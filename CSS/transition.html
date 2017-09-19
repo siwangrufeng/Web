@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+        }
+        .box{
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid red;
+            transition: all 5s;
+            /*回复效果时间*/
+        }
+        .box:hover{
+            transform: rotate(180deg) scale(6);
+            /*直接写rotate是以中心点旋转，x y 分别以xy轴旋转，deg是度数*/
+            /*scale()缩放，正整数为倍数，小数为缩小*/
+            /*transition: all 5s linear ;*/
+            /*linear匀速*/
+            transition: all 5s;
+            /*ease-in快进慢出 ease-out慢进快出 ease-in-out进出同速*/
+            /*后面再加时间就是延迟时间*/
+        }
+        input::placeholder{
+            color: red;
+        }
+        /*ul li:nth-child(n+4){*/
+            /*!*从4开始后面的所有*!*/
+            /*color: red;*/
+        /*}*/
+        /*ul li:nth-child(-n+4){*/
+            /*!*小于等于四*!*/
+            /*color: red;*/
+        /*}*/
+        /*ul li:nth-child(2n){*/
+            /*!*偶数 也可以是even*!*/
+            /*color: red;*/
+        /*}*/
+        /*ul li:nth-child(2n-1){*/
+            /*!*奇数 odd*!*/
+            /*color: red;*/
+        /*}*/
+        /*ul li:nth-child(3n+1){*/
+            /*!*从第一个开始，隔三取一*!*/
+            /*color: red;*/
+        /*}*/
+        /*ul li:nth-child(3n-1){*/
+            /*color: red;*/
+        /*}*/
+        /*ul li:last-child(2){*/
+            /*!*倒数第二*!*/
+            /*color: red;*/
+        /*}*/
+        /*.box{*/
+            /*opacity: ;透明度*/
+        /*}*/
+        /**/
+    </style>
+</head>
+<body>
+<div class="box">
+</div>
+<input type="text" placeholder="哈哈哈">
+<ul>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+    <li>哈哈哈</li>
+</ul>
+<!--div.box>ul.pic>li.items*8>div.pic$>img[src="img/$.jpg"]-->
+<!--快捷键，完了摁tab建-->
+</body>
+</html>

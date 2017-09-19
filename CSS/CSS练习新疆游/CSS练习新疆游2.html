@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			body{
+				width: 100%;
+				background: #4291f7;
+			}
+			.all{
+				margin: 0 auto;
+				width: 780px;
+			}
+			.head1{
+				background-image: url(img/banner.jpg);
+				width: 780px;
+				height: 150px;
+			}
+			.head2{
+				margin-top: 2px;
+				width: 780px;
+				height:30px;
+				background-image: url(img/button1.jpg);
+			}
+			.ul1{
+				list-style-type: none;
+				padding-top:6px;
+			}
+			.li1{
+				float: left;
+				color: blue;
+				font-size: 13px;
+				width: 60px;
+				height: 15px;
+				margin-left: 17px;
+				text-align: center;
+			}
+			a{
+				color: blue;
+			}
+			.left{
+				margin-top: 2px;
+				width: 200px;
+				height: 700px;
+				border-top: 5px white solid;
+				border-right: 5px white solid;
+				border-left: 5px white solid;
+				border-bottom: 3px white solid;
+				float: left;
+			}
+			.left1{
+				width: 200px;
+				height: 27px;
+				background-image: url(img/weather.jpg);
+				background-repeat: no-repeat;
+				background-size: 211px 47px;
+				margin-top: -4px;
+				margin-left: -5px;
+				padding-left:5px ;
+				padding-top: 20px;
+			}
+			.p1{
+				text-align: center;
+				color: white;
+				font-size: 14px;
+			}
+			.left2{
+				width: 200px;
+				height: 130px;
+				background: #6ea6e5;
+				color: white;
+				font-size: 12px;
+			}
+			.ul2{
+				list-style-image: url(img/icon1.gif);
+				list-style-position:inside ;
+				padding-top: 6px;
+			}
+			.li2{
+				width:200px ;
+				height: 23px;
+				margin-left: 16px;
+			}
+			.left3{
+				width: 200px;
+				height: 22px;
+				background: #c1ddfc;
+				font-size: 14px;
+				color: #4e74a2;
+			}
+			.pic1{
+				margin-left: 6px;
+				margin-bottom: 2px;
+			}
+			.left4{
+				width: 200px;
+				height: 505px;
+				background: #6ea6e5;
+				text-align: center;
+				font-size: 12px;
+				color:white;
+			}
+			.ul3{
+				list-style-type: none;
+				/*margin-top: 6px;*/
+			}
+			.pic2{
+				margin-top: 9px;
+				width: 180px;
+				height: 120px;
+				border-width: 1px;
+				border-color: white;
+				border-style: solid;
+			}
+			.li3{
+				width: 180px;
+				height: 140px;
+				margin-left: 9px;
+			}
+			.li4{
+				widows: 200px;
+				height: 25px;
+			}
+			.middle{
+				float: left;
+				margin-top: 2px;
+				margin-left: 2px;
+				width: 380px;
+				height: 698px;
+				border-color: white;
+				border-style: solid;
+				border-width: 5px;
+			}
+			.middle1{
+				width: 380px;
+				height: 260px;
+				background-image: url(img/ghost.jpg);
+				background-size: 380px 260px;
+			}
+			.middle2{
+				width: 380px;
+				height: 68px;
+				background: white;
+				background-image: url(img/picture_h1.gif);
+				background-size: 157px 45px;
+				background-repeat: no-repeat;
+				background-position: 5px 15px;
+			}
+			.middle3{
+				background: white;
+				width: 380px;
+				height: 142px;
+			}
+			.pic3{
+				width: 84px;
+				height: 137px;
+				margin-left: 6px;
+			}
+			.middle4{
+				width: 380px;
+				height: 68px;
+				background: white;
+				background-image: url(img/route_h1.gif);
+				background-size: 157px 45px;
+				background-repeat: no-repeat;
+				background-position: 5px 15px;
+			}
+			.middle5{
+				width: 380px;
+				height: 162px;
+				background: white;
+				font-size:13px ;
+			}
+			.ul4{
+				margin-left: 10px;
+				line-height: 35px;
+				font-size: 13px;
+				list-style-image: url(img/icon1.gif);
+				list-style-position:inside ;
+			}
+			.li5{
+				width: 380px;
+				height: 36px;
+			}
+			.a1:link{
+				text-decoration: none;
+			}
+			.right{
+				margin-top: 2px;
+				margin-left:2px ;
+				margin-bottom: 2px;
+				width: 166px;
+				height: 700px;
+				border-top: 5px white solid;
+				border-right: 5px white solid;
+				border-left: 5px white solid;
+				border-bottom: 3px white solid;
+				float: left;				
+			}
+			.right1{
+				width: 166px;
+				height: 23px;
+				background:#c1ddfc;
+				font-size: 15px;
+				color: blue;
+			}
+			.right2{
+				width: 166px;
+				height: 240px;
+				background: #6ea6e5;
+				text-align: center;
+			}
+			.pic4{
+				border-width: 1px;
+				border-color: white;
+				border-style: solid;
+				width: 150px;
+				height: 100px;
+				margin-top:10px ;
+			}
+			.right3{
+				width: 166px;
+				height: 145px;
+				background: #6ea6e5;
+				color: white;
+				font-size:13px ;
+				line-height: 30px;
+			}
+			.ul6{
+				list-style: none;
+				padding-left:10px ;
+				padding-top: 6px;
+			}
+			.li7{
+				width: 140px;
+				height: 30px;
+				border-bottom: 1px dashed white;
+				text-indent: 10px;
+			}
+			.right4{
+				width: 166px;
+				height: 246px;
+				background: #6ea6e5;
+				color: white;
+				font-size:13px ;
+				line-height: 30px;
+			}
+			.foot{
+				clear: both;
+				width: 770px;
+				height: 25px;
+				border: solid white 5px;
+				text-align: center;
+			}
+			.span6{
+				color: white;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div class="head1"></div>
+			<div class="head2">
+				<ul class="ul1">
+					<li class="li1"><a href="">首页</a></li>
+					<li class="li1"><a href="">新疆简介</a></li>
+					<li class="li1"><a href="">风土人情</a></li>
+					<li class="li1"><a href="">吃在新疆</a></li>
+					<li class="li1"><a href="">路线选择</a></li>
+					<li class="li1"><a href="">自主行</a></li>
+					<li class="li1"><a href="">摄影摄像</a></li>
+					<li class="li1"><a href="">游记精选</a></li>
+					<li class="li1"><a href="">资源下载</a></li>
+					<li class="li1"><a href="">雁过留声</a></li>
+				</ul>
+			</div>
+			<div class="left">
+				<div class="left1">
+					<p class="p1">天气查询</p>
+				</div>
+				<div class="left2">
+					<ul class="ul2">
+							<li class="li2">乌鲁木齐 雷阵雨 20℃-31℃<br /></li>
+							<li class="li2">吐鲁番 多云转阴 20℃-31℃<br /></li>
+							<li class="li2">喀什 阵雨转多云 20℃-31℃<br /></li>
+							<li class="li2">库尔勒 阵雨转阴 20℃-31℃<br /></li>
+							<li class="li2">克拉玛依 雷阵雨 20℃-31℃<br /></li>								</ul>
+				</div>
+				<div class="left3">
+					<img src="img/icon2.gif" class="pic1"/>
+					<span class="span1">今日推荐</span>
+				</div>
+				<div class="left4">
+					<ul class="ul3">
+							<li class="li3">
+								<img src="img/tuijian1.jpg" class="pic2"/>
+							</li>
+							<li class="li4">
+								<span class="span2">喀纳斯湖</span>
+							</li>
+							<li class="li3">
+								<img src="img/tuijian2.jpg" class="pic2"/>
+							</li>
+							<li class="li4">
+								<span class="span2">布尔津</span>
+							</li>
+							<li class="li3">
+								<img src="img/tuijian3.jpg" class="pic2"/>
+							</li>
+							<li class="li4">
+								<span class="span2">天山之路</span>
+							</li>
+						</ul>
+				</div>
+			</div>
+			<div class="middle">
+				<div class="middle1"></div>
+				<div class="middle2"></div>
+				<div class="middle3">
+					<img src="img/beauty1.jpg" class="pic3"/>
+					<img src="img/beauty2.jpg" class="pic3"/>
+					<img src="img/beauty3.jpg" class="pic3"/>
+					<img src="img/beauty4.jpg" class="pic3"/	>
+				</div>
+				<div class="middle4"></div>
+				<div class="middle5">
+					<ul class="ul4">
+							<li class="li5"><a href="" class="a1">吐鲁番——库尔勒——塔中——和田——喀什</a></li>
+							<li class="li5"><a href="" class="a1">乌鲁木齐——天池——克拉玛依——乌伦古湖——喀纳斯</a></li>
+							<li class="li5"><a href="" class="a1">乌鲁木齐——奎屯——乔尔玛——那拉提——巴音布鲁克</a></li>
+							<li class="li5"><a href="" class="a1">乌鲁木齐——五彩城——将军隔壁——吉木萨尔</a></li>
+						</ul>
+				</div>
+			</div>
+			<div class="right">
+				<div class="right1">
+					<img src="img/icon2.gif" class="pic1"/>
+					<span class="span3">新疆风光</span>
+				</div>
+				<div class="right2">
+					<ul class="ul5">
+						<li class="li6"><img src="img/tuijian1.jpg" class="pic4"/></li>
+						<li class="li6"><img src="img/tuijian2.jpg" class="pic4"/></li>
+					</ul>
+				</div>
+				<div class="right1">
+					<img src="img/icon2.gif" class="pic1"/>
+					<span class="span3">小吃推荐</span>
+				</div>
+				<div class="right3">
+					<ul class="ul6">
+							<li class="li7"><span class="span4">17号抓饭</span></li>
+							<li class="li7"><span class="span4">大盘鸡</span></li>
+							<li class="li7"><span class="span4">五一夜市</span></li>
+							<li class="li7"><span class="span4">水果</span></li>
+						</ul>
+				</div>
+				<div class="right1">
+					<img src="img/icon2.gif" class="pic1"/>
+					<span class="span3">宾馆酒店</span>
+				</div>
+				<div class="right4">
+					<ul class="ul6">
+							<li class="li7"><span class="span5">美丽华大饭店</span></li>
+							<li class="li7"><span class="span5">海德大饭店</span></li>
+							<li class="li7"><span class="span5">银都大饭店</span></li>
+							<li class="li7"><span class="span5">鸿福大饭店</span></li>
+							<li class="li7"><span class="span5">友好大酒店</span></li>
+							<li class="li7"><span class="span5">棉麻宾馆</span></li>
+							<li class="li7"><span class="span5">电信宾馆</span></li>
+						</ul>
+				</div>
+			</div>
+			<div class="foot">
+				<span>艾萨克&copy;版权所有</span>
+				<span class="span6">Nike@Zhu.com</span>
+			</div>
+		</div>
+	</body>
+</html>

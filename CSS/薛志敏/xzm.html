@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .banner{
+            width: 1000px;
+            height: 500px;
+            background: red;
+            overflow: hidden;
+            position: relative;
+            margin: 20px auto;
+        }
+        .pic li{
+            position: absolute;
+            top:0;
+            left: 0;
+            display: none;
+        }
+        .pic li img{
+            width: 1000px;
+            height: 500px;
+        }
+        .circle{
+            overflow: hidden;
+            position: absolute;
+            bottom: 10px;
+            left:30%;
+        }
+        .circle li{
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 25px;
+            float: left;
+            margin: 0 10px;
+        }
+        .circle .circle-red{
+            background: red;
+        }
+        .btn{
+            width: 50px;
+            background: greenyellow;
+            height: 100px;
+            position: absolute;
+            top:50%;
+            margin-top: -50px;
+            z-index: 2;
+           font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .prev{
+            left: 0;
+        }
+        .next{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="banner" id="banner">
+    <div class="pic" id="pic">
+        <ul>
+            <li style="display: block"><a href=""><img src="lunboimg/0.jpg" alt=""></a></li>
+            <li><a href=""><img src="lunboimg/1.jpg" alt=""></a></li>
+            <li><a href=""><img src="lunboimg/2.jpg" alt=""></a></li>
+            <li><a href=""><img src="lunboimg/3.jpg" alt=""></a></li>
+            <li><a href=""><img src="lunboimg/4.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="circle" id="circle">
+        <ul>
+            <li class="circle-red"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <p class="prev btn" id="prev">&lt</p>
+    <p class="next btn" id="next">&gt</p>
+</div>
+</body>
+<script>
+    var banner=document.getElementById("banner");
+    var pic=document.getElementById("pic");
+    var oPic=pic.getElementsByTagName("li");
+    var circle=document.getElementById("circle");
+    var oCircle=circle.getElementsByTagName("li");
+    var prev=document.getElementById("prev");
+    var next=document.getElementById("next");
+    var timer;
+    for(var i=0;i<oCircle.length;i++){
+        (function (i) {
+         oCircle[i].onmouseover=function () {
+             for(var j=0;j<oCircle.length;j++){
+                 oCircle[j].className="";
+                 oPic[j].style.display="none";
+             }
+             this.className="circle-red";
+             oPic[i].style.display="block";
+         }
+        })(i);
+        if(oPic[i].style.display=="block"){
+            (function (i) {
+                function tright() {
+                    i++;
+                    if(i==5){
+                        i=0;
+                    }
+//                    for(var a=0;a<oCircle.length;a++){
+//                        oCircle[a].className="";
+//                        oPic[a].style.display="none";
+//                    }
+//
+//                    oCircle[i].className="circle-red";
+//                    oPic[i].style.display="block";
+                    show()
+                }
+
+                function show(){
+                    for(var a=0;a<oCircle.length;a++){
+                        oCircle[a].className="";
+                        oPic[a].style.display="none";
+                    }
+                    oCircle[i].className="circle-red";
+                    oPic[i].style.display="block";
+                }
+                function tleft() {
+
+                    if(i==0){
+                        i=5;
+                    }
+//                    for(var a=0;a<oCircle.length;a++){
+//                        oCircle[a].className="";
+//                        oPic[a].style.display="none";
+//                    }
+                    i--;
+                    show();
+//                    oCircle[i].className="circle-red";
+//                    oPic[i].style.display="block";
+                }
+               next.onclick=function () {
+                   tright();
+               };
+                prev.onclick=function () {
+                    tleft();
+                }
+                timer=setInterval(function () {
+                    tright();
+                },1000);
+                banner.onmouseover=function () {
+                    clearInterval(timer);
+                }
+                banner.onmouseout=function () {
+                    clearInterval(timer);
+                    timer=setInterval(function () {
+                        tright();
+                    },1000);
+                }
+            })(i);
+        }
+    }
+
+</script>
+</html>

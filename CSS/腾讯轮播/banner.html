@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            border: 0;
+        }
+        .box{
+            width: 100%;
+            height: 580px;
+            position: relative;
+            overflow: hidden;
+        }
+        ul{
+            overflow: hidden;
+        }
+        .pic li{
+            position: absolute;
+            width: 100%;
+            height: 580px;
+            left: 0;
+            top:0;
+            display: none;
+        }
+        .pic .pic_1{
+            display: block;
+        }
+        .list{
+            position: absolute;
+            right: 40px;
+            top: 0;
+            background: rgba(255,255,255,0.7);
+            color: #202020;
+            font-size: 14px;
+            width: 240px;
+            height: 580px;
+            line-height: 28px;
+        }
+        .list li{
+            width: 210px;
+            height: 28px;
+            padding: 0 15px;
+            position: relative;
+        }
+        .list li .small{
+            position: absolute;
+        }
+        .list li .big{
+            width: 210px;
+            height: 54px;
+            padding: 10px 15px 12px;
+            margin-left: -15px;
+            background: white;
+            position: absolute;
+            display: none;
+        }
+        .list .list_li_1{
+            height: 76px;
+        }
+        .list .list_li_1 .big{
+            display: block;
+            z-index: 10;
+        }
+        .list .big p:nth-child(1){
+            line-height: 34px;
+            color:#FE713A ;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <ul class="pic" id="pic">
+        <li class="pic_1"><img src="img/1.jpg" alt=""></li>
+        <li><img src="img/2.jpg" alt=""></li>
+        <li><img src="img/3.jpg" alt=""></li>
+        <li><img src="img/4.jpg" alt=""></li>
+        <li><img src="img/5.jpg" alt=""></li>
+        <li><img src="img/6.jpg" alt=""></li>
+        <li><img src="img/7.jpg" alt=""></li>
+        <li><img src="img/8.jpg" alt=""></li>
+        <li><img src="img/9.jpg" alt=""></li>
+        <li><img src="img/10.jpg" alt=""></li>
+    </ul>
+    <ul class="list" id="list">
+        <li class="list_li_1">
+            <div class="small">浪花一朵朵：白云夫妇遛狗遇偷拍</div>
+            <div class="big big_fir" >
+                <p>浪花一朵朵</p>
+                <p>白云夫妇遛狗遇偷拍</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">反恐特战队2：黄维德何晟铭 对决</div>
+            <div class="big">
+                <p>反恐特战队2</p>
+                <p>黄维德何晟铭 对决</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">饭局的诱惑2：李湘早期写真曝光</div>
+            <div class="big">
+                <p>饭局的诱惑2</p>
+                <p>李湘早期写真曝光</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">极限挑战3：孙红雷姚晨再同框</div>
+            <div class="big">
+                <p>极限挑战3</p>
+                <p>孙红雷姚晨再同框</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">鬼吹灯之黄皮子坟：神奇百眼窟</div>
+            <div class="big">
+                <p>鬼吹灯之黄皮子坟</p>
+                <p>神奇百眼窟</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">双世宠妃：虐甜！小谭照顾吐血城</div>
+            <div class="big">
+                <p>双世宠妃</p>
+                <p>虐甜！小谭照顾吐血城</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">欢乐海鹦岛：暑期动画看这里</div>
+            <div class="big">
+                <p>欢乐海鹦岛</p>
+                <p>暑期动画看这里</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">2017华语金曲奖：全程回顾</div>
+            <div class="big">
+                <p>2017华语金曲奖</p>
+                <p>全程回顾</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">权力的游戏7：同步美国播出</div>
+            <div class="big">
+                <p>权力的游戏7</p>
+                <p>同步美国播出</p>
+            </div>
+        </li>
+        <li>
+            <div class="small">李雷和韩梅梅：女学渣爱上男学霸</div>
+            <div class="big">
+                <p>李雷和韩梅梅</p>
+                <p>女学渣爱上男学霸</p>
+            </div>
+        </li>
+    </ul>
+</div>
+</body>
+<script>
+    var box=document.getElementById("box");
+    var pic=document.getElementById("pic");
+    var list=document.getElementById("list");
+    var pic_li=pic.getElementsByTagName("li");
+    var list_li=list.getElementsByTagName("li");
+
+    for(i=0;i<list_li.length;i++){
+        list_li[i].a=i;
+        list_li[i].onmouseover=function(){
+            for(z=0;z<list_li.length;z++){
+                list_li[z].className="";
+                pic_li[z].className="";
+            }
+            this.className="list_li_1";
+            count=this.a;
+            pic_li[this.a].className="pic_1";
+        }
+    }
+    count=0;
+    function next(){
+        count++;
+        if(count==list_li.length){
+            count=0;
+        }
+        for(z=0;z<list_li.length;z++){
+            list_li[z].className="";
+            pic_li[z].className="";
+        }
+        list_li[count].className="list_li_1";
+        pic_li[count].className="pic_1";
+    }
+    function start(){
+        a=setInterval(next,1500);
+    }
+    function stop(){
+        clearInterval(a)
+    }
+    box.onmouseover=function(){
+        stop()
+    };
+    box.onmouseout=function(){
+        start()
+    };
+    start();
+
+
+</script>
+</html>

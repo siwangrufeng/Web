@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+            text-align: center;
+            background: lightblue;
+            padding-top: 200px;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        .box:hover img{
+            /*transition: 0.5s;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="cat.png" alt="" id="img">
+</div>
+</body>
+<script>
+    var a=document.getElementsByClassName("box")[0];
+    var b=document.getElementById("img");
+    a.onmouseenter=function(){  //onmouseenter表示确认进入该区域后触发，与onmouseover相比，不会重复调用。
+        b.style.transform="scale(1.2)";
+        b.style.transition="0.5s";
+        setTimeout(function(){  //延时调用，500ms之后调用该函数
+            b.style.transform="scale(1)";
+        },500)
+    }
+</script>
+</html>

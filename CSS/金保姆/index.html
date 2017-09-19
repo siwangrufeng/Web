@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.leoweather.min.js"></script>
+    <script src="js/index_js.js"></script>
+</head>
+<body>
+<div class="header">
+    <div class="header_cont">
+        <div class="header_cont_left">
+            <a href="" class="logOn">登陆</a>
+            <span class="header_line"></span>
+            <a href="" class="register">注册</a>
+            <span class="clock"></span>
+            <span id="weather"></span>
+        </div>
+        <div class="header_cont_right">
+            <span>您好，欢迎来到南京最权威的装修监管平台!</span>
+            <span>全国热线：<a>400-606-2221</a></span>
+            <img src="img/qq.png" alt="">
+            <span>QQ联系我们</span>
+        </div>
+    </div>
+</div>
+<div class="top">
+    <a href="" class="logo"><img src="img/logo.png" alt=""></a>
+    <form class="search">
+        <select name="company" id="" class="company">
+            <option value="装修公司">装修公司</option>
+            <option value="装修公司">装修公司</option>
+            <option value="装修公司">装修公司</option>
+            <option value="装修公司">装修公司</option>
+        </select>
+        <input type="text" placeholder="挑选您心仪的装修公司" class="search_type">
+        <input type="button" value="搜索" class="search_but">
+    </form>
+    <div class="search_right">
+        <div class="search_right_img">
+            <img src="img/search-right.png" alt="">
+        </div>
+        <p>免费量房报价第三方监理提供 <i>3</i> 家装饰公司免费量房、免费设计、免费报价</p>
+    </div>
+</div>
+<div class="nav">
+    <div class="nav_cont">
+        <ul>
+            <li><a href="">首页</a></li>
+            <li><a href="">我要装修</a></li>
+            <li><a href="">我要找监理</a></li>
+            <li><a href="">我要找装修公司</a></li>
+            <li><a href="">参观样板房</a></li>
+            <li><a href="">装修大课堂</a></li>
+            <li><a href="">业主口碑</a></li>
+        </ul>
+    </div>
+</div>
+<div class="banner">
+    <div class="tab">
+        <div class="tab_nav">
+            <ul>
+                <li class="tab_nav_active"><span></span>我要招标</li>
+                <li><span></span>我要装修</li>
+                <li><span></span>我要找公司</li>
+                <li><span></span>我要找监理</li>
+            </ul>
+        </div>
+        <div class="tab_info">
+            <ul class="tab_info_ul">
+                <li class="tab_info_li tab_info_li_active">
+                    <p>
+                        今日已有
+                        <span>1345</span>
+                        业主申请，本月申请人数已达
+                        <span>58841</span>
+                    </p>
+                    <input type="text" placeholder="您的称呼" name="tender_user" class="user">
+                    <input type="text" placeholder="手机号码" name="tender_phone" class="iphone">
+                    <select class="province">
+                        <option value="">请选择省份</option>
+                    </select>
+                    <select class="city">
+                        <option value="">请选择城市</option>
+                    </select>
+                    <select name="service" class="service">
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                    </select>
+                    <!--<ul class="province">-->
+                        <!--<li>请选择省</li>-->
+                        <!--<li class="province1">江苏</li>-->
+                        <!--<li class="province1">河南</li>-->
+                        <!--<li class="province1">河北</li>-->
+                    <!--</ul>-->
+                    <!--<div class="city_box">-->
+                        <!--<ul class="city">-->
+                            <!--<li>请选择市</li>-->
+                        <!--</ul>-->
+                        <!--<ul class="city city1">-->
+
+                            <!--<li>南京</li>-->
+                            <!--<li>宿迁</li>-->
+                            <!--<li>无锡</li>-->
+                        <!--</ul>-->
+                        <!--<ul class="city city2">-->
+                            <!--<li>驻马店</li>-->
+                            <!--<li>漯河</li>-->
+                            <!--<li>信阳</li>-->
+                        <!--</ul>-->
+                        <!--<ul class="city city3">-->
+                            <!--<li>石家庄</li>-->
+                            <!--<li>唐山</li>-->
+                            <!--<li>承德</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                    <!--<ul class="service">-->
+                        <!--<li>新房装修</li>-->
+                        <!--<li>新房装修</li>-->
+                        <!--<li>新房装修</li>-->
+                    <!--</ul>-->
+                    <button class="submit">免费发布招标</button>
+                </li>
+                <li class="tab_info_li tab_info_li_active">
+                    <p>
+                        今日已有
+                        <span>1345</span>
+                        业主申请，本月申请人数已达
+                        <span>58841</span>
+                    </p>
+                    <input type="text" placeholder="您的称呼" name="tender_user" class="user">
+                    <input type="text" placeholder="手机号码" name="tender_phone" class="iphone">
+                    <select class="province">
+                        <option value="">请选择省份</option>
+                    </select>
+                    <select class="city">
+                        <option value="">请选择城市</option>
+                    </select>
+                    <select name="service" class="service">
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                    </select>
+                    <!--<ul class="province">-->
+                    <!--<li>请选择省</li>-->
+                    <!--<li class="province1">江苏</li>-->
+                    <!--<li class="province1">河南</li>-->
+                    <!--<li class="province1">河北</li>-->
+                    <!--</ul>-->
+                    <!--<div class="city_box">-->
+                    <!--<ul class="city">-->
+                    <!--<li>请选择市</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city1">-->
+
+                    <!--<li>南京</li>-->
+                    <!--<li>宿迁</li>-->
+                    <!--<li>无锡</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city2">-->
+                    <!--<li>驻马店</li>-->
+                    <!--<li>漯河</li>-->
+                    <!--<li>信阳</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city3">-->
+                    <!--<li>石家庄</li>-->
+                    <!--<li>唐山</li>-->
+                    <!--<li>承德</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--<ul class="service">-->
+                    <!--<li>新房装修</li>-->
+                    <!--<li>新房装修</li>-->
+                    <!--<li>新房装修</li>-->
+                    <!--</ul>-->
+                    <button class="submit">免费找装修</button>
+                </li>
+                <li class="tab_info_li tab_info_li_active">
+                    <p>
+                        今日已有
+                        <span>1345</span>
+                        业主申请，本月申请人数已达
+                        <span>58841</span>
+                    </p>
+                    <input type="text" placeholder="您的称呼" name="tender_user" class="user">
+                    <input type="text" placeholder="手机号码" name="tender_phone" class="iphone">
+                    <select class="province">
+                        <option value="">请选择省份</option>
+                    </select>
+                    <select class="city">
+                        <option value="">请选择城市</option>
+                    </select>
+                    <select name="service" class="service">
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                    </select>
+                    <!--<ul class="province">-->
+                    <!--<li>请选择省</li>-->
+                    <!--<li class="province1">江苏</li>-->
+                    <!--<li class="province1">河南</li>-->
+                    <!--<li class="province1">河北</li>-->
+                    <!--</ul>-->
+                    <!--<div class="city_box">-->
+                    <!--<ul class="city">-->
+                    <!--<li>请选择市</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city1">-->
+
+                    <!--<li>南京</li>-->
+                    <!--<li>宿迁</li>-->
+                    <!--<li>无锡</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city2">-->
+                    <!--<li>驻马店</li>-->
+                    <!--<li>漯河</li>-->
+                    <!--<li>信阳</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city3">-->
+                    <!--<li>石家庄</li>-->
+                    <!--<li>唐山</li>-->
+                    <!--<li>承德</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--<ul class="service">-->
+                    <!--<li>新房装修</li>-->
+                    <!--<li>新房装修</li>-->
+                    <!--<li>新房装修</li>-->
+                    <!--</ul>-->
+                    <button class="submit">免费找装修公司</button>
+                </li>
+                <li class="tab_info_li tab_info_li_active">
+                    <p>
+                        今日已有
+                        <span>1345</span>
+                        业主申请，本月申请人数已达
+                        <span>58841</span>
+                    </p>
+                    <input type="text" placeholder="您的称呼" name="tender_user" class="user">
+                    <input type="text" placeholder="手机号码" name="tender_phone" class="iphone">
+                    <select class="province">
+                        <option value="">请选择省份</option>
+                    </select>
+                    <select class="city">
+                        <option value="">请选择城市</option>
+                    </select>
+                    <select name="service" class="service">
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                        <option value="新房装修">新房装修</option>
+                    </select>
+                    <!--<ul class="province">-->
+                    <!--<li>请选择省</li>-->
+                    <!--<li class="province1">江苏</li>-->
+                    <!--<li class="province1">河南</li>-->
+                    <!--<li class="province1">河北</li>-->
+                    <!--</ul>-->
+                    <!--<div class="city_box">-->
+                    <!--<ul class="city">-->
+                    <!--<li>请选择市</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city1">-->
+
+                    <!--<li>南京</li>-->
+                    <!--<li>宿迁</li>-->
+                    <!--<li>无锡</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city2">-->
+                    <!--<li>驻马店</li>-->
+                    <!--<li>漯河</li>-->
+                    <!--<li>信阳</li>-->
+                    <!--</ul>-->
+                    <!--<ul class="city city3">-->
+                    <!--<li>石家庄</li>-->
+                    <!--<li>唐山</li>-->
+                    <!--<li>承德</li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
+                    <!--<ul class="service">-->
+                    <!--<li>新房装修</li>-->
+                    <!--<li>新房装修</li>-->
+                    <!--<li>新房装修</li>-->
+                    <!--</ul>-->
+                    <button class="submit">免费找监理</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="banner_right">
+        <div class="banner_pic">
+            <ul class="banner_pic_ul">
+                <li class="banner_pic_active">
+                    <a href=""><img src="img/lunbo1.png" alt=""></a>
+                </li>
+                <li>
+                    <a href=""><img src="img/lunbo2.png" alt=""></a>
+                </li>
+            </ul>
+            <ul class="banner_cir_ul">
+            </ul>
+            <div id="prev">&lt;</div>
+            <div id="next">&gt;</div>
+        </div>
+        <div class="banner_bot">
+            <div class="banner_bot_security">
+                <div class="banner_bot_pic">
+                    <img src="img/baozhang.png" alt="">
+                </div>
+                <div class="banner_bot_info">
+                    <b>免费量房/报价 第三方监理</b>
+                    <p>装修满意后付款</p>
+                </div>
+            </div>
+            <div class="banner_bot_right">
+                <ul>
+                    <li>
+                        <span></span>
+                        企业认证
+                    </li>
+                    <li>
+                        <span></span>
+                        满意付款
+                    </li>
+                    <li>
+                        <span></span>
+                        第三方监理
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="side">
+        <div class="side_title">
+            服务指南
+        </div>
+        <div class="side_list">
+            <div class="side_list_cont side_list_cont1">
+                <i class="side_list_icon"></i>
+                <p class="question">我有问题</p>
+                 <p class="consult">
+                     先
+                     <span>咨询</span>
+                     一下
+                 </p>
+                <a href="" class="quickly">点击快速咨询</a>
+            </div>
+            <div class="side_list_cont side_list_cont2">
+                <i class="side_list_icon"></i>
+                <div class="phone_consult">
+                    <img src="img/e-code.png" alt="">
+                </div>
+                <p class="sweep_consult">扫一扫</p>
+                <span>手机咨询更方便</span>
+            </div>
+            <div class="side_list_cont side_list_cont3">
+                <i class="side_list_icon"></i>
+                <a href="" class="want_decoration">我要装修</a>
+                <a href="" class="want_tender">我要招标</a>
+                <a href="" class="quickly">快速找监理</a>
+            </div>
+            <div class="WeChat">
+                <div class="WeChat_img">
+                    <img src="img/weixinerweima.png" alt="">
+                </div>
+                <p class="WeChat_info">微信找监理</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="process">
+    <div class="process_title">
+        招标流程
+    </div>
+    <div class="process_info">
+        <ul>
+            <li>
+                <span></span>
+                <div class="process_words">
+                    <p>第一步</p>
+                    <b>免费发布招标</b>
+                </div>
+                <i></i>
+            </li>
+            <li>
+                <span></span>
+                <div class="process_words">
+                    <p>第二步</p>
+                    <b>客服回访</b>
+                </div>
+                <i></i>
+            </li>
+            <li>
+                <span></span>
+                <div class="process_words">
+                    <p>第三步</p>
+                    <b>量房设计预算</b>
+                </div>
+                <i></i>
+            </li>
+            <li>
+                <span></span>
+                <div class="process_words">
+                    <p>第四步</p>
+                    <b>选择公司</b>
+                </div>
+                <i></i>
+            </li>
+            <li>
+                <span></span>
+                <div class="process_words">
+                    <p>第五步</p>
+                    <b>交保证金</b>
+                </div>
+                <i></i>
+            </li>
+            <li>
+                <span></span>
+                <div class="process_words">
+                    <p>第六步</p>
+                    <b>评价</b>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="radio">
+    <div class="radio_title">
+        <div class="radio_title_left">
+            <div class="radio_title_pic">
+                <img src="img/radio-cont.png" alt="">
+            </div>
+           <p>视频直播</p>
+        </div>
+        <div class="radio_title_right">
+            <p>
+                已有
+                <span>418870</span>
+                位在线工地施工
+            </p>
+        </div>
+    </div>
+    <div class="radio_top">
+        <div class="radio_online">
+            <div class="radio_online_title">
+                <div class="radio_online_title_left">
+                    在线工地
+                </div>
+                <a class="radio_online_title_right" href="">
+                    更多&gt;&gt;
+                </a>
+            </div>
+            <div class="radio_online_cont">
+                <div class="radio_online_cont_left">
+                    <a href="">
+                        <div class="radio_online_cont_left_img">
+                            <img src="img/radio-1.png" alt="">
+                        </div>
+                        <p>浦口江月府三室二厅一卫</p>
+                    </a>
+                </div>
+                <div class="radio_online_cont_right">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <div class="radio_online_cont_right_img">
+                                    <img src="img/radio-2.png" alt="">
+                                </div>
+                                <p>大华锦绣城三室二厅一卫</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="radio_online_cont_right_img">
+                                    <img src="img/radio-3.png" alt="">
+                                </div>
+                                <p>梅花山庄三室二厅一卫</p>
+                            </a>
+                        </li>
+                        <li class="radio_online_cont_right_last">
+                            <a href="">
+                                <div class="radio_online_cont_right_img">
+                                    <img src="img/radio-4.png" alt="">
+                                </div>
+                                <p>南京碧桂园三室二厅一卫</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="radio_online_cont_right_img">
+                                    <img src="img/radio-5.png" alt="">
+                                </div>
+                                <p>大华锦绣城三室二厅一卫</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <div class="radio_online_cont_right_img">
+                                    <img src="img/radio-6.png" alt="">
+                                </div>
+                                <p>梅花山庄三室二厅一卫</p>
+                            </a>
+                        </li>
+                        <li class="radio_online_cont_right_last">
+                            <a href="">
+                                <div class="radio_online_cont_right_img">
+                                    <img src="img/radio-7.png" alt="">
+                                </div>
+                                <p>南京碧桂园三室二厅一卫</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="radio_class">
+            <div class="radio_class_title">
+                <div>
+                    装修大课堂
+                </div>
+                <a href="">更多&gt;&gt;</a>
+            </div>
+            <div class="radio_class_top">
+                <div class="radio_class_top_img">
+                    <img src="img/zhuangxiu.png" alt="">
+                </div>
+                <ul>
+                    <li><a href="">韩丽橱柜怎么样韩丽橱柜怎么样韩丽橱柜怎么样</a></li>
+                    <li><a href="">不锈钢水槽品牌不锈钢水槽品牌</a></li>
+                    <li><a href="">收音机品牌哪个好收音机品牌哪个好</a></li>
+                    <li><a href="">电暖气什么牌子的好电暖气什么牌子的好</a></li>
+                </ul>
+            </div>
+            <div class="radio_class_bot">
+                <ul>
+                    <li>&gt;&nbsp;&nbsp;<a href="">韩丽橱柜怎么样韩丽橱柜官方价格表</a></li>
+                    <li>&gt;&nbsp;&nbsp;<a href="">不锈钢水槽品牌不锈钢水槽哪个牌子好</a></li>
+                    <li>&gt;&nbsp;&nbsp;<a href="">收音机品牌哪个好收音机品牌排行</a></li>
+                    <li>&gt;&nbsp;&nbsp;<a href="">电暖气什么牌子的好电暖气什么样的好</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="radio_case">
+        <div class="radio_case_title">
+            <div class="radio_case_title_left">
+                装修失败案例分析
+            </div>
+            <a class="radio_case_title_right" href="">
+                更多&gt;&gt;
+            </a>
+        </div>
+        <div class="radio_case_cont">
+            <ul class="radio_case_cont_ul">
+                <li class="radio_case_cont_li">
+                    <div class="radio_case_cont_img">
+                        <a href=""><img src="img/fail-1.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li><a href="">钻石牌电风扇价格 钻石牌电风扇价格</a></li>
+                        <li><a href="">老粗布床单好吗 老粗布床单价格</a></li>
+                        <li><a href="">冰箱冷冻室不制冷的原因及快速修复</a></li>
+                        <li><a href="">南韩丝是什么面料南韩丝是什么面料</a></li>
+                    </ul>
+                </li>
+                <li class="radio_case_cont_li">
+                    <div class="radio_case_cont_img">
+                        <a href=""><img src="img/fail-2.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li><a href="">警惕！容易让霉运找上门的五种不知道说的啥</a></li>
+                        <li><a href="">厨房风水有讲究，选对吉位衣不知道是啥</a></li>
+                        <li><a href="">父母们注意！阻碍儿女前途的不知道啥</a></li>
+                        <li><a href="">住宅风水方位详解</a></li>
+                    </ul>
+                </li>
+                <li class="radio_case_cont_li">
+                    <div class="radio_case_cont_img">
+                        <a href=""><img src="img/fail-3.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li><a href="">装修完全手册</a></li>
+                        <li><a href="">装修计算器大全</a></li>
+                        <li><a href="">装修合同下载</a></li>
+                        <li><a href="">土巴兔监理项目表下载</a></li>
+                    </ul>
+                </li>
+                <li class="radio_case_cont_li">
+                    <div class="radio_case_cont_img">
+                        <a href=""><img src="img/fail-4.png" alt=""></a>
+                    </div>
+                    <ul>
+                        <li><a href="">警惕！容易让霉运找上门的五种不知道说的啥</a></li>
+                        <li><a href="">厨房风水有讲究，选对吉位衣不知道是啥</a></li>
+                        <li><a href="">父母们注意！阻碍儿女前途的不知道啥</a></li>
+                        <li><a href="">住宅风水方位详解</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="tender">
+    <div class="tender_title">
+        <div class="tender_title_left">
+            <div class="tender_title_pic">
+                <img src="img/zhaobiao.png" alt="">
+            </div>
+            <p>最新招标信息</p>
+        </div>
+        <div class="tender_title_right">
+            <p>
+                当前已有
+                <span>3645</span>
+                位业主申请了各种免费装修服务
+            </p>
+        </div>
+    </div>
+    <div class="tender_cont">
+        <div class="tender_cont_left">
+            <table>
+                <tr class="tr1">
+                    <td>业主</td>
+                    <td>电话</td>
+                    <td>建筑面积</td>
+                    <td>装修类型</td>
+                    <td class="td1">装修情况</td>
+                    <td>发布时间</td>
+                </tr>
+                <tr class="tr2">
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+                <tr>
+                    <td>王**</td>
+                    <td>138*****388</td>
+                    <td>79㎡</td>
+                    <td>半包</td>
+                    <td class="td1">上海市浦东新区成山小区住宅公寓装修</td>
+                    <td>09月20日</td>
+                </tr>
+            </table>
+        </div>
+        <div class="tender_cont_right">
+            <p>10秒免费登记，坐等装修公司找上门</p>
+            <form action="" class="free">
+                <input type="text" placeholder="您的称呼" class="name">
+                <input type="text" placeholder="手机号码" class="phone">
+                <select name="money" class="money">
+                    <option value="" style="display: none">您的预算</option>
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="3000">3000</option>
+                    <option value="4000">4000</option>
+                </select>
+                <button type="submit" class="apply">立即申请免费</button>
+            </form>
+            <div class="tender_cont_right_bot">
+                <div class="tender_cont_right_bot_img">
+                    <img src="img/qiye.png" alt="">
+                </div>
+                <span></span>
+                <div class="tender_cont_right_bot_img">
+                    <img src="img/baozhang2.png" alt="">
+                </div>
+                <span></span>
+                <div class="tender_cont_right_bot_img">
+                    <img src="img/disanfang.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reco">
+    <div class="reco_title">
+        <div class="reco_title_left">
+            <div class="reco_title_pic">
+                <img src="img/tuijian.png" alt="">
+            </div>
+            <p>金保姆推荐</p>
+        </div>
+        <div class="reco_title_right">
+            <p>
+                当前已有
+                <span>859216</span>
+                装修公司入驻金保姆平台
+            </p>
+        </div>
+    </div>
+    <div class="reco_cont">
+        <div class="reco_cont_left">
+            <div class="reco_cont_left_box">
+               <ul>
+                   <li>
+                       <span>广东星艺装饰公司</span>
+                       <a class="reco_cont_left_img" href="">
+                           <img src="img/tuijian1.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p>广东星艺装饰集团股份前身为广东星艺装饰有限公司1991广东星艺装饰集团股份前身为广东星艺装饰有限公司</p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>南京新爱化妆师有限责任公司</span>
+                       <a class="reco_cont_left_img" href="">
+                           <img src="img/tuijian2.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p>始创于1990年，原名军事工程公司（军办企业），军队</p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>南京新爱化妆师有限责任公司</span>
+                       <a class="reco_cont_left_img" href="">
+                           <img src="img/tuijian2.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p>始创于1990年，原名军事工程公司（军办企业），军队</p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>南京焦点装饰公司</span>
+                       <a class="reco_cont_left_img" href="">
+                           <img src="img/tuijian3.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p>南京焦点装饰公司，是住宅、办公会所、店面商铺</p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>江苏我乐装饰工程有限公司</span>
+                       <a href="" class="reco_cont_left_img">
+                           <img src="img/tuijian1.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p></p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>江苏我乐装饰工程有限公司</span>
+                       <a href="" class="reco_cont_left_img">
+                           <img src="img/tuijian1.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p></p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>广东星艺装饰公司</span>
+                       <a href="" class="reco_cont_left_img">
+                           <img src="img/tuijian1.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p>广东星艺装饰集团股份前身为广东星艺装饰有限公司1991广东星艺装饰集团股份前身为广东星艺装饰有限公司</p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>南京新爱化妆师有限责任公司</span>
+                       <a href="" class="reco_cont_left_img">
+                           <img src="img/tuijian2.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p>始创于1990年，原名军事工程公司（军办企业），军队</p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+                   <li>
+                       <span>南京新爱化妆师有限责任公司</span>
+                       <a href="" class="reco_cont_left_img">
+                           <img src="img/tuijian2.png" alt="">
+                       </a>
+                       <div class="reco_cont_left_info">
+                           <p>始创于1990年，原名军事工程公司（军办企业），军队</p>
+                           <a href="">查看全部&gt;&gt;</a>
+                       </div>
+                   </li>
+               </ul>
+            </div>
+        </div>
+        <div class="reco_cont_right">
+            <div class="reco_cont_right_title">
+                最受好评装修公司
+            </div>
+            <div class="reco_cont_right_list">
+                <ul>
+                    <li>
+                        <a>1</a>
+                        <div class="reco_cont_right_list_img">
+                            <img src="img/haotai.png" alt="">
+                        </div>
+                        <div class="reco_cont_right_list_info">
+                            <p>豪泰装饰</p>
+                            <span>22147</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a>2</a>
+                        <div class="reco_cont_right_list_img">
+                            <img src="img/baili.png" alt="">
+                        </div>
+                        <div class="reco_cont_right_list_info">
+                            <p>柏丽装饰</p>
+                            <span>20020</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a>3</a>
+                        <div class="reco_cont_right_list_img">
+                            <img src="img/jiuyu.png" alt="">
+                        </div>
+                        <div class="reco_cont_right_list_info">
+                            <p>九域装饰</p>
+                            <span>18441</span>
+                        </div>
+                    </li>
+                    <li>
+                        <a>4</a>
+                        <div class="reco_cont_right_list_img">
+                            <img src="img/jiuyu.png" alt="">
+                        </div>
+                        <div class="reco_cont_right_list_info">
+                            <p>九域装饰</p>
+                            <span>18441</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button type="button">
+                <span class="reco_cont_right_but_img">
+                    <img src="img/jia.png" alt="">
+                </span>
+                加入我们
+            </button>
+        </div>
+    </div>
+</div>
+<div class="visit">
+    <div class="visit_title">
+        <div class="visit_title_left">
+            <div class="visit_title_pic">
+                <img src="img/canguan.png" alt="">
+            </div>
+            <p>金保姆推荐</p>
+        </div>
+        <div class="visit_title_right">
+            <p>
+                我要参观样板房+
+            </p>
+        </div>
+    </div>
+    <div class="visit_cont">
+        <div class="visit_cont_left">
+            <div class="visit_cont_left_list">
+                <ul>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-1.png" alt="">
+                        </a>
+                        <a href="" class="visit_cont_left_list_info">普通住宅/新古典/3室2厅1卫</a>
+                        <p>紫金上林苑</p>
+                    </li>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-2.png" alt="">
+                        </a>
+                        <a href="" class="visit_cont_left_list_info">普通住宅/现代/3室2厅1卫</a>
+                        <p>中海国际社区</p>
+                    </li>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-1.png" alt="">
+                        </a>
+                        <a href="" class="visit_cont_left_list_info">普通住宅/雅致主义/3室2厅1卫</a>
+                        <p>银河湾卓苑</p>
+                    </li>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-4.png" alt="">
+                        </a>
+                        <a href="" class="visit_cont_left_list_info">普通住宅/田园/2室2厅1卫</a>
+                        <p>鼓教新村</p>
+                    </li>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-5.png" alt="">
+                        </a>
+                        <a href=""  class="visit_cont_left_list_info">普通住宅/新古典/3室2厅1卫</a>
+                        <p>紫金上林苑</p>
+                    </li>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-6.png" alt="">
+                        </a>
+                        <a href="" class="visit_cont_left_list_info">普通住宅/现代/3室2厅1卫</a>
+                        <p>中海国际社区</p>
+                    </li>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-7.png" alt="">
+                        </a>
+                        <a href="" class="visit_cont_left_list_info">普通住宅/雅致主义/3室2厅1卫</a>
+                        <p>银河湾卓苑</p>
+                    </li>
+                    <li>
+                        <a href="" class="visit_cont_left_list_img">
+                            <img src="img/canguan-8.png" alt="">
+                        </a>
+                        <a href="" class="visit_cont_left_list_info">普通住宅/田园/2室2厅1卫</a>
+                        <p>鼓教新村</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="visit_cont_right">
+            <div class="visit_cont_right_title">
+                <p>大家都在看</p>
+                <a href="">更多</a>
+            </div>
+            <div class="visit_cont_right_list">
+                <ul>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                    <li>
+                        <span class="number">1</span>
+                        <a href="">家庭装修流程</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="partner">
+    <div class="partner_title">
+        <div class="partner_title_left">
+            <div class="partner_title_pic">
+                <img src="img/hezuoshang.png" alt="">
+            </div>
+            <p>金保姆推荐</p>
+        </div>
+        <div class="partner_title_right">
+            <p>
+                已有
+                <span>859216</span>
+                建材商入驻金保姆平台
+            </p>
+        </div>
+    </div>
+    <div class="partner_cont">
+        <table>
+            <tr>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+                <td>
+                    <a href="" class="partner_cont_img">
+                        <img src="img/hezuo-1.png" alt="">
+                    </a>
+                    <div class="partner_cont_info">
+                        火热抢位中
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="foot">
+    <div class="foot_cont">
+        <ul>
+            <li>
+                <div class="foot_cont_img">
+                    <img src="img/bangzhu.png" alt="">
+                </div>
+                <p>装修帮助</p>
+                <div class="foot_cont_info">
+                    <a href="">装修陷阱</a>
+                    <a href="">装修骗局</a>
+                    <a href="">装修红黑板</a>
+                    <a href="">我要投诉</a>
+                </div>
+            </li>
+            <li>
+                <div class="foot_cont_img">
+                    <img src="img/xinshou.png" alt="">
+                </div>
+                <p>新手指南</p>
+                <div class="foot_cont_info">
+                    <a href="">注册和验证</a>
+                    <a href="">如何招标</a>
+                    <a href="">会员中心</a>
+                </div>
+            </li>
+            <li>
+                <div class="foot_cont_img">
+                    <img src="img/fuwu.png" alt="">
+                </div>
+                <p>装修帮助</p>
+                <div class="foot_cont_info">
+                    <a href="">装修助手</a>
+                    <a href="">专家指导</a>
+                    <a href="">家装专家</a>
+                    <a href="">装修保障</a>
+                </div>
+            </li>
+            <li>
+                <div class="foot_cont_img">
+                    <img src="img/guanyu.png" alt="">
+                </div>
+                <p>关于我们</p>
+                <div class="foot_cont_info">
+                    <a href="">金保姆简介</a>
+                    <a href="">我们的团队</a>
+                    <a href="">联系我们</a>
+                    <a href="">最新活动</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="bot">
+    <div class="bot_info">
+        Copyright©2013 南京金保姆网络部，All rights reserved.ICP备案：苏ICP备13010842号 技术支持： www.njjbm.co,
+    </div>
+    <div class="bot_img_list">
+        <div class="bot_img">
+            <img src="img/footer-1.png" alt="">
+        </div>
+        <div class="bot_img">
+            <img src="img/footer-2.png" alt="">
+        </div>
+        <div class="bot_img">
+            <img src="img/footer-3.png" alt="">
+        </div>
+        <div class="bot_img">
+            <img src="img/footer-4.png" alt="">
+        </div>
+    </div>
+</div>
+</body>
+</html>

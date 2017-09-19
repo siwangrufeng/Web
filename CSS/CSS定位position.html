@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 10px;
+				font-family: "微软雅黑";
+				font-size: 19px;
+				
+			}
+			#father{
+				background: yellow;
+				border: 2px black dashed;
+				width: 100%;
+				/*height: 100%;*/
+				padding: 10px;
+			}
+			#block1{
+				background: red;
+				border: 3px solid green;
+				padding: 10px;
+				position: relative;/*使用该元素该属性脱离文档流,根据自身原来的位置来定位,会覆盖其他的*/
+				top: 20px;
+				left: 20px;
+				/*position: absolute;*//*使该元素该属性脱离文档流,根据整个浏览器来定位,不受父级控制，并且没有这个属性，不能直接添加top left等*/
+				/*top: 0;
+				left: 0;*/
+				/*bottom: 0;
+				right: 0;*/
+			}
+			#block2{
+				background: orange;
+				border: 3px solid blue;
+				padding: 10px;
+				position: relative;/*如果有两个都是用该属性,那么根据浏览器浏览顺序,第二个会覆盖第一个。 如果父盒子有relative，且子盒子有absolute 那么子盒子是以父盒子的位置为标准定位*/
+				/*position: absolute;*//*使该元素脱离文档流,根据整个浏览器来定位,不受父级控制，并且没有这个属性，不能直接添加top left等*/
+				/*top: 0;
+				left: 0;*/
+				/*bottom: 0;
+				right: 0;*/
+			}
+		</style>
+	</head>
+	<body>
+			<div id="father">
+				<div id="block1">relative</div>
+				<div id="block2">relative</div>
+			</div>
+	</body>
+</html>

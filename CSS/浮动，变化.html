@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            /*a可默认将鼠标变成手，也可用cursor：pointer*/
+            /*cursor: context-menu;变成空十字*/
+            /*cursor: col-resize;双向箭头*/
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            background: pink;
+            margin: 50px auto;
+            text-align: center;
+            position: relative;
+            /*text-overflow: ellipsis;在大盒子里必须与overflow才能用这个属性，文本溢出部分变成省略号*/
+        }
+        .box:hover{
+            transform: translate3d(0,-20px,0);
+            transition: 0.5s;
+            /*变换 3d变化 xyz三轴变幻 变化不会影响上面的位置*/
+            box-shadow: 3px 2px 1px rgba(0,0,0,0.1 );
+            /*给盒子加阴影：*/
+                    /*h-shadow 必需，水平阴影的位置，允许负值*/
+                    /*v-shadow，必需，垂直阴影的位置，允许负值*/
+                    /*blur，可选，模糊距离*/
+                    /*spread，可选，阴影的尺寸*/
+                    /*color，可选，阴影的颜色，rgba格式*/
+                    /*inset，可选，将外部阴影（outset）改为内部*/
+            /*按照顺序排列*/
+        }
+        .price{
+            width: 120px;
+            height: 40px;
+            background: green;
+            margin: 0 auto ;
+            line-height: 40px;
+
+        }
+        .price a{
+            color: white;
+        }
+        .des{
+            line-height: 40px;
+        }
+        .des a{
+            color: white;
+        }
+        .box_follow{
+            padding: 0 40px;
+            height: 80px;
+            background: cornflowerblue;
+            position: absolute;
+            top:400px;
+        }
+        .box_follow a {
+            color: white;
+        }
+        .box:hover .box_follow{
+            top: 320px;
+            transition:all 0.5s;
+        }
+    </style>
+</head>
+<body>
+<a href="" title="shijiheping">shijiheping</a>
+<div class="box">
+    <div class="price">
+        <a href="">
+            <p>享9.5折</p>
+        </a>
+    </div>
+    <div class="pic">
+        <a href=""> <img src="img/dapei9.jpg" alt=""></a>
+    </div>
+    <p class="des">
+        <a href="">米兔积木机器人，履带机甲</a>
+    </p>
+    <div class="box_follow">
+        <p>
+            <a href="">
+                喜欢的不得了，搭建的过程充满乐趣，给小米点大大的赞
+            </a>
+        </p>
+    </div>
+</div>
+</body>
+</html>

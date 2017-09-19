@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 1px;
+        }
+        div{
+            width: 600px;
+            margin-left: 65px;
+        }
+        .body{
+            background:#FD6768 ;
+        }
+        .head{
+            height: 25px;
+            background:#FF6535;
+            text-align: center;
+        }
+        .heard{
+            width: 470px;
+        }
+        .foot{
+            height: 25px;
+            background:#F69C9B ;
+        }
+        .name1{
+            width: 230px;
+        }
+        .pai{
+            width:110px;
+        }
+        .wei{
+            width: 70px;
+        }
+        .jia{
+            width: 40px;
+        }
+        .jia1{
+            width: 65px;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <p>添加新商品</p>
+</div>
+<div class="body">
+    <div class="heard">
+    <form action="CSS基础练习.html">
+        <span>选择分类 </span>大类
+        <select name="big" id="big">
+            <option value="??????">??????</option>
+        </select>
+        小类
+        <select name="small" id="small">
+            <option value="????">????</option>
+        </select>
+        <br>
+        <span>商品名称</span>
+        <input type="text" name="ming" class="name1">
+        浮动价
+        <select name="fu" id="fu">
+            <option value="???">???</option>
+        </select>
+        <br>
+        <span>商品品牌</span>
+        <input type="text" name="pai"class="pai">
+        <select name="pai1" id="pai1">
+            <option value="STHERB">STHERB</option>
+        </select>
+        <br>
+        <span>商品规格</span>
+        <input type="text" name="gui" class="name1">
+        <br>
+        <span>商品单位</span>
+        <input type="text" name="wei" class="wei">
+        <select name="wei1" id="wei1">
+            <option value="请选择单位">请选择单位</option>
+        </select>
+        <br>
+        <span>商品价格</span>
+        市场价
+        <input type="text" class="jia">
+        元，
+        会员价
+        <input type="text" class="jia">
+        元，
+        VIP价
+        <input type="text" class="jia">
+        元
+        <br>
+        <span>商品库存</span>
+        库存：
+        <input type="text" placeholder="0" class="jia1">
+        已销售：
+        <input type="text" placeholder="0" class="jia1">
+        积分：
+        <input type="text" placeholder="0" class="jia">
+        <br>
+        <span>商品小图</span>
+        <input type="text" class="name1">
+        <input type="button" value="上传小图片">
+        <br>
+        <span>商品大图</span>
+        <input type="text" class="name1">
+        <input type="button" value="上传大图片">
+        <br>
+        <span class="name2">商品说明</span>
+        <textarea name="text" rows="7px" cols="45px">
+        </textarea>
+        <br>
+        <input type="checkbox" name="check" value="新品">新品
+        <input type="checkbox" name="check" value="推荐">推荐
+        <input type="checkbox" name="check" value="特价">特价
+        <input type="button" value="添加">
+    </form>
+    </div>
+</div>
+<div class="foot">
+
+</div>
+</body>
+</html>

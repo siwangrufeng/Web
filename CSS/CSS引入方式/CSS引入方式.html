@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<link rel="stylesheet" type="text/css" href="link2.css"/>--><!--使用link引入外部样式-->
+		<style type="text/css">
+			/*!*@import url("link1.css");或者*!@import "link1.css"			*/
+			p{
+				color:yellow ;
+				text-decoration: underline;
+				font-weight: bold;
+				font-size: 100px;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="link2.css"/>
+	</head>
+	<body>
+		<!--内联样式（行内样式），最直接的一种，直接对html标签使用style-->
+		<!--<p style="color: red; font-size:20px ;text-decoration: underline;">正文内容</p>-->
+		<p style="color: red;font-style: initial; font-size: 200px;"><!--<p>-->正文内容</p><!--斜体-->
+		<!--<p style="color: pink;font-size: 25px;font-weight: bold;">正文内容</p>-->
+		<!--加粗 可以写数字，至少要大于等于600才加粗，必须是整百数-->
+		
+		<!--内嵌样式，可以跟内联样式一起使用-->
+		<!--<p>紫色、粗体、下划线、25px的效果</p>
+		<p>紫色、粗体、下划线、25px的效果</p>
+		<p>紫色、粗体、下划线、25px的效果</p>-->
+		
+		<!--引入外部样式文件 最常使用的是link 也可用import-->
+		<!--<h2>CSS标题1</h2>
+		<p>紫色、粗体、下划线、25px的效果<p>
+		<h2>CSS标题2</h2>
+		<p>紫色、粗体、下划线、25px的效果<p>-->
+			
+			
+			<!--优先级按照上下顺序来-->
+	</body>
+</html>

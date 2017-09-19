@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin: 10px;
+				font-size: 20px;
+				font-family: "微软雅黑";
+			}
+			#block1{
+				background: pink;
+				border: dashed 1px black;
+				padding: 10px;
+				position: absolute;
+				left: 20px;
+				top: 20px;
+				z-index: 1;
+			}
+			#block2{
+				background: red;
+				border: dashed 1px black;
+				padding: 10px;
+				position: absolute;
+				left: 40px;
+				top: 40px;
+				z-index: 3;
+			}
+			#block3{
+				background: yellow;
+				border: dashed 1px black;
+				padding: 10px;
+				position: absolute;
+				left: 50px;
+				top: 50px;
+				z-index: -1;/* 浏览器默认最下面的在最上面，在有position后,可以通过z-index来控制重叠块的上下顺序,用整数包括负整数来表示,数字大的在上面*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="block1">AAAAAA</div>
+		<div id="block2">BBBBBB</div>
+		<div id="block3">CCCCCC</div>
+	</body>
+</html>

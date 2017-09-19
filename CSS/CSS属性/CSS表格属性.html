@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				border-collapse: separate;/*separate,也是默认值,单元格之间有距离,collapse相反，表示合并边框为单一的边框*/
+				border-spacing: 10px 30px;/*单元格边框的距离,先左后上 上个属性为collapse不可用*/
+				caption-side: bottom;/*默认为top*/
+				empty-cells: hide;/*设置是否显示表格中的空单元格，hide隐藏，show显示*/
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1" width="50%" height="100">
+			<caption>标题</caption>
+			<tr>
+				<td>单元格</td>
+				<td>单元格</td>
+				<td>单元格</td>
+			</tr>
+			<tr>
+				<td>单元格</td>
+				<td>单元格</td>
+				<td></td>
+			</tr>
+		</table>
+	</body>
+</html>

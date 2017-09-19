@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.all{
+				width: 100%;
+			}
+			.head{
+				width: 100%;
+				height: 70px;
+				background: #333333;
+				background-image: url(img/logo.png);
+/*				background-size: 220px 70px;*/
+				background-repeat: no-repeat;
+				background-position: 40px 0;
+			}
+			.ul1{
+				list-style-type: none;
+				font-size: 18px;
+				float: right;
+				margin-right: 120px;
+			}
+			.li1{
+				float: left;
+				height: 70px;
+				width: 100px;
+				margin-left:30px;
+				text-align: center;
+				line-height: 70px;
+			}
+			.li1:hover{
+				background: black;
+			}
+			.a1:link{
+				text-decoration: none;
+			}
+			.a1{
+				color: white;
+			}
+			.search{
+				width: 100%;
+				height: 550px;
+				background-image: url(img/search.jpg);
+				background-repeat: no-repeat;
+				background-size: 100% 550px;
+				position: relative;
+			}
+			.search1{
+				position: absolute;
+				left: 50%;
+				margin-left: -286px;
+				top: 50%;
+				margin-top: -25px;
+				height: 50px;
+				width: 450px;
+				border: 1px black solid;
+				border-radius: 5px;
+				font-size: 23px;
+			}
+			.search2{
+				position: absolute;
+				left: 50%;
+				margin-left: 167px ;
+				top: 50%;
+				margin-top: -26px;
+				height: 53px;
+				width: 120px;
+				background: white;
+				border: 1px black solid;
+				border-radius: 5px;
+				font-size: 23px;
+			}
+			.title{
+				width: 1362px;
+				height: 140px;
+				margin: 0 auto;
+				background: white;
+			}
+			.p1{
+				font-weight: bold;
+				font-size:40px;
+				text-align: center;
+				line-height: 80px;
+			}
+			.p2{
+				text-align: center;
+				color: slategrey;
+			}
+			.list{
+				width: 1362px;
+				height: 1060px;
+				margin: 0 auto;
+				background: white;
+			}
+			.ul2{
+				list-style-type: none;
+				margin-left: 60px;
+			}
+			.pic1{
+				width: 380px;
+				height: 230px;
+				margin-left: 2px;
+				margin-top: 2px;
+			}
+			.li2{
+				width: 384px;
+				height: 331px;
+				float: left;
+				margin-left: 20px;
+				margin-top: 10px;
+				border: 0.5px solid #eeeeee;
+			}
+			.p3{
+				width: 150px;
+				height: 30px;
+				background: #70af34;
+				text-align: center;
+				line-height: 30px;
+				position: relative;
+				color: white;
+				top: -230px;
+				left: 2px;
+			}
+			.li21{
+				margin-top: -15px;
+				width: 383px;
+				height: 73px;
+				/*background: red;*/
+			}
+			.span1{
+				font-size: 15px;
+				font-weight: bold;
+			}
+			.span2{
+				font-size: 15px;
+			}
+			.span3{
+				color: #ed6f2d;
+				font-size: 22px;
+				font-weight: bold;
+				
+			}.span4{
+				color: #ed6f2d;
+				font-size: 15px;
+			}
+			.span5{
+				font-size: 14px;
+				margin-left: 150px;
+			}
+			.p4{
+				width: 383px;
+				height: 46px;
+			}
+			.p5{
+				width: 383px;
+				height: 30px;
+			}
+			.leg{
+				width: 100%;
+				height: 250px;
+				background: #333333;
+				color: white;
+				font-size: 20px;
+				padding-top: 30px;
+			}
+			.leg1{
+				width: 1362px;
+				margin: 0 auto;
+				height: 250px;
+			}
+			.ul3{
+				width: 360px;
+				height: 240px;
+				/*background: red;*/
+				margin-left: 70px;
+				list-style-type: none;
+				float: left;
+			}
+			.li3{
+				line-height: 40px;
+				height: 40px;
+				width: 360px;
+			}
+			#li3{
+				font-size: 30px;
+				border-bottom: dashed 1px white;
+				line-height: 45px;
+				height: 45px;
+
+			}
+			.foot{
+				width: 100%;
+				height: 70px;
+				background: black;
+			}
+			.p6{
+				color: white;
+				font-size: 22px;
+				text-align: center;
+				line-height: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="all">
+			<div class="head">
+				<ul class="ul1">
+					<a href="shouye.html" class="a1"><li class="li1">首页</li></a>
+					<a href="lvxingzixun.html" class="a1"><li class="li1">旅游资讯</li></a>
+					<a href="jipiaodinggou.html" class="a1"><li class="li1">机票订购</li></a>
+					<a href="fengjingxinshang.html" class="a1"><li class="li1">风景欣赏</li></a>
+					<a href="jianjie.html" class="a1"><li class="li1">公司简介</li></a>				</ul>
+			</div>
+			<div class="search">
+				<input type="text" name="search"  placeholder="请输入旅游景点或城市" class="search1"/>
+				<input type="submit" name="submit" value="搜索" class="search2"/>
+			</div>
+			<div class="title">
+				<p class="p1">热门旅游</p>
+				<p class="p2">国内旅游、国外旅游、自助旅游、自驾旅游、游轮签证、主题旅游等各种最新热门旅游推荐</p>
+			</div>
+			<div class="list">
+				<ul class="ul2">
+					<li class="li2">
+						<img src="img/s1.jpg" class="pic1"/>
+						<p class="p3">国内专线</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;曼谷-芭提雅8日游&gt;</span>
+								<span class="span2">
+									包团特惠，超丰富景点，升级1晚国五，无自费，更赠送600元/人成人自费券
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥2864</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：77%</span>
+							</p>
+						</div>
+					</li>
+					<li class="li2">
+						<img src="img/s2.jpg" class="pic1"/>
+						<p class="p3">出境长线</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;马尔代夫双鱼岛Olhuveli4晚6日自助游&gt;</span>
+								<span class="span2">
+									上海出发，机+酒包含：早晚餐+快艇
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥8039</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：97%</span>
+							</p>
+						</div>
+					</li>
+					<li class="li2">
+						<img src="img/s3.jpg" class="pic1"/>
+						<p class="p3">自助旅游</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;海南双飞5日游&gt;</span>
+								<span class="span2">
+									含盐城接送，全程挂牌四星酒店，一价全含，零自费“自费项目”免费送
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥2709</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：90%</span>
+							</p>
+						</div>
+					</li>
+					<li class="li2">
+						<img src="img/s4.jpg" class="pic1"/>
+						<p class="p3">自助旅游</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;富山-大阪-东京8日游&gt;</span>
+								<span class="span2">
+									暑假亲子，2天自由，无导游安排自费项目，全程不强迫购物
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥9499</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：97%</span>
+							</p>
+						</div>
+					</li>
+					<li class="li2">
+						<img src="img/s5.jpg" class="pic1"/>
+						<p class="p3">国内短线</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;法瑞意德12日游&gt;</span>
+								<span class="span2">
+									4至5星，金色列车，少女峰，部分THE MALL
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥9199</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：97%</span>
+							</p>
+						</div>					
+					</li>
+					<li class="li2">
+						<img src="img/s6.jpg" class="pic1"/>
+					<p class="p3">出境长线</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;巴厘岛6日半自助游&gt;</span>
+								<span class="span2">
+									蓝梦出海，独栋别墅，悦榕庄下午茶，纯玩
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥6488</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：95%</span>
+							</p>
+						</div>
+					</li>
+					<li class="li2">
+						<img src="img/s7.jpg" class="pic1"/>
+						<p class="p3">游轮观光</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;塞舌尔迪拜9日自助游&gt;</span>
+								<span class="span2">
+									一游两国4晚塞舌尔，2晚迪拜，香港EK往返
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥9669</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：100%</span>
+							</p>
+						</div>
+					</li>
+					<li class="li2">
+						<img src="img/s8.jpg" class="pic1"/>
+						<p class="p3">出境长线</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;花样姐姐土耳其9日或10日游&gt;</span>
+								<span class="span2">
+									最高立减3000！中餐六菜一汤+土耳其当地美食满足您挑剔味蕾
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥9999</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：99%</span>
+							</p>
+						</div>
+					</li>
+					<li class="li2">
+						<img src="img/tour9.jpg" class="pic1"/>
+						<p class="p3">国内短线</p>
+						<div class="li21">
+							<p class="p4">
+								<span class="span1">&lt;大阪-京都-箱根双飞6日游&gt;</span>
+								<span class="span2">
+									盐城直飞，不走回头路，境外无自费，超值之旅
+							</span>
+							</p>
+							<p class="p5">
+								<span class="span3">￥5284</span>
+								<span class="span4">起</span>
+								<span class="span5">满意度：100%</span>
+							</p>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="leg">
+				<div class="leg1">
+					<ul class="ul3">
+						<li class="li3" id="li3">合作伙伴</li>
+						<li class="li3">途牛旅游网</li>
+						<li class="li3">驴妈妈旅游网</li>
+						<li class="li3">携程旅游</li>
+						<li class="li3">中国青年旅社</li>
+					</ul>
+					<ul class="ul3">
+						<li class="li3" id="li3">旅游FAQ</li>
+						<li class="li3">旅游合同签订方式？</li>
+						<li class="li3">儿童价是基于什么制定的？</li>
+						<li class="li3">旅游的线路品质怎么界定的？</li>
+						<li class="li3">单房差是什么？</li>
+						<li class="li3">旅游保险有哪些种类？</li>
+					</ul>
+					<ul class="ul3">
+						<li class="li3" id="li3">联系方式</li>
+						<li class="li3">微博：weibo.com/ycku</li>
+						<li class="li3">邮件：ycku@ycku.com</li>
+						<li class="li3">地址：江苏盐城无名路123号</li>
+					</ul>
+				</div>
+			</div>
+			<div class="foot">
+				<p class="p6">Copyright&copy;YCKU 瓢城旅行社|苏ICP 备120110119 号|旅行社经营许可证：L-YC-BK12345</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,9 @@
+h2{
+	color: pink;
+}
+p{
+	color: green;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 50px;
+}

@@ -1,0 +1,9 @@
+h2{
+	color: pink;
+}
+p{
+	color: blue;
+	text-decoration: line-through;
+	font-weight: bold;
+	font-size: 25px;
+}

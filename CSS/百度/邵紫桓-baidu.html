@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .top{
+            width:100%;
+            height:65px;
+            background-color:black;
+        }
+        .top .title {
+            height:65px;
+            float:right;
+            background-color:yellow;
+        }
+        .top .title span{
+            line-height:65px;
+            float:right;
+        }
+        .top .title span a{
+            font-size:20px;
+            font-family:"宋体";
+            text-decoration:underline;
+            color:#333333;
+            font-weight:bold;
+        }
+        .link{
+            border:0;
+            height:25px;
+            width:60px;
+            background-color:blue;
+            color:white;
+        }
+        .picture{
+            text-align:center;
+            margin-bottom:30px;
+        }
+        .logo{
+            height:130px;
+            width:270px;
+        }
+        .search{
+            position:relative;
+            width:650px;
+            height:44px;
+            background:red;
+            margin:0 auto;
+
+        }
+        .place{
+            width:550px;
+            height:40px;
+            position:absolute;
+            top:0;
+            left:0;
+        }
+        .click{
+            border:0;
+            width:100px;
+            height:44px;
+            background-color:blue;
+            font-size:15px;
+            font-weight:bold;
+            color:white;
+            position:absolute;
+            top:0;
+            right:0;
+        }
+        .footer{
+            width:100%;
+            position:relative;
+            top:200px;
+        }
+        .label{
+            text-align:center;
+        }
+        .label p{
+            font-size:12px;
+            padding-bottom:5px;
+        }
+        
+        .bottom {
+            text-align:center;
+
+        }
+        .bottom a{
+            color:grey;
+            font-size:12px;
+            text-decoration:underline;
+            padding:8px;
+        }
+        .copyright{
+            text-align:center;
+            color:grey;
+            font-size:12px;
+        }
+        .copyright a{
+            color:grey;
+            text-decoration:underline;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="top">
+    <div class="title">
+        <span>
+        <a href="#">地图</a>
+        <a href="#">hao123</a>
+        <a href="#">地图</a>
+        <a href="#">视频</a>
+        <a href="#">贴吧</a>
+        <a href="#">学术</a>
+        <a href="#">登录</a>
+        <a href="#">学术</a>
+            <a class="login" href="#">登录</a>
+         <a class="set" href="#">设置</a>
+            <input class="link" type="submit" value="更多产品" name="submit"/>
+        </span>
+    </div>
+</div>
+<div class="middle">
+    <div class="picture">
+        <img class="logo" src="//www.baidu.com/img/bd_logo1.png" alt="">
+    </div>
+    <div class="search">
+    <input class="place" type="text" name="search" value=""/>
+        <input class="click" type="button" value="百度一下" name="submit">
+    </div>
+</div>
+<div class="footer">
+    <div class="label">
+        <img src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_efde696.png" alt="">
+        <p>手机百度</p>
+    </div>
+    <div class="bottom">
+        <a href="#">把百度设为首页</a>
+        <a href="#">关于百度</a>
+        <a href="#">About Baidu</a>
+        <a href="#">百度推广</a>
+    </div>
+    <div class="copyright">
+        <p>
+            ©2017 Baidu <a href="">使用百度前必读</a> <a href="">意见反馈</a> 京ICP证030173号  <a href="">京公网安备11000002000001号</a>
+        </p>
+    </div>
+</div>
+</body>
+</html>
