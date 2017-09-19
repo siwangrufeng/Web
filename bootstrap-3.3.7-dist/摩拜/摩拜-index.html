@@ -31,6 +31,7 @@
 
         .banner {
             position: relative;
+            /*overflow: hidden;*/
         }
 
         .banner .banner-ul {
@@ -59,12 +60,14 @@
         .nav_box {
             position: absolute;
             width: 100%;
-            padding-left: 10%;
-            height: 53px;
-            background: transparent;
+            padding-left: 13%;
+            padding-right: 13%;
+            height: 80px;
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(rgba(0,0,0,.2)), to(rgba(255,255,255,0)));
             border: 0;
             padding-top: 13px;
             padding-bottom: 13px;
+            margin-bottom: 0;
         }
         .navbar-right{
             font-size: 16px;
@@ -74,6 +77,10 @@
         }
         .navbar-right li a{
             padding: 8px 20px;
+        }
+        .slogan{
+            position: absolute;
+            left: 13%;
         }
     </style>
 </head>
@@ -109,15 +116,19 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">产品</a></li>
-                        <li><a href="#">摩拜科技</a></li>
-                        <li><a href="#">城市</a></li>
-                        <li><a href="#">新闻</a></li>
-                        <li><a href="#">关于</a></li>
+                        <li><a href="#" style="color: white">产品</a></li>
+                        <li><a href="#" style="color: white">摩拜科技</a></li>
+                        <li><a href="#" style="color: white">城市</a></li>
+                        <li><a href="#" style="color: white">新闻</a></li>
+                        <li><a href="#" style="color: white">关于</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        <div class="jumbotron slogan">
+            <h1>让自行车回归城市</h1>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">立即开始使用Mobike</a></p>
+        </div>
     </div>
 </div>
 </body>
