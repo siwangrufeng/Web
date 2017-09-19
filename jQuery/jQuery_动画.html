@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $("input:eq(0)").click(function(){
+                $("img").hide(3000)
+            });
+            $("input:eq(1)").click(function(){
+                $("img").show(3000)
+            });
+            $("input:eq(2)").click(function(){
+                $("img").toggle(3000)
+            });
+            $("input:eq(3)").click(function(){
+                $("img").fadeOut(3000)
+            });
+            $("input:eq(4)").click(function(){
+                $("img").fadeIn(3000)
+            });
+            $("input:eq(5)").click(function(){
+                $("img").fadeToggle(3000)
+            });
+            $("input:eq(6)").click(function(){
+                $("img").fadeTo(3000,0.2)
+            });
+            $("input:eq(7)").click(function(){
+                $("img").slideUp(3000)
+            });
+            $("input:eq(8)").click(function(){
+                $("img").slideDown(3000)
+            });
+            $("input:eq(9)").click(function(){
+                $("img").slideToggle(3000)
+            });
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="Hide" />
+<input type="button" value="show" />
+<input type="button" value="toggle" />
+<input type="button" value="FadeOut" />
+<input type="button" value="FadeIn" />
+<input type="button" value="FadeToggle" />
+<input type="button" value="FadeTo" />
+<input type="button" value="slideUp" />
+<input type="button" value="slideDown" />
+<input type="button" value="slideToggle" />
+<br>
+<img src="轮播/img/banner2.webp" alt="" width="300px" height="250px
+">
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0 ;
+            padding: 0;
+        }
+        table{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            text-align: center;
+            border: 0;
+            border-spacing: 0;
+        }
+        thead tr{
+            height: 100px;
+            width: 500px;
+            font-weight: bold;
+        }
+        tbody tr{
+            width: 500px;
+            height: 100px;
+        }
+        tbody tr:nth-child(even){
+            background: lightgoldenrodyellow;
+        }
+        tbody tr:nth-child(odd){
+            background: darkgrey;
+        }
+        tr td{
+            width: 125px;
+            height: 100px;
+        }
+        tbody tr.chan{
+            background: palevioletred;
+        }
+    </style>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            var a=$("tbody tr");
+//            a.bind("click",function(){
+//                if ($(this).find("input").is(":checked")){
+//                    $(this).removeClass("chan");
+//                    $(this).find("input").removeAttr("checked");
+//                }else{
+//                    $(this).addClass("chan");
+//                    $(this).find("input").attr("checked","checked");
+//                }
+//            })
+            a.click(function(){
+
+            })
+        })
+    </script>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td> </td>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>暂住地</td>
+    </tr>
+    </thead>
+    <tbody>
+      <tr class="sele">
+          <td>
+              <input type="checkbox">
+          </td>
+          <td>张三</td>
+          <td>男</td>
+          <td>浙江宁波</td>
+      </tr>
+      <tr class="sele">
+          <td>
+              <input type="checkbox">
+          </td>
+          <td>张三</td>
+          <td>男</td>
+          <td>浙江宁波</td>
+      </tr>
+      <tr class="sele">
+          <td>
+              <input type="checkbox">
+          </td>
+          <td>张三</td>
+          <td>男</td>
+          <td>浙江宁波</td>
+      </tr>
+      <tr class="sele">
+          <td>
+              <input type="checkbox">
+          </td>
+          <td>张三</td>
+          <td>男</td>
+          <td>浙江宁波</td>
+      </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $("input:eq(0)").click(function(){
+                alert($("p").attr("title"));
+                //括号里面写属性名，表示获取该属性
+            });
+            $("input:eq(1)").click(function(){
+                $("p").attr({"id":"a"});
+                //给p标签添加属性，如果本来已经有了就覆盖，格式与css一样，css样式不能用这个添加，例如color，应该用css添加
+            });
+            $("input:eq(2)").click(function(){
+                $("p").removeAttr("title");
+                //移除p标签属性，括号里面可以规定，括号里面不写就清除所有属性,有的版本只能支持在括号里面写清楚，不支持不写一次清除所有
+            })
+        })
+    </script>
+</head>
+<body>
+<p title="你最喜欢的水果是">你最喜欢的水果是</p>
+<ul>
+    <li title="苹果">苹果</li>
+    <li title="橘子">橘子</li>
+    <li title="菠萝">菠萝</li>
+</ul>
+<input type="button" value="获取属性">
+<input type="button" value="添加属性">
+<input type="button" value="删除属性">
+</body>
+</html>

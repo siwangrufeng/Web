@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            width: 2000px;
+            height: 2000px;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="prompt" onclick="test_prompt()">
+<input type="button" value="confirm" onclick="test_confirm()">
+<input type="button" value="confirm" onclick="test_confirm()">
+<input type="button" value="moveBy" onclick="test_moveBy()">
+<input type="button" value="moveTo" onclick="test_moveTo()">
+<input type="button" value="resizeBy" onclick="test_resizeBy()">
+<input type="button" value="resizeTo" onclick="test_resizeTo()">
+<input type="button" value="scrollBy" onclick="test_scrollBy()">
+<input type="button" value="scrollTo" onclick="test_scrollTo()">
+<input type="button" value="open" onclick="test_open()">
+<input type="button" value="setInterval" onclick="show()">
+<div id="box"></div>
+</body>
+<script>
+    function test_prompt(){
+        var result=prompt("你好","hello");////第一个值是上面显示的，第二个是框里默认
+        alert(result);
+    }
+    function test_confirm(){
+        var result=window.confirm("确认关闭窗口？");
+        if (result){
+            window.close();
+        }else{
+            alert("没关掉哦");
+        }
+    }
+    function test_moveBy(){
+        window.moveBy(100,100);//移动窗口位置，第一个值是向右移动，第二个值向下移动，点击一次移动一次。IE可以，谷歌不行，bom会受浏览器影响，有的可以有的不行
+    }
+    function test_moveTo(){
+        window.moveTo(100,100);//移动窗口位置，第一个值是距离左边的距离，第二个值距离上边的距离，一共只能移动一次。
+    }
+    function test_resizeBy(){
+        window.resizeBy(50,10);//重设窗口大小，第一个值向右扩大，第二个值向下扩大
+    }
+    function test_resizeTo(){
+        window.resizeTo(500,50);//重设窗口大小，一次重设到位
+    }
+    function test_scrollBy(){
+        window.scrollBy(500,50);//点击一次滚动条位置变化一次，第一个值是横向向右，第二个值纵向向下
+    }
+    function test_scrollTo(){
+        window.scrollTo(500,50);//只能变化一次
+    }
+    function test_open(){
+        window.open("http://www.baidu.com","百度","width=200,height=200");//新窗口打开一个网址，第二个值是名字，看不见，第三个值，新打开窗口的属性，某些属性可用
+    }
+    function show(){
+        var s1=new Date();
+        var result="";
+        var hour=s1.getHours();
+        if (hour<10){
+            hour="0"+hour;
+        }
+        var minu=s1.getMinutes();
+        if (minu<10){
+            minu="0"+minu;
+        }
+        var sec=s1.getSeconds();
+        if (sec<10){
+            sec="0"+sec;
+        }
+        if (sec=="05"){
+            result=-1;
+        }
+        var box=document.getElementById("box");
+        box.innerHTML=hour+":"+minu+":"+sec;//.innerHTML指在页面中写入，在box中写入
+    }
+    setInterval("show()",1000);//1.加引号，2.函数赋值给变量，变量放进来，3.直接函数拖进来，4.不加括号
+
+</script>
+</html>

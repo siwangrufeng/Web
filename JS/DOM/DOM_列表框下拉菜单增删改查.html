@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="test">
+<input type="button" value="新增下拉菜单" onclick="createSelect()">
+<input type="button" value="10个下拉菜单，5个显示" onclick="create_ten()">
+<input type="button" value="一条条删掉列表框内容" onclick="rem()">
+<input type="button" value="一次性清空列表框" onclick="rem_all()">
+<br>
+</body>
+<script>
+    var test = document.getElementById("test");
+    function createSelect(){
+        var element = document.createElement("select");
+        var op=new Option("新增的选项1",1);  //通过这种方法创建一个下拉菜单的选项，第一个值是text第二个value，第三个defaultSelected默认是否显示该选项，第四个selected设置该选项当前是否被选中
+        element.options[0]=op;
+        test.appendChild(element);
+    }
+    function create_ten(){
+        var element = document.createElement("select");
+        for (i=0; i<10;i++){
+            var op=new Option("新增选项"+(i+1),(i+1));
+            element.options[element.length]=op;
+
+        }
+        test.appendChild(element);
+        element.id="city";
+        element.size=5;
+    }
+
+    function rem(){
+        var city=document.getElementById("city");
+        if (city.length>1){
+            city.remove(city.length-1)
+        }
+    }
+    function rem_all(){
+        var city=document.getElementById("city");
+        if (city.length>0){
+            city.length=0;
+        }
+    }
+</script>
+</html>

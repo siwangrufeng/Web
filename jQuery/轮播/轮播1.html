@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       li{
+           list-style: none;
+       }
+       ul{
+           overflow: hidden;
+       }
+        .box{
+            position: relative;
+            width: 1130px;
+            height: 700px;
+            float: right;
+        }
+        .nav{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background: pink;
+        }
+        .nav ul li{
+            float: left;
+            font-size: 30px;
+            padding: 0 30px;
+            margin-top: 30px;
+            margin-right: 50px;
+            background: yellow;
+        }
+        .nav ul .active{
+            background: yellowgreen;
+        }
+        .cont{
+            position: absolute;
+            top: 100px;
+            width: 100%;
+            height: 500px;
+        }
+        .cont ul li{
+            position: absolute;
+            display: none;
+        }
+        .prev,.next{
+            width: 50px;
+            height: 100px;
+            background: rgba(255,255,255,0);
+            line-height: 100px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            margin-top: -50px ;
+        }
+        .prev{
+            left: 0;
+        }
+        .next{
+            right: 0;
+        }
+        .cont:hover .prev{
+            background: rgba(255,255,255,0.8);
+        }
+       .cont:hover .next{
+           background: rgba(255,255,255,0.8);
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="nav" id="nav">
+            <ul>
+                <li class="active">首页</li>
+                <li>风景</li>
+                <li>旅游</li>
+                <li>天气</li>
+                <li>多云</li>
+            </ul>
+        </div>
+        <div class="cont" id="cont">
+            <ul>
+                <li style="display: block"><img src="img/banner_1.jpg" alt=""></li>
+                <li><img src="img/banner2.webp" alt=""></li>
+                <li><img src="img/banner3.jpg" alt=""></li>
+                <li><img src="img/banner_4.jpg" alt=""></li>
+                <li><img src="img/banner_5.webp" alt=""></li>
+            </ul>
+            <p class="prev" id="prev">&lt;</p>
+            <p class="next" id="next">&gt;</p>
+        </div>
+
+    </div>
+</body>
+<script>
+    var nav=document.getElementById("nav");
+    var cont=document.getElementById("cont");
+    var nav_list=nav.getElementsByTagName("li");
+    var cont_list=cont.getElementsByTagName("li");
+    var prev=document.getElementById("prev");
+    var next=document.getElementById("next");
+    for(i=0;i<nav_list.length;i++){
+        nav_list[i].a=i;
+        nav_list[i].onclick=function (){
+            for(z=0;z<nav_list.length;z++){
+                nav_list[z].className="";
+                cont_list[z].style.display="none";
+            }
+            this.className="active";
+            count=this.a;
+            cont_list[this.a].style.display="block";
+        }
+    }
+    var count=0;
+    function next_auto(){
+        count++;
+        if (count==nav_list.length){
+            count=0;
+        }
+        for(z=0;z<nav_list.length;z++){
+            nav_list[z].className="";
+            cont_list[z].style.display="none";
+        }
+        nav_list[count].className="active";
+        cont_list[count].style.display="block";
+    }
+    function prev_auto(){
+        count--;
+        if (count==-1){
+            count=nav_list.length-1;
+        }
+        for(z=0;z<nav_list.length;z++){
+            nav_list[z].className="";
+            cont_list[z].style.display="none";
+        }
+        nav_list[count].className="active";
+        cont_list[count].style.display="block";
+    }
+    next.onclick=function(){
+        next_auto()
+    };
+    prev.onclick=function(){
+        prev_auto()
+    };
+    function start(){
+        a=setInterval(next_auto,1000);//如果写var 一般情况写默认为全局变量
+    }
+    function stop(){
+        clearInterval(a);
+    }
+    cont.onmouseout=function(){
+        start()
+    };
+    cont.onmouseover=function(){
+        stop()
+    };
+    start();//为了保证一定能执行，放在最后面
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body *{
+            display: block;
+            border: 2px solid gray;
+            font-size: 22px;
+            color: gray;
+            margin: 20px auto;
+        }
+    </style>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $("h2").siblings().css({"color":"red","border-color":"red"});
+            //所有兄弟级元素
+//            $("h2").siblings("p").css({"color":"red","border-color":"red"});
+            //兄弟级所有p元素
+//            $("h2").next().css({"color":"red","border-color":"red"});
+            //接下来的兄弟节点，不用考虑空格和换行
+//            $("h2").next("p").css({"color":"red","border-color":"red"});
+            //接下来紧跟的兄弟节点中的p元素。位置没有挨着不显示
+//            $("h2").nextAll().css({"color":"red","border-color":"red"});
+            //接下来所有的兄弟元素
+//            $("h2").nextUntil("h6").css({"color":"red","border-color":"red"});
+            //不包括两端，只要中间部分
+        })
+    </script>
+</head>
+<body>
+<div class="box">div父元素
+    <p>p</p>
+    <span>span</span>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <h5>h5</h5>
+    <h6>h6</h6>
+    <p>p</p>
+</div>
+</body>
+</html>

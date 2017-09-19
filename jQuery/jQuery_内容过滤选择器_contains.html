@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $(":contains(堡)").css("color","red");
+            //containsz(text)匹配包含制定文本的元素，不写就是全局变色
+//            $("li:contains(堡)").css("color","red");
+            //匹配有堡的li元素
+//            $("ul:contains(堡)").css("color","red");
+            //匹配有堡的ul元素 ：contains表示包含
+//            alert($("p:empty").length);
+            //匹配空的p元素
+
+//            $("td:empty").css("background","yellow");
+            //只有td才有空元素，tr、table都没有  ：empty表示为空
+//            $("table :empty").css("background","yellow");
+            //table后面加空格，表示table的子元素，然后再匹配空元素
+        })
+    </script>
+</head>
+<body>
+<p></p>
+<p>my name is wahaha</p>
+<p>i like milk</p>
+<p>my best friend is cattle</p>
+<ul>
+    <li>汉堡包</li>
+    <li>鸡肉卷</li>
+    <li>可乐</li>
+</ul>
+<table border="1">
+    <tr>
+        <td>序号</td>
+        <td>站点</td>
+        <td>网址</td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td></td>
+        <td>网址</td>
+    </tr>
+    <tr>
+        <td>序号</td>
+        <td>站点</td>
+        <td></td>
+    </tr>
+</table>
+</body>
+</html>

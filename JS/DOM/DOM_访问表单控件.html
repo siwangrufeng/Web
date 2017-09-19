@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="http://www.baidu.com" id="myform" method="get" target="_self">
+    <input type="text" name="username" value="哈哈哈"><br>
+    <input type="text" name="password" value="123456"><br>
+    <select name="city" id="">
+        <option value="shanghai">上海</option>
+        <option value="nanjing" selected="selected">南京</option>
+    </select><br>
+    <input type="button" value="获取表单内第一个控件" onclick="a('username')">
+    <input type="button" value="获取表单内第二个控件" onclick="a('password')">
+    <input type="button" value="获取表单内第三个控件" onclick="a('city')">
+    <input type="button" value="获取表单提交地址" onclick="b()">
+    <input type="button" value="获取表单个数" onclick="c()">
+    <input type="button" value="获取表单method属性" onclick="d()">
+    <input type="button" value="获取表单结果窗口" onclick="e()">
+    <input type="button" value="重置" onclick="f()">
+    <input type="button" value="提交" onclick="g()">
+</form>
+</body>
+<script>
+    var myform=document.getElementById("myform");
+    function a(z){
+        alert(myform.elements[z].value);//可用名字
+//        alert(myform.elements[0].value);//可用下标
+    }
+    function b(){
+        alert(myform.action)
+    }
+    function c(){
+        alert(myform.length)
+    }
+    function d(){
+        alert(myform.method)
+    }
+    function e(){
+        alert(myform.target)
+    }
+    function f(){
+        myform.reset()
+    }
+    function g(){
+        myform.submit()
+    }
+
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $("li:eq(2)").html("西瓜");
+//            html包括里面的标签及内容
+//            $("li:eq(2)").text("<b>西瓜</b>");
+//            text只包括里面的文本也就是文字内容，此时会把b标签当做文字内容加进去
+//            alert($("li:eq(0)").html());
+//            html包括里面的标签及内容
+//            alert($("li:eq(0)").text());
+//            text只包括里面的文本也就是文字内容
+            $("input:eq(0)").click(function(){
+                alert( $("input:eq(0)").val())
+            });
+            $("input:eq(1)").click(function(){
+                 $("input:eq(1)").val("点击我啦")
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="点击获取value值">
+<input type="button" value="点击设置value值">
+<ul>
+    <li><b>你好</b></li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+</ul>
+</body>
+</html>

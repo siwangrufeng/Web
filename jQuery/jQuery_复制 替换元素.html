@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $("li").click(function(){
+//                $("li:eq(1)").clone().appendTo("ul");
+                //默认为false,这种情况下被克隆出来的li标签不具有点击的功能，false表示只克隆外表，不克隆绑定事件
+//            $("li:eq(1)").clone(true).appendTo("ul");
+                //true，被克隆出来的li具有原来的绑定时间
+            });
+//
+//            $("li:eq(1)").replaceWith("<li>草莓</li>");
+            //用后者替换前者
+            $("<li>草莓</li>").replaceAll("li:eq(1)");
+            //作用同上，用前者替换后者，都可用本来已经存在的元素
+        })
+    </script>
+</head>
+<body>
+<p title="你最喜欢的水果是">你最喜欢的水果是</p>
+<ul>
+    <li title="苹果">苹果</li>
+    <li title="橘子">橘子</li>
+    <li title="菠萝">菠萝</li>
+</ul>
+</body>
+</html>

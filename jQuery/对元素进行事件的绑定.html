@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            font: normal 12px Arial;
+            text-align: left;
+            padding: 4px;
+        }
+
+        .even {
+            background: #fff38f;
+        }
+
+        .odd {
+            background: #ffffee;
+        }
+
+        .selected {
+            background: #ff6500;
+            color: #fff;
+        }
+
+        .over {
+            background: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>张三</td>
+        <td>男</td>
+        <td>浙江宁波</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>李四</td>
+        <td>女</td>
+        <td>江苏泰州</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value="" checked="checked"/></td>
+        <td>王五</td>
+        <td>男</td>
+        <td>湖南长江</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>豆豆</td>
+        <td>女</td>
+        <td>江苏镇江</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    $(function () {
+        $("tbody>tr:even").addClass("even");
+        $("tbody>tr:odd").addClass("odd");
+        $("tbody>tr").bind("click", function () {
+            var hasSelected = $(this).hasClass("selected");
+            if (hasSelected) {
+                $(this).removeClass("selected").find(":checkbox").prop("checked", false)
+            } else {
+                $(this).addClass("selected").find(":checkbox").prop("checked", true)
+            }
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>/*style标签里面每一个都要加{}*/
+			/*p{}*/
+			*{
+				margin: 0;/*内边距为0*/
+				padding: 0;/*外边距为0*/
+			}/*通配符,接下来的所有标签都具有这个属性*/
+			.div{
+				width: 200px;  /*style标签内必须加单位*/
+				height: 200px;
+				background-color: pink;
+			}
+			div p{
+				font-family: "微软雅黑";/*字体*/
+				font-size: 20px;/*字号*/
+				color:red;/*颜色*/
+				/*<!--background:rgba(255,255,255,1);-->*/
+			}
+			/*img{
+				width: 200px;
+				height: 150px;
+			}在style里面一定要加单位*/
+			span{
+				text-decoration: line-through; /* 在文字上划一条横线*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div"><!--盒子标签，里面可以加入其他标签-->
+			<img src="图片/1.jpg" alt="如果图片刷不出来，显示这里的文字" width="200" height="150"/>
+			<span >原价</span><span>1999</span><!--可以使文字保持在同一行，然后可以进行分开的操作-->
+		</div>
+	</body>
+</html>

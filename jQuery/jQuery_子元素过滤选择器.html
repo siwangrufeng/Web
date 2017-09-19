@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $("p:first-child").css("background","red");
+            //first-child指匹配指定p元素的每个等级中同级的第一个，但是要求这个等级中第一个元素必须是p才能匹配到
+//            $("div p:first-child").css("background","red");
+            //指匹配div中的p
+//             $("p:first-of-type").css("background","red");
+            //跟first-child的区别在于，不要求此等级中第一个元素必须是p，可以自己一直检索到第一个为止
+//            $("p:last-child").css("background","red");
+            //last-child指匹配指定p元素的每个等级中同级的最后一个，但是要求这个等级中最后一个元素必须是p才能匹配到
+//            $("p:last-of-type").css("background","red");
+            //跟last-child的区别在于，不要求此等级中最后一个元素必须是p，可以自己一直检索到最后一个为止
+//            $("p:only-child").css("background","red");
+            //要求子元素只有一个p元素，不能有其他元素
+//            $("p:only-of-type").css("background","red");
+            //跟上者的区别是，子元素里面只有一个p元素，可以有其他不同元素
+        })
+    </script>
+</head>
+<body>
+<p>这是第一句话</p>
+<div style="border: 1px solid">
+    <span>这不是一个p 是一个span</span>
+    <p>这是第一个div里面第一个</p>
+    <div>
+        <p>llala </p>
+        <p>llala </p>
+    </div>
+    <p>这是第一个div里面第二个</p>
+</div>
+<div style="border: 1px solid">
+    <p>这是第二个div里面第一个</p>
+    <p>这是第二个div里面第二个</p>
+</div>
+<div style="border: 1px solid">
+    <p>这是只有一个p元素的div</p>
+</div>
+<div style="border: 1px solid">
+    <span>你好</span><br>
+    <p>这是只有一个p元素的div</p>
+</div>
+<p>这是第二句话</p>
+<span>这是一个span</span>
+</body>
+</html>

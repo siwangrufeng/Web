@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="alert('hello')" onunload="alert('byebye')">
+<form action="http://www.baidu.com" onsubmit="return false">
+    <input type="text" value="a" onfocus="alert('获取焦点')"
+           onblur="alert('失去焦点')"/>
+    <input type="text" value="b" onchange="alert('内容改变啦')"
+           onselect="alert('内容选中啦')">
+    <select name="city" onchange="alert('选项改变啦')">
+        <option>上海</option>
+        <option>北京</option>
+    </select><br/>
+    <input type="submit" value="提交">
+</form>
+</body>
+
+</html>

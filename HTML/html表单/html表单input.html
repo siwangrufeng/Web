@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="html表单input.html" method="get">
+		<!--form有三种常用属性，
+		action：指定表单提交后由什么处理程序进行处理，可以选择自己；
+		enctype:用于指定表单数据的编码方式,application/-www-form-urlencoded,默认处理成URL的编码的方式，mutipart/form-data，以二进制流的方式处理表单数据，text/plain，当表单的action值为mailto:URL的形式时使用，（邮箱地址）
+		method：指定向服务器提交的方式，一般为get或者post，post上传数据较多，会导致速度慢，但是安全性较高。get上传数据会直接在地址栏中显示，安全性较低。现在普遍使用get，会通过加自己的一套保密方式来增强安全性-->
+			单行文本框：<input type="text" name="user" maxlength="6" minlength="2" readonly="readonly" placeholder="哈哈"/><br /><!--单行文本框一般不需要value，文本框输入的东西就是上传的值，不需要给值，如果有value，就是文本框的默认初始值,这是在该框里输入东西需要先删除文本框的初始值，而使用placeholder点击之后可以直接输入-->
+			<!--maxlength和minlength分别代表最大长度和最小长度-->
+			<!--readonly表示该框变为只读模式，针对文本框-->
+			<label for="mima">密码框：</label><input type="password" name="userpass"  size="2" id="mima"/><br /><!--表面跟单行文本框一样，输入会自动被隐藏，value同上-->
+			<!--label for表示再点击左边文字的时候，文 本框里面会出现光标可以直接输入，要先给框取一个ID，然后for里面写ID的名字-->
+			<!--disabled禁用该元素 当type=hidden时不可用-->
+			<!--size指定该元素长度，外表看来文本框会发生变化，跟maxlength的区别是，size限制能看到的部分，其实里面可以无限输入无限上传-->
+			<!--以上两个提交的是name-->
+			隐藏域：<input type="hidden" name="userhide" value="隐藏"/><br /><!--只能自己在后台看到的东西 name是类型，也就是提交的是什么东西，value是值。隐藏域不占空间-->
+			
+			
+			
+			单选框：<input type="radio" name="sex" value="man" checked="checked" />男<!--checked 默认选中，只有在单选框多选框里面input才有这个属性 -->
+				   <input type="radio" name="sex" value="women"/>女<br /><!--单选框，有同样的名字，才能只选择一个-->
+					<!--提交name+value-->
+			多选框：<input type="checkbox" name="hobby" value="football" checked="checked"/>足球
+				   <input type="checkbox" name="hobby" value="paiqiu"/>排球
+				   <input type="checkbox" name="hobby" value="basketball"/>蓝球<br />
+					<!--提交name+value-->
+				   
+				   
+			提交按钮：<input type="submit" name="submit" value="注册"/>	<br /><!--这三种情况里面的value相当于给按钮重新命名，name可要可不要-->
+			重置按钮：<input type="reset" name="reset" value="刷新"/><br /><!--将整个form表单恢复初始值-->
+			普通按钮：<input type="button" value="普通按钮" /><br />
+			
+			
+			图片：<input type="image" src="../06.15作业/picture/302f2608-655a-489c-a0c5-a3b9172defd1.png" width="100px" height="50px" /><br /><!--一般图片不给name和value值-->
+			上传域：<input type="file" /><br /><!--一般不需要name和value-->
+			<!--提交文件-->
+			<!--谷歌内核，默认“选择文件”，火狐内核，默认“浏览”-->
+		</form>
+	</body>
+</html>

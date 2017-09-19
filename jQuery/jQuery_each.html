@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        //        var arr = [ "KFC", "BSK", "MDL" ];
+        //        $.each(arr, function(i,val){
+        //            document.write(i + "<br>");
+        //            document.write(val + "<br>");
+        //        });
+
+
+        $(function () {
+            $.each($("input:hidden"), function(i,val){
+                document.write(val + "<br>");
+                document.write(i + "<br>");
+                document.write(val.name + "<br>");
+                document.write(val.value + "<br>");
+            });
+        })
+    </script>
+</head>
+<body>
+<input name="aaa" type="hidden" value="111" />
+<input name="bbb" type="hidden" value="222" />
+<input name="ccc" type="hidden" value="333" />
+<input name="ddd" type="hidden"  value="444"/>
+</body>
+</html>

@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="html常见表单元素.html">
+			<select name="city" id="city"> <!--下拉菜单-->
+				<option value="南京">南京</option>
+				<option value="北京" selected="selected">北京</option><!--默认选中-->
+				<option value="上海">上海</option>
+				<option value="广州">广州</option>
+			</select>
+			<hr />
+			
+			
+			<select name="city1" id="city1" size="3" multiple="multiple"> <!--列表框 multiple 表示可以摁control进行多选 ，下拉框和列表框的区别只在于列表框多一个multiple-->
+				<option value="南京">南京</option>
+				<option value="北京" disabled="disabled">北京</option><!--disabled指定禁用-->
+				<option value="上海" selected="selected">上海</option> <!--selected默认选中，-->
+				<option value="广州">广州</option>
+			</select>
+			<hr />
+			
+			
+			<select name="city2" id="city2" size="3" multiple="multiple"> <!--列表框 multiple 表示可以摁control进行多选 ，下拉框和列表框的区别只在于列表框多一个size-->
+				<optgroup label="一线城市">	<!--lable必加，作为大标题 标题也会占一格 但不能选中-->
+					<option value="南京">南京</option>
+					<option value="北京">北京</option>
+					<option value="上海" selected="selected">上海</option> <!--selected默认选中，disabled指定禁用-->
+					<option value="广州">广州</option>
+				</optgroup>
+				<optgroup label="二线城市" disabled="disabled">	<!--lable必加，作为大标题， disabled禁用，标题禁用后，下面的也禁用-->
+					<option value="南京">南京</option>
+					<option value="北京">北京</option>
+					<option value="上海" selected="selected">上海</option> <!--selected默认选中，disabled指定禁用-->
+					<option value="广州">广州</option>
+				</optgroup>
+			</select>
+			<hr />
+				
+				
+			<select name="city3" id="city3"> <!--下拉菜单-->
+				<optgroup label="一线">
+					<option value="南京">南京</option>
+					<option value="北京">北京</option>
+					<option value="上海">上海</option>
+					<option value="广州">广州</option>
+				</optgroup>
+				<optgroup label="二线">
+					<option value="南京">南京</option>
+					<option value="北京">北京</option>
+					<option value="上海">上海</option>
+					<option value="广州">广州</option>
+				</optgroup>
+	 		</select>
+			<hr />	
+			<p>多行文本框</p>
+			<textarea name="text1" rows="5" cols="30" id="text1" readonly="readonly">
+				<!--多行文本框-->
+				1，巴拉巴拉
+				2，呼噜呼噜
+			</textarea>
+		</form>
+	</body>
+</html>

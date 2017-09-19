@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table id="mytable" border="1">
+    <caption>洋快餐</caption>
+    <tr>
+        <td>肯德基</td>
+        <td>必胜客</td>
+    </tr>
+    <tr>
+        <td>麦当劳</td>
+        <td>华莱士</td>
+    </tr>
+    <tr>
+        <td>德克士</td>
+        <td>汉堡王</td>
+    </tr>
+</table>
+<input type="button" value="返回标题" onclick="show_caption()">
+<input type="button" value="返回第一行第一个" onclick="show_cont(0,0)">
+<input type="button" value="返回第二行第二个" onclick="show_cont(1,1)">
+<input type="button" value="返回第三行第二个" onclick="show_cont(2,1)"><br>
+设置指定单元格的值：第<input type="text" id="row" size="2">行，第<input type="text" id="cel" size="2">列的值为<input type="text" id="course" size="10">
+<input type="button" id="btn_set" value="修改" onclick="reset()">
+</body>
+<script>
+    var table=document.getElementById("mytable");
+    function show_caption (){
+        alert(table.caption.innerHTML);
+    }
+    function show_cont (a,b){
+        alert(table.rows[a].cells[b].innerHTML);
+    }
+    function reset(){
+        var row=document.getElementById("row").value;
+        var cell=document.getElementById("cel").value;
+        var content=document.getElementById("course").value;
+        table.rows[row-1].cells[cell-1].innerHTML = content;
+    }
+</script>
+</html>

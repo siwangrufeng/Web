@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//    {
+//        var name="ahao";
+//        var age=10;
+//        alert("hello:"+name);
+//    }
+//    document.write(age);//花括号外可以调用;
+
+
+    //空语句；
+//    {
+//        var arr=[];
+//        for (var i=0;i<10;a[i++]=i+5);
+//        for (var index in arr){
+//            document.write(a[index]+"<br>");
+//        }
+//    }
+
+
+    //异常抛出语句；外部用一个花括号包裹起来，  报错后，后面的东西都不执行了， 括号里面是报错后显示的东西
+//{
+//    for(i=0;i<10;i++){
+//        document.write(i+"<br>");
+//        if (i==5){
+//            throw new Error("这个地方错啦");
+//        }
+//    }
+//}
+
+
+    //异常捕获语句 报错后捕捉到报错信息，并输出报错信息，否则只能在f12里显示，try测试，catch里面是形参，可以是任何东西，finally，最后无论如何都会执行
+//    try{
+//        var num=5;
+//        if(num==5){
+//            throw new Error("报错啦");
+//        }
+//    }catch (a){
+//        document.write(a.message);
+//    }finally {
+//        document.write("你好");
+//    }
+
+
+
+    //with语句块 偷懒
+{
+    with (document){
+        write("你好"+"<br>");
+        write("你好"+"<br>");
+        write("你好"+"<br>");
+        write("你好"+"<br>");
+    }
+}
+
+</script>
+</html>

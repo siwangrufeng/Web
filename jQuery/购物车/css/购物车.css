@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+ul{
+    /*overflow: hidden;*/
+}
+img{
+    border: 0;
+}
+a{
+    text-decoration: none;
+}
+.cont{
+    width: 990px;
+    margin: 0 auto;
+}
+h2{
+    text-align: center;
+}
+.head{
+    width: 990px;
+    height: 27px;
+    position: relative;
+}
+.head a{
+    display: block;
+    width: 80px;
+    height: 27px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: #E4393C;
+    border-bottom: 1px solid #E4393C;
+    position: absolute;
+}
+.top{
+    width: 988px;
+    height: 30px;
+    border: 1px solid #E9E9E9;
+    background: #F3F3F3;
+    padding-top: 12px;
+    line-height: 18px;
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 10px;
+}
+.all{
+    width: 122px;
+    height: 18px;
+    margin-left: 11px;
+    float: left;
+}
+#all{
+    margin-right: 8px;
+}
+.goods{
+    width: 122px;
+    height: 18px;
+    float: left;
+}
+.price,.num,.sum,.play{
+    width: 80px;
+    height: 18px;
+    text-align: left;
+    float: right;
+}
+.store1{
+    width: 990px;
+}
+.store1_title{
+    width: 979px;
+    height: 30px;
+    border-bottom: 2px solid #AAAAAA;
+    padding-left: 11px;
+}
+.store1_title span{
+    line-height: 30px;
+    font-size: 14px;
+    color: #666666;
+    font-weight: bold;
+    margin-left: 8px;
+    cursor: pointer;
+}
+.store1_cont{
+    width: 988px;
+    border: 1px solid #F1F1F1;
+    border-top: 0;
+}
+.store1_top{
+    width: 968px;
+    height: 26px;
+    padding: 5px 10px ;
+    font-size: 12px;
+}
+.store1_top a{
+    display: block;
+    width: 750px;
+    color: #666666;
+    line-height: 26px;
+    padding-left: 50px;
+    float: left;
+}
+.subtotal{
+    width: 100px;
+    float: left;
+}
+.store1_goods{
+    width: 978px;
+    padding: 0 10px 1px 0;
+}
+.store1_goods ul{
+
+}
+.store1_goods ul .goods_every{
+    height: 90px;
+    width: 948px;
+    border-top: 1px solid #F1F1F1;
+    position: relative;
+    padding-top: 17px;
+    padding-left: 40px;
+}
+.store1_goods ul .goods_checked{
+    background: #FFF4E8;
+}
+.every{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 15px;
+    top: 15px;
+}
+.store1_goods_cont{
+    width: 938px;
+    height: 90px;
+}
+.store1_img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #F1F1F1;
+    float: left;
+}
+.store1_img img{
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+.goods_info{
+    float: left;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #333333;
+    width: 208px;
+    height: 40px;
+    line-height: 20px;
+    cursor: pointer;
+}
+.goods_type{
+    width: 170px;
+    height: 40px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #333333;
+    float: left;
+    margin-left: 10px;
+}
+.goods_color,.goods_size{
+    overflow: hidden;
+    cursor: default;
+}
+.goods_price{
+    width: 160px;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    font-size: 12px;
+}
+.goods_quantity{
+    width: 80px;
+    height: 42px;
+    float: left;
+}
+.keys{
+    width: 78px;
+    height: 20px;
+    border: 1px solid #CACBCB;
+    background: white;
+}
+.keys .plus{
+    display:block;
+    width: 16px;
+    height: 20px;
+    border: 0;
+    color: #E9E9E9;
+    outline: none;
+    float: left;
+    text-align: center;
+    line-height: 17px;
+    font-size: 12px;
+    cursor: pointer;
+    user-select: none;
+
+}
+.keys .minus{
+    display: block;
+    width: 16px;
+    height: 20px;
+    border: 0;
+    color: #666666;
+    float: left;
+    text-align: center;
+    line-height: 17px;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+}
+.keys .nums{
+    float: left;
+    width: 44px;
+    height: 20px;
+    border-top:0 ;
+    border-bottom:0 ;
+    border-left: 1px solid #CACBCB;
+    border-right: 1px solid #CACBCB;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+}
+.goods_quantity p{
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    font-size: 12px;
+    color:#CACBCB ;
+    text-align: center;
+}
+.goods_sum{
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: right;
+    float: left;
+    margin-right: 40px;
+}
+.money_sum {
+    width: 100px;
+    height: 20px;
+    overflow: hidden;
+}
+.weight_sum {
+    width: 100px;
+    height: 20px;
+    color: #666666;
+    overflow: hidden;
+}
+.goods_play{
+    width: 75px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #666666;
+    float: left;
+}
+.del,.move_follow,.add_follow{
+    width: 75px;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

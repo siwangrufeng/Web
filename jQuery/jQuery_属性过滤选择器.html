@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $("input[value]").css({"color":"red"})
+//            $("input[value=今天是晴天]").css({"color":"red"})
+//            $("input[value!=今天是晴天]").css({"color":"red"})
+//            $("input[value^=今天]").css({"color":"red"})
+//            $("input[value$=二]").css({"color":"red"})
+//            $("input[value*=忙碌]").css({"color":"red"})
+//            $("input[value~=天]").css({"color":"red"})
+            $("input[value][name]").css({"color":"red"})
+        })
+    </script>
+</head>
+<body>
+<input type="text" value="今天是晴天">
+<input type="text" value="今天是星期二">
+<input type="text" value="今天是工作日">
+<input type="text" value="今天是个忙碌的日子" name="day">
+<input type="text" value="今 天 我" name="title">
+</body>
+</html>

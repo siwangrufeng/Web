@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //命名函数，有名函数
+//        show();//写在上面也可以调用
+//        function show(){
+//            alert(1);
+//        }//函数本身并不执行，需要调用才能执行
+//        show();//调用名为show的函数，执行函数里面的语句块
+//      function show(name,age){     //name为形参，名字自己决定
+//          document.write(name+age)
+//      }
+//       show("zhangsan","10岁");       //调用时传入实参
+
+        //匿名函数，无名函数，匿名函数不能在上面调用
+//        var f=function(name){
+//            document.write(name+"!")
+//        };
+//        f("赵丽颖");    //将函数赋值给一个变量名，通过调用变量名来调用函数，不能在函数上面调用，因为检测到的只是一个变量名，并非一个可以运行的函数
+
+        //使用function类构造匿名函数，不能在上面调用，不常用，代码太长，括号里面不提示不报错，不利于后期维护等，前面写参数，后面写执行语句块，括号里面的括号要加单引号，调用方法一样
+//        var f1=new Function("name","age","gender","document.write('可爱的'+name+gender+age)");
+//        f1("zhangsan",10,"女");
+
+
+        //函数返回值
+//        function  show(){
+//            return"abc";
+//        }
+//        var f=show();
+//        alert(f);
+
+//        function show(){
+//            return function (){    //也可return一个函数，这时候show函数的return值是里面的函数，直接
+//                alert(1);
+//            }
+//        }
+//        var f=show();
+//        alert(f);  //直接alert f是显示return值
+//        var f=show();
+//        f();   //调用f才能调用到里面的函数
+
+
+
+
+        //局部变量与全局变量
+//        var name="zhangsan";    //全局变量，全局都可调动
+//        function show(){
+//            var age =10;            //局部变量，只能在局部范围内调用，如果全局和局部有同样变量名，则以局部变量为准
+//            alert(name+age);
+//        }
+//        show()
+
+        //局部函数与全局函数
+//        function  f1(){
+//            var n=1;
+//            function f2(){
+//                alert(n);
+//            }
+//            f2();
+//        }
+//        f1()
+
+        //闭包，一个函数有权访问另一个函数作用域中的变量
+//        function f1(){
+//            var n=1;
+//            function f2(){
+//                alert(n);
+//            }
+//            return f2;
+//        }
+//        alert(f1());
+//        var b=f1();
+//        b()
+
+//        函数调用方法
+//        一、直接调用
+//        show()就是直接调用，实际前面省略了window，没有指定分配给哪个对象使用的时候，默认分配给的是window
+//        二、.call调用
+//        函数引用.call（调用者，参数1，参数2……）
+//        三、.apply调用
+//        函数引用.apply（调用者，arguments）
+//        arguments相当于是数组，用来存放多个参数。
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+<!--<button onclick="show()">点击</button>-->
+<!--onclick点击，点击后调用show-->
+</body>
+</html>

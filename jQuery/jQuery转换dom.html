@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            alert($("#ID").val());//与dom写法不同
+//            alert($("a").html());
+//            alert($(".className").val());
+            //转换为dom
+            alert($("#ID")[0].value);
+            alert($("a")[0].innerHTML);
+            alert($(".className")[0].value);
+        })
+    </script>
+</head>
+<body>
+<input type="text" id="ID" value="通过id名获取">
+<a href="">通过标签名获取</a>
+<input type="text" class="className" value="通过类名获取">
+</body>
+</html>

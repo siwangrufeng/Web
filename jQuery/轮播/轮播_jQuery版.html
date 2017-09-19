@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        ul{
+            overflow: hidden;
+        }
+        #box{
+            width: 1130px;
+            height: 500px;
+            position: relative;
+        }
+        .pic{
+            width: 1130px;
+            height: 500px;
+        }
+        .pic li{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        /*.circle li:hover{*/
+            /*background: yellow;*/
+        /*}*/
+        .circle{
+            width: 160px;
+            height: 40px;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -80px;
+        }
+        .circle li{
+            width: 20px;
+            height: 20px;
+            margin: 10px;
+            float: left;
+            background: red;
+            border-radius: 50%;
+        }
+        .prev,.next{
+            width: 50px;
+            height: 70px;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            line-height: 70px;
+            font-size: 30px;
+            color: black;
+            background: yellow;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        .prev{
+            left: 0;
+        }
+        .next{
+            right:0;
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $(".pic li:not(:first)").hide();
+            $(".circle li").click(function(){
+                count=$(".circle li").index(this);
+                $(this).css("background","blue").siblings().css("background","red");
+                $(".pic li").eq($(".circle li").index(this)).show().siblings().hide();
+            });
+            function aaa(){
+                $(".circle li").each(function(){
+                    $(".circle li").css("background","red");
+                    $(".circle li").eq(count).css("background","blue");
+                    $(".pic li").eq(count).show().siblings().hide();
+                })
+            }
+            var count=0;
+            function auto(){
+                count++;
+                if (count==$(".circle li").length){
+                    count=0;
+                }
+                aaa()
+            }
+            function prev_1(){
+                count--;
+                if (count==-1){
+                    count=$(".circle li").length-1;
+                }
+                aaa()
+            }
+            $(".next").click(function(){
+                auto()
+            });
+            $(".prev").click(function(){
+                prev_1()
+            });
+            function start(){
+                a=setInterval(auto,1000)
+            }
+            function stop(){
+                clearInterval(a)
+            }
+            $("#box").mouseover(function(){
+                stop()
+            });
+            $("#box").mouseout(function(){
+                start()
+            });
+            start();
+        })
+    </script>
+</head>
+<body>
+<div id="box">
+    <ul class="pic">
+        <li><img src="img/banner_1.jpg" alt=""></li>
+        <li><img src="img/banner2.webp" alt=""></li>
+        <li><img src="img/banner3.jpg" alt=""></li>
+        <li><img src="img/banner_4.jpg" alt=""></li>
+    </ul>
+    <ul class="circle" id="circle">
+        <li style="background: blue"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="prev" id="prev">&lt;</div>
+    <div class="next" id="next">&gt;</div>
+</div>
+</body>
+</html>

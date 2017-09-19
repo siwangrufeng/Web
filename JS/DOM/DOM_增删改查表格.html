@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="test">
+<input type="button" value="创建一个五行四列表格" onclick="create_table()">
+<input type="button" value="删除最后一行" onclick="dele_rows()">
+<input type="button" value="删除最后一个单元格" onclick="dele_cell()">
+</body>
+<script>
+    var table = document.createElement("table");
+    var test=document.getElementById("test");
+    function create_table(){
+        for (i=0;i<5;i++){
+            tr=table.insertRow(i);
+            for(z=0;z<4;z++){
+                td=tr.insertCell(z);
+//                table.rows[i].cells[z].innerHTML=i+1+'.'+(z+1);
+                td.innerHTML=i+1+'.'+(z+1);
+            }
+        }
+        table.border="1";
+        test.appendChild(table);
+    }
+    table.id="table";
+    function dele_rows(){
+        var tab=document.getElementById("table");
+//        table.deleteRow(4);
+//        table.deleteRow(tr.length-1);
+        if (tab.rows.length>0){
+            //        table.deleteRow(table.rows.length-1);
+            tab.deleteRow(tab.rows.length-1);
+        }
+    }
+    function dele_cell(){
+        var tab=document.getElementById("table");
+//        var last_row=tab.rows.length-1;
+//        if (tab.rows[last_row].cells.length>0){
+//            tab.rows[last_row].deleteCell(tab.rows[last_row].cells.length-1)
+//        }
+        var last_row=tab.rows[tab.rows.length-1];
+        if (last_row.cells.length>0){
+            last_row.deleteCell(last_row.cells.length-1)
+        }
+//
+    }
+
+
+
+</script>
+</html>

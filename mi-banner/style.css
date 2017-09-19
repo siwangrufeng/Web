@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    border:0;
+}
+/*  banner部分开始  */
+.box{
+    width:1226px;
+    height:460px;
+    background: red;
+    margin:50px auto;
+    position: relative;
+}
+.pic ul li{
+    width:1226px;
+    height:460px;
+    position: absolute;
+}
+.left_nav{
+    width: 234px;
+    height:460px;
+    background: rgba(0,0,0,0.6);
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.left_nav ul li{
+    padding-left: 30px;
+    line-height: 42px;
+}
+.left_nav ul li:hover{
+    background: yellow;
+    cursor: pointer;
+}
+.left_nav ul li:nth-child(1){
+    margin-top: 20px;
+}
+.left_nav ul li span{
+    position: absolute;
+    right:30px;
+}
+
+/*左右箭头*/
+.btn{
+    background: url("icon-slides.png");
+    width: 41px;
+    height:69px;
+    position: absolute;
+    top:50%;
+    margin-top: -34.5px;
+}
+.prev{
+    left:234px;
+    background-position: -84px 0;
+}
+.prev:hover{
+    background-position: 0 0;
+}
+.next{
+    right:0;
+    background-position: -125px 0;
+}
+.next:hover{
+    background-position: -42px 0;
+}
+
+/*选项点开始*/
+.circle{
+    position: absolute;
+    right:30px;
+    bottom: 25px;
+}
+.circle ul li{
+    width: 10px;
+    height:10px;
+    background: rgba(0,0,0,0.5);
+    border:3px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    float: left;
+    margin:5px 8px;
+}
+
+/*  banner部分结束  */

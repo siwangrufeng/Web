@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $("p").filter(".a").css({"color":"red","border-color":"red"});
+            //filter选择的是符合后面条件的。跟not取反
+//            $("p").not(".a").css({"color":"red","border-color":"red"});
+            //not选择的是不符合后面条件的。
+//            alert($("p").size());//同.length，要被淘汰了
+//            alert($("div").index("span"));//后面括号写元素名，从同级的每一个元素计算下标，如果不存在，返回-1
+//            $("span").add("a").css("color","red");
+            //add表示二者加起来，跟逗号有相似之处
+//            $("div").find(".a").css("color","red");//在子级及以后寻找，不能寻找p.a
+            $("button").click(function(){
+                $("p").each(function(){
+                    alert($(this).text())
+                })
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <p>-1</p>
+    <span>haha</span>
+    <p>1</p>
+    <p class="a">2</p>
+    <a href="">nihao</a>
+    <p>3</p>
+    <button>点击输出p的值</button>
+</div>
+
+</body>
+</html>

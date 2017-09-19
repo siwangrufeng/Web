@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin-top: 20px;
+        }
+        a{
+            display: block;
+            width: 100px;
+            height: 50px;
+            background: darkgray;
+            margin-top: 20px;
+            /*position: relative;*/
+        }
+        div{
+            position: absolute;
+        }
+    </style>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $("a:eq(0)").mouseover(function(e){
+////                $("body").remove("div");
+//                this.z=this.title;
+//                this.title="";
+//                newDiv=$("<div style='background: red'>" + this.z + "</div>");
+//                var X= e.pageX+15;
+//                var Y= e.pageY+5;
+//                newDiv.appendTo("body");
+//                newDiv.css({"left":X,"top":Y}).fadeIn();
+//            }).mouseout(function(){
+//                this.title=this.z;
+//                $("div").remove();
+//            })
+            $("a:eq(0)").mouseover(function(){
+                this.z=this.title;
+                this.title="";
+                var newDiv=$("<div style='background: red'>" + this.z + "</div>");
+                $("a:eq(0)").mousemove(function(e){
+                    var X= e.pageX+15;
+                    var Y= e.pageY+5;
+                    newDiv.appendTo("body");
+                    newDiv.css({"left":X,"top":Y}).fadeIn();
+                })
+            }).mouseout(function(){
+                this.title=this.z;
+                $("div").remove();
+            })
+        })
+    </script>
+</head>
+<body>
+<a href="" style="color: blue" title="这是提示1的提示">提示1</a>
+<br>
+<a href="" style="color: blue">提示2</a>
+</body>
+</html>

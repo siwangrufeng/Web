@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        //选择器运用跟css相似
+//        #id:根据id名匹配
+//                .className:根据类名匹配
+//        className：根据标签名
+//        *：匹配所有元素
+//        select1，select2…：同时选取
+//        ancestor descendant：选取ancestor里面所有的descendant，跟css空格用法想用，第一个元素下面的所有具有该类名或标签名的元素
+//        parent>child：获取parent下面的child元素，只要子元素，不要孙级
+//        prev+next：选取一个元素后的一个平级元素
+//        prev~siblings：选取一个元素后的所有具有siblings名的平级元素
+//        :first 根据类名id名标签名匹配第一个
+//        :last 根据类名id名标签名匹配最后一个
+//        :not(selector) 除了括号里面写的，其他的都要，返回除括号内以外的值
+//        :even 下标为偶数的元素（与：nth（child）不同
+//        :odd 下标为奇数的元素
+//        :eq(index) 匹配该索引值的元素
+//        :gt(index) 匹配大于该索引值的元素 会返回num 小于它的下标值，用length表示出来
+//        :lt(index) 匹配小于该索引值的元素 会返回num
+//        :header 匹配所有h1，h2，h3此类的标签
+//        :anmated 匹配正执行动画效果的元素（暂时不讲）
+
+
+        $(function(){
+//            alert($("li:first").html());//first等属于属性，所以加：
+//            alert($("li:last").html());
+//            alert($("input:not(:checked)").val());//not后面括号可以写属性，属性前面加：
+//            alert($("input:eq(1)").val());
+//            alert($("li:lt(1)").length); //比如说这个返回值应该是比下标1大的下标，应该是2,3
+
+//            alert($(":header").length)
+//            alert($("#divTest :header").length);//注意空格，是下一层的
+        })
+    </script>
+</head>
+<body>
+<div id="divTest">
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <input type="radio" value="你好" checked>你好
+    <input type="radio" value="不好">不好
+    <h1>h1</h1>
+    <h5>h5</h5>
+</div>
+</body>
+</html>

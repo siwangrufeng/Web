@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body *{
+            display: block;
+            border: 2px solid gray;
+            font-size: 22px;
+            color: gray;
+            margin: 0 auto;
+        }
+        .box{
+            width: 500px;
+            height: 400px;
+        }
+        ul{
+            width: 400px;
+            height: 300px;
+        }
+        li{
+            width: 300px;
+            height: 200px;
+        }
+        span{
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $("span").parent().css({"color":"red","border-color":"red"});
+            //.parent（）代表父元素，上一级元素。css样式。只有一组，不加花括号，多组用花括号括起来，用逗号分隔
+//            $("span").parents().css({"color":"red","border-color":"red"});
+            //.parents()代表父级及以上所有父级元素
+//            $("span").parents("ul").css({"color":"red","border-color":"red"});
+            //这句表示父级及以上中所有的ul
+//            $("span").parentsUntil("div").css({"color":"red","border-color":"red"});
+            //不包前不包后，取中间部分
+            $("div").children("ul.ul1").css({"color":"red","border-color":"red"});
+            //过滤子级中符合条件的
+        })
+    </script>
+</head>
+<body>
+<div class="box">div(曾祖父元素)
+    <ul class="ul1">附加
+        <ul class="ul2">ul(祖父元素)
+            <li>li(父元素)
+                <span>span</span>
+            </li>
+        </ul>
+    </ul>
+</div>
+</body>
+</html>

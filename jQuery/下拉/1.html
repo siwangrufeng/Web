@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .box {
+            width: 150px;
+            margin: 0 auto;
+        }
+        .menu{
+            overflow:hidden;
+            border-color: #C4D5DF;
+            border-style: solid;
+            border-width: 0 1px 1px;
+        }
+        /* lv1 */
+        .menu li.level1 a{
+            display: block;
+            height: 28px;
+            line-height: 28px;
+            background:#EBF3F8;
+            font-weight:700;
+            color: #5893B7;
+            text-indent: 14px;
+            border-top: 1px solid #C4D5DF;
+        }
+        .menu li.level1 a:hover{text-decoration:none;}
+        .menu li.level1 a.current{background:#B1D7EF;}
+        /* lv2 */
+        .menu li ul{overflow:hidden;}
+        .menu li ul.level2{display:none;}
+        .menu li ul.level2 li a{
+            display: block;
+            height: 28px;
+            line-height: 28px;
+            background:#ffffff;
+            font-weight:400;
+            color: #42556B;
+            text-indent: 18px;
+            border-top: 0 solid #ffffff;
+            overflow: hidden;
+        }
+        .menu li ul.level2 li a:hover{
+            color:#f60;
+        }
+    </style>
+    <script src="../JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            $(".level1:eq(0)").click(function(){
+//                $(".level1 ul").hide();
+//                $(".level1:eq(0) ul").show();
+//            });
+//            $(".level1:eq(1)").click(function(){
+//                $(".level1 ul").hide();
+//                $(".level1:eq(1) ul").show();
+//            });
+//            $(".level1:eq(2)").click(function(){
+//                $(".level1 ul").hide();
+//                $(".level1:eq(2) ul").show();
+//            });
+//            $(".level1").click(function(){
+//                $(this.child()).show();
+//                $(this.siblings().child()).hide();
+//            })
+//            $(".level1>a").click(function(){
+////                $(this).next().show();
+////                $(this).parent().siblings().children("a").next().hide();//
+////                $(this).next().show().parent().siblings().children("a").next().hide();//children不包括孙子，只要子级
+//                $(this).next().show().parent().siblings().children("ul").hide();
+//            })
+            $(".level1").click(function(){
+                $(this).children(".level2").show();
+                $(this).siblings().children(".level2").hide();
+                return false;
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul class="menu">
+        <li class="level1">
+            <a href="#none">衬衫</a>
+            <ul class="level2">
+                <li><a href="#none">短袖衬衫</a></li>
+                <li><a href="#none">长袖衬衫</a></li>
+                <li><a href="#none">短袖T恤</a></li>
+                <li><a href="#none">长袖T恤</a></li>
+            </ul>
+        </li>
+        <li class="level1">
+            <a href="#none">卫衣</a>
+            <ul class="level2">
+                <li><a href="#none">开襟卫衣</a></li>
+                <li><a href="#none">套头卫衣</a></li>
+                <li><a href="#none">运动卫衣</a></li>
+                <li><a href="#none">童装卫衣</a></li>
+            </ul>
+        </li>
+        <li class="level1">
+            <a href="#none">裤子</a>
+            <ul class="level2">
+                <li><a href="#none">短裤</a></li>
+                <li><a href="#none">休闲裤</a></li>
+                <li><a href="#none">牛仔裤</a></li>
+                <li><a href="#none">免烫卡其裤</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

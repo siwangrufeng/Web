@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1" width="50%" height="100" cellspacing="0" cellpadding="0"><!--用于定义表格 cellspacing表示表格边框相互的距离 cellpadding表示表格内部的内容与表格边框之间的距离-->
+			<caption>我喜欢的歌曲</caption><!--定义表格的标题 默认居中-->
+			<thead>
+				<tr>
+					<th>歌名</th><!--定义表格页眉得单元格，会默认加粗居中-->
+					<th>作者</th>
+				</tr>
+			</thead>
+			<tbody>
+			    <tr><!--定义表格的行，只能包含<td>和<th>两种元素-->
+			    		<td>光辉岁月</td>
+			    		<td>beyond</td>
+			    </tr>
+			    <tr>
+			    		<td>红豆</td>
+			    		<td>王菲</td>
+			    </tr>
+			    <tr>
+			    		<td>我只在乎你</td>
+			    		<td>邓丽君</td>
+			    </tr>
+			    <tr>
+			   	 	<td>倩女幽魂</td>
+			    		<td rowspan="2">张国荣</td><!--扩展单元格，数字表示包括自己一共占有的位置 表示一个单元格纵向占两个位置-->
+			    </tr>
+			    <tr>
+			   	 	<td>有谁共鸣</td>
+			   	 	<!--被扩展了，所以实际上只有一个单元格，所以这个地方并没有单元格-->
+			    </tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="2">现总计5首歌曲</td><!--表示一个单元格横向占两个位置-->
+				</tr>
+			</tfoot>
+
+		</table>
+		<!--table>(tr>td*5)*3 表格的快速建立方式，括号里面代表几列，括号外面代表几行-->
+	</body>
+</html>

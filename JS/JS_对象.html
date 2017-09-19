@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//    内置对象
+//    创建Date的对象方法
+//    var a=new Date();
+//    var b=new Date("10 09,2012 06:24:12");
+//    var c=new Date(2017,8,7,9,55,50);
+//    var d=new Date(2017,8,7);
+//    var e=new Date(1000);
+//从1970年一月一日8点之后1000毫秒
+//    document.write(a.toString()+"<br>"+b.toString()+"<br>"+c.toString()+"<br>"+d.toString()+"<br>"+e.toString()+"<br>");
+
+//    Date对象获取时间细节方法：
+//    var a=new Date().getDate();
+//    var b=new Date().getDay();
+//    var c=new Date().getMonth();
+//    var d=new Date().getFullYear();
+//    var e=new Date().getHours();
+//    var f=new Date().getMinutes();
+//    var g=new Date().getSeconds();
+//    var h=new Date().getTime();
+//    document.write("返回几号1~31"+a.toString()+"<br>"+"返回周几0~6"+b.toString()+"<br>"+"返回月份0~11"+c.toString()+"<br>"+"返回四位数年份"+d.toString()+"<br>"+"返回小时0~23"+e.toString()+"<br>"+"返回分钟0~59"+f.toString()+"<br>"+"返回秒数0~59"+g.toString()+"<br>"+"返回从1970年1月1日至今毫秒数"+h.toString()+"<br>")
+//    var a=new Date(2012,11,12,12,12,12).getDate();
+//    var b=new Date(2012,11,12,12,12,12).getDay();
+//    var c=new Date(2012,11,12,12,12,12).getMonth();
+//    var d=new Date(2012,11,12,12,12,12).getFullYear();
+//    var e=new Date(2012,11,12,12,12,12).getHours();
+//    var f=new Date(2012,11,12,12,12,12).getMinutes();
+//    var g=new Date(2012,11,12,12,12,12).getSeconds();
+//    var h=new Date(2012,11,12,12,12,12).getTime();
+//    document.write("今天是"+d+"年"+(c+1)+"月"+a+"日"+e+"时"+f+"分"+g+"秒");
+//    var a=new Date();
+//    a.setDate(12);
+//    document.write(a);
+
+//    Math对象的常用方法；
+//    abs(x);
+//    返回数的绝对值
+//    ceil(x);
+//    对数进行上舍入
+//    floor(x);
+//    对数进行下舍入
+//    max(x,y);
+//    取最大值
+//    min(x,y);
+//    取最小值
+//    pow(x,y);
+//    返回x的y次幂
+//    random();
+//    返回0-1之间的随机数
+//    round(x);
+//    四舍五入
+//    sqrt(9);
+//    返回数的平方根
+//    a=Math.sqrt(9);
+//    alert(a)
+
+//    b=Math.random();
+//    document.write(b*100)
+
+
+//    对象创建方法
+//    一、使用new关键字调用构造器创建对象；
+//    function Student(name,age){
+//        this.a=name;
+//        this.b=age;
+////        a b 都是属性名，把传的参数以属性值赋给这个函数
+//    }
+//    var s1=new Student("zhangsan",10);
+//    document.write(s1.a+","+s1.b);
+//    document.write(this.a+","+this.b);
+
+
+//    二、使用Object直接创建对象
+//    var myO = new Object();
+//    myO.name = "nihao";
+//    myO.age = 10;
+//    myO.info = function(){
+//    document.write(this.age+this.name);
+//};
+//    myO.info();
+//    myO.Q=function abc(){
+//        document.write(this.name+","+this.age);
+//    };
+//    myO.Q();
+//    function abc(){
+//    document.write(this.name+","+this.age);
+//    };
+//    myO.Q=abc;
+//    myO.Q();
+
+
+//    三、使用JSON语法创建对象
+//    JSON(JavaScript Object Notation)是一种轻量级的数据交换格式，易于人阅读和编写
+//    JSON对象用大括号括起来，大括号里包含多个“名值对”，用逗号隔开，
+//    var person1={
+//        name:"zhangsan",
+//        age:10,
+//        gender:"man"
+//    };
+//    JSON格式可以相互嵌套，多个明值对用数组表示
+//    var person2={
+//        people:[
+//            {name:"zhangsan",age:10},
+//            {name:"lisi",age:12},
+//            {name:"wangwu",age:15}
+//        ]
+//    }
+    var person={
+        name:"zhangsan",
+        age:"14",
+        sons:[
+            {name:"lisi",age:11},
+            {name:"wangwu",age:12},
+            {name:"zhaoliu",age:13}
+        ],
+        info:function(){
+            document.write(this.name+","+this.age+"<br>");
+            for(i in this.sons){
+                document.write(this.sons[i].name+":"+this.sons[i].age+"<br>")
+            }
+        }
+    };
+    person.info()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

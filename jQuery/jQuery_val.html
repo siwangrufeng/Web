@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $("input:eq(0)").click(function(){
+                alert($("#single").val());
+//                select下拉菜单的val是指被选中的选项的val值
+            });
+            $("input:eq(1)").click(function(){
+                $("#single").val("选择3");
+//                设置select下拉菜单的val必须是已有的option的val值，设置后表示拥有该value值得option作为默认选项
+            })
+        })
+    </script>
+</head>
+<body>
+<input type="button" value="点击弹出单选框val值">
+<input type="button" value="点击设置单选框val值">
+<select name="" id="single">
+    <option value="1">选择1</option>
+    <option value="选择2">选择2</option>
+    <option value="选择3">选择3</option>
+</select>
+</body>
+</html>

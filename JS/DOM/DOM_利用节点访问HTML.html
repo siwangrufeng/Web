@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #n4{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<!--<div id="box">我的盒子</div>-->
+<!--<textarea id="cont" cols="30" rows="10">你好</textarea>-->
+<!--<br>-->
+<!--<input type="text" id="text" value="范蕾蕾">-->
+<!--<input type="button" id="but" value="访问三个元素" onclick="show()">-->
+<ul>
+    <li id="n1">张三</li>
+    <li id="n2">李四</li>
+    <li id="n3">王五</li>
+    <li id="n4">赵六</li>
+    <li id="n5">小七</li>
+    <li id="n6">你好</li>
+</ul>
+<input type="button" value="父节点中的内容" onclick="a(ul)">
+<input type="button" value="第一个子节点" onclick="a(first)">
+<input type="button" value="上一个节点" onclick="a(prev)">
+<input type="button" value="下一个节点" onclick="a(next)">
+<input type="button" value="最后一个子节点" onclick="a(last)">
+<input type="button" value="子节点个数" onclick="child()">
+</body>
+<script>
+    var n4=document.getElementById("n4");
+    var ul=n4.parentNode;
+    var first=ul.firstElementChild;
+    var prev=n4.previousElementSibling;
+    var next=n4.nextElementSibling;
+    var last=ul.lastElementChild;
+    function a(z){
+        alert(z.innerHTML)
+    }
+//    function fath(){
+//        alert(ul.innerHTML);
+////        var li_1=ul.getElementsByTagName("li");
+////        var a ="";
+////        for(i =0;i<li_1.length;i++){
+////            a=a+li_1[i].innerHTML+"\n"
+////        }
+////        alert(a)
+//    }
+//    function fir(){
+////        var first=ul.firstChild;
+////        alert(first.nextSibling.innerHTML);
+//        var first=ul.firstElementChild;//因为ul li中间存在空格，所以，第二个才是真正的第一个元素，或者中间加element，意思为元素
+//        alert(first.innerHTML)
+//    }
+//    function prev(){
+////        var pre=n4.previousSibling;
+////        alert(pre.previousSibling.innerHTML)
+//        var pre=n4.previousElementSibling;
+//        alert(pre.innerHTML)
+//    }
+//    function next(){
+////        var nex=n4.nextSibling;
+////        alert(nex.nextSibling.innerHTML)
+//        var nex=n4.nextElementSibling;
+//        alert(nex.innerHTML)
+//    }
+//    function last(){
+////        var las=ul.lastChild;
+////        alert(las.previousSibling.innerHTML)
+//        var las=ul.lastElementChild;
+//        alert(las.innerHTML)
+//    }
+    function child(){
+        var chi=ul.getElementsByTagName("li");  //长度不考虑空格因素，因为指有效元素的长度
+        alert(chi.length)
+    }
+
+
+
+
+//    function show(){
+//        var box=document.getElementById("box");
+//        var cont=document.getElementById("cont");
+//        var text=document.getElementById("text");
+//        alert(box.innerHTML+"\n"+cont.innerHTML+"\n"+text.value);
+//        alert(box.innerHTML+"\n"+cont.value+"\n"+text.value)
+//    }
+//    普通文本文档通过.innerHTML的方式来获取里面的文本显示内容，像input text这种单行输入框，value里面的内容就是文本显示内容，像textarea这种多层文本框，既可以用.value也可以用.innerHTML来获取文本内容
+</script>
+</html>

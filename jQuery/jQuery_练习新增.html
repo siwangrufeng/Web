@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            document.onclick = function () {
+//                $("body").append("<div></div>");
+//                $("body div").addClass("zzz").css({"width":"50px","height":"50px","background":"lightblue","float":"left","margin":"20px"});
+//                $("a").html($(".zzz").length);
+//                $("body")[0].appendChild($("<div></div>")[0]);//中括号0 表示把jQuery变成dom，appendchild是dom里面的用法。
+//                $("a").html($("div").size());
+                var myDiv = $("<div></div>");//此时并非创建一个元素，而是表示这个元素
+                $("body")[0].appendChild(myDiv[0]);//此时创建一个新的div元素
+                var i = $("div").size();
+                document.title = i;
+                $("div").html(i)
+            }
+        })
+    </script>
+    <style>
+        /*a {*/
+            /*text-decoration: none;*/
+        /*}*/
+
+        div {
+            width: 50px;
+            height: 50px;
+            margin: 20px;
+            float: left;
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+<!--<p>-->
+    <!--页面中有-->
+    <!--<a href="">0</a>-->
+    <!--个div块，点击自动增加一个div-->
+<!--</p>-->
+</body>
+</html>

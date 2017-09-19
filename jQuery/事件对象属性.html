@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http://www.baidu.com">点击我</a>
+<input type="button" value="点击我">
+</body>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    $(function(){
+        $("a").click(function(event){
+//            alert(event.type)
+            var tg = event.target;
+            alert(event.target.nodeName);
+//            alert(tg.href);
+//            alert(event.pageX + "--" + event.pageY);
+            return false;
+        });
+//        $("a").mousedown(function(event){
+//            alert(event.which);
+//            return false;
+//        });
+//        $("input").keyup(function(event){
+//            alert(event.which)
+//        })
+    })
+</script>
+</html>

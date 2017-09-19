@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin-top: 20px;
+        }
+        p{
+            width: 200px;
+            height: 30px;
+            background: skyblue;
+        }
+    </style>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $("p").click(function(){
+                alert(1)
+            });
+            $("input").click(function(){
+                var $remove=$("p").remove();
+                //remove移除掉整个p标签包括属性和内容，返回值为p标签，可以再被添加，添加后属性保留，事件没了
+//                var $remove=$("p").detach();
+                //detach删除后，所有的属性包括发生的事件都可以被完整保留
+                $("div").append($remove);
+//                var $remove=$("p").empty();
+                //empty是清空内部的东西，p标签本身还在。包括属性和事件
+
+            })
+        })
+    </script>
+</head>
+<body>
+<p>啊哈哈哈</p>
+<input type="button">点我
+<br>
+<div  style="background: red">
+    你好
+</div>
+</body>
+</html>

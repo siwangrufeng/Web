@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="box">
+    <div class="pic">
+        <ul>
+            <li><img src="1.jpg" alt=""></li>
+            <li><img src="2.jpg" alt=""></li>
+            <li><img src="3.jpg" alt=""></li>
+            <li><img src="4.jpg" alt=""></li>
+            <li><img src="5.jpg" alt=""></li>
+            <li><img src="6.jpg" alt=""></li>
+            <li><img src="7.jpg" alt=""></li>
+        </ul>
+    </div>
+    <div class="left_nav">
+        <ul>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+            <li>手机 电话卡<span>&gt;</span></li>
+        </ul>
+    </div>
+    <p class="prev btn"></p>
+    <p class="next btn"></p>
+    <div class="circle">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/购物车.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/购物车.js"></script>
+</head>
+<body>
+<div class="cont">
+    <h2>购物车</h2>
+    <div class="head">
+        <a href="">全部商品 <span>7</span></a>
+    </div>
+    <div class="top">
+        <div class="all">
+            <input type="checkbox" value="all" id="all">
+            <span>全选</span>
+        </div>
+        <div class="goods">商品</div>
+        <div class="play">操作</div>
+        <div class="sum">小计</div>
+        <div class="num">数量</div>
+        <div class="price">单价</div>
+    </div>
+    <div class="store1">
+        <div class="store1_title">
+            <input type="checkbox" value="store">
+            <span>锐创恒泰科技手机专营店</span>
+        </div>
+        <div class="store1_cont">
+            <div class="store1_top">
+                <a href="">活动商品购满¥100.00，即可加价换购商品1件 ></a>
+                <div class="subtotal"></div>
+            </div>
+            <div class="store1_goods">
+                <ul>
+                    <li class="goods_every">
+                        <div class="every">
+                            <input type="checkbox">
+                        </div>
+                        <div class="store1_goods_cont">
+                            <div class="store1_img">
+                                <img src="img/goods_1.jpg" alt="">
+                            </div>
+                            <p class="goods_info">华为 HUAWEI nova 2 4GB+64GB 全网通4G手机 玫瑰金</p>
+                            <div class="goods_type">
+                                <p class="goods_color">颜色：玫瑰金</p>
+                                <p class="goods_size"></p>
+                            </div>
+                            <p class="goods_price">¥<a>2199.00</a></p>
+                            <div class="goods_quantity">
+                                <div class="keys">
+                                    <span class="plus">-</span>
+                                    <input class="nums" type="text" value="1">
+                                    <span class="minus">+</span>
+                                </div>
+                                <p>有货</p>
+                            </div>
+                            <div class="goods_sum">
+                                <p class="money_sum">¥<a>2199.00</a></p>
+                                <p class="weight_sum"></p>
+                            </div>
+                            <div class="goods_play">
+                                <div class="del">删除</div>
+                                <div class="move_follow">移到我的关注</div>
+                                <div class="add_follow">加到我的关注</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="store1">
+        <div class="store1_title">
+            <input type="checkbox" value="store">
+            <span>京东自营</span>
+        </div>
+        <div class="store1_cont">
+            <div class="store1_top">
+                <a href="">活动商品购满¥199.00，即可享受满减 ></a>
+                <div class="subtotal"></div>
+            </div>
+            <div class="store1_goods">
+                <ul>
+                    <li class="goods_every">
+                        <div class="every">
+                            <input type="checkbox">
+                        </div>
+                        <div class="store1_goods_cont">
+                            <div class="store1_img">
+                                <img src="img/goods_2.jpg" alt="">
+                            </div>
+                            <p class="goods_info">【京东超市】卫新 薰衣草洗衣液 2kg</p>
+                            <div class="goods_type">
+                                <p class="goods_color">颜色：薰衣草</p>
+                                <p class="goods_size">尺码：2kg</p>
+                            </div>
+                            <p class="goods_price">¥<a>27.90</a></p>
+                            <div class="goods_quantity">
+                                <div class="keys">
+                                    <span class="plus">-</span>
+                                    <input class="nums" type="text" value="1">
+                                    <span class="minus">+</span>
+                                </div>
+                                <p>有货</p>
+                            </div>
+                            <div class="goods_sum">
+                                <p class="money_sum">¥<a>27.90</a></p>
+                                <p class="weight_sum">2.03kg</p>
+                            </div>
+                            <div class="goods_play">
+                                <div class="del">删除</div>
+                                <div class="move_follow">移到我的关注</div>
+                                <div class="add_follow">加到我的关注</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="goods_every">
+                        <div class="every">
+                            <input type="checkbox">
+                        </div>
+                        <div class="store1_goods_cont">
+                            <div class="store1_img">
+                                <img src="img/goods_3.jpg" alt="">
+                            </div>
+                            <p class="goods_info">【京东超市】新西兰原装进口牛奶 安佳Anchor全脂牛奶UHT纯牛奶250ml*24</p>
+                            <div class="goods_type">
+                                <p class="goods_color"></p>
+                                <p class="goods_size"></p>
+                            </div>
+                            <p class="goods_price">¥<a>89.00</a></p>
+                            <div class="goods_quantity">
+                                <div class="keys">
+                                    <span class="plus">-</span>
+                                    <input class="nums" type="text" value="1">
+                                    <span class="minus">+</span>
+                                </div>
+                                <p>有货</p>
+                            </div>
+                            <div class="goods_sum">
+                                <p class="money_sum">¥<a>89.00</a></p>
+                                <p class="weight_sum">6.72kg</p>
+                            </div>
+                            <div class="goods_play">
+                                <div class="del">删除</div>
+                                <div class="move_follow">移到我的关注</div>
+                                <div class="add_follow">加到我的关注</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="goods_every">
+                        <div class="every">
+                            <input type="checkbox">
+                        </div>
+                        <div class="store1_goods_cont">
+                            <div class="store1_img">
+                                <img src="img/goods_4.jpg" alt="">
+                            </div>
+                            <p class="goods_info">【京东超市】美素佳儿（Friso）金装幼儿配方奶粉 3段（1-3岁幼儿适用）900</p>
+                            <div class="goods_type">
+                                <p class="goods_color">颜色：3段900g</p>
+                                <p class="goods_size"></p>
+                            </div>
+                            <p class="goods_price">¥<a>169.00</a></p>
+                            <div class="goods_quantity">
+                                <div class="keys">
+                                    <span class="plus">-</span>
+                                    <input class="nums" type="text" value="1">
+                                    <span class="minus">+</span>
+                                </div>
+                                <p>有货</p>
+                            </div>
+                            <div class="goods_sum">
+                                <p class="money_sum">¥<a>169.00</a></p>
+                                <p class="weight_sum">1.11kg</p>
+                            </div>
+                            <div class="goods_play">
+                                <div class="del">删除</div>
+                                <div class="move_follow">移到我的关注</div>
+                                <div class="add_follow">加到我的关注</div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <div class="store1">
+        <div class="store1_title">
+            <input type="checkbox" value="store">
+            <span>酷风行手机专营店</span>
+        </div>
+        <div class="store1_cont">
+            <div class="store1_top">
+                <a href=""> 活动商品已购满¥4400.00 （已减¥500.00） ></a>
+                <div class="subtotal"></div>
+            </div>
+            <div class="store1_goods">
+                <ul>
+                    <li class="goods_every">
+                        <div class="every">
+                            <input type="checkbox">
+                        </div>
+                        <div class="store1_goods_cont">
+                            <div class="store1_img">
+                                <img src="img/goods_5.jpg" alt="">
+                            </div>
+                            <p class="goods_info">保千里打令VR手机 轻奢智能全网通4G 双卡双待 D7精英套装版</p>
+                            <div class="goods_type">
+                                <p class="goods_color">D7精英套装版</p>
+                                <p class="goods_size"></p>
+                            </div>
+                            <p class="goods_price">¥<a>4480.00</a></p>
+                            <div class="goods_quantity">
+                                <div class="keys">
+                                    <span class="plus">-</span>
+                                    <input class="nums" type="text" value="1">
+                                    <span class="minus">+</span>
+                                </div>
+                                <p>有货</p>
+                            </div>
+                            <div class="goods_sum">
+                                <p class="money_sum">¥<a>4480.00</a></p>
+                                <p class="weight_sum"></p>
+                            </div>
+                            <div class="goods_play">
+                                <div class="del">删除</div>
+                                <div class="move_follow">移到我的关注</div>
+                                <div class="add_follow">加到我的关注</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="goods_every">
+                        <div class="every">
+                            <input type="checkbox">
+                        </div>
+                        <div class="store1_goods_cont">
+                            <div class="store1_img">
+                                <img src="img/goods_7.jpg" alt="">
+                            </div>
+                            <p class="goods_info">VETAS V5 PRO 全网通4G 商务轻奢智能手机 128G 双卡双待 咖啡色 小牛皮</p>
+                            <div class="goods_type">
+                                <p class="goods_color">咖啡色</p>
+                                <p class="goods_size">小牛皮风尚版</p>
+                            </div>
+                            <p class="goods_price">¥<a>7999.00</a></p>
+                            <div class="goods_quantity">
+                                <div class="keys">
+                                    <span class="plus">-</span>
+                                    <input class="nums" type="text" value="1">
+                                    <span class="minus">+</span>
+                                </div>
+                                <p>有货</p>
+                            </div>
+                            <div class="goods_sum">
+                                <p class="money_sum">¥<a>7999.00</a></p>
+                                <p class="weight_sum"></p>
+                            </div>
+                            <div class="goods_play">
+                                <div class="del">删除</div>
+                                <div class="move_follow">移到我的关注</div>
+                                <div class="add_follow">加到我的关注</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

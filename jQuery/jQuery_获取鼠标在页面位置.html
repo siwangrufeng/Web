@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $(document).mousemove(function(e){
+                //e为形参，不能不要，不能用this代替
+                $("#xy").html("x:"+ e.pageX+"y:"+ e.pageY);
+                //.page表示获取在页面中的位置。XY分别表示横竖距离
+            })
+        })
+    </script>
+</head>
+<body>
+<div id="xy">
+
+</div>
+</body>
+</html>

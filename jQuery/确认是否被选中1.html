@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            $("#table tr:has(td:has(:checkbox:enabled))").css("background","red");
+//            $("#table>tr:has(td:has(:checkbox:enabled))").css("background", "red");
+//            alert($("#table>tbody").length)   //table里面默认一个tbody，如果用＞，一定要加上tbody。
+        })
+    </script>
+</head>
+<body>
+<table id="table">
+    tbody
+    <tr>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行</td>
+        <td>第1行<input type="checkbox" disabled="disabled"/></td>
+    </tr>
+    <tr>
+        <td>第2行</td>
+        <td>第2行</td>
+        <td>第2行</td>
+        <td>第2行</td>
+        <td>第2行<input type="checkbox"/></td>
+    </tr>
+    <tr>
+        <td>第3行</td>
+        <td>第3行</td>
+        <td>第3行</td>
+        <td>第3行</td>
+        <td>第3行<input type="checkbox" disabled="disabled"/></td>
+    </tr>
+    <tr>
+        <td>第4行</td>
+        <td>第4行</td>
+        <td>第4行</td>
+        <td>第4行</td>
+        <td>第4行<input type="checkbox"/></td>
+    </tr>
+</table>
+</body>
+</html>

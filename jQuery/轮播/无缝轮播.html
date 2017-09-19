@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .box {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .nav {
+            width: 1000px;
+            height: 50px;
+        }
+
+        .nav span {
+            display: block;
+            float: left;
+            width: 199px;
+            height: 50px;
+            border-right: 1px solid black;
+            background: skyblue;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .nav span:last-child {
+            border-right-color: skyblue;
+        }
+
+        .cont {
+            width: 1000px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cont ul {
+            height: 200px;
+            position: absolute;
+        }
+
+        .cont ul li {
+            float: left;
+            width: 200px;
+            height: 200px;
+        }
+
+        .cont ul li img {
+            width: 200px;
+            height: 200px;
+        }
+
+        .nav .active {
+            background: palevioletred;
+        }
+
+        .next, .prev {
+            width: 50px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            font-size: 30px;
+            color: black;
+            position: absolute;
+            top: 50%;
+            margin-top: -35px;
+            background: blue;
+            cursor: pointer;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        #info {
+            width: 200px;
+            height: 220px;
+            display: none;
+            position: absolute;
+        }
+
+        #words {
+            width: 200px;
+            height: 20px;
+        }
+
+        #pic {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            var wid = $("li").width();
+            var clone = $("li:lt(5)").clone();
+            var count = 0;
+            $(".cont_ul").append(clone);
+            var num = $("li").length;
+            var ul_wid = wid * num;
+            $("ul").width(ul_wid);
+            $(".nav span").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                count = $(this).index();
+                $("ul").stop().animate({
+                    "left": count * wid * -5
+                });
+            });
+
+            $(".next").click(function () {
+                count--;
+                console.log(count);
+                if (count == -1) {
+                    $("ul").css({
+                        "left": -(num - 5) * wid
+                    });
+                    count = (num / 5) - 2;
+                }
+                $("ul").stop().animate({
+                    "left": count * wid * -5
+                }, 500);
+                $(".nav span").eq(count).addClass("active").siblings().removeClass("active");
+            });
+
+
+            function prev() {
+                count++;
+                if (count == num / 5) {
+                    $("ul").css({"left": "0"});
+                    count = 1;
+                }
+                if (count == (num / 5) - 1) {
+                    $(".nav span").eq(0).addClass("active").siblings().removeClass("active");
+                } else {
+                    $(".nav span").eq(count).addClass("active").siblings().removeClass("active");
+                }
+                $("ul").stop().animate({
+                    "left": count * wid * -5
+                }, 500);
+                $(".nav span").eq(count).addClass("active").siblings().removeClass("active");
+            }
+
+            $(".prev").click(function () {
+                prev()
+            });
+            var a = setInterval(prev, 1500);
+            $(".box").hover(function () {
+                clearInterval(a);
+            }, function () {
+                a = setInterval(function () {
+                    prev()
+                }, 1500)
+            });
+            $("li img").mouseover(function (i) {
+                this.a = this.title;
+                this.title = "";
+                var newDiv = $("<div id='info'></div>");
+                var newP = $("<p id='words'>" + this.a + "</p>");
+                var newPic = $("<div id='pic'></div>");
+                var pic = this.cloneNode();
+                newPic.append(pic);
+                $("body").append(newDiv);
+                newP.appendTo(newDiv);
+                newPic.appendTo(newDiv);
+                newDiv.show();
+            }).mouseout(function () {
+                this.title = this.a;
+                $("#info").remove();
+            }).mousemove(function (e) {
+                var X = e.pageX + 15;
+                var Y = e.pageY + 5;
+                $("#info").css({
+                    "left": X,
+                    "top": Y
+                })
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="nav">
+        <span class="active">1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+    <div class="cont">
+        <ul class="cont_ul">
+            <li><img src="img/love_1.jpg" alt="" title="这是图片1"></li>
+            <li><img src="img/love_1.jpg" alt="" title="这是图片2"></li>
+            <li><img src="img/love_1.jpg" alt="" title="这是图片3"></li>
+            <li><img src="img/love_1.jpg" alt="" title="这是图片4"></li>
+            <li><img src="img/love_1.jpg" alt="" title="这是图片5"></li>
+            <li><img src="img/love_2.jpg" alt="" title="这是图片6"></li>
+            <li><img src="img/love_2.jpg" alt="" title="这是图片7"></li>
+            <li><img src="img/love_2.jpg" alt="" title="这是图片8"></li>
+            <li><img src="img/love_2.jpg" alt="" title="这是图片9"></li>
+            <li><img src="img/love_2.jpg" alt="" title="这是图片10"></li>
+            <li><img src="img/love_3.jpg" alt="" title="这是图片11"></li>
+            <li><img src="img/love_3.jpg" alt="" title="这是图片12"></li>
+            <li><img src="img/love_3.jpg" alt="" title="这是图片13"></li>
+            <li><img src="img/love_3.jpg" alt="" title="这是图片14"></li>
+            <li><img src="img/love_3.jpg" alt="" title="这是图片15"></li>
+            <li><img src="img/love_4.jpg" alt="" title="这是图片16"></li>
+            <li><img src="img/love_4.jpg" alt="" title="这是图片17"></li>
+            <li><img src="img/love_4.jpg" alt="" title="这是图片18"></li>
+            <li><img src="img/love_4.jpg" alt="" title="这是图片19"></li>
+            <li><img src="img/love_4.jpg" alt="" title="这是图片20"></li>
+            <li><img src="img/love_5.jpg" alt="" title="这是图片21"></li>
+            <li><img src="img/love_5.jpg" alt="" title="这是图片22"></li>
+            <li><img src="img/love_5.jpg" alt="" title="这是图片23"></li>
+            <li><img src="img/love_5.jpg" alt="" title="这是图片24"></li>
+            <li><img src="img/love_5.jpg" alt="" title="这是图片25"></li>
+        </ul>
+        <div class="prev">←</div>
+        <div class="next">→</div>
+    </div>
+</div>
+</body>
+</html>

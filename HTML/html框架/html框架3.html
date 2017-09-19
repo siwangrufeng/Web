@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<frameset rows="30%,*">
+		<frame src="frame1.html"/>
+		<frameset cols="25%,*">
+			<frame src="frame2.html" noresize="noresize"/><!--不能拉动，固定边框-->
+			<frame src="frame3.1.html" name="right"/><!--给这个框架命名，然后可以使用target通过名字指定别的东西在这个框架里面显示-->
+		</frameset>>
+		<noframes>
+			<body>
+				此浏览器不支持
+			</body><!--body和frameset不能共存，除非在noframe里面，只有浏览器不支持frameset框架时，才会被显示出来-->
+		</noframes>
+	</frameset>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin: 20px;
+            border: 1px solid gray;
+        }
+    </style>
+    <script src="JS/jquery-1.11.3.min.js"></script>
+    <script>
+        // 省略参数： 返回第一个li元素在所有同辈元素中的索引
+        document.writeln( $("li").index( ) ); // 0
+        // 参数为DOM元素： 返回n6在$li中的索引
+        document.writeln( $("li").index( document.getElementById("n6") ) ); // 1
+        // 参数为jQuery对象： 返回$("#n7")在$li中的索引
+        document.writeln( $("li").index( $("#n7") ) ); // 2
+        // 参数为选择器字符串： 返回$li中的第一个元素(即n5)在选择器"#n4"所匹配的元素中的索引
+        // 选择器"#n4"匹配的元素只有n4一个，没有n5，因此返回-1
+        document.writeln( $("li").index( "#n4" ) ); // -1
+        // 省略参数：n4在同辈元素中的索引，n4之前的同辈元素有一个n3，因此返回索引为1
+        document.writeln ( $("#n4").index( ) ); // 1
+        // 参数为选择器字符串：n8在选择器"span"所匹配的元素中的索引
+        // 选择器"span"匹配n3、n8两个元素，n8是其中的第二个元素，因此返回索引为1
+        document.writeln ( $("#n8").index( "span" ) ); // 1
+    </script>
+</head>
+<body>
+<div id="n1">
+    <div id="n2">
+        <span id="n3"></span>
+        <ul id="n4">
+            <li id="n5">1</li>
+            <li id="n6">2</li>
+            <li id="n7">3</li>
+        </ul>
+        <span id="n8"></span>
+    </div>
+</div>
+</body>
+</html>

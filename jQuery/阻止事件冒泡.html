@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #content{
+            width: 220px;
+            border: 1px solid #0050d0;
+            background: #96e555;
+        }
+        span{
+            width: 200px;
+            margin: 10px;
+            background: #666;
+            cursor: pointer;
+        }
+        p{
+            width: 200px;
+            background: #888;
+            color: white;
+            height: 16px;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    外层div元素
+    <span>内层span元素</span>
+    外层div元素
+</div>
+<div id="msg"></div>
+</body>
+<script src="jquery-1.11.1.min.js"></script>
+<script>
+    $(function(){
+        $("span").bind("click",function(event){
+            var txt = $("#msg").html()+"<p>内层span元素被点击</p>";
+            $("#msg").html(txt);
+             event.stopPropagation();
+        });
+
+        $("#content").bind("click",function(event){
+            var txt = $("#msg").html()+"<p>外层div元素被点击</p>";
+            $("#msg").html(txt);
+            event.stopPropagation();
+        });
+        $("body").bind("click",function(){
+            var txt = $("#msg").html()+"<p>body元素被点击</p>";
+            $("#msg").html(txt)
+        });
+    })
+</script>
+</html>

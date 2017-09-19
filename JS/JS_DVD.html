@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var arrlend = ["长城","短程","忠诚","A-Tu","UC总裁升职记"]; //可借的dvd
+    var arrreturn = ["金刚狼","寂静岭","三国","钢铁侠"];	   //可还的dvd
+//    1，列出所有可借的
+    var num1=prompt("请输入序号进行操作：\n1.查询并出借DVD\n2.查询DVD名是否存在\n3.新增DVD\n4.归还DVD\n5.查询所有DVD\n");
+    var lend="可借DVD列表:\n";
+    if(num1==1) {
+        for (i in arrlend) {
+            lend = lend + (parseInt(i) + 1) + "." + arrlend[i] + "\n";
+        }
+        var num2 = prompt("输入序号借DVD" + lend);
+        alert(arrlend[num2 - 1] + "\n出借成功");
+        arrreturn.push(arrlend[num2 - 1]);
+        arrlend.splice(num2 - 1, 1);
+        if(num2>0&&num2<=arrlend.length){
+            var lend1="可借DVD列表:\n";
+            var ret1="待还DVD列表：\n";
+            for(x in arrlend){
+                lend1=lend1+(parseInt(x)+1)+"."+arrlend[x]+"\n";
+            }
+            for(y in arrreturn){
+                ret1=ret1+(parseInt(y)+1)+"."+arrreturn[y]+"\n";
+            }
+            alert(lend1+"\n"+ret1);
+        }else {
+            alert("请输入正确序号进行出借操作!")
+        }
+    }
+
+    else if(num1==2){
+        var name=prompt("请输入DVD名进行查询\n");
+        for(i in arrlend){
+            if(arrlend[i]==name){
+                alert(name+"已存在");
+                break;
+            }else if (i==arrlend.length-1){
+                for(z in arrreturn){
+                    if(arrreturn[z]==name){
+                        alert(name+"\n已存在");
+                        break;
+                    }else if(z==arrreturn.length-1){
+                        alert(name+"\n不存在");
+                    }
+                }
+            }
+        }
+    }else if(num1==3){
+        var name1=prompt("请输入要添加的DVD名");
+        for(i in arrlend){
+            if(name1==arrlend[i]){
+                alert(name1+"已存在");
+                break;
+            }else if(i==arrlend.length-1){
+                for(c in arrreturn) {
+                    if (name1 == arrreturn[c]) {
+                        alert(name1 + "已存在");
+                        break;
+                    } else if (c == arrreturn.length - 1) {
+                        alert(name1 + "已成功添加");
+                        arrlend.push(name1);
+                        alert(arrlend);
+                    }
+                }
+            }
+        }
+    }else if(num1==4){
+        var ret2="待还DVD列表：\n"
+        for (i in arrreturn){
+            ret1=ret1+(parseInt(i)+1)+arrreturn[i]+"\n";
+        }
+        var num3=prompt("请输入归还DVD的编号"+ret1);
+        arrlend.push(arrreturn[num3-1]);
+        arrreturn.splice(num3-1,1);
+        alert(arrlend+"\n"+arrreturn);
+        var lend3="可借DVD列表\n";
+        var ret3="待还DVD列表\n";
+        for(c in arrlend){
+            lend3=lend3+(parseInt(c)+1)+"."+arrlend[c]+"\n";
+        }
+        for(d in arrreturn){
+            ret3=ret3+(parseInt(d)+1)+"."+arrreturn[d]+"\n";
+        }
+        alert(lend3+"\n"+ret3);
+    }else if(num1==5){
+        var ret="待还DVD列表\n";
+        for(i in arrreturn){
+            ret=ret+(parseInt(i)+1)+"."+arrreturn[i]+"\n";
+        }
+        for(i in arrlend){
+            lend = lend+(parseInt(i)+1)+"."+arrlend[i]+"\n";
+        }
+        alert(lend+"\n"+ret);
+    }
+
+</script>
+</html>

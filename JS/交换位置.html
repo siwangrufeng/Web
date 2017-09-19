@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ul{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+    <li style="color: red">1</li>
+    <li style="color: blue">2</li>
+    <li style="color: black">3</li>
+    <li style="color: yellowgreen">4</li>
+    <li style="color: green">5</li>
+</ul>
+</body>
+<script>
+    ul=document.getElementById("ul");
+    for (i=0;i<ul.childNodes.length;i++){
+        ul.childNodes[i].onclick=function(){
+            if (this.nextElementSibling){
+                ul.insertBefore(this.nextElementSibling,this)
+            }
+        }
+    }
+
+
+
+</script>
+</html>

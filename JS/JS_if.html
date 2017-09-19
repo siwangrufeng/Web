@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+//    var num=999;
+//    if(num<998){
+//        document.write(1);
+//    }else if (num>1000){
+//        num="哈哈哈";
+//        document.write(num);
+//    }else {
+//        document.write(123);
+//    }
+
+
+//男士体重=身高-100±3
+//女士体重=身高-110±3
+//    输入性别身高体重，查看是否标准
+    var sex=prompt("请输入性别");
+    var sta_man = w-(h-100);
+    var sta_woman = w-(h-110);
+    if (sex=="男"){
+        var h=prompt("请输入身高（cm）");
+        var w=prompt("请输入体重（kg）");
+        if(sta_man>3){
+            alert("偏重")
+        }else if (sta_man<-3){
+            alert("偏轻")
+        }else if(sta_man>=-3&&sta_man<=3){
+            alert("正常")
+        }else {
+            alert("请正确输入")
+        }
+    }else if(sex=="女"){
+        var h=prompt("请输入身高（cm）");
+        var w=prompt("请输入体重（kg）");
+        if(sta_woman>3){
+            alert("偏重")
+        }else if (sta_woman<-3){
+            alert("偏轻")
+        }else if(sta_woman>=-3&&sta_woman<=3){
+            alert("正常")
+        }else {
+            alert("请正确输入")
+        }
+    }else {
+        alert("请输入正确性别")
+    }
+
+
+
+//    键盘中输入两个数，按从小到大排序打印
+//    var num1=prompt("请输入第一个数字");
+//    var num2=prompt("请输入第二个数字");
+//
+//    if (num1>num2){
+//        document.write(num2+"小于"+num1)
+//    }else if (num1<num2){
+//        document.write(num1+"小于"+num2)
+//    }else {
+//        document.write("二者相等")
+//    }
+
+//    用户出差，不满一周算一周发放津贴，每周500元，输入出差天数，求津贴
+//    var day=parseInt(prompt("请输入出差天数"));
+//    var yu=day%7;
+//    var money;
+//    if(day>0&&day<=7){
+//        alert("您的出差津贴为500元")
+//    }else if (day>7){
+//        if (yu==0){
+//            money=parseInt(day/7)*500;
+//            alert(money)
+//        }else {
+//            money=parseInt(day/7+1)*500;
+//            alert(money)
+//        }
+//    }else {
+//        alert("请输入正确出差天数")
+//    }
+
+//    输入星期几的第一个字母来判断是周几，如果第一个字母一样，判断第二个
+//    var words1=prompt("请输入第一个字母");
+//    if (words1=="s"||words1=="S"){
+//        var words2=prompt("请输入第二个字母");
+//        if(words2=="u"||words2=="U"){
+//            alert("周日")
+//        }else if (words2=="a"||words2=="A"){
+//            alert("周六")
+//        }else {
+//            alert("请输入正确的字母")
+//        }
+//    }else if(words1=="m"||words1=="M"){
+//        alert("周一")
+//    }else if (words1=="t"||words1=="T"){
+//        var words3=prompt("请输入第二个字母");
+//        if(words3=="u"||words3=="U"){
+//            alert("周二")
+//        }else if (words3=="h"||words3=="H"){
+//            alert("周四")
+//        }else {
+//            alert("请输入正确的字母")
+//        }
+//    }else if(words1=="w"||words1=="W"){
+//        alert("周三")
+//    }else if(words1=="f"||words1=="F"){
+//        alert("周五")
+//    }else{
+//        alert("请输入正确的字母")
+//    }
+
+
+//    判断某年某月有多少天，打印输出
+//    var year=prompt("请输入年份");
+//    var mon=prompt("请输入月份");
+//    if(year>0) {
+//        if (mon == 1 || mon == 3 || mon == 5 || mon == 7 || mon == 8 || mon == 10 || mon == 12) {
+//            alert(year + "年" + mon + "月有31天")
+//        } else if (mon == 4 || mon == 6 || mon == 9 || mon == 11) {
+//            alert(year + "年" + mon + "月有30天")
+//        } else if (mon == 2) {
+//            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+//                alert(year + "年" + mon + "月有29天")
+//            } else {
+//                alert(year + "年" + mon + "月有28天")
+//            }
+//        } else {
+//            alert("请输入正确月份")
+//        }
+//    }else {
+//        alert("请输入正确年份")
+//    }
+//
+</script>
+</html>
