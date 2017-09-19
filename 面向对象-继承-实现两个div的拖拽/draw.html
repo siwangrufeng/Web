@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>draw</title>
+    <style>
+        #div1{width: 200px;height: 200px;background-color: yellow;position: absolute}
+        #div2{width: 200px;height: 200px;background-color: red;position: absolute}
+    </style>
+</head>
+<body>
+<div id="div1">一般拖拽</div>
+<div id="div2">限制拖拽</div>
+<script src="test.js"></script>
+<script>
+    window.onload=function () {
+
+
+//          多态
+//        var cat=new Cat('小花猫');
+//        var dog=new Dog('小黄狗');
+//        var fish=new Fish('油炸鱼');
+//        var bone=new Bone('碎骨头');
+//        var master=new Master('owen');
+//        master.feed(cat,fish);
+//        master.feed(dog,bone);
+
+
+//      闭包
+//        var n=111;
+//        function test() {
+//            var m=222;
+//            alert(n);
+//            var k=function () {
+//                return m;
+//            }
+//            return k;
+//        }
+//        var k=test();
+//        alert(k());
+
+        new fnDraw('div1');
+        new limitDraw('div2');
+//        console.log(document);
+//        console.log(document.documentElement);
+//        console.log(document.body);
+    }
+    function fnDraw(id) {
+        var _this=this;
+        this.odiv=document.getElementById(id);
+        this.disX=0;
+        this.disY=0;
+        this.odiv.onmousedown=function (event) {
+            _this.fnDown(event);
+        };
+    }
+    fnDraw.prototype.fnDown=function (event) {
+        var _this=this;
+        var e=event||window.event;
+        this.disX=e.clientX-this.odiv.offsetLeft;
+        this.disY=e.clientY-this.odiv.offsetTop;
+        document.onmousemove=function(event) {
+            _this.fnMove(event);
+            return false;
+        };
+        document.onmouseup=function () {
+            _this.fnUp();
+        };
+    }
+
+    fnDraw.prototype.fnMove=function(event) {
+        var ev=event||window.event;
+        this.odiv.style.left=ev.clientX-this.disX+'px';
+        this.odiv.style.top=ev.clientY-this.disY+'px';
+    }
+    fnDraw.prototype.fnUp=function() {
+        document.onmousemove = null;
+        document.onmouseup = null;
+    }
+    
+    function limitDraw(id) {
+        fnDraw.call(this,id);
+    }
+
+    for(var i in fnDraw.prototype){
+        limitDraw.prototype[i]=fnDraw.prototype[i];
+    }
+    limitDraw.prototype.fnMove=function (event) {
+        var ev=event||window.event;
+        var l=ev.clientX-this.disX;
+        var t=ev.clientY-this.disY;
+        if(l<0){
+            l=0;
+        }else if(l>document.documentElement.clientWidth-this.odiv.width){
+            l=document.documentElement.clientWidth-this.odiv.offsetWidth;
+        }
+        if(t<0){
+            t=0;
+        }else if(t>document.documentElement.clientHeight-this.odiv.offsetHeight){
+            t=document.documentElement.clientHeight-this.odiv.offsetHeight;
+        }
+        this.odiv.style.left=l+'px';
+        this.odiv.style.top=t+'px';
+    }
+</script>
+</body>
+</html>
