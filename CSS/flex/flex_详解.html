@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 500px;
+            height: 400px;
+            display: flex;
+            background: gainsboro;
+            /*flex-direction: row;*/
+            /*默认值，横向排列*/
+            /*flex-direction: column;*/
+            /*竖向排列*/
+            /*flex-direction: inherit;*/
+            /*flex-direction: row-reverse;*/
+            /*横向反向排列*/
+            /*flex-direction: column-reverse;*/
+            /*竖向反向排列*/
+            /*flex-wrap: nowrap;*/
+            /*默认值，不换行,装不下的话会将里面的内容自动缩小*/
+            flex-wrap: wrap;
+            /*换行*/
+            /*flex-wrap: wrap-reverse;*/
+            /*换行，反向换行*/
+            /*justify-content: flex-start;*/
+            /*执行在主轴上的对齐方式，，flex-start为默认值，从左边依次排列*/
+            /*justify-content: flex-end;*/
+            /*靠右排列*/
+            /*justify-content: center;*/
+            /*居中排列*/
+            /*justify-content: space-around;*/
+            /*平分分布，每两个之间的距离是最边上的两倍*/
+            /*justify-content: space-between;*/
+            /*两边靠齐，中间的平均分*/
+            /*align-items: flex-start;*/
+            /*执行在交叉轴上的对齐方式，以交叉轴起点对齐*/
+            /*align-items: flex-end;*/
+            /*以交叉轴终点对齐*/
+            /*align-items: center;*/
+            /*以交叉轴中点对齐*/
+            /*align-items: baseline;*/
+            /*以第一行文本的基线对齐*/
+            /*align-items: stretch;*/
+            /*不设置高度的情况下，会被拉伸充满整个高度 设置了高度则不起作用*/
+
+
+
+            /*align-content: center;*/
+            /*align-content必须在可换行的基础上，多行即为多轴*/
+            /*以交叉轴的中点对齐，也就是上下居中对齐，相互之间没有缝隙*/
+            /*align-content: stretch;*/
+            /*默认值，没有高度的话，轴线占满整个交叉轴，也就是高度平分，没有缝隙*/
+            /*有高度的话，从交叉轴上面开始，缝隙按照行数平分*/
+            /*align-content: flex-end;*/
+            /*以交叉轴下面开始，相互之间没有缝隙*/
+            /*align-content: flex-start;*/
+            /*以交叉轴上面开始，相互之间没有缝隙*/
+            /*align-content: space-around;*/
+            /*纵轴方向上平分，跟边缘的距离比两者之间距离大一倍*/
+            /*align-content: space-between;*/
+            /*上下平分，上下都挨边*/
+        }
+        .div1,.div2{
+            width: 98px;
+            height: 98px;
+            background: hotpink;
+            border: 1px solid black;
+            font-size: 30px;
+            /*line-height: 98px;*/
+            text-align: center;
+        }
+        .div100{
+            flex-grow: 2;
+        }
+        /*阮一峰http://www.ruanyifeng.com/blog/2015/07/flex-examples.html*/
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="div1 div100">div1</div>
+    <div class="div2">div2</div>
+    <div class="div2">div3</div>
+    <!--<div class="div2" style="height: 80px ;font-size:12px">div4</div>-->
+    <!--<div class="div2" style="height: 100px ;font-size:30px">div5</div>-->
+    <!--<div class="div2" style="height: 60px; font-size:20px">div6</div>-->
+    <div class="div2">div7</div>
+    <!--<div class="div2">div8</div>-->
+    <!--<div class="div2">div9</div>-->
+    <!--<div class="div2">div10</div>-->
+    <!--<div class="div2">div11</div>-->
+    <!--<div class="div2">div12</div>-->
+    <!--<div class="div2">div12</div>-->
+</div>
+</body>
+</html>
