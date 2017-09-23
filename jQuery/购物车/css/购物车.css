@@ -48,19 +48,20 @@ h2{
     color: #666666;
     margin-bottom: 10px;
 }
-.all{
-    width: 122px;
+.all_box{
+    width: 60px;
     height: 18px;
     margin-left: 11px;
     float: left;
 }
-#all{
+.all{
     margin-right: 8px;
 }
 .goods{
     width: 122px;
     height: 18px;
     float: left;
+    margin-left: 60px;
 }
 .price,.num,.sum,.play{
     width: 80px;
@@ -106,6 +107,9 @@ h2{
 }
 .subtotal{
     width: 100px;
+    height: 26px;
+    line-height: 26px;
+    background: pink;
     float: left;
 }
 .store1_goods{
@@ -220,7 +224,7 @@ h2{
 }
 .keys .nums{
     float: left;
-    width: 44px;
+    width: 43px;
     height: 20px;
     border-top:0 ;
     border-bottom:0 ;
@@ -273,12 +277,71 @@ h2{
     overflow: hidden;
     cursor: pointer;
 }
-
-
-
-
-
-
+.bot{
+    width: 988px;
+    height: 50px;
+    border: 1px solid #F0F0F0;
+    margin: 20px auto;
+}
+.bot .all_box{
+    margin-top: 14px;
+}
+.bot .all_box span{
+    color: #666666;
+}
+.bot_del,.bot_remove,.offline{
+    line-height: 52px;
+    float: left;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #666666;
+    cursor: pointer;
+}
+.bot .bot_right{
+    width: 400px;
+    height: 50px;
+    float: right;
+    position: relative;
+}
+.bot .bot_right .all_nums{
+    width: 100px;
+    height: 50px;
+    line-height: 25px;
+    overflow: hidden;
+    font-size: 13px;
+    color: #666666;
+    float: left;
+}
+.bot .bot_right .all_nums span{
+    color: #E64346;
+}
+.bot .bot_right .all_price{
+    font-size: 13px;
+    color: #666666;
+    height: 22px;
+    line-height: 22px;
+    float: left;
+    width: 160px;
+    text-align: center;
+}
+.bot .bot_right .all_price a,span{
+    font-size: 15px;
+    color: #E64346;
+}
+.bot .bot_right .statement{
+    width: 96px;
+    height: 52px;
+    background:#E64346 ;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 52px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+}
 
 
 

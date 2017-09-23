@@ -3,7 +3,7 @@
  */
 $(function(){
     //点击全选
-    $("#all").click(function(){
+    $(".all").click(function(){
         if($(this).prop("checked")){
             $(".goods_every").addClass("goods_checked").find("input[type=checkbox]").prop("checked",true);
             $(".store1_title").find("input[type=checkbox]").prop("checked",true);
@@ -12,55 +12,92 @@ $(function(){
             $(".store1_title").find("input[type=checkbox]").prop("checked",false);
         }
     });
+
     //点击店铺选择
-    $(".store1_title input").click(function () {
+
+    $(".store1_check").click(function () {
         if ($(this).prop("checked")){
             $(this).parents(".store1").find(".goods_every").addClass("goods_checked").find("input").prop("checked",true);
+            if($(".store1_check").length==$(".store1_check:checked").length){
+                $(".all").prop("checked",true)
+            }else {
+                $(".all").prop("checked",false)
+            }
         }else{
             $(this).parents(".store1").find(".goods_every").removeClass("goods_checked").find("input").prop("checked",false);
+            $(".all").prop("checked",false);
         }
     });
     //点击每一项选择
-    $(".every input").click(function () {
-        if ($(".every input").prop("checked")){
-            $(this).parents(".goods_every").addClass("goods_checked");
-        }else{
-            $(this).parents(".goods_every").removeClass("goods_checked");
+    $(".every_check").click(function () {
+        var a=$(this).parents(".store1").find(".every_check");//店铺商品数
+        var b=$(this).parents(".store1").find(".every_check:checked");//店铺内被选中的商品数
+        var c=$(this).parents(".store1").find(".store1_check");//店铺全选按钮
+         if ($(this).prop("checked")){
+        $(this).parents(".goods_every").addClass("goods_checked");
+    }else{
+        $(this).parents(".goods_every").removeClass("goods_checked");
+    }
+        if (a.length== b.length){
+            c.prop("checked",true);
+            if($(".store1_check").length==$(".store1_check:checked").length){
+                $(".all").prop("checked",true)
+            }else {
+                $(".all").prop("checked",false)
+            }
+        } else {
+            c.prop("checked",false)
         }
+        price2($(this));
+
     });
     //右键点击
-    var nums=1;
 
     $(".minus").click(function () {
-        nums++;
-        var price_sum=$(this).parents(".goods_quantity").siblings(".goods_sum").find(".money_sum").find("a");
-        var price_every=$(this).parents(".goods_quantity").siblings(".goods_price").find("a");
-        // alert(price_every.html())
-        if (nums>1){
+        var nums=$(this).siblings(".nums").val();
+        if (nums>=1){
             $(this).siblings(".plus").css("color","#666666");
-        }else if (nums<=1){
-            nums=1;
-            $(this).siblings(".plus").css({"color":"#E9E9E9","disabled":"disabled"})
+            nums ++;
         }
-        $(this).siblings(".nums").val(nums);
-        price_sum.html((price_every.html()*nums).toFixed(2));
+        $(this).siblings(".nums").val(parseInt(nums));
+        price1($(this))
     });
     //左键点击
     $(".plus").click(function () {
-        nums--;
-        var price_sum=$(this).parents(".goods_quantity").siblings(".goods_sum").find(".money_sum").find("a");
-        var price_every=$(this).parents(".goods_quantity").siblings(".goods_price").find("a");
-        if (nums<=1) {
-            nums=1;
+        var nums=$(this).siblings(".nums").val();
+        if (nums<=2) {
             $(this).css({"color": "#E9E9E9"});
+            // nums=2;
+            nums = 1;
+        } else {
+            nums --;
         }
         $(this).siblings(".nums").val(nums);
-        price_sum.html((price_every.html()*nums).toFixed(2));
+        price1($(this))
     });
+    //商品价格
+    function price1(btn) {
+        var unit_price=btn.parents(".goods_every").find(".goods_price a").html();
+        var nums=btn.siblings(".nums").val();
+        var price1=btn.parents(".store1_goods_cont").find(".unit_price");
+        console.log(nums);
+        price1.html((unit_price*nums).toFixed(2))
+    }
+    //店铺商品价格
+    function price2(d) {
+        var sum=0;
+        d.parents(".store1_goods").find(".every_check").each(function () {
+            if ($(this).prop("checked")){
+                 var price= $(this).parents(".goods_every").find(".unit_price").html();
+                        //.css("background","red");
+                 console.log(price);
+                // sum=sum+price;
 
+            }
+            // $(this).parents(".store1_cont").find(".subtotal").html(sum)
 
-
-
+        })
+    }
 
 
 
