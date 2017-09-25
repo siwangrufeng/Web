@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>结构性元素</title>
+</head>
+<body>
+<!--header标签定义文档的页眉，通常是一些引导和导航信息。它不局限于写在网页头部，也可以写在网页内容里面。
+通常header标签至少包含（但不局限于）一个标题标记（h1-h6），还可以包括hgroup标签，还可以包括表格内容、
+标识、搜索表单、nav导航等。-->
+<header>
+    <!--nav标签代表页面的一个部分，是一个可以作为页面导航的链接组，
+    其中的导航元素链接到其它页面或者当前页面的其它部分，使html代码在语义化方面更加精确，
+    同时对于屏幕阅读器等设备的支持也更好。-->
+    <nav>
+        <ul>
+            <li><a href="#html5">HTML5文章介绍</a></li>
+            <li><a href="#css3">CSS3文章介绍</a></li>
+            <li><a href="#jquery">jQuery文章介绍</a></li>
+        </ul>
+    </nav>
+</header>
+<!--article元素代表文档、页面或应用程序中独立的、完整的、可以独自被外部引用的内容。
+它可以是一篇博客或报刊中的文章、一篇论坛帖子、一段用户评论或独立的插件，或其他任何独立的内容。
+除了内容部分，一个article元素通常有它自己的标题（一般放在一个header元素里面），
+有时还有自己的脚注。-->
+<article>
+    <header>
+        <!--hgroup标签是对网页或区段section的标题元素（h1-h6）进行组合。-->
+        <hgroup>
+            <h1>article元素的使用方法</h1>
+            <h2>HTML 5的革新</h2>
+        </hgroup>
+        <p>发表日期:2010/10/10</p>
+    </header>
+    <p>article元素时什么？怎么使用article元素...</p>
+    <section>
+        <h2>评论</h2>
+        <article>
+            <header>
+                <h3>发表者：shenmiweiyi</h3>
+                <p>
+                    1小时前
+                </p>
+            </header>
+            <p>这篇文章很不错啊，顶一下！</p>
+        </article>
+        <article>
+            <header>
+                <h3>发表者：神秘唯一</h3>
+
+                <p>
+                    1小时前
+                </p>
+            </header>
+            <p>这篇文章很不错啊，对article解释的很详细</p>
+        </article>
+    </section>
+</article>
+<!--aside标签用来装载非正文的内容，被视为页面里面一个单独的部分。它包含的内容与页面的主要内容是分开的，
+可以被删除，而不会影响到网页的内容、章节或是页面所要传达的信息。例如广告，成组的链接，侧边栏等等。aside和内容有关，但是并不是内容的一部分-->
+<aside>
+    <h1>作者简介</h1>
+
+    <p>汇杰广场807教室</p>
+</aside>
+<!--figure是作为内容的一部分，但是它所在的位置不会影响内容的表达-->
+<figure>
+    <img src="img.gif" alt="figure标签" title="figure标签"/>
+    <figcaption>小狗的照片</figcaption>
+</figure>
+<!--footer标签定义section或document的页脚，包含了与页面、文章或是部分内容有关的信息，比如说文章的作者或者日期。-->
+<footer>
+    © gerry.zhu 世界和平！
+</footer>
+</body>
+</html>

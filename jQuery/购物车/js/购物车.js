@@ -159,7 +159,7 @@ $(function(){
             if($(this).html()==""){
                 i=0;
             }else {
-                i=parseFloat($(this).html())
+                i=parseFloat($(this).html());
                 console.log(i)
             }
             num=num+i;
