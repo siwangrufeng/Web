@@ -1,10 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+<head lang="en">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>常用的语义性元素</title>
 </head>
 <body>
+<!--Internet Explorer 9+、Firefox、Opera、Chrome 和 Safari 支持 <mark> 标签。
+ 注意：Internet Explorer 8 及更早版本不支持 mark 标签。-->
+<p>I
+    <mark>Love</mark>
+    You!
+</p>
 
+<!--IE 10、Firefox、Opera、Chrome 和 Safari 6 支持 <progress> 标签。
+注释：IE 9 或者更早版本的 IE 浏览器不支持 <progress> 标签。-->
+Downloading progress:
+<progress value="100" max="100">
+</progress>
+
+<!--目前所有主流浏览器都不支持 time标签。-->
+<p>We open at
+    <time>10:00</time>
+    every morning.
+</p>
+<p>I have a date on
+    <time datetime="2015-03-08">全国妇女的节日</time>
+</p>
+<!--目前，只有 Chrome 和 Safari 6 支持 details 标签。-->
+<!--summary 标签为 details 元素定义一个可见的标题。 当用户点击标题时会显示出详细信息。
+目前，只有 Chrome 和 Safari 6 支持 summary 标签。-->
+<details>
+    <summary>Copyright 1999-2011.</summary>
+    <p> - by Refsnes Data. All Rights Reserved.</p>
+
+    <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+</details>
+<!--IE 10、Firefox、Opera 和 Chrome 支持 <datalist> 标签。
+注释：IE 9 和更早版本的 IE 浏览器 以及 Safari 不支持 <datalist> 标签。-->
+<input list="browsers">
+<datalist id="browsers">
+    <option value="Internet Explorer">
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+</datalist>
+
+<!--标签定义 ruby 注释-->
+<!--IE 9+、Firefox、Opera、Chrome 和 Safari 支持 ruby 标签。
+注释：IE 8 或更早版本的 IE 浏览器不支持 ruby 标签。-->
+<ruby>
+    漢
+    <rt> ㄏㄢˋ</rt>
+</ruby>
+
+<!--目前主流浏览器并不支持 menu标签。-->
+<menu>
+    <li><input type="checkbox"/>RED</li>
+    <li><input type="checkbox"/>BLUE</li>
+</menu>
+
+<!--目前，主流浏览器都不支持 <command> 标签。只有 IE 9 支持 command 标签-->
+<command type="command" label="save" onclick="save()">Save</command>
 </body>
-</html>
+<html>
