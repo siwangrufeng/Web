@@ -10,14 +10,21 @@ $(function(){
     //点击全选
     $(".all").click(function(){
         if($(this).prop("checked")){
+            $(".all").prop("checked",true);
             $(".goods_every").addClass("goods_checked").find("input[type=checkbox]").prop("checked",true);
             $(".store1_title").find("input[type=checkbox]").prop("checked",true);
+            // price2($(".store1_check"))
+            price5();
         }else{
+            $(".all").prop("checked",false);
             $(".goods_every").removeClass("goods_checked").find("input[type=checkbox]").prop("checked",false);
             $(".store1_title").find("input[type=checkbox]").prop("checked",false);
         }
         numcheck();
-        price4();
+
+        $(".store1_check").each(function () {
+            price3($(this))
+        })
     });
 
     //点击店铺选择
@@ -76,9 +83,14 @@ $(function(){
         $(this).siblings(".nums").val(parseInt(nums));
         price1($(this));
         if ($(this).parents(".goods_every").find(".every_check").prop("checked")){
-        price2($(this).parents(".goods_every").find(".every_check"))
+            price2($(this).parents(".goods_every").find(".every_check"))
+            numcheck()
+            price4()
         }
-        price4()
+
+
+
+
     });
 
     //左键点击
@@ -94,9 +106,11 @@ $(function(){
         $(this).siblings(".nums").val(nums);
         price1($(this));
         if ($(this).parents(".goods_every").find(".every_check").prop("checked")){
-            price2($(this).parents(".goods_every").find(".every_check"))
+            price2($(this).parents(".goods_every").find(".every_check"));
+            numcheck();
+            price4()
         }
-        price4()
+
     });
 
 
@@ -146,28 +160,49 @@ $(function(){
         var num=0;
         $(".every_check").each(function () {
             if($(this).prop("checked")){
-                num++
+                var num1=parseInt($(this).parents(".goods_every").find(".nums").val());
+                num=num+num1
             }
         });
         $(".all_nums").find("span").html(num);
     }
 
 //所有选中商品价格
-    function price4(e) {
+    function price4() {
         var num=0;
         $(".subtotal").each(function () {
             if($(this).html()==""){
                 i=0;
             }else {
                 i=parseFloat($(this).html());
-                console.log(i)
             }
             num=num+i;
         });
-        $(".all_price").find("span").html(num.toFixed(2));
-
+        if (num==0){
+            num="00.00";
+            $(".all_price").find("span").html(num);
+        }else {
+            $(".all_price").find("span").html(parseFloat(num).toFixed(2));
+        }
     }
 
+    function price5() {
+        var num=0;
+        $(".unit_price").each(function () {
+            if($(this).html()==""){
+                i=0;
+            }else {
+                i=parseFloat($(this).html());
+            }
+            num=num+i;
+        });
+        if (num==0){
+            num="00.00";
+            $(".all_price").find("span").html(num);
+        }else {
+            $(".all_price").find("span").html(parseFloat(num).toFixed(2));
+        }
+    }
 
 
 });
