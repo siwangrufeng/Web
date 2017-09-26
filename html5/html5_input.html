@@ -55,5 +55,45 @@
     <input type="submit">
     <br>
 </form>
+<!--新增input属性-->
+<!--autocomplete 规定 <input> 元素输入字段是否应该启用自动完成功能。-->
+<!--autofocus 规定当页面加载时 <input> 元素应该自动获得焦点。-->
+<!--form 规定 <input> 元素所属的一个或多个表单。-->
+<!--新增的表单重写属性-->
+<!--formaction：规定当表单提交时处理输入控件的文件的 URL。-->
+<!--formenctype：规定当表单数据提交到服务器时如何编码。-->
+<!--formmethod：定义发送表单数据到 action URL 的 HTTP 方法。-->
+<!--formnovalidate：formnovalidate 属性覆盖 <form> 元素的novalidate 属性。-->
+    <!--formtarget：规定表示提交表单后在哪里显示接收到响应的名称或关键词。-->
+    <!--除了formnovalidate属性，其它属性都是只针对 type=“submit”和 type=“image”。并不绝对-->
+    <!--新增的height和width属性规定 <input>元素的高度、和宽度。(只针对type=“image”)。-->
+<form action="LoginServlet" method="get">
+    用户名：<input type="text" name="username" autocomplete="on"><br>
+    <!--autocomplete自动补齐-->
+    密码：<input type="text" name="password" autocomplete="off"><br>
+    <input type="submit" value="登录">
+</form>
+<button autofocus="on">点我</button>
+<!--获取焦点，高亮，吸引注意力-->
+<form action="#" method="get">
+    请输入网址：<input type="url" list="url_list" name="weblink">
+    <datalist id="url_list">
+        <option label="新浪" value="http://www.sina.com.cn"></option>
+        <!--label可以理解为加一个类似标签的东西 平时一般写的labelfor-->
+        <option label="搜狐" value="http://www.sohu.com"></option>
+        <option label="网易" value="http://www.163.com"></option>
+    </datalist>
+    <input type="submit" value="提交">
+</form>
+<!--list 属性引用 <datalist> 元素，其中包含 <input> 元素的预定义选项。-->
+    <!--新增的min、max和step属性。-->
+    <!--min:规定输入框所输入的最小值。-->
+    <!--max:规定输入框所输入的最大值。-->
+    <!--step:为输入框规定合法的数字间隔。-->
+    <!--multiple 属性规定允许用户输入到 <input> 元素的多个值。-->
+    <!--pattern 规定用于验证 <input> 元素的值的正则表达式。-->
+    <!--placeholder 规定可描述输入 <input> 字段预期值的简短的提示信息 。-->
+    <!--required 规定必需在提交表单之前填写输入字段。-->
+
 </body>
 </html>

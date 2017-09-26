@@ -106,6 +106,73 @@
             transform: rotate(-45deg);
             transition: 0.5s;
         }
+        .navbar-default .navbar-nav > li:nth-child(1) {
+            position: relative;
+        }
+
+        .navbar-default .navbar-nav > li .triangle {
+            min-width: 240px;
+            height: 10px;
+            position: relative;
+        }
+
+        .navbar-default .navbar-nav > li .triangle span {
+            display: block;
+            width: 0;
+            height: 0;
+            border: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 10px solid white;
+            position: absolute;
+            left: 30px;
+        }
+        .navbar-default .navbar-nav li:nth-child(1):hover .float{
+            display: block;
+        }
+        .navbar-default .navbar-nav > li .float {
+            min-width: 240px;
+            min-height: 220px;
+            position: absolute;
+            left: -10px;
+            display: none;
+            /*z-index: 5;*/
+        }
+        .navbar-default .navbar-nav > li .float ul{
+            min-width: 240px;
+            min-height: 210px;
+        }
+        .navbar-default .navbar-nav > li .float .float_li {
+            min-width: 240px;
+            min-height: 70px;
+            background: white;
+            padding: 15px 20px 8px;
+        }
+        .navbar-default .navbar-nav > li .float .float_li:nth-child(1){
+            border-radius: 4px 4px 0 0;
+        }
+        .navbar-default .navbar-nav > li .float .float_li:last-child{
+            border-radius: 0 0 4px 4px;
+        }
+        .navbar-default .navbar-nav > li .float .float_li a{
+            display: block;
+            min-height: 28px;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 28px;
+            color: black;
+        }
+        .navbar-default .navbar-nav > li .float .float_li a:hover{
+            text-decoration: none;
+            color: #E35D4D;
+        }
+        .navbar-default .navbar-nav > li .float .float_li p{
+            min-height: 20px;
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            margin-bottom: 0;
+        }
         header .container-fluid{
             padding: 0;
         }
@@ -397,7 +464,23 @@
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="#">产品</a>
-
+                            <div class="float">
+                                <div class="triangle"><span></span></div>
+                                <ul>
+                                    <li class="float_li">
+                                        <a href="">经典版</a>
+                                        <p>经典，可靠</p>
+                                    </li>
+                                    <li class="float_li">
+                                        <a href="">轻骑</a>
+                                        <p>城市随处可骑行</p>
+                                    </li>
+                                    <li class="float_li">
+                                        <a href="">智能锁</a>
+                                        <p>摩拜制造，天生靠得住</p>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                         <li><a href="#">摩拜科技</a></li>
                         <li><a href="#">城市</a></li>
