@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #myCanvas{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="400">
+    <!--定义一个画布，取id 规定宽高，相当于在该位置占用一块地方作为画布-->
+    您的浏览器不支持canvas元素，请更新或更换你的浏览器
+    <!--当浏览器不支持canvas时，这句话会显示-->
+</canvas>
+</body>
+<script>
+    window.onload=function(){
+        var canvas=document.getElementById("myCanvas");
+        var context=canvas.getContext("2d");
+        context.beginPath();         //必写 开始绘制路径
+        context.moveTo(50,100);//线的起点 left top
+        context.lineTo(300,100);
+        context.arcTo(350,100,350,250,50);
+        context.lineTo(350,500);//线的终点
+        context.lineWidth = "10";//线的宽度
+        context.stroke();
+    }
+</script>
+</html>

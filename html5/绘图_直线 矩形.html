@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #myCanvas{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="400">
+    <!--定义一个画布，取id 规定宽高，相当于在该位置占用一块地方作为画布-->
+    您的浏览器不支持canvas元素，请更新或更换你的浏览器
+    <!--当浏览器不支持canvas时，这句话会显示-->
+</canvas>
+</body>
+<script>
+    window.onload = function(){
+        var canvas = document.getElementById("myCanvas");   //必写 获取canvas
+        var context = canvas.getContext("2d"); //必写 创建2d环境
+        context.fillStyle = "red";            //给矩形填充颜色
+        context.fillRect(50,10,100,100);       // 创建矩形 left top width height
+
+
+        context.beginPath();         //必写 开始绘制路径
+        context.moveTo(50,canvas.height/2+30);//线的起点 left top
+        context.lineTo(500,canvas.height/2+30);//线的终点
+        context.lineWidth = "15";//线的宽度
+        context.lineCap = "butt";//规定两端端点的样式，不变
+        context.strokeStyle = "#00ff00";//规定线的颜色
+        context.stroke();//使绘制路径显示出来，不加不显示，不规定颜色的情况下，默认为黑色
+
+        context.beginPath();         //开始绘制路径
+        context.moveTo(50,canvas.height/2+50);
+        context.lineTo(500,canvas.height/2+50);
+        context.lineWidth = "15";
+        context.lineCap = "round";//规定两端端点的样式，向外突出圆
+        context.strokeStyle = "#000000";
+        context.stroke();
+
+        context.beginPath();         //开始绘制路径
+        context.moveTo(50,canvas.height/2+70);
+        context.lineTo(500,canvas.height/2+70);
+        context.lineWidth = "15";
+        context.lineCap = "square";//规定两端端点的样式，向外突出矩形
+        context.strokeStyle = "#e3e3e3";
+        context.stroke()
+
+    }
+</script>
+</html>
+<!--Canvas绘制步骤-->
+<!--–在html5页面中添加canvas元素，定义id属性值以便接下来调用。-->
+<!--–使用id寻找页面中的canvas元素-->
+<!--–通过canvas元素的getContext方法来获取其上下文（Context），-->
+<!--即创建Context对象，以获取允许进行绘制的2D环境。-->
+<!--–使用JavaScript脚本来进行绘制HarmonyWin Confidential– Internal/Restricted/HighlyRestricted-->
+<!--<canvas id="myCanvas" width="578" height="200"></canvas>-->
+<!--var c=document.getElementById(“myCanvas”);-->
+<!--var context=c.getContext(“2d”);-->
+<!--context.fillStyle=‘#ff0000’;-->
+<!--context.fillRect(50,25,100,50);-->
+
+<!--绘制直线相关的方法-->
+<!--•绘制直线的相关属性   HarmonyWin Confidential– Internal/Restricted/HighlyRestricted-->
+<!--beginPath()    定义了一个新的路径绘制动作的开始。-->
+<!--moveTo()       为指定点创建了一个新的子路径，这个点就变成了新的上下文点。-->
+<!--我们可以把moveTo()方法看成用来定位我们的绘图鼠标用的。-->
+<!--lineTo()       以上下文点为起点，到方法参数中指定的点之间画一条直线。-->
+<!--stroke()       为所画的线赋予颜色，并使其可见。如果没有特别的指定颜色的-->
+<!--话，则默认使用黑色画直线。-->
+<!--lineWidth      直线的宽度。-->
+<!--strokeStyle    直线的颜色。-->
+<!--直线端点样式    HTML5 canvas支持3种直线的端点样式，包括：butt，round，和-->
+<!--square。 设定端点样式是用lineCap属性设定。缺省情况下，将-->
+<!--使用butt样式。-->
