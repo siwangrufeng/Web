@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #myCanvas{
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.beginPath();
+            context.rect(10,150,200,100);
+            context.fillStyle="blue";
+            context.lineWidth=5;
+            context.strokeStyle="red";
+            context.shadowColor="black";
+            context.shadowBlur=20;
+            //阴影模糊度，越大越模糊
+            context.shadowOffsetX=10;
+            //x轴偏移量
+            context.shadowOffsetY=10;
+//            context.globalAlpha = .2;
+            //全局的透明度
+            context.fill();
+            context.stroke();
+
+            //两个使图形显示出来的要放在最后面
+
+            //添加一个阴影会使后面所有图形都有阴影 前面没有，想去掉就加上个透明
+
+
+            context.beginPath();
+            context.arc(350,200,50,0,2*Math.PI,true);
+            context.fillStyle="pink";
+            context.lineWidth="5";
+            context.strokeStyle="hotpink";
+            context.shadowColor="transparent";
+            context.fill();
+            context.stroke();
+        }
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="400">
+    您的浏览器不支持canvas元素，请更新或更换你的浏览器
+</canvas>
+</body>
+</html>

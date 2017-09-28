@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #myCanvas{
+            border:1px solid #000000;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+
+            context.beginPath();
+            context.arc(200,200,150,0,2*Math.PI,true);
+            context.fillStyle= "pink";
+            context.lineWidth=2;
+            context.strokeStyle="black";
+            context.fill();
+            context.stroke();
+
+            context.beginPath();
+            context.arc(140,150,40,0,2*Math.PI,true);
+            context.fillStyle= "black";
+            context.lineWidth=2;
+            context.fill();
+
+            context.beginPath();
+            context.arc(260,150,40,0,2*Math.PI,true);
+            context.fillStyle= "black";
+            context.lineWidth=2;
+            context.fill();
+
+            context.beginPath();
+            context.arc(120,130,5,0,2*Math.PI,true);
+            context.fillStyle= "white";
+            context.lineWidth=2;
+            context.fill();
+
+            context.beginPath();
+            context.arc(240,130,5,0,2*Math.PI,true);
+            context.fillStyle= "white";
+            context.lineWidth=2;
+            context.fill();
+
+            context.beginPath();
+            context.moveTo(150,300);
+            context.bezierCurveTo();
+            context.lineWidth = "10";
+            context.strokeStyle="red";
+            context.stroke();
+        }
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="400">
+    您的浏览器不支持canvas元素，请更新或更换你的浏览器
+</canvas>
+</body>
+</html>

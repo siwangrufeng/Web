@@ -20,17 +20,16 @@
             context.fillStyle = "red";            //给矩形填充颜色
             context.fillRect(50,0,100,100);       // 创建矩形 left top width height
             //fillRect是指带填充的矩形
-
             context.beginPath();
             context.rect(10,150,200,100);
             //直接创建矩形，不带填充
             context.fillStyle="blue";
             //填充颜色
-            context.fill();
-            //用.rect（），需要用.fill（）调用颜色填充，跟.stroke同理
-            context.lineWidth=5;
             context.strokeStyle="red";
             //线的颜色
+            //用.rect（），需要用.fill（）调用颜色填充，跟.stroke同理
+            context.lineWidth=5;
+            context.fill();
             context.stroke();
 
             //圆形
@@ -38,42 +37,42 @@
             context.arc(350,200,50,0,2*Math.PI,true);
             //前两个值表示圆心位置，第三个值半径，第四第五代表画一整圈，0.5代表90°，1代表180°，0和2是同一个位置，以此类推，第六个值true代表逆时针，false代表顺时针，默认false
             context.fillStyle="pink";
-            context.fill();
             context.lineWidth="5";
             context.strokeStyle="hotpink";
+            context.fill();
             context.stroke();
 
 
             context.beginPath();
             context.arc(500,200,50,0,1*Math.PI,true);
             context.fillStyle="pink";
-            context.fill();
             context.lineWidth="5";
             context.strokeStyle="hotpink";
+            context.fill();
             context.stroke();
 
             context.beginPath();
             context.arc(650,200,50,0,1*Math.PI,false);
             context.fillStyle="pink";
-            context.fill();
             context.lineWidth="5";
             context.strokeStyle="hotpink";
+            context.fill();
             context.stroke();
 
             context.beginPath();
             context.arc(500,350,50,0,.5*Math.PI,true);
             context.fillStyle="pink";
-            context.fill();
             context.lineWidth="5";
             context.strokeStyle="hotpink";
+            context.fill();
             context.stroke();
 
             context.beginPath();
             context.arc(650,350,50,0,.5*Math.PI,false);
             context.fillStyle="pink";
-            context.fill();
             context.lineWidth="5";
             context.strokeStyle="hotpink";
+            context.fill();
             context.stroke();
         }
     </script>

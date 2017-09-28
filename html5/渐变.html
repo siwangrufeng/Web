@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #myCanvas{
+            border:1px solid black;
+        }
+        #img{
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+
+            //线性渐变
+            var lingrad=ctx.createLinearGradient(0,0,200,200);
+            //前两个值四线性渐变的线的起点。后面为终点
+            lingrad.addColorStop(0,"red");
+            lingrad.addColorStop(1/7,"orange");
+            lingrad.addColorStop(2/7,"yellow");
+            lingrad.addColorStop(3/7,"#67FF9F");
+            lingrad.addColorStop(4/7,"cyan");
+            lingrad.addColorStop(5/7,"#4EA9FF");
+            lingrad.addColorStop(6/7,"#FA7EFF");
+            lingrad.addColorStop(1,"red");
+            //赋色，第一个为开始的地方，衔接下一个，比如0.5表示占一半
+            ctx.fillStyle=lingrad;
+            //将新建的对象作为颜色，赋给新创建的矩形
+            ctx.strokeStyle=lingrad;
+            //最好加上
+            ctx.fillRect(10,10,200,200);
+            //创建并填充矩形
+
+
+            //径向渐变
+            var radgrad=ctx.createRadialGradient(400,110,20,400,110,100);
+            radgrad.addColorStop(0,"red");
+            radgrad.addColorStop(.5,"blue");
+            radgrad.addColorStop(1,"black");
+            ctx.fillStyle=radgrad;
+            ctx.strokeStyle=radgrad;
+            ctx.fillRect(300,10,200,200);
+
+            function show(type){
+                var img=document.getElementById("img");
+                var imggrad=ctx.createPattern(img,type);
+                //type位置有repeat no-repeat repeat-x repeat-y
+                ctx.fillStyle=imggrad;
+                ctx.fillRect(600,10,200,200);
+                //不能控制图片大小
+            }
+            show("repeat");
+
+
+        }
+    </script>
+</head>
+<body>
+<img src="1.jpg" alt="" id="img">
+<canvas id="myCanvas" width="1000" height="400">
+    您的浏览器不支持canvas元素，请更新或更换你的浏览器
+</canvas>
+</body>
+</html>
