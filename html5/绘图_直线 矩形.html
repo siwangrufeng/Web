@@ -24,6 +24,8 @@
     window.onload = function(){
         var canvas = document.getElementById("myCanvas");   //必写 获取canvas
         var context = canvas.getContext("2d"); //必写 创建2d环境
+
+
         context.fillStyle = "red";            //给矩形填充颜色
         context.fillRect(50,10,100,100);       // 创建矩形 left top width height
 
@@ -50,8 +52,34 @@
         context.lineWidth = "15";
         context.lineCap = "square";//规定两端端点的样式，向外突出矩形
         context.strokeStyle = "#e3e3e3";
-        context.stroke()
+        context.stroke();
 
+        context.beginPath();
+        context.moveTo(99,150);
+        context.lineTo(149,50);
+        context.lineTo(199,150);
+        context.lineJoin="miter";
+        //线的加入方式，也就是连接方式。默认为miter，也就是尖角
+        context.lineWidth="25";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(239,150);
+        context.lineTo(289,50);
+        context.lineTo(339,150);
+        context.lineJoin="round";
+        //线的加入方式，也就是连接方式。圆角
+        context.lineWidth="25";
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(379,150);
+        context.lineTo(429,50);
+        context.lineTo(479,150);
+        context.lineJoin="bevel";
+        //线的加入方式，也就是连接方式。方角
+        context.lineWidth="25";
+        context.stroke();
     }
 </script>
 </html>

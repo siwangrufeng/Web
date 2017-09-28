@@ -24,6 +24,7 @@
     window.onload=function(){
         var canvas=document.getElementById("myCanvas");
         var context=canvas.getContext("2d");
+
         context.beginPath();         //必写 开始绘制路径
         context.moveTo(50,100);//线的起点 left top
         context.lineTo(300,100);
@@ -31,6 +32,49 @@
         context.lineTo(350,500);//线的终点
         context.lineWidth = "10";//线的宽度
         context.stroke();
+
+        context.beginPath();
+        context.moveTo(100,50);
+        context.lineTo(350,50);
+        context.arcTo(400,50,400,100,50);
+        context.moveTo(400,100);
+        context.lineTo(400,500);
+        context.lineWidth = "10";
+        context.strokeStyle="red";
+        context.stroke();
+
+//        二次贝塞尔曲线
+        context.beginPath();
+        context.moveTo(450,100);
+        context.quadraticCurveTo(550,0,650,200);
+//        根据每个点坐标描绘出一个曲线，自己可以在后面再加lineto 还有再加一条曲线来达到想要的效果
+        context.lineWidth = "5";
+        context.strokeStyle="pink";
+        context.stroke();
+
+//        三次贝塞尔曲线
+        context.beginPath();
+        context.moveTo(650,150);
+        context.bezierCurveTo(500,10,700,10,900,300);
+        //根据每个点坐标，描绘出曲线，后面可以加lineto 直线 二次曲线或者三次曲线来达到想要的效果
+        context.lineWidth = "5";
+        context.strokeStyle="green";
+        context.stroke();
+
+
+//        组合练习
+        context.beginPath();
+        context.moveTo(500,200);
+//        context.quadraticCurveTo(600,400,610,300);
+        context.bezierCurveTo(600,350,610,400,650,300);
+        context.bezierCurveTo(650,300,680,200,710,300);
+        context.bezierCurveTo(710,300,750,450,800,350);
+        context.lineTo(880,200);
+//
+        context.lineWidth = "5";
+        context.strokeStyle="blue";
+        context.stroke();
     }
+
 </script>
 </html>
