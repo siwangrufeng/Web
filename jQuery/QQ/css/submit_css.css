@@ -1,0 +1,224 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+}
+img{
+    border: 0;
+}
+li{
+    list-style: none;
+}
+ul{
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.myQQ{
+    width: 430px;
+    height: 330px;
+    /*margin: 200px auto;*/
+    background: rgba(235,242,249,1);
+}
+#container{
+    width: 430px;
+    height: 182px;
+    overflow: hidden;
+}
+#container #anitOut canvas{
+    width: 450px;
+    height: 220px;
+}
+header{
+    width: 430px;
+    height: 182px;
+    position: relative;
+    background:#00E1FF ;
+}
+header .header_img{
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    padding-top: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+header .header_img .iconfont{
+    display: inline-block;
+    width: 60px;
+    height: 70px;
+    font-size: 57px;
+    font-weight: lighter;
+}
+header .header_img span{
+    display: inline-block;
+    width: 80px;
+    height: 70px;
+    font-size: 48px;
+    font-family: Dotum;
+}
+header .header_right{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+header .header_right li{
+    display: inline-block;
+    color: white;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+header .header_right li:hover{
+    background: rgba(255,255,255,.1);
+}
+header .header_right li:last-child:hover{
+    background: rgb(212,64,39);
+}
+.main{
+    width: 430px;
+    height: 148px;
+}
+.main .main_logo{
+    width: 135px;
+    height: 148px;
+    float: left;
+}
+.main .main_logo .logo{
+    width: 135px;
+    height: 92px;
+    position: relative;
+}
+.main .main_logo .logo_box{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 12px;
+}
+.main .main_logo .logo_box img{
+    width: 80px;
+    height: 80px;
+}
+.main .main_logo .status{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    cursor: default;
+}
+.main .main_logo .status .status_window{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.main .main_logo .status .status_window .iconfont{
+    display: block;
+    width: 18px;
+    height: 18px;
+    font-size: 22px;
+    color: rgb(112,237,58);
+    margin-top: -2px;
+    margin-left: -1px;
+}
+.main .main_logo .status .status_ul{
+    width: 103px;
+    margin-top: 5px;
+    margin-left: 2px;
+    background: rgb(236,237,238);
+    display: none;
+    box-shadow: 0 0 5px rgba(0,0,0,.4);
+}
+.main .main_logo .status .status_ul li{
+    width: 103px;
+    height: 24px;
+    line-height: 24px;
+    position: relative;
+}
+
+.main .main_logo .status .status_ul li span{
+    display: inline-block;
+    width: 70px;
+    height: 24px;
+    position: absolute;
+    right: 0;
+    background: white;
+    padding-left: 10px;
+    font-size: 12px;
+    line-height: 24px;
+ }
+.main .main_logo .status .status_ul li b{
+    display: block;
+    width: 76px;
+    height: 1px;
+    background: #B7C3CC;
+    position: absolute;
+    right: 2px;
+    bottom: 0;
+}
+.main .main_logo .status .status_ul li img{
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+.main .main_logo .status .status_ul li .iconfont{
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+}
+.main .main_logo .status .status_ul li .online{
+    font-size: 22px;
+    color: rgb(112,237,58);
+}
+.main .main_logo .status .status_ul li .busy{
+    font-size: 15px;
+    color: rgb(247,81,55);
+}
+.main .main_logo .status .status_ul li .DNDST{
+    font-size: 21px;
+    color: rgb(247,81,55);
+}
+.main .main_logo .status .status_ul li .invisible{
+    font-size: 13px;
+    color: rgb(254,163,86);
+}
+.main .main_logo .status .status_ul li:hover{
+    background: rgb(0,155,219);
+}
+.main .main_logo .status .status_ul li:hover span{
+    background: rgb(0,155,219);
+}
+
+
+
+
+

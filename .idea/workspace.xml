@@ -22,62 +22,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="矩形 圆形.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/矩形 圆形.html">
+      <file leaf-file-name="submit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jQuery/QQ/submit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-33.294117">
-              <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
+            <state vertical-scroll-proportion="-14.176471">
+              <caret line="64" column="56" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CSS渐变.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/CSS渐变.html">
+      <file leaf-file-name="submit_css.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jQuery/QQ/css/submit_css.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.8235292">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.36708862">
+              <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="练习.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/练习.html">
+      <file leaf-file-name="浮动，变化.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CSS/浮动，变化.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.352941">
-              <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+            <state vertical-scroll-proportion="-10.294118">
+              <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="渐变.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/渐变.html">
+      <file leaf-file-name="submit_js.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jQuery/QQ/js/submit_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.147059">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="绘制图像.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/html5/绘制图像.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.764706">
-              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="75" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="绘制文字.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/html5/绘制文字.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5142405">
-              <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="217" column="31" selection-start-line="217" selection-start-column="31" selection-end-line="217" selection-end-column="31" />
+              <folding>
+                <element signature="e#79#158#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,6 +70,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -128,6 +112,12 @@
         <option value="$PROJECT_DIR$/html5/绘制图像.html" />
         <option value="$PROJECT_DIR$/html5/绘图_曲线.html" />
         <option value="$PROJECT_DIR$/html5/绘制文字.html" />
+        <option value="$PROJECT_DIR$/jQuery/QQ/landing.html" />
+        <option value="$PROJECT_DIR$/jQuery/QQ/css/submit_css.html" />
+        <option value="$PROJECT_DIR$/jQuery/QQ/css/submit_js.js" />
+        <option value="$PROJECT_DIR$/jQuery/QQ/submit.html" />
+        <option value="$PROJECT_DIR$/jQuery/QQ/js/submit_js.js" />
+        <option value="$PROJECT_DIR$/jQuery/QQ/css/submit_css.css" />
       </list>
     </option>
   </component>
@@ -137,8 +127,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="637" />
-    <option name="y" value="26" />
+    <option name="x" value="535" />
+    <option name="y" value="52" />
     <option name="width" value="927" />
     <option name="height" value="804" />
   </component>
@@ -195,7 +185,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="html5" />
+              <option name="myItemId" value="jQuery" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="哈哈哈" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="哈哈哈" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -210,13 +214,16 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\哈哈哈\html5" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\哈哈哈\jQuery\QQ\js" />
       <recent name="C:\Users\Administrator\Desktop\哈哈哈\bootstrap-3.3.7-dist\摩拜" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\哈哈哈\jQuery\QQ\js" />
+      <recent name="C:\Users\Administrator\Desktop\哈哈哈\html5" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -301,8 +308,8 @@
     <option name="totallyTimeSpent" value="18027000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="637" y="26" width="927" height="804" extended-state="0" />
-    <editor active="true" />
+    <frame x="535" y="52" width="927" height="804" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17563118" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -341,78 +348,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/html5/渐变.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/矩形 圆形.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/CSS渐变.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/渐变.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/矩形 圆形.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="37" selection-start-line="71" selection-start-column="37" selection-end-line="71" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/CSS渐变.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/练习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="34" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/html5/渐变.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/html5/绘图_曲线.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -701,10 +636,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/QQ/js/jquery-1.11.3.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/html5/绘制文字.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5142405">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+        <state vertical-scroll-proportion="-11.029411">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/QQ/font/demo_unicode.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27689874">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/QQ/img/smail.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/QQ/submit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.176471">
+          <caret line="64" column="56" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/QQ/js/submit_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="217" column="31" selection-start-line="217" selection-start-column="31" selection-end-line="217" selection-end-column="31" />
+          <folding>
+            <element signature="e#79#158#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/transition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.028481012">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/放大缩小.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.22626582">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CSS/浮动，变化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.294118">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery/QQ/css/submit_css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36708862">
+          <caret line="154" column="37" selection-start-line="154" selection-start-column="37" selection-end-line="154" selection-end-column="37" />
           <folding />
         </state>
       </provider>
