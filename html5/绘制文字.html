@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #myCanvas{
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+
+
+//            //实心文本
+//            ctx.font="italic 40px Arial";
+//            ctx.fillStyle="hotpink";
+//            ctx.fillText("你好！再见！",100,100);
+//
+//            //空心文本
+//            ctx.font="italic 60px Arial";
+//            ctx.strokeStyle="hotpink";
+//            ctx.strokeText("你好！再见！",100,200);
+//
+//            //描线文本
+//            ctx.font="italic 80px Arial";
+//            ctx.fillStyle="hotpink";
+//            ctx.strokeStyle="black";
+//            ctx.lineWidth=1;
+//            //线宽变化，向内扩，足够大会完全遮盖实心文本
+//            ctx.fillText("你好！再见！",100,300);
+//            ctx.strokeText("你好！再见！",100,300);
+
+            // 文本对齐属性开始
+            var x = 500;
+            var y = 200;
+            ctx.font = "italic 40px  Microsoft YaHei";
+            ctx.strokeStyle = 'blue';
+            ctx.lineWidth = 2; //设置描边的宽度
+            ctx.textAlign = "right";
+            //对齐方式，以画布的中心为准，注意left是把文本的左边与线对齐，而不是放在线左边
+            ctx.strokeText("Hello TuoWenHao!", x, y);
+
+            
+
+        }
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="400">
+    您的浏览器不支持canvas元素，请更新或更换你的浏览器
+</canvas>
+<!--绘制文本的方法-->
+<!--context.fillText(Text,x1, y1);-->
+<!--其中text是要绘制的文本，x1,y1是绘制文本的位置。-->
+
+
+
+<!--设置文本的字体、大小和样式-->
+<!--要设置字体、大小和样式，需要用到上下文对象的font属性。样式可以是normal, italic或bold。默认情况是normal。-->
+
+<!--设置文本颜色-->
+<!--文本的颜色用fillStyle属性设置。-->
+
+<!--描绘文本边缘-->
+<!--要描绘字体边缘的效果，要使用strokeText()方法替代fillText()，同时要用strokeStyle属性替代fillStyle属性。-->
+
+</body>
+</html>

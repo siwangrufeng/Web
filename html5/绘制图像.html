@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #myCanvas{
+            border:1px solid black;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var ctx = document.getElementById("myCanvas").getContext("2d");
+            var img=new Image();  //new一个图片对象
+            img.src="1.jpg";  //给图片对象的src属性附一个图片
+            img.onload=function(){  //要写.onload，图片加载完之后
+//                ctx.drawImage(img,10,10);
+                //将图片放置在画布中，第一个值是图片对象，第二三为在画布中的位置
+//                ctx.drawImage(img,10,10,200,200);
+                //第二三为在画布中的位置，第四五是指把图片压缩或放大到该尺寸
+                ctx.drawImage(img,200,200,200,100,50,50,400,200);
+                //第二三为对图片裁剪的位置，是相对图片的位置。三四为裁剪的大小。五六位将图片放在canvas的位置，相对画布的位置，七八是将裁剪好的图片缩放至该尺寸
+            }
+
+        }
+    </script>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="400">
+    您的浏览器不支持canvas元素，请更新或更换你的浏览器
+</canvas>
+</body>
+</html>

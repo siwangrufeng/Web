@@ -25,7 +25,7 @@
         var canvas=document.getElementById("myCanvas");
         var context=canvas.getContext("2d");
 
-        context.beginPath();         //必写 开始绘制路径
+        context.beginPath();         //必写 开始绘制路径 代表一个新的开始，如果不写，后面的属性会覆盖前面的
         context.moveTo(50,100);//线的起点 left top
         context.lineTo(300,100);
         context.arcTo(350,100,350,250,50);
