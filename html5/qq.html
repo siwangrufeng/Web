@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<input type="text" class="user" value="请输入QQ号"><br/>
+<input type="password" class="password" value="请输入密码"><br/>
+<input type="button" class="button" value="登陆">
+</body>
+<script>
+    $(function(){
+        $(".user").focus(function(){
+            var a =$(this).val();
+            if(a == this.defaultValue){
+                $(this).val("")
+            }
+        });
+        $(".user").blur(function(){
+            var a =$(this).val();
+            if(a==""){
+            $(this).val(this.defaultValue);
+            }
+                //defaultValue——默认value值
+        });
+        $(".password").focus(function(){
+            var a =$(this).val();
+            if(a == this.defaultValue){
+                $(this).val("")
+            }
+        });
+        $(".password").blur(function(){
+            var a =$(this).val();
+            if(a==""){
+                $(this).val(this.defaultValue);
+            }
+            //defaultValue——默认value值
+        });
+
+
+        $(".button").click(function(){
+            var text=$(".user").val().trim();      //trim去除前面空格，只能作为【判断条件】
+            if(text == ""){
+                alert("请输入正确的QQ号")
+            }else{
+                alert("稍后将进入QQ页面")
+            }
+        })
+
+
+    })
+</script>
+</html>

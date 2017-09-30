@@ -32,11 +32,18 @@ a{
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
+.all{
+    position: relative;
+}
 .myQQ{
     width: 430px;
     height: 330px;
     /*margin: 200px auto;*/
     background: rgba(235,242,249,1);
+    box-shadow:0 0 10px 1px rgba(0,0,0,.4);
+    border-radius: 3px;
+    position: absolute;
+    display: block;
 }
 #container{
     width: 430px;
@@ -62,6 +69,7 @@ header .header_img{
     top: 0;
     left: 0;
     width: 100%;
+    cursor: default;
 }
 header .header_img .iconfont{
     display: inline-block;
@@ -77,24 +85,25 @@ header .header_img span{
     font-size: 48px;
     font-family: Dotum;
 }
-header .header_right{
+.header_right{
     position: absolute;
     right: 0;
     top: 0;
+    cursor: default;
 }
-header .header_right li{
+.header_right li{
     display: inline-block;
     color: white;
-    cursor: pointer;
     width: 30px;
     height: 30px;
     text-align: center;
     line-height: 30px;
+    cursor: default;
 }
-header .header_right li:hover{
+.header_right li:hover{
     background: rgba(255,255,255,.1);
 }
-header .header_right li:last-child:hover{
+.header_right li.close:hover{
     background: rgb(212,64,39);
 }
 .main{
@@ -102,12 +111,13 @@ header .header_right li:last-child:hover{
     height: 148px;
 }
 .main .main_logo{
-    width: 135px;
+    width: 125px;
     height: 148px;
     float: left;
+    position: relative;
 }
 .main .main_logo .logo{
-    width: 135px;
+    width: 125px;
     height: 92px;
     position: relative;
 }
@@ -134,17 +144,24 @@ header .header_right li:last-child:hover{
 }
 .main .main_logo .status .status_window{
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    margin-top: -3px;
+    margin-left: -3px;
+    user-select: none;
 }
-.main .main_logo .status .status_window .iconfont{
+.main .main_logo .status .status_window a{
+    position: absolute;
+    display:inline-block;
+    width: 24px;
+    height: 24px;
+}
+.main .main_logo .status .status_window .status_list1{
+    display: none;
+}
+.main .main_logo .status .status_window a:first-child{
     display: block;
-    width: 18px;
-    height: 18px;
-    font-size: 22px;
-    color: rgb(112,237,58);
-    margin-top: -2px;
-    margin-left: -1px;
 }
 .main .main_logo .status .status_ul{
     width: 103px;
@@ -172,6 +189,11 @@ header .header_right li:last-child:hover{
     font-size: 12px;
     line-height: 24px;
  }
+.main .main_logo .status .status_ul li a{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
 .main .main_logo .status .status_ul li b{
     display: block;
     width: 76px;
@@ -181,13 +203,13 @@ header .header_right li:last-child:hover{
     right: 2px;
     bottom: 0;
 }
-.main .main_logo .status .status_ul li img{
+.main .main_logo .status img{
     width: 17px;
     height: 17px;
     margin-top: 3px;
     margin-left: 3px;
 }
-.main .main_logo .status .status_ul li .iconfont{
+.main .main_logo .status .iconfont{
     display: block;
     float: left;
     width: 24px;
@@ -195,19 +217,19 @@ header .header_right li:last-child:hover{
     line-height: 24px;
     text-align: center;
 }
-.main .main_logo .status .status_ul li .online{
+.main .main_logo .status .online{
     font-size: 22px;
     color: rgb(112,237,58);
 }
-.main .main_logo .status .status_ul li .busy{
+.main .main_logo .status .busy{
     font-size: 15px;
     color: rgb(247,81,55);
 }
-.main .main_logo .status .status_ul li .DNDST{
+.main .main_logo .status .DNDST{
     font-size: 21px;
     color: rgb(247,81,55);
 }
-.main .main_logo .status .status_ul li .invisible{
+.main .main_logo .status .invisible{
     font-size: 13px;
     color: rgb(254,163,86);
 }
@@ -217,6 +239,343 @@ header .header_right li:last-child:hover{
 .main .main_logo .status .status_ul li:hover span{
     background: rgb(0,155,219);
 }
+.main .main_logo .account{
+    position: absolute;
+    left: 12px;
+    bottom: 6px;
+    cursor: default;
+}
+.main .main_logo .account .iconfont{
+    font-size: 20px;
+    color: rgb(204,204,204);
+    transition: 0.3s;
+}
+.main .main_logo .account span{
+    display: block;
+    color:rgb(204,204,204) ;
+    position: absolute;
+    right: -6px;
+    bottom: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.main .main_logo .account:hover .iconfont{
+    color: rgb(98,180,247);
+    transition: 0.3s;
+}
+.main .main_logo .account:hover span{
+    color: rgb(98,180,247);
+    transition: 0.3s;
+}
+.main #logOn{
+    float: left;
+    width: 195px;
+    height: 138px;
+    padding-top: 10px;
+    margin-left: 12px;
+}
+.main #logOn .user{
+    width: 195px;
+    height: 59px;
+    position:relative;
+}
+.main #logOn .user .userName{
+    width: 188px;
+    height: 28px;
+    border: 1px solid rgb(209,209,209);
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding-left: 5px;
+    color: black;
+    outline: none;
+    position: absolute;
+}
+.main #logOn .user .passWord {
+    width: 188px;
+    height: 28px;
+    border: 1px solid rgb(209, 209, 209);
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding-left: 5px;
+    color: black;
+    outline: none;
+    position: absolute;
+    top: 29px;
+}
+.main #logOn .user .triangle{
+    display: block;
+    position: absolute;
+    right:6px;
+    top: 8px;
+    font-size: 10px;
+    color: rgb(177,177,177);
+    z-index: 11;
+    cursor: default;
+    user-select: none;
+}
+.main #logOn .user .triangle1{
+    transform: rotate(180deg);
+    color: black;
+}
+.main #logOn .user .keyboard{
+    display: block;
+    position: absolute;
+    right: 4px;
+    bottom: 1px;
+    font-size: 20px;
+    color: rgb(177,177,177);
+    z-index: 11;
+    cursor: default;
+}
+.main #logOn .user .triangle:hover{
+    color: black;
+}
+.main #logOn .user .keyboard:hover{
+    color: rgb(98,180,247);
+}
+.main #logOn .userName_box:hover .userName{
+    border-color: rgb(21,131,221);
+    z-index: 10;
+}
+.main #logOn .passWord_box:hover .passWord{
+    border-color: rgb(21,131,221);
+    z-index: 10;
+}
+.main #logOn .remember,.auto{
+    width: 70px;
+    height: 15px;
+    float: left;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgb(101,101,101);
+    margin-top: 10px;
+}
+.main #logOn .remember input{
+    vertical-align: bottom;
+    border: 1px solid rgb(178,178,178);
+    width: 15px;
+    height: 15px;
+}
+.main #logOn .auto{
+    float: right;
+}
+.main #logOn .auto input{
+    vertical-align: bottom;
+    border: 1px solid rgb(178,178,178);
+    width: 15px;
+    height: 15px;
+}
+.main #logOn .logOn{
+    width: 195px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    background: rgb(9,163,220);
+    margin-top: 13px;
+    color: white;
+    font-size: 12px;
+    outline: none;
+}
+.main #logOn .logOn:hover{
+    background: rgb(60,195,245);
+}
+.main .main_right{
+    width: 86px;
+    height: 138px;
+    float: right;
+    padding-top: 10px;
+    position: relative;
+}
+.main .main_right .register,.retrieve{
+    font-size: 12px;
+    color: rgb(9,163,220);
+    line-height: 29px;
+}
+.main .main_right .register:hover{
+    color: rgb(97,179,246);
+}
+.main .main_right .retrieve:hover{
+    color: rgb(97,179,246);
+}
+.main .main_right .code{
+    display: block;
+    font-size: 25px;
+    position: absolute;
+    bottom: 3px;
+    right: 7px;
+    color: rgb(204,204,204);
+    transition: 0.3s;
+    cursor: default;
+}
+.main .main_right .code:hover{
+    color: rgb(9,163,220);
+    transition: 0.3s;
+}
+.qqSet{
+    width: 430px;
+    height: 330px;
+    background: rgba(235,242,249,1);
+    box-shadow:0 0 10px 1px rgba(0,0,0,.4);
+    cursor: default;
+    border-radius: 3px;
+    position: absolute;
+    display: none;
+}
+#container1{
+    width: 430px;
+    height: 182px;
+    overflow: hidden;
+}
+#container1 #anitOut1 canvas{
+    width: 450px;
+    height: 220px;
+}
+.qqSet .setHeader{
+    width: 430px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    }
+.qqSet .setHeader .header_box{
+    width: 430px;
+    height: 40px;
+    background: -webkit-linear-gradient(transparent, rgba(235,242,249,1)); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(transparent, rgba(235,242,249,1)); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(transparent, rgba(235,242,249,1)); /* Firefox 3.6 - 15 */
+    background: linear-gradient(transparent, rgba(235,242,249,1)); /* 标准的语法 */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.qqSet .setMain{
+    width: 399px;
+    height: 226px;
+    padding: 30px 11px 0 20px;
+    font-size: 13px;
+}
+.qqSet .setMain .sm_top{
+    height: 122px;
+}
+.qqSet .setMain .sm_t_title{
+    height: 18px;
+    margin-bottom: 15px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box{
+    float: left;
+    margin-right: 8px;
+    margin-bottom: 9px;
+    text-align: right;
+    height: 24px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box.type_box{
+    width: 165px;
+    font-size: 12px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box.add_box{
+    width: 121px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box.port_box{
+    width: 89px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box input{
+    height: 22px;
+    border: 1px solid rgb(227,230,234);
+    border-radius: 3px;
+    cursor: default;
+    padding-left: 3px;
+    font-size: 12px;
+}
+
+.qqSet .setMain .sm_t_cont .sm_t_c_box input.type{
+    width: 114px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box .add{
+    width: 83px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box .port{
+    width: 51px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box .set_user{
+    width: 114px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box .set_password{
+    width: 83px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box .field{
+    width: 51px;
+}
+.qqSet .setMain .sm_t_cont .sm_t_c_box select.type{
+    height: 24px;
+    border: 1px solid rgb(227,230,234);
+    border-radius: 3px;
+    cursor: default;
+    padding-left: 3px;
+    font-size: 12px;
+    width: 119px;
+}
+.qqSet .setMain .sm_t_bot{
+    text-align: right;
+    padding-right: 9px;
+}
+.qqSet .setMain .sm_t_bot button{
+    width: 54px;
+    height: 22px;
+    border: 1px solid rgb(227,230,234);
+    border-radius: 3px;
+    background:rgb(240,245,250);
+    color: rgb(118,121,125);
+}
+.qqSet .setFooter{
+    width: 430px;
+    height: 32px;
+    border-top: 1px solid rgb(251,253,254);
+    border-bottom: 1px solid rgb(160,177,190);
+    background: rgb(205,226,242);
+    text-align: right;
+}
+.qqSet .setFooter button{
+    width: 84px;
+    height: 26px;
+    border: 1px solid rgb(134,148,158);
+    margin-top: 4px;
+    border-radius: 3px;
+    background: rgb(244,244,244);
+}
+.qqSet .setFooter button.cancel{
+    margin-right: 7px;
+}
+.qqSet .setFooter button:hover{
+    background: rgb(190,231,253);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
