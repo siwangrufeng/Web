@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "simsun";
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .box {
+            width: 100%;
+            height: 340px;
+            margin-top: 100px;
+            border: 1px solid blue;
+        }
+
+        .list {
+            width: 1200px;
+            height: 340px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .banner {
+            position: relative;
+            overflow: hidden;
+            width: 1200px;
+            height: 300px;
+            border: 1px solid red;
+        }
+
+        .banner li {
+            position: absolute;
+            width: 750px;
+            height: 300px;
+            transition: all .3s ease-out;
+        }
+
+        .banner li img {
+            width: 750px;
+            height: 300px;
+            float: left;
+        }
+
+        .banner li.p1 {
+            transform: translate3d(-244px, 0, 0) scale(.81);
+        }
+
+        .banner li.p2 {
+            transform: translate3d(0, 0, 0) scale(.81);
+            transform-origin: 0 50%;
+            /*控制缩放的中心点，默认三个值，xyz，z一般不用，xy默认50%，就是以中心点缩放*/
+            z-index: 2;
+            opacity: .9;
+        }
+
+        .banner li.p3 {
+            transform: translate3d(224px, 0, 0);
+            z-index: 3;
+        }
+
+        .banner li.p4 {
+            transform: translate3d(448px, 0, 0) scale(.81);
+            transform-origin: 100% 50%;
+            z-index: 2;
+            opacity: .9;
+        }
+
+        .banner li.p5 {
+            transform: translate3d(672px, 0, 0) scale(.81);
+        }
+
+        .banner li.p6 {
+            transform: translate3d(896px, 0, 0) scale(.81);
+        }
+
+        .banner li.p7 {
+            transform: translate3d(1120px, 0, 0) scale(.81);
+        }
+
+        .next, .prev {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 20px;
+            color: white;
+            background: rgba(0, 0, 0, .5);
+            top: 50%;
+            margin-top: -45px;
+            cursor: default;
+            user-select: none;
+        }
+
+        .next {
+            right: -150px;
+        }
+
+        .prev {
+            left: -150px;
+        }
+
+        .cir {
+            width: 1200px;
+            text-align: center;
+        }
+
+        .cir li {
+            width: 15px;
+            height: 15px;
+            background: skyblue;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .cir li.active {
+            background: hotpink;
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            var arr = ["p7", "p6", "p5", "p4", "p3", "p2", "p1"];
+            //创建一个数组，将来作为类名赋给li
+
+
+            //小圆点点击
+            var e = 0;
+            $(".cir li").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                if (d == 0) {
+                    e = 4;
+                    var arr1 = ["p7", "p6", "p5", "p4", "p3", "p2", "p1"];
+                    $(".banner li").each(function (i, e) {
+                        $(e).removeClass().addClass(arr1[i]);
+                    });
+                } else if (d == 1) {
+                    e = 3;
+                    var arr2 = ["p6", "p5", "p4", "p3", "p2", "p1", "p7"];
+                    $(".banner li").each(function (i, e) {
+                        $(e).removeClass().addClass(arr2[i]);
+                    });
+                } else if (d == 2) {
+                    e = 2;
+                    var arr3 = ["p5", "p4", "p3", "p2", "p1", "p7", "p6"];
+                    $(".banner li").each(function (i, e) {
+                        $(e).removeClass().addClass(arr3[i]);
+                    });
+                } else if (d == 3) {
+                    e = 1;
+                    var arr4 = ["p4", "p3", "p2", "p1", "p7", "p6", "p5"];
+                    $(".banner li").each(function (i, e) {
+                        $(e).removeClass().addClass(arr4[i]);
+                    });
+                } else if (d == 4) {
+                    e = 0;
+                    var arr5 = ["p3", "p2", "p1", "p7", "p6", "p5", "p4"];
+                    $(".banner li").each(function (i, e) {
+                        $(e).removeClass().addClass(arr5[i]);
+                    });
+                } else if (d == 5) {
+                    e = 6;
+                    var arr6 = ["p2", "p1", "p7", "p6", "p5", "p4", "p3"];
+                    $(".banner li").each(function (i, e) {
+                        $(e).removeClass().addClass(arr6[i]);
+                    });
+                } else if (d == 6) {
+                    e = 5;
+                    var arr7 = ["p1", "p7", "p6", "p5", "p4", "p3", "p2"];
+                    $(".banner li").each(function (i, e) {
+                        $(e).removeClass().addClass(arr7[i]);
+                    });
+                }
+                d = $(this).index();
+                console.log(d);
+            });
+
+            var d = 0;
+
+            function next() {
+                arr.push(arr[0]);
+                arr.shift();
+                $(".banner li").each(function (i, e) {
+                    $(e).removeClass().addClass(arr[i]);
+                });
+                var index2 = $(".banner li").index($(".p1"));
+//                console.log(index2);
+//                $(".cir li").eq(6 - index2).addClass("active").siblings().removeClass("active");
+                d++;
+                $(".cir li").eq(d).addClass("active").siblings().removeClass("active");
+                console.log(d);
+            }
+
+
+            //左边箭头点击
+            $(".prev").click(function () {
+                prev();
+            });
+            //右边箭头点击
+            $(".next").click(function () {
+                next();
+            });
+
+            function prev() {
+                arr.unshift(arr[6]);
+                //将最后一个添加到第一个
+                arr.pop();
+                //删除最后一个
+                $(".banner li").each(function (i, e) {
+                    //i代表下标，e代表当前对象，也就是this，受顺序影响，默认前面的是下标，后面是当前对象
+                    $(e).removeClass().addClass(arr[i]);
+
+                });
+                var index1 = $(".banner li").index($(".p1"));
+//                console.log(index1);
+                $(".cir li").eq(6 - index1).addClass("active").siblings().removeClass("active");
+
+            }
+
+
+            //点击图片切换
+            $(document).on("click",".p4", function () {
+                next();
+            });
+            $(document).on("click",".p2", function () {
+                prev();
+            });
+
+
+//            function start() {
+//                a = setInterval(next, 1500)
+//            }
+//
+//            function stop() {
+//                clearInterval(a)
+//            }
+//
+//            $(".box").mouseover(function () {
+//                stop()
+//            }).mouseout(function () {
+//                start()
+//            });
+//            start();
+
+
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="list">
+        <ul class="banner">
+            <li class="p7">
+                <img src="img/muma1.jpg" alt="">
+            </li>
+            <li class="p6">
+                <img src="img/muma2.jpg" alt="">
+            </li>
+            <li class="p5">
+                <img src="img/muma3.png" alt="">
+            </li>
+            <li class="p4">
+                <img src="img/muma4.png" alt="">
+            </li>
+            <li class="p3">
+                <img src="img/muma5.png" alt="">
+            </li>
+            <li class="p2">
+                <img src="img/muma6.jpg" alt="">
+            </li>
+            <li class="p1">
+                <img src="img/muma7.jpg" alt="">
+            </li>
+        </ul>
+        <ul class="cir">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p class="prev">&lt;</p>
+        <p class="next">&gt;</p>
+    </div>
+
+</div>
+</body>
+</html>
