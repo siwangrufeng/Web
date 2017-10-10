@@ -149,6 +149,7 @@
             //小圆点点击
             var e = 0;
             $(".cir li").click(function () {
+                d = $(this).index();
                 $(this).addClass("active").siblings().removeClass("active");
                 if (d == 0) {
                     e = 4;
