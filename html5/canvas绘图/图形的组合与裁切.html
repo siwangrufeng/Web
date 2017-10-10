@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #myCanvas {
+            border: 1px solid #9C9898;
+            background-color: #77ffcc;
+        }
+        img{
+            width: 700px;
+            height: 400px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.globalCompositeOperation="source-atop";
+            context.globalCompositeOperation="source-in";
+            context.globalCompositeOperation="source-out";
+            context.globalCompositeOperation="source-over";
+            context.globalCompositeOperation="destination-atop";
+            context.globalCompositeOperation="destination-in";
+            context.globalCompositeOperation="destination-out";
+            context.globalCompositeOperation="destination-over";
+            context.globalCompositeOperation="lighter";
+            context.globalCompositeOperation="darker";
+            context.globalCompositeOperation="xor";
+            context.globalCompositeOperation="copy";
+            context.fill();
+
+            //  copyRight-范蕾蕾
+
+
+        }
+    </script>
+</head>
+<body>
+<img src="img/cut1.png" alt="">
+<img src="img/cut2.png" alt="">
+<canvas id="myCanvas" width="800" height="800"></canvas>
+</body>
+</html>
