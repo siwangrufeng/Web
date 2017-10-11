@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>播放音频</title>
+</head>
+<body>
+<button onclick="getFirstBuffRange()" type="button">获得第一个缓冲范围</button>
+<button onclick="getVid()" type="button">获取当前视频URL</button>
+<br>
+<button onclick="getCurTime()" type="button">获取视频当前播放时间</button>
+<button onclick="setCurTime()" type="button">设置视频播放时间点</button>
+<br/>
+<button onclick="getPlaySpeed()" type="button">获取视频默认播放速度</button>
+<button onclick="setPlaySpeed()" type="button">设置视频默认播放速度</button>
+<br/>
+<button onclick="getVidDur()" type="button">获取视频的播放长度</button>
+<br/>
+<!--播放视频-->
+<button onclick="enableLoop()" type="button">设置循环</button>
+<button onclick="disableLoop()" type="button">取消循环</button>
+<button onclick="checkLoop()" type="button">是否循环</button>
+<br/>
+<button onclick="enableMute()" type="button">设置静音</button>
+<button onclick="disableMute()" type="button">取消静音</button>
+<button onclick="checkMute()" type="button">是否静音</button>
+<br/>
+<button onclick="getNWState()" type="button">获取网络状态</button>
+<button onclick="isVidPaused()" type="button">视频是否暂停</button>
+<br/>
+<button onclick="getPlaySpeed()" type="button">获得视频速度</button>
+<button onclick="setPlaySpeed()" type="button">减慢视频速度</button>
+<br/>
+<button onclick="getFirstPlayedRange()" type="button">获得首段播放的范围</button>
+<br/>
+<button onclick="enablePreload()" type="button">设置预加载</button>
+<button onclick="disablePreload()" type="button">取消预加载</button>
+<button onclick="checkPreload()" type="button">检查预加载状态</button>
+<br>
+<button onclick="getReadyState()" type="button">获取视频的就绪状态</button>
+<br/>
+<button onclick="getFirstSeekableRange()" type="button">获得第一次可寻址范围</button>
+<br/>
+<button onclick="getVolume()" type="button">获取当前音量</button>
+<button onclick="setHalfVolume()" type="button">设置音量为0.2</button>
+<button onclick="setFullVolume()" type="button">设置音量为1.0</button>
+<br>
+<!-- autoplay="autoplay"自动播放-->
+<video id="my_video" width="320" height="240" controls="controls">
+    <source src="mov_bbb.mp4" type="video/mp4"/>
+    <!--理论上来说source相当于备选项，上面的格式不支持自动检索下面的-->
+    <source src="mov_bbb.mp4" type="video/ogg"/>
+    您的浏览器不支持 HTML5 video 标签。
+</video>
+<script>
+    var myVid = document.getElementById("my_video");
+    /*buffered 属性返回 TimeRanges 对象。 TimeRanges 对象表示用户的音频/视频缓冲范围，没有缓冲的时候就是0 有的时候就是1*/
+    function getFirstBuffRange() {
+        alert("Start: " + myVid.buffered.start(0) + " End: " + myVid.buffered.end(0));
+    }
+    /*所有TimeRanges队形都可以用，start(0)表示从哪边开始缓存   end(0)缓存结束 以秒为单位*/
+
+
+    /*currentSrc属性返回当前音频/视频的 URL*/
+    function getVid() {
+        alert(myVid.currentSrc);
+    }
+
+
+    /*用于获取或设置当前的播放位置，返回值为时间，单位为秒*/
+    function getCurTime() {
+        alert(myVid.currentTime);
+    }
+
+
+    /*不起作用*/
+    function setCurTime() {
+        myVid.currentTime = 5;
+    }
+
+
+    /*设置或返回音频/视频的默认播放速度。 */
+    function getPlaySpeed() {
+        alert(myVid.defaultPlaybackRate);
+    }
+    function setPlaySpeed() {
+        myVid.defaultPlaybackRate = 0.5;
+        myVid.load();
+        //使视频重新播放
+    }
+
+    /*duration返回总时间  单位为秒*/
+    function getVidDur() {
+        alert(myVid.duration);
+    }
+
+
+    /*设置循环*/
+    function enableLoop() {
+        myVid.loop = true;
+        myVid.load();
+    }
+
+    function disableLoop() {
+        myVid.loop = false;
+        myVid.load();
+    }
+
+    function checkLoop() {
+        alert(myVid.loop);
+    }
+
+    /*设置并判断是否静音*/
+    function enableMute() {
+        myVid.muted = true;
+    }
+
+    function disableMute() {
+        myVid.muted = false;
+    }
+
+    function checkMute() {
+        alert(myVid.muted);
+    }
+
+    /*networkState 属性返回音频/视频的当前网络状态*/
+    function getNWState() {
+        alert(myVid.networkState);
+    }
+
+    /*检查视频是否暂停*/
+    function isVidPaused() {
+        alert(myVid.paused);
+    }
+
+    /*获取并设置视频播放速度*/
+    function getPlaySpeed() {
+        alert(myVid.playbackRate);
+    }
+
+    function setPlaySpeed() {
+        myVid.playbackRate = 0.5;
+    }
+
+    /*获得视频中以秒计的首段已播放的范围*/
+    function getFirstPlayedRange() {
+        alert("Start: " + myVid.played.start(0) + " End: " + myVid.played.end(0));
+    }
+
+    /*preload 属性设置或返回是否在页面加载后立即加载音频/视频 auto none metadata表示只加载源文件比如第一帧图像，控制条等*/
+    function enablePreload() {
+        myVid.preload = "auto";
+    }
+
+    function disablePreload() {
+        myVid.preload = "none";
+    }
+
+    function checkPreload() {
+        alert(myVid.preload);
+    }
+
+    /*返回音频/视频的当前就绪状态。*/
+    function getReadyState() {
+        alert(myVid.readyState);
+    }
+
+    /*TimeRanges 对象表示音频/视频中用户可寻址的范围。(可拖动缓存播放的位置)*/
+    //    function getFirstSeekableRange() {
+    //        alert("Start: " + myVid.seekable.start(0) + " End: " + myVid.seekable.end(0));
+    //    }
+
+    /*volume 属性设置或返回音频/视频的当前音量。*/
+    function getVolume() {
+        alert(myVid.volume);
+    }
+
+    function setHalfVolume() {
+        myVid.volume = 0.2;
+    }
+
+    function setFullVolume() {
+        myVid.volume = 1.0;
+    }
+</script>
+</body>
+</html>

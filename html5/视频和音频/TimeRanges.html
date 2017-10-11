@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+buffered属性返回一个对象，该对象实现TimeRanges接口，已确认浏览器是否已缓存媒体数据。TimeRanges对象表示一段时间范围，在大多数情况下，TimeRanges对象表示的时间范围是一个单一的以0开始的范围，但是如果浏览器发出Range Requests请求，这是TimeRanges对象表示的时间范围是多个时间范围。
+TimeRanges对象具有一个length属性，表示有多少个时间范围，大多数情况下存在时间范围，该值为1；不存在时间范围时，该值为0.两个方法TimeRanges.start(index)与TimeRanges.end(0),大多数情况下index值直接设置为0就可以了。当用videoElement.buffered语法来实现TimeRanges接口时，TimeRanges.start(0)表示当前的缓存区内从媒体数据的什么时间开始进行缓存，TimeRanges.end(0)表示当前缓存区内的结束时间。
+
+seekable返回一个TimeRanges对象，该对象表示请求到的数据的时间范围。当媒体为视频时，开始时间为请求到的视频数据的第一帧的时间，结束时间为请求到的视频数据的最后一帧的时间。
+
+played返回一个TimeRanges对象，从该对象中可以读取媒体文件的一播放部分的时间段。开始时间为一播放部分的开始时间，结束时间为一播放部分的结束时间。
+</body>
+</html>

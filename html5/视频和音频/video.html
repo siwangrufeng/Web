@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+audio元素与video元素所具有属性大致相同~
+<audio src="test.mp3" controls="controls">   <!--controls必须写否则display：none-->
+    您的浏览器不支持audio元素
+</audio>
+<video src="test.mp4" width="600" height="300" controls="controls">   <!--宽高设置-->
+    您的浏览器不支持video元素
+    <source src="test.mp3" type="video/mp3">  <!--source表示为同一个媒体数据指定多个播放格式与编码格式，从上至下选择，直至支持格式停止-->   <!--type最好不要省略，否则浏览器从上而下判断时会自己先行测试（下载一下段数据），指明type可以省带宽-->
+    <source src="test.mp4" type="video/mp4">
+</video>
+
+1）src：在该属性中指定媒体数据的URL地址 定义地址<br>
+
+2）autoplay：在该属性中指定媒体是否在页面加载后自动播放。<br>
+<video src="test.mp4" width="600" height = "300" autoplay controls="controls"></video><br>
+
+3）preload：在该属性中指定视频或音频数据是否预先加载（可以节省时间）。<br>
+该属性有三个可选择的值：none、metadata、auto，默认值auto. <br>
+none表示不进行加载，metadata表示只预加载媒体的元数据（媒体字节数、第一帧、播放列表、、持续时间等）. <br>
+auto表示预加载全部视频或音频. <br>
+<video src="test.mp4" width="600" height = "300" controls="controls" preload="metadata"></video><br>
+
+4）poster（video元素独有属性）<br>
+当视频不可用时，可以使用该元素想用户展示一幅替代用的图片。当视频不可用时，最好使用该属性，以免展示视频的区域中一片空白。<br>
+<video src="test.mp4" poster="timg.jpg" preload="metadata" controls="controls"></video><br>
+
+5）loop：在该属性中指定是否循环播放视频或音频。<br>
+<video src="test.mp4" autoplay loop controls="controls"></video><br>
+
+6）controls：在该属性中指定是否为该视频或音频添加浏览器自带的播放用的控制条（各版本浏览器显示效果不同，opera个人觉得最好看）。<br>
+
+7）width、height（video元素独有属性） <br>
+<video src="test.mp4" width="600" height="300" controls="controls"></video><br>
+<br>
+
+8）error：正常使用时error值为null，出现错误时会生成一个MediaError对象，该对象对应的错误状态为 1、2、3、4 <br>
+1-用户中止下载  2-网络中断，停止下载  3-资源可用，解码错误  4-格式不支持 <br>
+<code>
+    var video = document.getElementById("**");
+    video.addEventListener("error",function(){
+        var error = video.error;
+        switch(error.code){
+            case 1:
+                alert("你中断下载了~");
+                break;
+            case 2:
+                alert("网络故障~");
+                break;
+            case 3:
+                alert("解码故障~");
+                break;
+            case 4:
+                alert("不支持格式~");
+                break;
+        }
+    },false)
+</code>
+
+
+
+9）networkState：读取当前网络状态，4个对应状态值0、1、2、3 <br>
+0-元素处于初始状态  1-浏览器已选择好用什么编码格式来播放媒体但是没有建立网络连接 本地视频为1    2-数据加载中  3-无法加载（编码不对或格式不对） <br>
+<code>
+    var video = document.getElementById("**");
+    video.addEventListener("progress",function(e){
+        var networkStateDisplay = document.getElementById("networkState");
+        //根据networkState属性值进行判断
+        if(video.networkState == 0){
+            networkStateDisplay.innerHTML = "初始状态"
+        }
+        if(video.networkState == 2){
+            //计算已加载玩的字节数
+            networkStateDisplay.innerHTML = "加载~~" + 【 e.loaded + "/" + e.total + "byte" 】;
+        }
+    },false);
+</code>
+
+10）currentSrc：返回媒体数据的URL地址。返回 <br>
+
+11）buffered：确认浏览器是否已经缓存媒体数据，是一个时间范围0-1; <br>
+
+12）readyState：媒体当前播放位置的就绪状态，5个状态值。 <br>
+0-没.
+有获取到媒体数据，无法播放。  1-获取到足够的数据但当前位置的媒体数据不是有效的数据（无效数据，无法播放）。  2-获取到有效的数据，但是没有紧随其后的数据（当前位置可以播放）。  3-可以播放，但是不能是最后一帧。   4-获取到足够的数据，正常播放。
+<br>
+
+13）seeking与seekable：seeking返回布尔值，表示浏览器是否正在请求某一位置的数据，true请求，false停止请求。 seekable返回TimeRanges对象。
+
+14）currentTime、startTime、duration：currentTime媒体当前的播放位置，也可以通过currentTime修改当前播放位置，如果修改值的位置上无有效数据，则抛出异常。  startTime读取媒体的开始时间。  duration播放总时间。单位都为秒。
+
+15）played、paused、ended：played返回TimeRanges对象，从中读取已播放的时间段，开始时间为已播放的开始时间，结束时间为已播放部分的结束时间。  paused返回布尔值，判断是否暂停播放，true暂停，false正常播放。   ended是否播放完毕，true完毕，false未完毕。
+<br>
+
+16）defaultPlaybackRate、playbackRate：defaultPlaybackRate修改默认的播放速率，也可读取当前播放速率。  playbackRate修改当前的播放速率，也可读取当前播放速率。 <br>
+
+17）volume、muted：volume读取或修改媒体的播放音量，范围0-1。  muted判断是否静音，true静音，false未静音。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

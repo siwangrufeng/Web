@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="jquery-1.11.3.min.js"></script>
+<body>
+<video src="test.mp4" width="600" height="400" id="video" controls>
+    您的浏览器不支持播放
+</video>
+<br>
+<button type="button" id="play">播放</button>
+<button type="button" id="pause">暂停</button>
+</body>
+<script>
+    vid = document.getElementById("video");
+//    vid.addEventListener("ended", function () {
+//        alert("结束了！")
+//    },true);
+    vid.addEventListener("ended", function () {
+        if (vid.ended==true){
+            alert("结束了")
+        }
+    },true);
+    //最后的true表示是捕获事件，false为冒泡事件，影响不大，一般把它和判断的状态保持一致，
+    //写在前面的话需要在body里面添加一个函数，使加载完之后先获取这个对象，直接写获取不到，而且函数要写在$function或者window。onload外面，否则为闭包函数，获取不到
+    //或者直接把script写在body后面，就不用先获取对象
+
+        $("#play").click(function () {
+            vid.play();
+        });
+        $("#pause").click(function () {
+            vid.pause(true);
+        });
+
+
+</script>
+
+
+</html>
