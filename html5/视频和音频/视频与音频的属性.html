@@ -73,7 +73,7 @@
     }
 
 
-    /*不起作用*/
+    /*受浏览器影响，谷歌有时候不能用*/
     function setCurTime() {
         myVid.currentTime = 5;
     }
@@ -165,10 +165,10 @@
         alert(myVid.readyState);
     }
 
-    /*TimeRanges 对象表示音频/视频中用户可寻址的范围。(可拖动缓存播放的位置)*/
-    //    function getFirstSeekableRange() {
-    //        alert("Start: " + myVid.seekable.start(0) + " End: " + myVid.seekable.end(0));
-    //    }
+    /*TimeRanges 对象表示音频/视频中用户可寻址的范围。(可拖动缓存播放的位置) 受浏览器影响，谷歌有时候不能用*/
+        function getFirstSeekableRange() {
+            alert("Start: " + myVid.seekable.start(0) + " End: " + myVid.seekable.end(0));
+        }
 
     /*volume 属性设置或返回音频/视频的当前音量。*/
     function getVolume() {

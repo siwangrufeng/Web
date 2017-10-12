@@ -420,7 +420,9 @@ header .header_img span{
     cursor: default;
     border-radius: 3px;
     position: absolute;
-    display: none;
+    z-index: -100;
+    transform: rotateY(270deg);
+    /*display: none;*/
 }
 #container1{
     width: 430px;

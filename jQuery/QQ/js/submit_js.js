@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017\9\29 0029.
  */
-$(function () {
+$(function(){
     if (!window.ActiveXObject && !!document.createElement("canvas").getContext) {
         $.getScript("http://im-img.qq.com/pcqq/js/200/cav.js?_=1428576021379",
             function () {
@@ -208,10 +208,11 @@ $(function () {
     } else {
         alert('调用cav.js失败');
     }
+})
 
 
 
-
+$(function () {
 
     if (!window.ActiveXObject && !!document.createElement("canvas").getContext) {
         $.getScript("http://im-img.qq.com/pcqq/js/200/cav.js?_=1428576021379",
@@ -455,14 +456,19 @@ $(function () {
 
     //切换页面
     $(".setUp").click(function(){
-        //$(".myQQ").css({"transform":"rotateY(90deg)","transition":"5s","display":"none"});
-        //$(".qqSet").css({"transform":"rotateY(180deg)","transition":"5s","display":"block"});
-        $(".myQQ").hide();
-        $(".qqSet").show()
+        //$(".myQQ").css({"transform":"rotateY(360deg)","transition":"4s"});
+        //setTimeout(function(){
+        //    //$(".qqSet").show();
+        //    $(".myQQ").css("z-index","-100");
+        //    $(".qqSet").css({"transform":"rotateY(360deg)","transition":"3s","z-index":"100"});
+        //},500);
     });
     $(".cancel").click(function(){
-        $(".myQQ").show();
-        $(".qqSet").hide();
+        //$(".qqSet").css({"transform":"rotateY(0deg)","transition":"2s"});
+        //setTimeout(function(){
+        //    $(".qqSet").css("z-index","-100");
+        //    $(".myQQ").css({"transform":"rotateY(0deg)","transition":"2s","z-index":"1100"});
+        //},500);
     })
 
 

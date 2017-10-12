@@ -1,0 +1,281 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+
+}
+img{
+    border: 0;
+}
+li{
+    list-style: none;
+}
+ul{
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.cont{
+    width: 290px;
+    height: 696px;
+    margin: 20px 320px;
+    background: #E1EAF6;
+    border: 1px solid #C8C8C8;
+    border-radius: 2px;
+}
+header{
+    width: 290px;
+    height: 150px;
+    background: url("../img/bg.jpg") no-repeat center;
+}
+header .h_top{
+    width: 290px;
+    height: 33px;
+}
+header .h_top .logo{
+    width: 37px;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+    color: rgba(255,255,255,.6);
+    font-size: 12px;
+    float: left;
+    cursor: default;
+}
+header .h_top .h_t_right{
+    width: 120px;
+    height: 33px;
+    float: right;
+}
+header .h_top .h_t_right .h_t_r_btn{
+    width: 30px;
+    height: 33px;
+    text-align: center;
+    line-height: 33px;
+    float: left;
+    color: white;
+    cursor: default;
+}
+header .h_top .h_t_right .h_t_r_btn:hover{
+    background: rgba(255,255,255,.2);
+}
+header .h_top .h_t_right .h_t_r_btn .iconfont{
+    font-size: 10px;
+    display: block;
+}
+header .h_top .h_t_right .skin .iconfont{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+header .h_top .h_t_right .min .iconfont{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+header .h_top .h_t_right .close .iconfont{
+    font-weight: bold;
+}
+header .blurb{
+    width: 280px;
+    height: 79px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+header .blurb .head{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid transparent;
+    float: left;
+}
+header .blurb .head img{
+    width: 64px;
+    height: 64px;
+}
+header .blurb .head:hover{
+    border-color: rgb(0,155,219);
+    cursor: pointer;
+}
+header .blurb .introduce{
+    width: 150px;
+    height: 64px;
+    margin-left: 5px;
+    float: left;
+    cursor: default;
+}
+header .blurb .introduce .i_top{
+    width: 150px;
+    height: 22px;
+}
+header .blurb .introduce .i_top .name{
+    max-width: 100px;
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    color: white;
+    float: left;
+    font-weight: bold;
+}
+header .blurb .introduce .i_top .state{
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+header .blurb .introduce .i_top .state:hover{
+    background: rgba(0,0,0,.2);
+}
+header .blurb .introduce .i_top .state .s_window{
+    width: 20px;
+    height: 20px;
+}
+header .blurb .introduce .i_top .state .s_window .iconfont{
+    display: block;
+    width: 20px;
+    height: 20px;
+    font-size: 22px;
+    line-height: 23px;
+    text-align: center;
+    color: #70ED3A;
+}
+header .blurb .introduce .i_top .level{
+    max-width: 100px;
+    overflow: hidden;
+    float: left;
+    font-size: 10px;
+    color: #EBF031;
+    line-height: 17px;
+    height: 17px;
+    margin-left: 5px;
+    font-family: "华文彩云", 宋体;
+    text-shadow: -1px 0 #B86030,0 1px #B86030,1px 0 #B86030,0 -1px #B86030;
+    margin-top: 2px;
+}
+header .blurb .introduce .i_top .level:hover{
+    background: rgba(0,0,0,.2);
+}
+header .blurb .introduce .i_mid{
+    width: 145px;
+    height: 22px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+    position: relative;
+}
+header .blurb .introduce .i_mid input{
+    width: 140px;
+    height: 20px;
+    border: 1px solid transparent;
+    cursor: default;
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+    background: transparent;
+    position: absolute;
+    top:0;
+    left: 0;
+    padding-left: 3px;
+    outline: none;
+}
+header .blurb .introduce .i_mid input:hover{
+    border-color: rgb(20,81,129);
+}
+header .blurb .introduce .i_bot{
+    width: 150px;
+    height: 25px;
+}
+header .blurb .introduce .i_bot .i_b_icon{
+    width: 112px;
+    height: 25px;
+    float: left;
+}
+header .blurb .introduce .i_bot .i_b_icon li{
+    float: left;
+    margin-right: 3px;
+    width: 25px;
+    height: 25px;
+}
+header .blurb .introduce .i_bot .i_b_icon li:hover{
+    background: rgba(0,0,0,.2);
+}
+header .blurb .introduce .i_bot .i_b_icon li img{
+    margin-top: 3px;
+    margin-left: 4px;
+}
+header .blurb .introduce .i_bot .more{
+    width: 15px;
+    height: 25px;
+    float: left;
+}
+header .blurb .introduce .i_bot .more:hover{
+    background: rgba(0,0,0,.2);
+}
+header .blurb .introduce .i_bot .more .m_window{
+    width: 15px;
+    height: 25px;
+}
+header .blurb .introduce .i_bot .more .m_window img{
+    margin-top: 4px;
+    margin-left: -2px;
+}
+header .blurb .weather{
+    width: 58px;
+    height:58px;
+    float: left;
+    margin-left: -8px;
+    cursor: pointer;
+}
+header .blurb .weather .sun-shower{
+    transform: scale(.6);
+    margin-top: -15px;
+}
+header .search{
+    width: 290px;
+    height: 28px;
+    background: rgba(255,255,255,.2);
+}
+header .search input{
+    width: 290px;
+    height: 28px;
+    border: 0;
+    background: transparent;
+    color: rgba(255,255,255,.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
