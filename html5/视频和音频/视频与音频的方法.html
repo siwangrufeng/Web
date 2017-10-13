@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>音频、视频相关方法</title>
+</head>
+<body>
+<p>浏览器是否支持播放MP4视频 <span>
+<button onclick="supportType('video/mp14','avc1.42E01E, mp4a.40.2')" type="button">测试1</button>
+</span></p>
+<p>浏览器是否支持播放ogg视频 <span>
+<button onclick="supportType('video/ogg','theora,vorbis')" type="button">测试2</button>
+</span></p>
+<button onclick="changeSource()" type="button">切换视频资源</button>
+    <br>
+    <button onclick="playVid()" type="button">播放视频</button>
+        <button onclick="pauseVid()" type="button">暂停视频</button>
+            <br/>
+            <video id="my_video" width="320" height="240" controls="controls" autoplay="autoplay">
+                <source id="mp4_src" src="mov_bbb.mp4" type="video/mp4"/>
+                <source id="ogg_src" src="mov_bbb.ogg" type="video/ogg"/>
+                您的浏览器不支持 HTML5 video 标签。
+                </video>
+                    <script>
+                        function supportType(vidType, codType) {
+                            myVid = document.createElement('video');
+                            isSupp = myVid.canPlayType(vidType + ';codecs="' + codType + '"');
+                            //需要传参才能测试
+                            if (isSupp == "") {
+                                isSupp = "No";
+                            }
+                            alert(isSupp);
+                        }
+
+                        function changeSource() {
+                            document.getElementById("mp4_src").src = "test.mp4";
+                            document.getElementById("ogg_src").src = "test.ogg";
+                            //替换视频文件 只能替换一次
+                            document.getElementById("my_video").load();
+                        }
+
+                        var myVideo = document.getElementById("my_video");
+
+                        function playVid() {
+                            myVideo.play();
+                        }
+
+                        function pauseVid() {
+                            myVideo.pause();
+                        }
+                    </script>
+</body>
+</html>

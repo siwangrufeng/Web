@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>音频、视频相关方法</title>
+    <script>
+        window.onload = function () {
+//            var myVid = document.getElementById("my_video");
+//            myVid.oncanplay = alert("可以开始播放视频");
+
+            myVid = document.getElementById("my_video");
+            myVid.oncanplaythrough = alert("可以在不停下来进行缓冲的情况下持续播放指定的音频/视频");
+
+            /*  myVid=document.getElementById("my_video");
+             myVid.ondurationchange=alert("视频的时间发生了改变");*/
+
+            /*  myVid=document.getElementById("my_video");
+             myVid.onloadeddata=alert("浏览器开始加载当前帧数据，但没有足够的数据来播放指定音频/视频的下一帧");*/
+
+            /*音频/视频的元数据包括：时长、尺寸（仅视频）以及文本轨道。*/
+            /* myVid=document.getElementById("my_video");
+             myVid.onloadedmetadata=alert("播放器加载视频元数据");*/
+
+            /*当浏览器开始寻找指定的音频/视频时，会发生 loadstart 事件。即当加载过程开始时*/
+            /* myVid=document.getElementById("my_video");
+             myVid.onloadstart=alert("开始加载视频");*/
+            /*当浏览器正在下载指定的音频/视频时，会发生 progress 事件。
+
+             当音频/视频处于加载过程中时，会依次发生以下事件：
+
+             loadstart
+             durationchange
+             loadedmetadata
+             loadeddata
+             progress
+             canplay
+             canplaythrough*/
+            /*myVid=document.getElementById("my_video");
+             myVid.onprogress=alert("下载视频");*/
+
+            /*播放完成时回调*/
+            /* var aud = document.getElementById("my_video");
+             aud.onended = function() {
+             alert("音频播放完成");
+             };*/
+
+            /*视频暂停是回调*/
+            /*var vid = document.getElementById("my_video");
+             vid.onpause = function() {
+             alert("视频暂停播放");
+             };*/
+
+            /*playing 事件在音频/视频(audioideo)因缓冲而暂停或停止后已就绪时触发。*/
+            /*var vid = document.getElementById("my_video");
+             vid.onplaying = function() {
+             alert("视频正在播放");
+             };*/
+
+            /*拖动条移动时触发*/
+            /* var vid = document.getElementById("my_video");
+             vid.onseeked = function() {
+             alert("Seek operation completed!");
+             };*/
+
+
+            /*   // 获取 id="myVideo" 的 video 元素
+             var vid = document.getElementById("my_video");
+
+             // 为 video 元素添加 ontimeupdate 事件，如果当前播放位置改变则执行函数
+             vid.ontimeupdate = function() {myFunction()};
+
+             function myFunction() {
+             // 显示 id="demo" 的 p 元素中视频的播放位置
+             document.getElementById("demo").innerHTML = vid.currentTime;
+             }*/
+
+            /* var vid = document.getElementById("my_video");
+             vid.onvolumechange = function() {
+             alert("音量已改变");
+             };*/
+
+        }
+
+
+    </script>
+</head>
+<body>
+<video id="my_video" width="320" height="240" controls="controls">
+    <source id="mp4_src" src="mov_bbb.mp4" type="video/mp4"/>
+    <source id="ogg_src" src="mov_bbb.ogg" type="video/ogg"/>
+    您的浏览器不支持 HTML5 video 标签。
+</video>
+
+<p>播放位置: <span id="demo"></span></p>
+<img src="img/事件1.png" alt="">
+<img src="img/事件2.png" alt="">
+</body>
+</html>

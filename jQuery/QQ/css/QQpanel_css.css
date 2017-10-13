@@ -297,10 +297,21 @@ header .search .iconfont{
     width: 72px;
     height: 35px;
     float: left;
+    position: relative;
 }
 .container .tab ul li img{
-    margin-left: 25px;
-    margin-top: 6px;
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    margin-left: -12px;
+}
+.container .tab ul li .tab_noselect{
+    display: block;
+}
+.container .tab ul li .tab_select{
+    display: none;
 }
 .container .tab .slider{
     width: 72px;
@@ -310,73 +321,85 @@ header .search .iconfont{
     left: 0;
     bottom: -2px;
 }
-.container .board{
-    width: 290px;
-    height: 468px;
+.container .board_all{
+    width: 275px;
+    height: 463px;
+    padding-top: 5px;
+    padding-right: 15px;
+    overflow-x: hidden;
     border-bottom: 1px solid #cad1da;
+    overflow-y: auto;
+    cursor: default;
 }
-.container .board ul li{
+.container .board{
+    width: 275px;
+    height: 463px;
+}
+.container .board ul{
+    width: 275px;
+}
+.container .board1 ul li{
     height: 45px;
-    width: 280px;
+    width: 265px;
     padding-left: 10px;
     padding-top: 11px;
-    padding-right: 7px;
 }
-
-.container .board ul li .header{
+.container .board1 ul li .header{
     width: 42px;
     height: 42px;
     float: left;
     border-radius: 50%;
     overflow: hidden;
-
 }
-.container .board ul li .header img{
+.container .board1 ul li .header img{
     width: 42px;
     height: 42px;
 }
-.container .board ul li .chat{
-    width: 229px;
+.container .board1 ul li .chat{
+    width: 218px;
     height: 35px;
     padding-top: 4px;
     float: right;
 }
-.container .board ul li .chat .chat_top{
-    width: 229px;
+.container .board1 ul li .chat .chat_top{
+    width: 218px;
     height: 18px;
     line-height: 18px;
 }
-.container .board ul li .chat .chat_top .chat_type{
-    width: 182px;
+.container .board1 ul li .chat .chat_top .chat_type{
+    width: 170px;
     height: 18px;
     float: left;
     font-size: 13px;
     color: black;
-
 }
-.container .board ul li .chat .chat_top .chat_time{
-    width: 32px;
+.container .board1 ul li .chat .chat_top .chat_type img{
+    width: 14px;
+    height: 14px;
+}
+.container .board1 ul li .chat .chat_top .chat_time{
+    width: 38px;
     height: 18px;
     text-align: right;
-    padding-right: 15px;
     color: #7f7f7f;
     float: right;
     font-size: 11px;
+    margin-right: 5px;
 }
-.container .board ul li .chat .chat_bot{
-    width: 229px;
+.container .board1 ul li .chat .chat_bot{
+    width: 218px;
     height: 17px;
     line-height: 17px;
     position: relative;
 }
-.container .board ul li .chat .chat_bot .chat_cont{
-    width: 229px;
+.container .board1 ul li .chat .chat_bot .chat_cont{
+    width: 214px;
     height: 17px;
-    font-size: 13px;
+    font-size: 12px;
     color: #7f7f7f;
     overflow: hidden;
 }
-.container .board ul li .chat .chat_bot .chat_tips{
+.container .board1 ul li .chat .chat_bot .chat_tips{
     width: 16px;
     height: 16px;
     border-radius: 50%;
@@ -387,23 +410,147 @@ header .search .iconfont{
     text-align: center;
     position: absolute;
     top:0;
-    right: 14px;
+    right: 11px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.container .board1 ul li:hover{
+    background: rgb(211,220,231);
+}
+.container .board2{
+    margin-top: -4px;
+    height: 467px;
+}
+.container .board2 .friend_list{
+    width: 290px;
+}
+.container .board2 .friend_list .friend_list_li{
+    width: 290px;
+    min-height: 28px;
+    line-height: 28px;
+    font-size: 13px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_triangle{
+    float: left;
+    margin-right: 8px;
+    width: 12px;
+    height: 28px;
+    text-align: center;
+    margin-left: 10px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_triangle .iconfont{
+    display: block;
+    transform: rotate(-90deg);
+    font-size: 10px;
+    transition: .3s;
+    color: #9da3ac;
+}
+.container .board2 .friend_list .friend_list_li .f_l_triangle .f_l_t_rotate{
+    transform: rotate(0deg);
+    transition: .3s;
+}
+.container .board2 .friend_list .friend_list_li .f_l_triangle .f_l_t_color{
+    color:#5a5e62 ;
+}
+.container .board2 .friend_list .friend_list_li .f_l_name{
+    float: left;
+    margin-right: 3px;
+    max-width: 200px;
+    height: 28px;
+    overflow: hidden;
+}
+.container .board2 .friend_list .friend_list_li .f_l_num{
+    float: left;
+    max-width: 60px;
+    height: 28px;
+    overflow: hidden;
+    font-size: 10px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed{
+    width: 290px;
+    display: none;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed1{
+    display: block;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li{
+    height: 58px;
+    width: 280px;
+    padding-left: 10px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li .header1{
+    float: left;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    margin-top: 7px;
+    overflow: hidden;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li .header1 img{
+    width: 42px;
+    height: 42px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li .h1_right{
+    float: left;
+    width: 200px;
+    height: 42px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li .h1_right .h1_r_top{
+    width: 200px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 13px;
+    overflow: hidden;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li .h1_right .h1_r_bot{
+    width: 200px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 18px;
+    overflow: hidden;
+    color:#7f7f7f ;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li .h1_right .h1_r_bot img{
+    width: 12px;
+    height: 13px;
+    display: inline-block;
+    float: left;
+    margin-top: 3px;
+    margin-right: 2px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li .h1_right .h1_r_bot p{
+    float: left;
+    width: 183px;
+    height: 18px;
+}
+.container .board2 .friend_list .friend_list_li .f_l_detailed li:hover{
+    background: rgb(211,220,230);
+}
+.container .board3{
+    margin-top: -5px;
+    height: 468px;
+}
+.container .board3 .group{
+    width: 290px;
+    height: 36px;
+    border-bottom: 1px solid #cfd7e2;
+    font-size: 12px;
+}
+.container .board3 .group .g_type{
+    float: left;
+    height: 30px;
+    line-height: 36px;
+    padding: 6px 0 0 3px;
+}
+.container .board3 .group .g_type li{
+    float: left;
+    padding: 2px 3px;
+    background: yellow;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 3px;
+}
+.container .board3 .group .g_right
 
 
 
