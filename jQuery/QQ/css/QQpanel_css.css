@@ -281,6 +281,7 @@ header .search .iconfont{
 .container{
     width: 290px;
     height: 505px;
+    user-select: none;
 }
 .container .tab{
     width: 290px;
@@ -313,6 +314,12 @@ header .search .iconfont{
 .container .tab ul li .tab_select{
     display: none;
 }
+.container .tab ul .tab_li .tab_noselect{
+    display: none;
+}
+.container .tab ul .tab_li .tab_select{
+    display: block;
+}
 .container .tab .slider{
     width: 72px;
     height: 2px;
@@ -322,21 +329,26 @@ header .search .iconfont{
     bottom: -2px;
 }
 .container .board_all{
-    width: 275px;
+    width: 290px;
     height: 463px;
     padding-top: 5px;
-    padding-right: 15px;
-    overflow-x: hidden;
     border-bottom: 1px solid #cad1da;
-    overflow-y: auto;
     cursor: default;
+    position: relative;
 }
 .container .board{
-    width: 275px;
+    width: 290px;
     height: 463px;
+    position: absolute;
+    display: none;
+}
+.container .board1{
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: block;
 }
 .container .board ul{
-    width: 275px;
+    width: 290px;
 }
 .container .board1 ul li{
     height: 45px;
@@ -418,6 +430,8 @@ header .search .iconfont{
 .container .board2{
     margin-top: -4px;
     height: 467px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .container .board2 .friend_list{
     width: 290px;
@@ -535,6 +549,7 @@ header .search .iconfont{
     height: 36px;
     border-bottom: 1px solid #cfd7e2;
     font-size: 12px;
+    position: relative;
 }
 .container .board3 .group .g_type{
     float: left;
@@ -545,12 +560,167 @@ header .search .iconfont{
 .container .board3 .group .g_type li{
     float: left;
     padding: 2px 3px;
-    background: yellow;
     height: 20px;
     line-height: 20px;
     margin-left: 3px;
 }
-.container .board3 .group .g_right
+.container .board3 .group .g_type li:hover{
+    background: #bbc2cc;
+}
+.container .board3 .group .g_type .g_type_li{
+    background: #bbc2cc;
+}
+.container .board3 .group .g_right{
+    height: 18px;
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    line-height: 18px;
+}
+.container .board3 .group .g_right .g_new{
+    float: left;
+    margin-right: 3px;
+}
+.container .board3 .group .g_right .g_new .iconfont{
+    display: inline-block;
+    margin-left: -2px;
+    font-size: 10px;
+}
+.container .board3 .group .g_right .g_official{
+    width: 18px;
+    height: 18px;
+    float: left;
+    text-align: center;
+}
+.container .board3 .group .g_right .g_official:hover{
+    background: #cad2dd;
+}
+.container .board3 .group_all{
+    position: relative;
+    width: 290px;
+    height: 431px;
+}
+.container .board3 .group_cont{
+    width: 290px;
+    height: 431px;
+    display: none;
+    position: absolute;
+}
+.container .board3 .group_cont1{
+    display: block;
+}
+.container .board3 .group_cont .g_c_ul .g_c_li{
+    width: 290px;
+    min-height: 30px;
+}
+.container .board3 .group_cont .qq_group_type{
+    width: 290px;
+    height: 30px;
+}
+.container .board3 .group_cont .qq_group_type .triangle{
+    display: block;
+    float: left;
+    width: 12px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-left: 9px;
+}
+.container .board3 .group_cont .qq_group_type .triangle .iconfont{
+    display: block;
+    font-size: 10px;
+    transform: rotate(-90deg);
+    transition: .3s;
+}
+.container .board3 .group_cont .qq_group_type .triangle .f_l_t_rotate{
+    transform: rotate(0deg);
+    transition: .3s;
+}
+.container .board3 .group_cont .qq_group_type .q_g_t_name{
+    float: left;
+    margin-left: 7px;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    max-width: 200px;
+    overflow: hidden;
+}
+.container .board3 .group_cont .qq_group_type .q_g_t_num{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    float: left;
+}
+.container .board3 .group_cont .qq_group_list{
+    width: 290px;
+    display: none;
+}
+
+.container .board3 .group_cont .qq_group_list1{
+    display: block;
+}
+.container .board3 .group_cont .qq_group_list li{
+    height: 36px;
+    width: 280px;
+    padding-left: 10px;
+}
+.container .board3 .group_cont .qq_group_list li .header2{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: left;
+    margin-top: 3px;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li .header2 img{
+    width: 30px;
+    height: 30px;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li .qq_group_name1{
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 36px;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li .qq_group_name1 span{
+    color: #7f7f7f;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li .qq_group_time{
+    float: right;
+    color: #7f7f7f;
+    font-size: 12px;
+    line-height: 36px;
+    margin-right: 3px;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li2{
+    height: 55px;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li2 .header2{
+    width: 42px;
+    height: 42px;
+    margin-top: 6px;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li2 .header2 img{
+    width: 42px;
+    height: 42px;
+}
+.container .board3 .group_cont .qq_group_list .qq_group_list_li2 .qq_group_name1{
+    float: left;
+    margin-left: 5px;
+    font-size: 12px;
+    line-height: 55px;
+}
+
+.container .board3 .group_cont3{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
 
 
 
