@@ -34,11 +34,13 @@ a{
 }
 .all{
     position: relative;
+    margin: 100px auto;
+    width: 430px;
+    height: 330px;
 }
 .myQQ{
     width: 430px;
     height: 330px;
-    /*margin: 200px auto;*/
     background: rgba(235,242,249,1);
     box-shadow:0 0 10px 1px rgba(0,0,0,.4);
     border-radius: 3px;

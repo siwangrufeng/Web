@@ -469,8 +469,36 @@ $(function () {
         //    $(".qqSet").css("z-index","-100");
         //    $(".myQQ").css({"transform":"rotateY(0deg)","transition":"2s","z-index":"1100"});
         //},500);
+    });
+
+
+
+    //密码输入框的简单判断
+    // $(".passWord").propertychange(function () {
+    //     var length=$(this).val().length;
+    //     console.log(length)
+    // })
+
+
+
+    // $(".passWord").bind("input","propertychange",function () {
+    //     var length=$(this).val().length;
+    //动态获取value长度
+    //     console.log(length);
+    // });
+
+    $("#logOn").on("submit",function (e) {
+        var length=$(this).find(".password").val().length;
+        if (length>16){
+            e.preventDefault();
+            alert("请输入8位以上16位数以内密码")
+        }else if(length<8){
+            e.preventDefault();
+            alert("请输入8位以上16位数以内密码")
+        }
     })
 
+    //点击登录
 
 });
 

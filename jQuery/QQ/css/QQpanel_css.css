@@ -35,7 +35,7 @@ a{
 .cont{
     width: 290px;
     height: 696px;
-    margin: 20px 320px;
+    margin: 20px auto;
     background: #E1EAF6;
     border: 1px solid #C8C8C8;
     border-radius: 2px;
@@ -264,7 +264,9 @@ header .search input{
     padding-left: 28px;
     outline: none;
 }
-
+header .search input::placeholder{
+    color: rgba(255,255,255,.8);
+}
 header .search .iconfont{
     display: block;
     width: 28px;
@@ -711,12 +713,224 @@ header .search .iconfont{
     font-size: 12px;
     line-height: 55px;
 }
-
 .container .board3 .group_cont3{
     text-align: center;
     font-size: 30px;
     font-weight: bold;
 }
+.container .board4{
+    /*display: block;*/
+}
+.container .board4 .space{
+    width: 290px;
+    height: 40px;
+}
+.container .board4 .space .space_type{
+    max-width: 200px;
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    margin-left: 10px;
+    font-size: 12px;
+    float: left;
+}
+.container .board4 .space .space_type .iconfont{
+    font-size: 10px;
+    color: #bebebe;
+}
+.container .board4 .space .refresh{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    overflow: hidden;
+    float: right;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+.container .board4 .space .refresh img{
+    width: 16px;
+    height: 16px;
+    transition:.3s;
+}
+.container .board4 .speak{
+    width: 260px;
+    min-height: 30px;
+    border: 1px solid #cad2dd;
+    font-size: 12px;
+}
+.container .board4 .speak .speak_frame{
+    width: 252px;
+    min-height: 30px;
+    line-height: 30px;
+    border: 0;
+    padding-left: 4px;
+    padding-right: 4px;
+    outline: none;
+    background: #E1EAF6;
+}
+.container .board4 .speak .speak_frame::placeholder{
+    color: #cad2dd;
+}
+.container .board4 .space_cont{
+    width: 280px;
+    height: 391px;
+    padding-left: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container .board4 .space_cont .space_ul{
+    width: 270px;
+}
+.container .board4 .space_cont .space_ul .space_li{
+    width: 270px;
+    margin-top: 20px;
+    font-size: 12px;
+}
+.container .board4 .space_cont .space_ul .space_li .space_head{
+    width: 270px;
+    height: 42px;
+}
+.container .board4 .space_cont .space_ul .space_li .space_head .header4{
+    float: left;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.container .board4 .space_cont .space_ul .space_li .space_head .header4 img{
+    width: 42px;
+    height: 42px;
+}
+.container .board4 .space_cont .space_ul .space_li .space_head .space_info{
+    width: 200px;
+    height: 42px;
+    line-height: 16px;
+    float: left;
+    margin-left: 8px;
+    padding-top: 5px;
+}
+.container .board4 .space_cont .space_ul .space_li .space_words{
+    margin-top: 5px;
+    width: 270px;
+    min-height: 30px;
+    line-height: 30px;
+}
+.container .board4 .space_cont .space_ul .space_li .space_words img{
+    width: 16px;
+    height: 17px;
+    vertical-align: middle;
+    margin-top: -6px;
+}
+.container .board4 .space_cont .space_ul .space_li .space_img{
+    width: 270px;
+    height: 100%;
+    overflow: hidden;
+}
+.container .board4 .space_cont .space_ul .space_li .space_img img{
+    display: inline-block;
+    float: left;
+}
+.container .board4 .space_cont .space_ul .space_li .control{
+    width: 270px;
+    height: 40px;
+    border-bottom: 1px solid #cad2dd;
+    margin-bottom: 10px;
+}
+.container .board4 .space_cont .space_ul .space_li .control .browse{
+    max-width: 120px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    float: left;
+}
+.container .board4 .space_cont .space_ul .space_li .control .handle{
+    float: right;
+    padding-top: 10px;
+}
+.container .board4 .space_cont .space_ul .space_li .control .handle .praise{
+    float: left;
+    width: 19px;
+    height: 19px;
+    text-align: center;
+    color: #8f9396;
+}
+.container .board4 .space_cont .space_ul .space_li .control .handle .comment{
+    width: 19px;
+    height: 19px;
+    float: left;
+    margin-left: 5px;
+}
+.container .board4 .space_cont .space_ul .space_li .control .handle .comment img{
+    width: 18px;
+    height: 19px;
+}
+.container .board4 .space_cont .space_ul .space_li .control .handle .share{
+    width: 19px;
+    height: 19px;
+    float: left;
+    margin-left: 5px;
+}
+.container .board4 .space_cont .space_ul .space_li .control .handle .share img{
+    width: 19px;
+    height: 19px;
+}
+.container .board4 .space_cont .space_ul .space_li .praise2{
+    line-height: 16px;
+}
+.container .board4 .space_cont .space_ul .space_li .praise2 .praise2_img{
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px;
+}
+.container .board4 .space_cont .space_ul .space_li .praise2 span{
+    color: #485b6c;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.container .board4 .space_cont .space_ul .space_li .comment2{
+    margin-top: 5px;
+}
+.container .board4 .space_cont .space_ul .space_li .comment2 .comment2_name{
+    color: #485b6c;
+}
+.container .board4 .space_cont .space_ul .space_li .comment2 ul{
+    width: 270px;
+}
+.container .board4 .space_cont .space_ul .space_li .speak_too{
+    width: 260px;
+    min-height: 30px;
+    border: 1px solid #cad2dd;
+    margin-top: 5px;
+    font-size: 12px;
+}
+.container .board4 .space_cont .space_ul .space_li .speak_too input{
+    width: 252px;
+    min-height: 30px;
+    line-height: 30px;
+    border: 0;
+    outline: none;
+    background: #E1EAF6;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.container .board4 .space_cont .space_ul .space_li .speak_too input::placeholder{
+    color: #cad2dd;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

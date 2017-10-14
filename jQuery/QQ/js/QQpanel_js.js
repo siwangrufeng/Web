@@ -85,6 +85,82 @@ $(function () {
         $(".board").eq(index).show().siblings().hide();
 
         $(".slider").css("left",72*index+"px");
+    });
+
+    //点击刷新
+
+
+
+    //点赞
+    var a=0;
+    $(".praise").click(function () {
+        a++;
+        if (a%2!=0){
+            $(this).find(".iconfont").css("color","#3166b7");
+            var span=$("<span class='praise2_name'>loading...</span>");
+            $(this).parents(".control").siblings(".praise2").find("img")
+                .after(span);
+        }else {
+            $(this).find(".iconfont").css("color","#8f9396");
+            $(this).parents(".control").siblings(".praise2").find("span:first").remove();
+        }
+
+    });
+
+
+
+    //评论插入列表
+
+    //有问题
+
+    $(".speak_too").on("submit",function (e) {
+        e.preventDefault();
+        var li=$(this).parents(".space_ul").find(".comment2").find("li:last").clone();
+        var value=$(this).find("input").val();
+        li.find(".comment2_name").html("loading...");
+        li.find(".comment2_cont").html(value);
+        $(this).siblings(".comment2").find("ul").append(li);
+        $(this).find("input").val("")
+    });
+
+
+    //发表动态；
+    $(".speak").on("submit",function (e) {
+        e.preventDefault();
+        var li=$(this).siblings(".space_ul").find(".space_li").eq(0).clone();
+        var value=$(this).find("input").val();
+        var date=new Date();
+        var hours=date.getHours();
+        var minu=date.getMinutes();
+        if(hours<10){
+            hours="0"+hours;
+        }
+        li.find(".header4").find("img")
+            // .remove()
+            // .src="img/my_logo.jpg";
+            .attr("src","img/my_logo.jpg");
+        li.find(".space_name").html("loading...");
+        li.find(".space_time").html(hours+":"+minu);
+        li.find(".space_words").html(value);
+        li.find(".space_img").remove();
+        li.find(".praise2").remove();
+        li.find(".comment2 ul li").empty();
+        li.find(".browse").find("span").html(0);
+        $(this).siblings(".space_ul").prepend(li);
+        $(this).find("input").val("");
+    })
+
+
+
+    //个性签名
+
+    //有问题
+    $(".i_mid").click(function () {
+        $(this).find("input").val("");
+    }).on("submit",function (e) {
+        e.preventDefault();
+        var val=$(this).find("input").val();
+        $(this).find("input").css("placeholder","val")
     })
 
 
