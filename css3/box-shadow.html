@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>box-shadow</title>
+    <style type="text/css">
+        div {
+            width: 300px;
+            height: 100px;
+            background-color: yellow;
+            box-shadow: 10px 10px 5px #888888;
+            /*x轴偏移，y轴偏移，不需要偏移就是0 第三个模糊距离 第四个阴影大小*/
+            /*可在最前面添加 inset 将外阴影改为内阴影*/
+            /*兼容Mozilla类型的浏览器，如ff*/
+            -moz-box-shadow: 10px 10px 5px #888888;
+            /*兼容webkit引擎，如Chorme和Safari等*/
+            -webkit-box-shadow: 10px 10px 5px #888888;
+        }
+
+        input, textarea {
+            padding: 4px;
+            border: solid 1px #E5E5E5;
+            width: 200px;
+            background: #FFFFFF;
+            /*设置边框阴影效果*/
+            box-shadow: rgba(0, 0, 0, 0.5) 0 0 8px;
+            /*兼容Mozilla类型的浏览器，如ff*/
+            -moz-box-shadow: rgba(0, 0, 0, 0.5) 0 0 8px;
+            /*箭筒webkit引擎，如Chorme和Safari等*/
+            -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 0 8px;
+        }
+
+        input:hover, textarea:hover, input:focus, textarea:focus {
+            border-color: #C9C9C9;
+        }
+
+        label {
+            margin-left: 10px;
+            color: #999999;
+
+        }
+
+        .submit input {
+            width: auto;
+            padding: 9px 15px;
+            background: #617798;
+            border: 0;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+
+
+    </style>
+</head>
+<body>
+<h3>box-shadow</h3>
+
+<div></div>
+<H3>登陆表单</H3>
+
+<form>
+    <p class="name">
+        <label for="name">姓名</label>
+        <input type="text" name="name" id="name"/>
+    </p>
+
+    <p class="email">
+        <label for="email">邮箱</label>
+        <input type="text" name="email" id="email"/>
+    </p>
+
+    <p class="submit">
+        <input type="submit" value="提交"/>
+    </p>
+</form>
+
+</body>
+</html>

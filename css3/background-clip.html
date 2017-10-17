@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-clip</title>
+    <style type="text/css">
+        .border {
+            background-image: url("img/bomb.jpg");
+            background-color: black;
+            /*可同时加以上两个属性，可同时显示，特别是图片加载不出来可以显示背景色*/
+            background-repeat: no-repeat;
+            /*background-position: left top;*/
+
+            border-width: 30px;
+            border-style: dashed;
+            border-color: rgba(255, 0, 0, .5);
+
+            width: 150px;
+            height: 150px;
+            padding: 30px;
+            margin: 0 auto;
+
+
+            /*background-clip: border-box;*/
+            /*裁切方式 以边框外部为基准裁切图片*/
+            /*background-clip: padding-box;*/
+            /*裁切方式 以边框内部也就是padding开始的位置为基准裁切图片*/
+            /*background-clip:content-box;*/
+            /*裁切方式 以padding内部为基准裁切图片*/
+
+
+
+
+            /*background-origin: border-box;*/
+            /*改变背景图原点 以边框外部左上角为原点*/
+            /*background-origin: padding-box;*/
+            /*改变背景图原点 以边框内部也就是padding开始的位置左上角为原点*/
+            background-origin: content-box;
+            /*改变背景图原点 以padding内部左上角为原点*/
+
+
+        }
+
+    </style>
+</head>
+<body>
+<h3>background-clip的使用</h3>
+
+<div class="border"></div>
+
+</body>
+</html>

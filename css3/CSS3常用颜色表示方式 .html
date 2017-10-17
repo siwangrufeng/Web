@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS3常用颜色表示方式</title>
+    <style>
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            font-size: 10px;
+        }
+
+        li.rgba1 {
+            background: rgba(255, 255, 0, 1);
+        }
+
+        li.rgba2 {
+            background: rgba(255, 255, 0, 0.8);
+        }
+
+        li.rgba3 {
+            background: rgba(255, 255, 0, 0.6);
+        }
+
+        li.rgba4 {
+            background: rgba(255, 255, 0, 0.4);
+        }
+
+        li.rgba5 {
+            background: rgba(255, 255, 0, 0.2);
+        }
+
+        li.rgba6 {
+            background: rgba(255, 255, 0, 0);
+        }
+
+        br {
+            clear: both;
+        }
+
+        input, textarea {
+            padding: 4px;
+            border: solid 1px #E5E5E5;
+            font: sans-serif;
+            width: 200px;
+            background: #FFFFFF;
+            /*设置边框阴影效果*/
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+            /*兼容Mozilla类型的浏览器，如ff*/
+            -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+            /*箭筒webkit引擎，如Chorme和Safari等*/
+            -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 8px;
+        }
+
+        input:hover, textarea:hover, input:focus, textarea:focus {
+            border-color: #C9C9C9;
+        }
+
+        label {
+            margin-left: 10px;
+            color: #999999;
+
+        }
+
+        .submit input {
+            width: auto;
+            padding: 9px 15px;
+            background: #617798;
+            border: 0;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
+
+        /*HSL*/
+        div.hslL1 {
+            background: hsl(320, 100%, 50%);
+            height: 20px;
+        }
+
+        div.hslL2 {
+            background: hsl(320, 50%, 50%);
+            height: 20px;
+        }
+
+        div.hslL3 {
+            background: hsl(320, 100%, 75%);
+            height: 20px;
+        }
+
+        div.hslL4 {
+            background: hsl(202, 100%, 50%);
+            height: 20px;
+        }
+
+        div.hslL5 {
+            background: hsl(202, 50%, 50%);
+            height: 20px;
+        }
+
+        div.hslL6 {
+            background: hsl(202, 100%, 75%);
+            height: 20px;
+        }
+
+        /*HSLA*/
+        div.hslaL1 {
+            background: hsla(320, 100%, 50%, 0.2);
+            height: 20px;
+        }
+
+        div.hslaL2 {
+            background: hsla(320, 50%, 50%, 0.4);
+            height: 20px;
+        }
+
+        div.hslaL3 {
+            background: hsla(320, 100%, 75%, 0.6);
+            height: 20px;
+        }
+
+        div.hslaL4 {
+            background: hsla(202, 150%, 50%, 0.8);
+            height: 20px;
+        }
+
+        div.hslaL5 {
+            background: hsla(202, 50%, 50%, 1.0);
+            height: 20px;
+        }
+
+        div.hslaL6 {
+            background: hsla(201, 100%, 75%, 0);
+            height: 20px;
+        }
+
+
+    </style>
+</head>
+<body>
+<h3>CSS3的RGBA效果</h3>
+<ul>
+    <li class="rgba1">1</li>
+    <li class="rgba2">0.8</li>
+    <li class="rgba3">0.6</li>
+    <li class="rgba4">0.4</li>
+    <li class="rgba5">0.2</li>
+    <li class="rgba6">0</li>
+</ul>
+
+<br/>
+
+<H3>登陆表单</H3>
+
+<form>
+    <p class="name">
+        <label for="name">姓名</label>
+        <input type="text" name="name" id="name"/>
+    </p>
+
+    <p class="email">
+        <label for="email">邮箱</label>
+        <input type="text" name="email" id="email"/>
+    </p>
+
+    <p class="submit">
+        <input type="submit" value="提交"/>
+    </p>
+</form>
+<h3>HSL</h3>
+
+<div CLASS="hslL1"></div>
+<div CLASS="hslL2"></div>
+<div CLASS="hslL3"></div>
+<div CLASS="hslL4"></div>
+<div CLASS="hslL5"></div>
+<div CLASS="hslL6"></div>
+
+<h3>HSLA</h3>
+
+<div CLASS="hslaL1"></div>
+<div CLASS="hslaL2"></div>
+<div CLASS="hslaL3"></div>
+<div CLASS="hslaL4"></div>
+<div CLASS="hslaL5"></div>
+<div CLASS="hslaL6"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-origin</title>
+    <style type="text/css">
+        .border {
+            background: url("img/bomb.jpg");
+            background-repeat: no-repeat;
+            background-position: left top;
+
+            /*默认的是padding-box*/
+           /* background-origin: padding-box;
+            -moz-background-origin:padding-box;
+            -webkit-background-origin:padding-box;*/
+            /*改变背景图原点 以边框内部也就是padding开始的位置左上角为原点*/
+
+          /*  background-origin: border-box;
+            -moz-background-origin:border-box;
+            -webkit-background-origin:border-box;*/
+            /*改变背景图原点 以边框外部左上角为原点*/
+
+            background-origin: content-box;
+            -moz-background-origin:content-box;
+            /*火狐内核，报错但是生效*/
+            -webkit-background-origin:content-box;
+            /*改变背景图原点 以padding内部左上角为原点*/
+
+            border-width: 30px;
+            border-style: dashed;
+            border-color:rgba(255,0,0,0.5);
+
+            width: 150px;
+            height: 150px;
+            padding: 30px;
+            margin: 0 auto;
+        }
+
+
+    </style>
+</head>
+<body>
+<h3>background-origin的使用</h3>
+
+<div class="border"></div>
+
+</body>
+</html>

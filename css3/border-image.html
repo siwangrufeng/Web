@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>border-image</title>
+    <style type="text/css">
+
+        div {
+            border: 15px solid transparent;
+            width: 250px;
+            padding: 10px 20px;
+        }
+
+        #round {
+            -webkit-border-image: url("img/border-bg.png") 30 30 round;
+            /* Safari 5 and older */
+            /*第一个值是源 第二个第三个是裁切尺寸，分别为距离上边 距离右边 距离下边 距离左边 可以像margin padding一样简写成两个值 最后一个为repeat值，repeat为重复 最后不够一整个就裁切，round类似repeat，但是会自动适应大小，最后不会有残缺的图片，stretch拉伸*/
+            -o-border-image: url("img/border-bg.png") 30 30 round;
+            /* Opera */
+            border-image: url("img/border-bg.png") 30 30 round;
+        }
+
+        #stretch {
+            -webkit-border-image: url("img/border-bg.png") 30 30 stretch;
+            /* Safari 5 and older */
+            -o-border-image: url("img/border-bg.png") 30 30 stretch;
+            /* Opera */
+            border-image: url("img/border-bg.png") 30 30 stretch;
+        }
+
+    </style>
+</head>
+<body>
+<h3>border-image的使用</h3>
+
+<div id="round">使用repeated来填充容器</div>
+<br>
+
+<div id="stretch">使用stretched来填充容器</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-size</title>
+    <style type="text/css">
+
+        .border {
+            background: url("img/bomb.jpg") black;
+            background-repeat: no-repeat;
+            background-position: left top;
+            background-origin: content-box;
+            background-clip: content-box;
+
+           /* background-size: 80px 80px;*/
+          /* background-size: 50% 100%;*/
+           /*background-size:100%;*/
+            /*同percentage=>  width百分百 height等比例自适应*/
+            /*background-size:cover;    */
+            /*完全覆盖我的盒子范围，可能会出现溢出 强调是必须要覆盖整个盒子*/
+            background-size: contain;
+            /*最大比例的完全显示背景图片内容 可能会等宽可能会等高*/
+
+
+
+            border-width: 3px;
+            border-style: dashed;
+            border-color: red;
+
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<h3>background-size的使用</h3>
+
+<div class="border"></div>
+
+</body>
+</html>

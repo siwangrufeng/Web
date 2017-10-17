@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS3常用文本属性</title>
+    <style type="text/css">
+        p {
+            font: bold 60px sans-serif;
+            color: #000;
+            text-shadow: 2px 2px 10px #ff0000;
+            /*第三个参数是模糊度，数字越大越模糊, 前两个参数可以为0，第三个参数可省略*/
+        }
+
+        /*Note that text-overflow only occurs when the container's overflow property has the value hidden, scroll or auto and white-space: nowrap;.*/
+        div.test {
+            white-space: nowrap;
+            /*中文默认会自动换行，加这个属性文本不会换行，文本会在在同一行上继续，直到遇到 <br> 标签为止。*/
+            width: 12em;
+            /*Ems”(em):“em”是一个可伸缩的单位, 用于web文档媒体展示。一个em等于当前的字体大小*/
+            overflow: hidden;
+            border: 1px solid #000000;
+        }
+
+        div.test:hover {
+            overflow: visible;
+        }
+
+        h3.test {
+            width: 11em;
+            border: 1px solid #000000;
+            word-wrap: break-word;
+            /*英文状态下也会自动换行，此属性规定的是遇到长单词，长到装不下的时候，要不要打断单词下一行显示，不写会溢出*/
+        }
+
+    </style>
+</head>
+<body>
+<p>海同科技-HTML5+CSS3</p>
+
+<H2>text-overflow:ellipsis</H2>
+
+<div class="test" style="text-overflow:ellipsis;">这是一段长文本，没办法完整的在容器中显示。</div>
+<br>
+
+<H2>text-overflow:clip</H2>
+
+<div class="test" style="text-overflow:clip;">这是一段长文本，没办法完整的在容器中显示。</div>
+<br>
+
+<H2> word-wrap: normal/break-word</H2>
+
+<h3 class="test"> This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will
+    break and wrap to the next line.</h3>
+</body>
+</html>

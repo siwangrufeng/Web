@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 300px;
+            height: 400px;
+            transform: rotate(-90deg);
+        }
+        .box{
+            width: 100px;
+            height: 150px;
+            /*background: hotpink;*/
+        }
+        .box1{
+            border: 50px solid red;
+            border-radius: 0 150px 150px 0/0 150px 150px 0;
+            /*有没有border都可以用border-radius实现控制*/
+            /*分别如图依次控制各个角度的值 中间要以/连接*/
+        }
+        .box2{
+            width: 300px;
+            border: 2px solid red;
+            border-radius: 100px 0 100px 0/100px 0 100px 0;
+        }
+        .box3{
+            width: 300px;
+            height: 600px;
+        }
+        .box31{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            border-right: 0;
+            border-bottom: 0;
+            border-radius: 50% 50% 0 50%/50% 50% 0 50%;
+        }
+        .box32{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            border-left: 0;
+            border-top: 0;
+            border-radius: 0 50% 50% 50%/0 50% 50% 50%;
+        }
+    </style>
+</head>
+<body>
+<img src="img/IMG_20171017_110859.jpg" alt="">
+<div class="box box1"></div>
+<div class="box box2"></div>
+<div class="box box3">
+    <div class="box31">
+
+    </div>
+    <div class="box32">
+
+    </div>
+</div>
+</body>
+</html>
