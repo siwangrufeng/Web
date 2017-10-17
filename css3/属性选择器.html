@@ -1,0 +1,38 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>CSS3属性选择器</title>
+    <style type="text/css">
+        p {
+            margin: 4px;
+        }
+
+        a[href^="http:"] {
+            background: url(img/window.gif.gif) no-repeat left center;
+            padding-left: 18px;
+        }
+
+        a[href$="pdf"] {
+            background: url(img/icon_pdf.gif.gif) no-repeat left center;
+            padding-left: 18px;
+        }
+
+        a[href*="xxx"] {
+            background: url(img/icon_img.gif.gif) no-repeat left center;
+            padding-left: 18px;
+        }
+
+    </style>
+</head>
+<img src="img/属性选择器.jpg" alt="">
+<body>
+<p><a href="http://www.baidu.com/name.pdf">PDF文件</a></p>
+<p><a href="http://www.baidu.com/name.ppt">PPT文件</a></p>
+<p><a href="http://www.baidu.com/name.xls">XLS文件</a></p>
+<p><a href="http://www.baidu.com/xxx.rar">RAR文件</a></p>
+<p><a href="http://www.baidu.com/name.gif">GIF文件</a></p>
+<p><a href="http://www.baidu.com/xxx.jpg">JPG文件</a></p>
+<p><a href="http://www.baidu.com/">http://www.baidu.com/</a></p>
+</body>
+</html>

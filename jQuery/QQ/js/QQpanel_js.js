@@ -115,19 +115,28 @@ $(function () {
 
     $(".speak_too").on("submit",function (e) {
         e.preventDefault();
-        var li=$(this).parents(".space_ul").find(".comment2").find("li:last").clone();
+
+        var li=$(this).parents(".space_ul").find(".comment2").find("li").eq(0).css({
+            "background":"green"
+        }).clone().css({
+            "background":"yellow"
+        });
         var value=$(this).find("input").val();
-        li.find(".comment2_name").html("loading...");
+        li.find(".comment2_name").html("loading...").css({
+            "background":"red"
+        });
         li.find(".comment2_cont").html(value);
         $(this).siblings(".comment2").find("ul").append(li);
-        $(this).find("input").val("")
+        $(this).siblings(".comment2").css({
+            "background":"black"
+        });
+        $(this).find("input").val("");
     });
-
 
     //发表动态；
     $(".speak").on("submit",function (e) {
         e.preventDefault();
-        var li=$(this).siblings(".space_ul").find(".space_li").eq(0).clone();
+        var li=$(this).siblings(".space_ul").find(".space_li").eq(0).clone(true);
         var value=$(this).find("input").val();
         var date=new Date();
         var hours=date.getHours();
@@ -135,10 +144,10 @@ $(function () {
         if(hours<10){
             hours="0"+hours;
         }
-        li.find(".header4").find("img")
-            // .remove()
-            // .src="img/my_logo.jpg";
-            .attr("src","img/my_logo.jpg");
+        if(minu<10){
+            minu="0"+minu
+        }
+        li.find(".header4").find("img").attr("src","img/my_logo.jpg");
         li.find(".space_name").html("loading...");
         li.find(".space_time").html(hours+":"+minu);
         li.find(".space_words").html(value);
@@ -148,13 +157,12 @@ $(function () {
         li.find(".browse").find("span").html(0);
         $(this).siblings(".space_ul").prepend(li);
         $(this).find("input").val("");
-    })
+    });
 
 
 
     //个性签名
 
-    //有问题
     $(".i_mid").click(function () {
         $(this).find("input").val("");
     }).on("submit",function (e) {

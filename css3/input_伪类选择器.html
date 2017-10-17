@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>CSS3属性选择器</title>
+    <style>
+        input[type="text"]:enabled {
+            background: #ffff00;
+        }
+
+        input[type="text"]:disabled {
+            background: #ff5aba;
+        }
+
+        /*!*目前浏览器不支持*!*/
+        input:checked {
+            background: #ff2f27;
+        }
+
+        input:read-write {
+            background-color: pink;
+        }
+        /**/
+        input:read-only {
+            background-color: blue;
+        }
+        /*!*匹配元素中被用户选中或处于高亮状态的部分*!*/
+        ::selection {
+            color: red;
+        }
+
+        div::selection {
+            color: green;
+        }
+        /*!*火狐浏览器 通过其私有属性 ::-moz-selection 支持*!*/
+        ::-moz-selection {
+            color: #ff0000;
+        }
+        /*!*用于标签的值在指定区间之外时显示的样式*!*/
+
+        input:out-of-range
+        {
+            border:2px solid red;
+        }
+        /*用于标签的值在指定区间之内时显示的样式*/
+
+        input:in-range
+        {
+            border:2px solid yellow;
+        }
+        /*!*可选的输入元素(可填可不填)*!*/
+        p>input[type='text']:optional{
+            background-color: #6de9ff;
+        }
+        p>input[type='text']:required{
+            background-color: #ff26d2;
+        }
+        input[type="email"]:valid
+        {
+            background-color: yellow;
+        }
+        input[type="email"]:invalid
+        {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<img src="img/input_伪类选择器.png" alt="">
+<form action="#" name="myform" method="get">
+    姓名: <input type="text" value="Nike-Zhu"/><br>
+    国家: <input type="text" disabled="disabled" value="中国"/><br>
+    <input type="radio" checked="checked" value="male" name="gender"/> 男<br>
+    <input type="radio" value="female" name="gender"/> 女<br>
+
+    <p>普通的input元素:<br><input value="hello"></p>
+
+    <p>只读的input元素:<br><input readonly value="hello"></p>
+
+    <div>这是div元素中的一些文本.</div>
+    <input type="number" min="5" max="10" value="55" />
+    <p>可选的 input 元素:<br><input type="text"></p>
+
+    <p>必填的 input 元素:<br><input required type="text"></p>
+
+    <input type="email" value="support@exampel.com" />
+</form>
+</body>
+</html>
