@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 180px;
+            height: 300px;
+            background: hotpink;
+            /*position: relative;*/
+            margin-bottom: 30px;
+        }
+        .box1{
+            width: 180px;
+            height: 300px;
+            /*position: absolute;*/
+            left: 0;
+            top: 0;
+            background: url("img/animations_lianxi.png") no-repeat;
+
+            animation-name: move;
+            /*@keyframes的名字*/
+
+
+            animation-duration:1s;
+            /*规定动画完成一个周期的时间*/
+
+
+            /*animation-delay: 2s;*/
+            /*规定动画何时开始，默认为0，设置延时用的*/
+
+
+            animation-iteration-count: infinite;
+            /*设置动画播放次数，为整数，infinite为无限次*/
+
+
+            animation-direction: alternate;
+            /*规定动画是否在下一周期逆行 默认为normal，意思是不逆行；
+            alternate为逆行*/
+
+
+            animation-play-state:running;
+            /*规定动画是否运行，默认为running，paused为暂停*/
+
+
+            animation-timing-function: step-start;
+            /*作用于每一帧，
+            linear从头到尾速度相同，
+            ease 默认值 以低速开始然后加速在结束前减速，
+            ease-in以低速开始
+            ease-out以低速结束
+            ease-in-out以低速开始和结束
+            cubic-bezier（n,n,n,n）
+            step-start当前帧结束的时候直接进入下一帧
+            step-end当前帧结束直接进入上一帧*/
+
+
+
+            /*animation: move 1s infinite alternate;*/
+            /*以上除animation-play-state以外所有属性都可以简写到一起，但为了避免冲突，容易发生冲突的数值最好分开写*/
+        }
+        @keyframes move {   /*固定写法，后面是名字，可以自己取，将来写在要用这个动画的animation属性里*/
+            from{
+                background-position-x: 0;
+                /*每一个算一帧*/
+                /*from是开始也就是0%。只能用百分比表示*/
+            }
+            14.3%{
+                background-position-x: -180px;
+            }
+            28.6%{
+                background-position-x: -360px;
+            }
+            42.8%{
+                background-position-x: -540px;
+            }
+            51.1%{
+                background-position-x: -720px;
+            }
+            71.4%{
+                background-position-x: -900px;;
+            }
+            85.7%{
+                background-position-x: -1080px;
+            }
+            to{
+                background-position-x: 0;
+                /*to相当于100%*/
+                /*相当于无缝轮播，最后以很快的速度将left变成0*/
+            }
+        }
+        span{
+            display: inline-block;
+            padding: 0 10px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background: pink;
+            cursor: default;
+        }
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $(".one").click(function () {
+                $(".box1").css({"animation-duration":".2s","animation-play-state":"running"})
+            });
+            $(".two").click(function () {
+                $(".box1").css({"animation-duration":".5s","animation-play-state":"running"})
+            });
+            $(".three").click(function () {
+                $(".box1").css({"animation-duration":"1s","animation-play-state":"running"})
+            });
+            $(".four").click(function () {
+                $(".box1").css({"animation-duration":"3s","animation-play-state":"running"})
+            });
+            $(".five").click(function () {
+                $(".box1").css("animation-play-state","paused")
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <div class="box1"></div>
+</div>
+<span class="one">最快</span>
+<span class="two">快速</span>
+<span class="three">正常速度</span>
+<span class="four">慢速</span>
+<span class="five">暂停</span>
+</body>
+</html>

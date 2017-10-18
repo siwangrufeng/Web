@@ -129,7 +129,6 @@
 
             $(".next").click(function () {
                 count--;
-                console.log(count);
                 if (count == -1) {
                     $("ul").css({
                         "left": -(num - 5) * wid
@@ -171,6 +170,8 @@
                     prev()
                 }, 1500)
             });
+
+
             $("li img").mouseover(function (i) {
                 this.a = this.title;
                 this.title = "";

@@ -52,20 +52,20 @@
             var box_list=$(".box").not(".box_first").not(".box_last");
             $(".active").next().show();
             lump_list.click(function(){
-                $("body").animate({scrollTop:box_list.eq($(lump_list).index(this)).offset().top},500);
+                $("body,html").animate({scrollTop:box_list.eq($(lump_list).index(this)).offset().top},500);
                 $("lump_list").css({"background":"cornflowerblue"});
                 $(this).addClass("active").siblings().removeClass("active");
                 $(".line").hide();
                 $(this).next().show();
             });
             $(".last").click(function(){
-                $("body").animate({scrollTop:0},500);
+                $("body,html").animate({scrollTop:0},500);
             });
 
 
 
             $(window).scroll(function () {
-                var z=$("body").scrollTop();
+                var z=$("body,html").scrollTop();
                 if(z>=500){
                     $(".side").fadeIn();
                 }else {
@@ -80,10 +80,7 @@
                         return false;//中断循环    不中断的话会直接执行到最大下标
                     }
                 });
-
             });
-
-
         })
     </script>
 </head>

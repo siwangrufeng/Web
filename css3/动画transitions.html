@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 300px;
+            background: hotpink;
+            position: absolute;
+        }
+        .box:hover{
+            width: 600px;
+            height: 600px;
+            left: 300px;
+            top: 300px;
+            transition-property:width,height,left,top;
+            /*规定应用过渡的属性名，可加多个，用逗号隔开 ，不写默认为all*/
+
+            transition-duration:3s;
+            /*规定过渡时间*/
+
+            transition-timing-function: linear;
+            /*linear从头到尾速度相同，*/
+            /*ease 默认值 以低速开始然后加速在结束前减速，*/
+            /*ease-in以低速开始*/
+            /*ease-out以低速结束*/
+            /*ease-in-out以低速开始和结束*/
+            /*cubic-bezier（n,n,n,n）*/
+
+
+            transition-delay: 0s;
+            /*规定过渡效果何时开始，设置延时，默认0s*/
+
+
+            /*transition:all 3s linear;*/
+            /*以上四个属性可以组合简写，注意两个以秒计算的属性最好单独写，可能会冲突*/
+            /*transition: width 3s linear,height 1s ease-in;*/
+            /*可以以逗号隔开，分开规定不同属性值*/
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>
