@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body{
+            background: palevioletred;
+        }
+        .box{
+            font-size: 30px;
+            color: black;
+        }
+        @media screen and (min-width: 600px) and (max-width: 1000px) {
+            /*对屏幕进行监测 媒体监测*/
+            body{
+                background: pink;
+                transition: 2s;
+            }
+            .box{
+                font-size: 60px;
+                color: white;
+                transition: 2s;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            display: flex;
+            /*给父盒子加flex*/
+        }
+        .text{
+            flex: 1;
+            /*给子盒子加flex 后面的数字表示：例如两个子盒子都是1 就是1+1，然后二分之一，如果一个是2一个是1就是2+1然后占三分之二*/
+            background: hotpink;
+        }
+        .tex{
+            padding: 5vw 5vw;
+            /*5vw是指浏览器窗口宽度的百分之5,5vh是指高度的百分之五*/
+            display: flex;
+            flex-direction: column;
+            /*表示纵轴*/
+            justify-content: center;
+            /*在纵轴的基础上，居中 要在有高度的前提下*/
+            min-height: 360px;
+        }
+        .pic{
+            flex: 1;
+            background:url("img/promo-01.jpg") center;
+            background-size: cover;
+            min-height: 360px;
+        }
+        @media (max-width: 600px) {
+            .box{
+                flex-direction: column;
+                /*当宽度小于600时 里面的子盒子纵轴显示，如果是column-reverse
+                表示反方向*/
+            }
+            .tex{
+                min-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="text">
+        <div class="tex">
+            <h1>
+                轻巧可提
+            </h1>
+            <p>
+                有史以来最轻巧的摩拜单车，升级选用航天级铝材车架，我们在轻巧和牢固两个层面都达到了最佳状态。一个女生即可双手举起的单车，骑行流畅省力。
+            </p>
+        </div>
+    </div>
+    <div class="pic">
+
+    </div>
+</div>
+</body>
+</html>
