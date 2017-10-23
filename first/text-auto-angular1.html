@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<!--表明整个html文档受angular控制，控制全局，同理，加在哪里控制哪里-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        h2{
+            border: 1px solid red;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header-page">
+        .header-page
+    </div>
+    <h2>写出代码：input元素里面输入内容，在h2里面同时显示</h2>
+    <div class="panel">  <!--面板-->
+        .panel
+        <h2 class="panel-heading" id="name">{{hello}}~{{user}}</h2>
+        <h2>{{hello+"你好"+user}}</h2>
+        <div class="panel-body">
+            <input type="text" class="form-control" ng-model="hello">
+            <input type="text" class="form-control" ng-model="user">
+            <!--ng-model ng代表angular指定，model表示数据   双向绑定-->
+            <!--angular表示全HTML文档语言控制脚本包-->
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+</html>

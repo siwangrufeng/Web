@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<!--表明整个html文档受angular控制，控制全局，同理，加在哪里控制哪里-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        h2{
+            border: 1px solid red;
+            height: 50px;
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl">
+<!--正常情况下只存在一个ng-controller，正常都写在body里-->
+<div class="container">
+    <div class="header-page">
+        .header-page
+    </div>
+    <h2>写出代码：input元素里面输入内容，在h2里面同时显示</h2>
+    <div class="panel">  <!--面板-->
+        .panel
+        <h2 id="name">{{hello}}~{{user}}</h2>
+        <h2>{{hello+"你好"+user}}</h2>
+        <div class="panel-body">
+            姓：<input type="text"  ng-model="hello"><br>
+            名：<input type="text"  ng-model="user"><br>
+            <!--ng-model ng代表angular指定，model表示数据   双向绑定-->
+            <!--angular表示全HTML文档语言控制脚本包-->
+            姓名：{{hello+" "+user}}
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    var app=angular.module('myApp',[]);
+    //固定写法，实例化应用
+    //angular module=>模板 （ng-app的值，[注入]） 插件或者第三方组件写在中括号里面
+    //这个注入为依赖注入，需要用到的时候就注入，不需要用到的时候就不用，中括号不写东西相当于不起用第三方，用一些自身的方法就可以实现。方便代码优化，节省内存
+
+//    app.controller("myCtrl",["$scope", function ($scope) {
+//        $scope.hello="john";
+//        $scope.user="bob";
+//    }]);
+    //完整写法 $scope视图，是固定值，不更改
+
+
+    app.controller('myCtrl',function($scope){
+        $scope.hello="john";
+        $scope.user="bob";
+    })
+
+</script>
+</html>

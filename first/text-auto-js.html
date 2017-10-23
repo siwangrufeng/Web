@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        .panel-heading{
+            border: 1px solid red;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header-page">
+        .header-page
+    </div>
+    <h2>写出代码：input元素里面输入内容，在h2里面同时显示</h2>
+    <div class="panel">  <!--面板-->
+        .panel
+        <h2 class="panel-heading" id="name"></h2>
+        <div class="panel-body">
+            <input type="text" class="form-control" id="user">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    window.onload=function(){
+        var user=document.getElementById("user");
+//        var user=document.querySelector("#user");
+//        选择器，可用id 类名 标签名 和$类似，不推荐用
+        var name=document.getElementById("name");
+
+        user.onkeyup=function(){
+            var val=user.value;
+            name.innerHTML=val;
+        }
+
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,30 @@
+apache   阿帕奇服务器
+MySQL    数据库
+
+www   发布目录（应用程序之类的打包在这里面）
+  
+appserv文件夹里面的文件绝对不允许用中文
+
+localhost(本机测试) = 127.0.0.1
+
+
+wamp =》（window + Apache + MySQL + php）
+lamp =》（Linux + Apache + MySQL + php）
+phpstudy
+
+每一次更换环境的时候记住把上一次的环境配置完全清空
+
+同步    数据同步时会造成阻塞（当前任务未完成，无法执行下一步）
+异步    无阻塞现象（多线程同事运行）
+
+install 安装
+Uninstall  卸载
+
+
+客户端与服务器端的通行：需要参与者
+（程序狗+计算机）
+
+
+
+
+
