@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<table ng-controller="myCtrl" border="1">
+    <tr ng-repeat="x in records">
+        <!--ng-repeat放的位置决定循环的部分，控制其本身及子级 按行输出-->
+        <td>{{x.Name}}</td>
+        <td>{{x.Country}}</td>
+    </tr>
+</table>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+        $scope.records = [
+            {
+                "Name" : "Alfreds Futterkiste",
+                "Country" : "Germany"
+            },
+            {
+                "Name" : "Berglunds snabbk",
+                "Country" : "Sweden"
+            },
+            {
+                "Name" : "Centro comercial Moctezuma",
+                "Country" : "Mexico"
+            },
+            {
+                "Name" : "Ernst Handel",
+                "Country" : "Austria"
+            }
+        ];
+        //数组的形式也可以当做JSON来用，里面可以继续套；
+
+
+
+    });
+</script>
+</html>

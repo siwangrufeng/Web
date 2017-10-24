@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+</head>
+<body ng-controller="ctrl1">
+<div>
+    <p>{{province+"~"+city}}</p>
+    <h2 ng-init="province='四川';city='成都'">{{province+"~"+city}}</h2>
+    <!--双向绑定，一个改都会被改掉-->
+    <input type="text" value="xxxx" ng-model="city">
+</div>
+<div ng-controller="ctrl2" ng-init="province='四川';city='成都'">
+    <!--一般只有一个ng-controller，但是可以有多个，每个控制某一部分-->
+    <!--ng-init是初始化，相当于全局变量，控制自己控制的区域，会被子级里的控制器覆盖-->
+    <p>{{province+"~"+city}}</p>
+    <h2>{{province+"~"+city}}</h2>
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    var app=angular.module("myApp",[]);
+    app.controller("ctrl1", function ($scope) {
+        $scope.province="哈哈哈哈";
+        $scope.city="哈哈哈哈";
+    });
+//    app.controller("ctrl2", function ($scope) {
+//        $scope.province="河南";
+//        $scope.city="驻马店";
+//        //即使名字相同，可以被不同的控制器控制
+//    })
+</script>
+</html>
