@@ -14,19 +14,19 @@
             <form class="info_form">
                 <div class="form-group">
                     <h4>姓名：</h4>
-                    <input type="text" name="name" ng-model="name" class="form-control">
+                    <input type="text" name="name" ng-model="info.name" class="form-control">
                 </div>
             </form>
             <form class="info_form">
                 <div class="form-group">
                     <h4>邮箱：</h4>
-                    <input type="email" name="email" ng-model="email" class="form-control">
+                    <input type="email" name="email" ng-model="info.email" class="form-control">
                 </div>
             </form>
             <form class="info_form">
                 <div class="form-group">
                     <h4>性别：</h4>
-                    <select name="sex" ng-model="sex" class="form-control">
+                    <select name="sex" ng-model="info.sex" class="form-control">
                         <option value="">请选择性别</option>
                         <!--因为angular的原因，通常第一个要写一个value为空的选项，并加上文字，避免出现bug，同时value为空就不能提交，所以不影响最后的结果-->
                         <option value="0">女士</option>
@@ -39,10 +39,11 @@
                 <div class="form-group">
                     <h4>爱好：</h4>
                     <div class="form-control">
-                        <input type="checkbox" name="hobby" value="play" ng-model="play">玩手机
-                        <input type="checkbox" name="hobby" value="food" ng-model="food">美食
-                        <input type="checkbox" name="hobby" value="sleep" ng-model="sleep">睡觉
-                        <input type="checkbox" name="hobby" value="game" ng-model="game">游戏
+                        <input type="checkbox" name="hobby" value="play" ng-model="info.hobby.play">玩手机
+                        <input type="checkbox" name="hobby" value="food" ng-model="info.hobby.food">美食
+                        <input type="checkbox" name="hobby" value="sleep" ng-model="info.hobby
+.sleep">睡觉
+                        <input type="checkbox" name="hobby" value="game" ng-model="info.hobby.game">游戏
                     </div>
                 </div>
             </form>
@@ -59,7 +60,7 @@
             <!--！为非，取反，真等于假-->
 
             <button class="btn btn-success" ng-click="
-                a=name;name=email;email=a;
+                a=info.name;info.name=info.email;info.email=a;
             ">更换姓名邮箱内容</button>
 
             <button class="btn btn-success" ng-click="read()">初始化赋值</button>
@@ -79,37 +80,37 @@
                     <tr>
                         <td>姓名</td>
                         <td>name</td>
-                        <td>{{name}}</td>
+                        <td>{{info.name}}</td>
                     </tr>
                     <tr>
                         <td>邮箱</td>
                         <td>email</td>
-                        <td>{{email}}</td>
+                        <td>{{info.email}}</td>
                     </tr>
                     <tr>
                         <td>性别</td>
                         <td>sex</td>
-                        <td>{{sex}}</td>
+                        <td>{{info.sex}}</td>
                     </tr>
                     <tr>
                         <td>玩手机</td>
                         <td>play</td>
-                        <td>{{play}}</td>
+                        <td>{{info.hobby.play}}</td>
                     </tr>
                     <tr>
                         <td>美食</td>
                         <td>food</td>
-                        <td>{{food}}</td>
+                        <td>{{info.hobby.food}}</td>
                     </tr>
                     <tr>
                         <td>睡觉</td>
                         <td>sleep</td>
-                        <td>{{sleep}}</td>
+                        <td>{{info.hobby.sleep}}</td>
                     </tr>
                     <tr>
                         <td>游戏</td>
                         <td>game</td>
-                        <td>{{game}}</td>
+                        <td>{{info.hobby.game}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -141,13 +142,18 @@
 
 
         $scope.read = function () {
-            $scope.name=$scope.data.name;
-            $scope.email=$scope.data.email;
-            $scope.sex=$scope.data.sex;
-            $scope.play=$scope.data.hobby.play;
-            $scope.sleep=$scope.data.hobby.sleep;
-            $scope.food=$scope.data.hobby.food;
-            $scope.game=$scope.data.hobby.game;
+//            $scope.name=$scope.data.name;
+//            $scope.email=$scope.data.email;
+//            $scope.sex=$scope.data.sex;
+//            $scope.play=$scope.data.hobby.play;
+//            $scope.sleep=$scope.data.hobby.sleep;
+//            $scope.food=$scope.data.hobby.food;
+//            $scope.game=$scope.data.hobby.game;
+            //表示控制器里的每个值等于以上JSON的对应值
+
+            $scope.info=$scope.data;
+            //另外取值来代表也可以
+
         };
         //调用JSON里面的数据
         //可以以函数的形式，点击触发，也可以不用函数封装

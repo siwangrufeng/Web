@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+<body ng-controller="ctrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>数据data</h2>
+            <pre>      <!--  预格式，被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体  -->
+                {{ data | json }}
+                <!--  竖线为过滤 选择器，过滤data里面的json格式的数据并且以json格式显示  -->
+            </pre>
+        </div>
+        <div class="col-md-4">
+            <h2>列表list</h2>
+            <ul class="list-group">
+                <!--repeat在发现有相同数据的时候，只会显示一个，但是json是不停在刷新的-->
+                <li class="list-group-item" ng-repeat="row in data" ng-click="get($index);rem($index)">
+                    <!--{{"姓名:"+row.user+",年龄:"+row.age}}-->
+                    <!--{{row}}-->
+                    {{row.user}}
+                    <div class="badge badge-important">     <!--badge 徽章-->
+                        {{row.age}}
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>操作form</h2>
+            <div class="form-group">
+                <input type="text" ng-model="info.user" class="form-control" placeholder="姓名">
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="info.age" class="form-control" placeholder="年纪">
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="info.sex" class="form-control" placeholder="性别">
+            </div>
+            <div class="form-group">
+                <div ng-click="insert()" class="btn btn-primary">插入数据到data</div>
+                <div ng-click="remove()" class="btn btn-danger">依次删除</div>
+                <div ng-click="del()" class="btn btn-success">删除某个</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="js/angular.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("ctrl", function ($scope) {
+        $scope.data = [
+            {user: "fan", age: "18"},
+            {user: "zhao", age: "19"},
+            {user: "qian", age: "20"}
+        ];
+        $scope.insert = function () {
+//            $scope.data.push($scope.info);
+            //将input获取到的info值插入到data后面；
+            //然后从里面找到user age再输出；
+            //这里有一个bug问题，跟版本有关系，绑定值得时候，会把form表单也绑定上去，以后删除数据会将整个表单删除，所以要解决
+
+//            var newInfo=$scope.info;
+//            $scope.data.push(newInfo);
+            //这种办法跟版本有关系，可能有用可能没用
+
+
+            $scope.data.push({
+                user: $scope.info.user,
+                age: $scope.info.age
+            });
+            //这种办法是最有效的解决办法，避免了原先的传值时对象也会莫名其妙传上去的问题，掐断至于对象之间的联系
+        };
+
+
+        $scope.get = function (index) {
+            $scope.info = $scope.data[index];
+            $scope.del = function () {
+                $scope.data.splice(index, 1);
+            }
+        };
+
+//        $scope.rem= function (index) {
+//            $scope.data.splice(index,1);
+//        };
+
+        $scope.remove = function () {
+            var num = $scope.data.length - 1;
+            $scope.data.splice(num);
+        }
+
+    })
+</script>
+</html>

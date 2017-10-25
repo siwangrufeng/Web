@@ -9,7 +9,7 @@
 <body>
 <table ng-controller="myCtrl" border="1">
     <tr ng-repeat="x in records">
-        <!--ng-repeat放的位置决定循环的部分，控制其本身及子级 按行输出-->
+        <!--ng-repeat放的位置决定循环的部分，重复其自身 按JSON数组的行输出-->
         <td>{{x.Name}}</td>
         <td>{{x.Country}}</td>
     </tr>

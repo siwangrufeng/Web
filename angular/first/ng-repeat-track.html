@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+<body ng-controller="ctrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h2>数据data</h2>
+            <pre>      <!--  预格式，被包围在 pre 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体  -->
+                {{ data | json }}
+                <!--  竖线为过滤 选择器，过滤data里面的json格式的数据并且以json格式显示  -->
+            </pre>
+        </div>
+        <div class="col-md-4">
+            <h2>列表list</h2>
+            <ul class="list-group">
+                <!--repeat在发现有相同数据的时候，只会显示一个，但是json是不停在刷新的-->
+                <li class="list-group-item" ng-repeat="row in aaa track by $index">
+                    {{$index}}:{{row}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h2>操作form</h2>
+            <div class="form-group">
+                <input type="text" ng-model="info.user" class="form-control" placeholder="姓名">
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="info.age" class="form-control" placeholder="年纪">
+            </div>
+            <div class="form-group">
+                <input type="text" ng-model="info.sex" class="form-control" placeholder="性别">
+            </div>
+            <div class="form-group">
+                <div ng-click="insert()" class="btn btn-primary">插入数据到data</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="js/angular.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("ctrl", function ($scope) {
+        $scope.data = [
+            {user:"fan",age:"18"},
+            {user:"zhao",age:"19"},
+            {user:"qian",age:"20"}
+        ];
+        $scope.aaa=[10,10,10,20,20,30,40];
+        $scope.insert= function () {
+            $scope.data.push({
+                user:$scope.info.user,
+                age:$scope.info.age
+            });
+
+        };
+
+    })
+</script>
+</html>
