@@ -23,14 +23,14 @@
                     <h3>{{area}}</h3>
                     <select ng-model="area" class="form-control">
                         <option value="">请下拉选择地区--</option>
-                        <option ng-repeat="row in data" value="{{row.area}}" ng-click="a($index)">
+                        <option ng-repeat="row in data" value="{{row.area}}">
                             {{row.area}}
                         </option>
                     </select>
                     <h3>{{city}}</h3>
                     <select ng-model="city" class="form-control">
                         <option value="">请下拉选择城市--</option>
-                        <option ng-repeat="row in city" value="{{row.area}}">
+                        <option ng-repeat="row in data.city" value="{{row.city}}">
                             {{row}}
                         </option>
                     </select>
@@ -50,16 +50,17 @@
     angular.module("myApp", [])
             .controller("myCtrl", ["$scope", function ($scope) {
                 $scope.data = [
-                    //华东 华中 华南等
-                    {area: "华东地区", city: ["上海", "苏州", "杭州"]
-                    }, {area: "华中地区", city: ["上海", "苏州", "杭州"]
-                    }, {area: "华北地区", city: ["上海", "苏州", "加州"]
-                    }, {area: "华南地区", city: ["上海", "苏州", "杭州"]}
+                    {area: "华东地区", city: ["A", "苏州", "杭州"]
+                    },
+                    {area: "华中地区", city: ["B", "苏州", "杭州"]
+                    },
+                    {area: "华北地区", city: ["C", "苏州", "加州"]
+                    },
+                    {area: "华南地区", city: ["D", "苏州", "liu州"]}
                 ];
-//                $scope.a= function (index) {
-//                    $scope.z=$scope.data[index];
-//                    alert(1);
-//                }
+
+
+
             }])
 </script>
 </body>
