@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="myCtrl">
+<div class="container">
+    <h1 class="page-heading">AngularJs</h1>
+    <p class="lead">ng-options,ng-show,ng-hide,ng-if</p>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>表单 form</h2>
+            <form name="reg_form">
+                <div class="form-group">
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <h3>{{area}}</h3>
+                    <select ng-model="area" class="form-control">
+                        <option value="">请下拉选择地区--</option>
+                        <option ng-repeat="row in data" value="{{row.area}}" ng-click="a($index)">
+                            {{row.area}}
+                        </option>
+                    </select>
+                    <h3>{{city}}</h3>
+                    <select ng-model="city" class="form-control">
+                        <option value="">请下拉选择城市--</option>
+                        <option ng-repeat="row in city" value="{{row.area}}">
+                            {{row}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="btn btn-primary">登记</div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</div>
+
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myApp", [])
+            .controller("myCtrl", ["$scope", function ($scope) {
+                $scope.data = [
+                    //华东 华中 华南等
+                    {area: "华东地区", city: ["上海", "苏州", "杭州"]
+                    }, {area: "华中地区", city: ["上海", "苏州", "杭州"]
+                    }, {area: "华北地区", city: ["上海", "苏州", "加州"]
+                    }, {area: "华南地区", city: ["上海", "苏州", "杭州"]}
+                ];
+//                $scope.a= function (index) {
+//                    $scope.z=$scope.data[index];
+//                    alert(1);
+//                }
+            }])
+</script>
+</body>
+</html>

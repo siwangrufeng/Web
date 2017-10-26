@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+</head>
+<body ng-controller="ctrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>列表</h2>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>
+                        序列
+                    </th>
+                    <th>
+                        品名
+                    </th>
+                    <th>
+                        价格
+                    </th>
+                    <th>
+                        数量
+                    </th>
+                    <th>
+                        时间
+                    </th>
+                    <th>
+                        金额
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--<tr ng-repeat="row in data | filter:{price:0.1} | orderBy:pailie" class="text-right">-->
+                <tr ng-repeat="row in data| orderBy:sortPrice" class="text-right">
+
+                    <!--orderBy以什么排序，在此表示，以quantity的顺序排列 在quantity前面加-表示反方向排列-->
+                    <!--filter是筛选出符合条件的，有很多用法，在此是表示筛选price为或者包含0.1的数据-->
+
+                    <td>{{$index+1}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.price | currency : "¥" : 2}}</td>
+                    <!--竖线为过滤器，currency以货币格式显示，默认为美元$符号，后面加上拼接字符¥，后面写数字表示保留几位小数，国际上人民币符号为CHY 日元JY-->
+                    <td>{{row.quantity | number:0}}</td>
+                    <!--number以数字格式显示，数字表示保留几位小数-->
+                    <td>{{row.date | date}}</td>
+                    <!--date以日期格式显示-->
+                    <td>{{(row.quantity)*(row.price) | currency : "¥" : 2}}</td>
+                </tr>
+
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="6" class="text-right">总金额：{{num | currency : "¥" : 2}}</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <div class="btn btn-success" ng-click="togg()">点击排序</div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("ctrl", ["$scope", function ($scope) {
+        $scope.data = [
+            {
+                name: "贾云飞",
+                price: 0.1,
+                quantity: 22,
+                date: "2017-10-26"
+            },
+            {
+                name: "许帅帅",
+                price: 0.1,
+                quantity: 11,
+                date: "2017-10-25"
+            },
+            {
+                name: "电脑",
+                price: 3000,
+                quantity: 7,
+                date: "2017-10-24"
+            },
+            {
+                name: "签字笔",
+                price: 10.1,
+                quantity: 100,
+                date: "2017-10-23"
+            },
+            {
+                name: "A4纸",
+                price: 30,
+                quantity: 10,
+                date: "2017-10-22"
+            }
+        ];
+        $scope.num = 0;
+        for (i = 0; i < $scope.data.length; i++) {
+            $scope.num += ($scope.data[i].quantity * $scope.data[i].price)
+        }
+        $scope.sortPrice='quantity';
+        $scope.togg=function(){
+            $scope.sortPrice='-quantity';
+        }
+    }]);
+</script>
+</html>

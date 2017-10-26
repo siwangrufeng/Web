@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="myCtrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>{{hello | uppercase}}</h2>
+            <h2>{{hello | lowercase}}</h2>
+        </div>
+        <div class="col-md-6">
+            <h2>{{demo}}</h2>
+        </div>
+    </div>
+</div>
+
+<script src="js/angular.min.js"></script>
+<script>
+
+    angular.filter.uppercase = function (str) {
+        return str.toUpperCase();
+    };
+
+    angular.module("myApp", []).controller("myCtrl", ["$scope", "$filter", function ($scope, $filter) {
+        $scope.hello = "Welcome mY Home";
+//        $scope.demo = $scope.hello.toUpperCase();
+        $scope.demo = $filter("uppercase")($scope.hello)
+    }])
+</script>
+</body>
+</html>
