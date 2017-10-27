@@ -20,21 +20,41 @@
                     <input type="text" class="form-control">
                 </div>
                 <div class="form-group">
-                    <h3>{{area}}</h3>
-                    <select ng-model="area" class="form-control">
+                    <h3>{{hello}}</h3>
+                    <!--<select ng-model="hello" class="form-control" ng-change="show()">-->
+                    <!--ng-model里面的值根据下拉菜单选中的option的value值决定-->
+                    <select ng-model="hello" class="form-control" ng-change="arr=hello.split(',')">
                         <option value="">请下拉选择地区--</option>
-                        <option ng-repeat="row in data" value="{{row.area}}">
-                            {{row.area}}
+                        <option ng-repeat="row in data" value="{{row.cities}}">
+                            {{row.area}}：{{row.cities}}
                         </option>
                     </select>
-                    <h3>{{city}}</h3>
-                    <select ng-model="city" class="form-control">
+                    <h3>{{bye}}</h3>
+                    <select ng-model="bye" class="form-control">
                         <option value="">请下拉选择城市--</option>
-                        <option ng-repeat="row in data.city" value="{{row.city}}">
+                        <option ng-repeat="row in arr" value="{{row}}">
                             {{row}}
                         </option>
                     </select>
                 </div>
+
+
+                <div class="form-group" style="background: hotpink">
+                    <h3>{{hello1}}</h3>
+                    <select ng-model="hello1" ng-options="row.area for row in data" class="form-control">
+                        <!--row.area表示option显示的值，row表示option的value-->
+                        <!--前面的值可以通过拼接来表示，比如row.area+':'+row.cities-->
+                        <option value="">请下拉选择地区--</option>
+                    </select>
+                    <h3>{{bye1}}</h3>
+                    <select ng-model="bye1" ng-options="item for item in hello1.cities" class="form-control">
+                        <!--item表示option显示的值，第二个item表示option的value-->
+                        <option value="">请下拉选择城市--</option>
+                    </select>
+
+                </div>
+
+
                 <div class="form-group">
                     <div class="btn btn-primary">登记</div>
                 </div>
@@ -45,21 +65,28 @@
     </div>
 </div>
 
+
 <script src="js/angular.min.js"></script>
 <script>
     angular.module("myApp", [])
             .controller("myCtrl", ["$scope", function ($scope) {
                 $scope.data = [
-                    {area: "华东地区", city: ["A", "苏州", "杭州"]
+                    {
+                        area: "华东地区", cities: ["A", "苏州", "杭州"]
                     },
-                    {area: "华中地区", city: ["B", "苏州", "杭州"]
+                    {
+                        area: "华中地区", cities: ["B", "苏州", "杭州"]
                     },
-                    {area: "华北地区", city: ["C", "苏州", "加州"]
+                    {
+                        area: "华北地区", cities: ["C", "苏州", "加州"]
                     },
-                    {area: "华南地区", city: ["D", "苏州", "liu州"]}
+                    {area: "华南地区", cities: ["D", "苏州", "liu州"]}
                 ];
 
-
+//            $scope.show= function () {
+//                $scope.arr=$scope.hello;
+//                $scope.arr=$scope.arr.split(",")
+//            }
 
             }])
 </script>

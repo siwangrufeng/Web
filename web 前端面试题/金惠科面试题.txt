@@ -1,0 +1,6 @@
+1.ajax get post区别？
+2.通过jQuery  alert出input的name属性
+3.什么是闭包
+4.js dom操作 有哪些？
+5.flex-box是什么
+6.讲一下自己做的最熟悉的项目

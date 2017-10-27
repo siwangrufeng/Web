@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .ul {
+        list-style: none;
+        display: inline-block;
+    }
+
+    .selectOption ul li {
+        display: inline-block;
+        width: 50px;
+        padding: 5px;
+    }
+
+    ul li:hover {
+        background-color: #59C0F3;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .container {
+        display: inline-block;
+    }
+
+    dl {
+        display: inline-block;
+    }
+
+    dl dt {
+        display: inline-block;
+    }
+
+    .container {
+        position: relative;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .selectBoder {
+        width: 150px;
+        height: 20px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        cursor: pointer;
+        border: 1px solid #808080;
+        padding: 2px 5px;
+        font-size: 14px;
+    }
+
+    .selectBoder:hover {
+        border-color: #59C0F3;
+    }
+
+    .selectOption:before {
+        width: 0;
+        height: 0;
+        border-bottom: 50px solid #ffffff;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+    }
+
+    .selectOption {
+        font-size: 14px;
+        position: absolute;
+        background-color: #ffffff;
+        z-index: 9999;
+        border: 1px solid #eee;
+        width: 360px;
+        padding: 3px 5px;
+        box-shadow: 5px 5px 10px #888888;
+    }
+
+    .button {
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        background-color: #59C0F3;
+        text-align: center;
+        line-height: 25px;
+        cursor: pointer;
+        font-size: 24px;
+        color: #fff;
+        margin: 0 5px;
+        border-radius: 30px;
+    }
+
+    .button:hover {
+        background-color: #12bb16;
+    }
+</style>
+<body ng-app="myApp" ng-controller="myControl">
+<div class="inline" ng-repeat="option in options">
+    <div class="container">
+        <dl>
+            <dd class="selectBoder" ng-click="choseP($index)" ng-value="false">{{option.province}}</dd>
+            <dt class="selectOption" ng-if="option.ifShowProvince" ng-mouseleave="leaveProvince(option)">
+            <ul>
+                <li ng-repeat=" x in province" ng-value="x.value" ng-click="choseProvince($event.target,option)"
+                    data-name="{{x.name}}">{{x.name}}
+                </li>
+            </ul>
+            </dt>
+        </dl>
+    </div>
+    <div class="container">
+        <dl>
+            <dd class="selectBoder" ng-click="choseC($index)" ng-value="false">{{option.city}}</dd>
+            <dt class="selectOption" ng-if="option.ifShowCity" ng-mouseleave="leaveCity(option)">
+            <ul>
+                <li ng-repeat="y in option.cities" ng-value="y.value" ng-click="choseCity($event.target,option)"
+                    data-name="{{y.name}}">{{y.name}}
+                </li>
+            </ul>
+            </dt>
+        </dl>
+    </div>
+    <!--<span class="button" ng-click="addChose($index)">+</span>-->
+    <!--<span class="button" ng-click="deleteChose($index)">-</span>-->
+</div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript">
+    var app = angular.module('myApp', []);
+    app.controller('myControl', function ($scope) {
+        $scope.ifShowCity = false;
+        $scope.ifShowProvince = false;
+        $scope.options = [{index: "0", ifShowCity: false, ifShowProvince: false, province: "", city: "", cities: ""}];
+        $scope.leaveProvince = function (option) {
+            $.each($scope.options, function (index, item) {
+                if (option == $scope.options[index]) {
+                    $scope.optionIndex = index;
+                }
+            });
+            $scope.options[$scope.optionIndex].ifShowProvince = false;
+        };
+
+        $scope.leaveCity = function (option) {
+            $.each($scope.options, function (index, item) {
+                if (option == $scope.options[index]) {
+                    $scope.optionIndex = index;
+                }
+            });
+            $scope.options[$scope.optionIndex].ifShowCity = false;
+        };
+        $scope.choseProvince = function (target, option) {
+            $.each($scope.options, function (index, item) {
+                if (option == $scope.options[index]) {
+                    $scope.optionIndex = index;
+                }
+            });
+            $scope.options[$scope.optionIndex].ifShowProvince = false;
+            $scope.options[$scope.optionIndex].province = target.getAttribute("data-name");
+            $.each($scope.province, function (index, item) {
+                        if (item.value == target.getAttribute("value")) {
+                            $scope.options[$scope.optionIndex].cities = item.children;
+                        }
+                    }
+            )
+        };
+        $scope.choseCity = function (target, option) {
+            $.each($scope.options, function (index, item) {
+                if (option == $scope.options[index]) {
+                    $scope.optionIndex = index;
+                }
+            });
+            $scope.options[$scope.optionIndex].ifShowCity = false;
+            $scope.options[$scope.optionIndex].city = target.getAttribute("data-name");
+        };
+        function getPrarms() {
+            return $scope.options;
+        }
+
+        $scope.sub = function () {
+            getPrarms();
+        };
+        $scope.province =
+                [{
+                    name: "湖北省",
+                    value: "01",
+                    children: [{
+                        name: "武汉",
+                        value: "0101"
+                    }, {
+                        name: "黄冈",
+                        value: "0102"
+                    }, {
+                        name: "荆州",
+                        value: "0103"
+                    }, {
+                        name: "十堰",
+                        value: "0104"
+                    }, {
+                        name: "黄石",
+                        value: "0105"
+                    }, {
+                        name: "鄂州",
+                        value: "0106"
+                    }, {
+                        name: "咸宁市",
+                        value: "0107"
+                    }, {
+                        name: "襄阳市",
+                        value: "0108"
+                    }
+                    ]
+                }, {
+                    name: "广东省",
+                    value: "02",
+                    children: [{
+                        name: "广东",
+                        value: "0201"
+                    }, {
+                        name: "深圳",
+                        value: "0202"
+                    }, {
+                        name: "佛山",
+                        value: "0203"
+                    }, {
+                        name: "惠州",
+                        value: "0204"
+                    }, {
+                        name: "东莞",
+                        value: "0205"
+                    }]
+                }, {
+                    name: "河北省",
+                    value: "03",
+                    children: [{
+                        name: "北京",
+                        value: "0301"
+                    }, {
+                        name: "邯郸",
+                        value: "0302"
+                    }, {
+                        name: "邢台",
+                        value: "0303"
+                    }, {
+                        name: "保定",
+                        value: "0304"
+                    }, {
+                        name: "秦皇岛",
+                        value: "0305"
+                    }
+                    ]
+                }
+                ];
+        $scope.choseP = function ($index) {
+            $scope.options[$index].ifShowProvince = !$scope.options[$index].ifShowProvince;
+            $scope.options[$index].ifShowCity = false;
+        };
+        $scope.choseC = function ($index) {
+            $scope.options[$index].ifShowCity = !$scope.options[$index].ifShowCity;
+            $scope.options[$index].ifShowProvince = false;
+        };
+        $scope.addChose = function ($index) {
+            if ($scope.options.length < 10) {
+                $scope.options.splice($scope.options.length, 0, {    //从最后面添加内容
+                    index: $scope.options.length, ifShowCity: false, ifShowProvince: false
+                });
+                $scope.canDelete = true;
+            } else {
+                $scope.canAdd = false;
+            }
+        };
+//        $scope.deleteChose = function ($index) {
+//            if ($scope.options.length > 1) {
+//                $scope.options.splice($index, 1);                          //从当前行删除。
+//            }
+//            if ($index == 1) {
+//                $scope.canDelete = false;
+//            }
+//        }
+    });
+</script>
+</html>
