@@ -21,14 +21,11 @@
 </head>
 <body>
 <div id="box">
-    <div id="title">
-        标题
-    </div>
-    <div id="data">
-        内容
-    </div>
+    <div id="title">标题</div>
+    <div id="data">内容</div>
 </div>
 </body>
+<!--<script src="zxx.drag.1.0-min.js"></script>-->
 <script>
     var box=document.getElementById("box");
     var title=document.getElementById("title");
@@ -81,6 +78,6 @@
             }
         }
     };
-    startDrag(box,title)
+    startDrag(title,box)
 </script>
 </html>

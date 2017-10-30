@@ -43,7 +43,7 @@
         document.onmousemove = function(ev) {
             var oEvent = ev || event;
             //只能拖动窗口标题才能移动
-//            if(oEvent.target!=h2){
+//            if(oEvent.target!=tit){
 //                return;
 //            }
             //保证拖拽框一直保持在浏览器窗口内部，不能被拖出的浏览器窗口的范围
@@ -62,12 +62,12 @@
             }
             box.style.left = l + "px";
             box.style.top = t + "px";
-        }
+        };
         //鼠标抬起的函数
         document.onmouseup = function() {
             document.onmousemove = null;
             document.onmouseup = null;
-        }
+        };
         //火狐浏览器在拖拽空div时会出现bug
         //return false阻止默认事件，解决火狐的bug
         return false;

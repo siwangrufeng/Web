@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="myCtrl">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div ng-show="" class="btn btn-danger">A</div>
+            <!--默认值为false-->
+            <!--ng-show ng-hide是通过控制类名来控制隐藏的，相当于添加了display：none-->
+        </div>
+        <div class="col-md-4">
+            <div ng-hide="" class="btn btn-success">B</div>
+            <!--默认值false-->
+        </div>
+        <div class="col-md-4">
+            <div ng-if="true" class="btn btn-info">C</div>
+            <!--默认值为false，为隐藏-->
+            <!--ng-if是通过直接从DOM删除该标签来控制隐藏的，它捆绑的变量是不正常的，所以在ng-repeat里面一定不要加ng-if-->
+            <!--添加了ng-if=“true”，控制台会多一个ng-scope，表示控制器作用域，不受你当前可能的控制器控制-->
+            <!--同时添加了ng-if控制台都会多出被注释掉的东西，叫做模板-->
+        </div>
+    </div>
+    <hr>
+    <div class="row" ng-init="a=true;b=true;c=false">
+        <div class="col-md-4">
+            <div ng-show="a" class="btn btn-danger">A</div>
+        </div>
+        <div class="col-md-4">
+            <div ng-hide="b" class="btn btn-success">B</div>
+        </div>
+        <div class="col-md-4">
+            <div ng-if="c" class="btn btn-info">C</div>
+        </div>
+    </div>
+    <hr>
+    <h2>点击后面一行控制上面一行是否隐藏</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div ng-show="x" class="btn btn-danger">A</div>
+        </div>
+        <div class="col-md-4">
+            <div ng-hide="y" class="btn btn-success">B</div>
+        </div>
+        <div class="col-md-4">
+            <div ng-if="z" class="btn btn-info">C</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div ng-click="x=!x" class="btn btn-danger">a</div>
+        </div>
+        <div class="col-md-4">
+            <div  ng-click="y=!y" class="btn btn-success">b</div>
+        </div>
+        <div class="col-md-4">
+            <div ng-click="z=!z" class="btn btn-info">c</div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/angular.js"></script>
+<script>
+    angular.module("myApp", [])
+            .controller("myCtrl", ["$scope", function ($scope) {
+                $scope.x=true;
+                $scope.y=false;
+                $scope.z=true;
+
+                }]);
+</script>
+</html>

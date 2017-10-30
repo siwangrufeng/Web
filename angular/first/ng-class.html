@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        .red {
+            color: blue;
+        }
+
+        .bor {
+            border: 5px solid red;
+        }
+
+        .bac {
+            background: darkgrey;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>右侧输入控制以下文本属性</h2>
+            <div class="btn btn-default" style="{{x}}">文字展示</div>
+            <br>
+            <!--通过双向绑定来控制样式-->
+            <div class="btn btn-default" ng-class="'red'">文字展示</div>
+            <br>
+            <!--控制台里面显示的red类名是ng-class通过变量传输进来的,要加引号-->
+            <div class="btn btn-default" ng-class="{true:'red',false:''}[flag]">文字展示</div>
+            <br>
+            <!--checkbox被勾选时flag会为true或false，然后在ng-class的json里面用flag选值来控制是否加red这个类名-->
+            <div class="btn btn-default" ng-class="{'red':true,'bor':true,'bac':true}">文字展示</div>
+            <br>
+            <div class="btn btn-default" ng-class="{'red':aa,'bor':bb,'bac':cc}">文字展示4</div>
+        </div>
+        <div class="col-md-6">
+            <h2>在下框输入属性</h2>
+            <input class="form-control" type="text" ng-model="x"><br>
+
+            <input type="checkbox" ng-model="flag"><br>
+
+
+            <input ng-model="aa" type="checkbox" id="checkbox1">
+            <label for="checkbox1">红色字体</label>
+            <input ng-model="bb" type="checkbox" id="checkbox2">
+            <label for="checkbox2">边框</label>
+            <input ng-model="cc" type="checkbox" id="checkbox3">
+            <label for="checkbox3">背景色</label>
+        </div>
+    </div>
+    <div class="row" ng-controller="myCtrl">
+        <div class="col-md-12">
+            <h2>用ng-class控制表格</h2>
+            <table class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>No</th>
+                    <th>品名</th>
+                    <th>类型</th>
+                    <th class="text-right">价格</th>
+                    <th class="text-right">数量</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in data">
+                    <td ng-class="{'red':row.type=='食品','bor':row.type=='办公','bac':row.type=='家电'}">{{$index+1}}</td>
+                    <td>{{row.name}}</td>
+                    <td>{{row.type}}</td>
+                    <td class="text-right">{{row.price}}</td>
+                    <td class="text-right">{{row.num}}</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-right">总价</td>
+                        <td class="text-right">{{sum}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/angular.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", ["$scope", function ($scope) {
+        $scope.data=[
+            {name:"安德玛",type:"办公",price:"99.9",num:"30"},
+            {name:"金拱门",type:"食品",price:"25.5",num:"10"},
+            {name:"海尔",type:"家电",price:"199.9",num:"1"},
+            {name:"面包",type:"食品",price:"10",num:"20"},
+            {name:"西门子",type:"家电",price:"4999",num:"2"}
+        ];
+        $scope.sum=0;
+        for (i=0;i<$scope.data.length;i++){
+            $scope.sum += ($scope.data[i].num * $scope.data[i].price)
+        }
+    }]);
+</script>
+</html>
