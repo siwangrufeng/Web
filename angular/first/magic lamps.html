@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <style>
+        tr {
+            text-align: center;
+        }
+
+        td {
+            width: 100px;
+            height: 150px;
+            user-select: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body ng-controller="ctrl">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <tr ng-repeat="(k,row) in data">
+                    <td ng-class="{true:'btn-primary',false:''}[row[0]]" ng-click="act(k,0)">{{$index*3+1}}</td>
+                    <td ng-class="{true:'btn-primary',false:''}[row[1]]" ng-click="act(k,1)">{{$index*3+2}}</td>
+                    <td ng-class="{true:'btn-primary',false:''}[row[2]]" ng-click="act(k,2)">{{$index*3+3}}</td>
+                    <!--[row[2]]是参考变量-->
+                </tr>
+
+            </table>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("ctrl", ["$scope", function ($scope) {
+        $scope.data = [
+            [true, true, false],
+            [true, false, true],
+            [true, false, true]
+        ];
+//二维数组 按行和列来展示数据
+
+//        $scope.act=function(row,col){
+//            $scope.data[row][col]=!$scope.data[row][col];
+//        }
+
+//        $scope.act = function (row, col) {
+//            $scope.data[row][col] = !$scope.data[row][col];
+//            if (row==0&&col==0){
+//                $scope.data[row][col+1] = !$scope.data[row][col+1];
+//                $scope.data[row+1][col] = !$scope.data[row+1][col];
+//                $scope.data[row+1][col+1] = !$scope.data[row+1][col+1];
+//            }
+//            if (row==0&&col==1){
+//                $scope.data[row][col+1] = !$scope.data[row][col+1];
+//                $scope.data[row][col-1] = !$scope.data[row][col-1];
+//            }
+//            if (row==0&&col==2){
+//                $scope.data[row+1][col] = !$scope.data[row+1][col];
+//                $scope.data[row][col-1] = !$scope.data[row][col-1];
+//                $scope.data[row+1][col-1] = !$scope.data[row+1][col-1];
+//            }
+//            if (row==1&&col==0){
+//                $scope.data[row-1][col] = !$scope.data[row-1][col];
+//                $scope.data[row+1][col] = !$scope.data[row+1][col];
+//            }
+//            if (row==1&&col==1){
+//                $scope.data[row-1][col] = !$scope.data[row-1][col];
+//                $scope.data[row][col-1] = !$scope.data[row][col-1];
+//                $scope.data[row+1][col] = !$scope.data[row+1][col];
+//                $scope.data[row][col+1] = !$scope.data[row][col+1];
+//            }
+//            if (row==1&&col==2){
+//                $scope.data[row-1][col] = !$scope.data[row-1][col];
+//                $scope.data[row+1][col] = !$scope.data[row+1][col];
+//            }
+//            if (row==2&&col==0){
+//                $scope.data[row-1][col] = !$scope.data[row-1][col];
+//                $scope.data[row][col+1] = !$scope.data[row][col+1];
+//                $scope.data[row-1][col+1] = !$scope.data[row-1][col+1];
+//            }
+//            if (row==2&&col==1){
+//                $scope.data[row][col+1] = !$scope.data[row][col+1];
+//                $scope.data[row][col-1] = !$scope.data[row][col-1];
+//            }
+//            if (row==2&&col==2){
+//                $scope.data[row-1][col] = !$scope.data[row-1][col];
+//                $scope.data[row][col-1] = !$scope.data[row][col-1];
+//                $scope.data[row-1][col-1] = !$scope.data[row-1][col-1];
+//            }
+//        };
+
+        $scope.change = [
+            [
+                [[0, 1], [1, 0], [1, 1]],    [[0, 0], [0, 2]],    [[0, 1], [1, 1], [1, 2]]
+            ],
+            [
+                [[0, 0], [2, 0]], [[0, 1],    [1, 0], [1, 2], [2, 1]],    [[0, 2], [2, 2]]
+            ],
+            [
+                [[1, 0], [1, 1], [2, 1]],    [[2, 0], [2, 2]],    [[1, 1], [1, 2], [2, 1]]
+            ]
+        ];
+
+        $scope.act = function (row, col) {
+            $scope.data[row][col] = !$scope.data[row][col];
+            var other = $scope.change[row][col];
+            console.log(other);
+            for (var i = 0; i < other.length; i++) {
+                console.log(other[i]);
+                $scope.data[other[i][0]][other[i][1]] = !$scope.data[other[i][0]][other[i][1]];
+            }
+        }
+
+
+    }])
+</script>
+</html>

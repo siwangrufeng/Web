@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+img {
+    border: 0;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+html {
+    font-size: 12px;
+}
+.container {
+    width: 31.3rem;
+    height: 55.58rem;
+    margin: 0 auto;
+    background: gainsboro;
+}
+.panel{
+    width: 31.3rem;
+    height: 51.3rem;
+}
+.index header{
+    width: 31.3rem;
+    height: 19.5rem;
+    position: relative;
+    background: url("../image/index-bg.png") no-repeat;
+    background-size:31.3rem 19.5rem;
+}
+.index header .h_slogan{
+    width: 6.3rem;
+    height: 6.8rem;
+    font-family: TRENDS;
+    font-size: 3rem;
+    color: #FFFFFF;
+    letter-spacing: 0.12rem;
+    line-height: 3.417rem;
+    text-shadow: 0 0.083rem 0.25rem #FC6E26;
+    position: absolute;
+}
+.index header .h_s_left{
+    top: 6.2rem;
+    left: 4rem;
+}
+.index header .h_s_right{
+    top: 6.2rem;
+    right: 3.75rem;
+}
+.index header .h_logo{
+    width: 7.7rem;
+    height: 9.2rem;
+    position: absolute;
+    left: 11.9rem;
+    top: 5.2rem;
+}
+.index header .h_logo img{
+    width: 7.7rem;
+    height: 9.2rem;
+}
+.index .advert{
+    width: 18.75rem;
+    height: 19.1rem;
+}
+.index .advert .icon{
+    width: 4.7rem;
+    height: 1.7rem;
+    border: 1px solid #FC6E26;
+    border-radius: 0.33rem;
+    color: #FC6E26;
+    text-align: center;
+    line-height: 1.7rem;
+    margin-top: 0.9rem;
+    margin-left: 1.9rem;
+    font-size: 1rem;
+}
+.index .advert .num{
+    width: 13.3rem;
+    height: 6.3rem;
+    margin-left: 9.1rem;
+    margin-top: 5rem;
+    font-family: HelveticaNeueDeskInterface-Regular;
+    font-size: 64px;
+    color: #F4223C;
+    position: relative;
+}
+.index .advert .num span{
+    font-size: 3rem;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.control{
+    width:31.3rem;
+    height: 4.167rem;
+    border-top:rgba(151,151,151,.3) solid 0.083rem ;
+    opacity: 0.3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
