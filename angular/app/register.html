@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Title</title>
-    <link rel="stylesheet" href="css/login_css.css">
-    <link rel="stylesheet" href="css/media.css">
+    <link rel="stylesheet" href="css/register_css.css">
 </head>
 <body>
 <div class="container">
@@ -14,19 +13,26 @@
             <i></i>
             返回
         </span>
-        <p>登录</p>
+        <p>注册</p>
     </header>
-    <form action="" class="login">
+    <form action="" class="register">
         <div class="form_group">
-            <label for="user">账号</label>
+            <label for="user">手机号码</label>
             <input type="text" placeholder="请输入你的手机号码" id="user">
         </div>
         <div class="form_group">
-            <label for="password">密码</label>
+            <label for="password">登录密码</label>
             <input type="text" placeholder="请输入你的密码" id="password">
         </div>
-        <a class="login_sub">登录</a>
-        <a href="register.html" class="register">注册</a>
+        <div class="form_group">
+            <label for="password_repeat">重复密码</label>
+            <input type="text" placeholder="请重复输入你的密码" id="password_repeat">
+        </div>
+        <div class="form_group form_agree">
+            <input type="checkbox" id="agree">
+            <label for="agree">我已确定并同意"网站服务协议"</label>
+        </div>
+        <a class="register_sub">确定</a>
     </form>
 
 </div>

@@ -54,17 +54,17 @@ body{
     font-size: 1.5rem;
     color: white;
 }
-.container .login{
+.container .register{
     padding-left: 2.5%;
     padding-right: 2.5%;
 }
-.container .login .form_group{
+.container .register .form_group{
     height: 5rem;
     border-bottom: solid 1px rgba(203,203,209,.6);
     font-size: 1.4rem;
     line-height: 5rem;
 }
-.container .login .form_group input{
+.container .register .form_group input{
     font-size: 1.2rem;
     color: rgb(203,203,208);
     border: 0;
@@ -72,28 +72,27 @@ body{
     height: 100%;
     outline: none;
 }
-.container .login .login_sub{
+.container .register .form_agree{
+    border-bottom: 0;
+    padding-left: 1rem;
+}
+.container .register .form_agree input{
+    float: left;
+    margin-right: 1.2rem;
+}
+.container .register .register_sub{
     display: block;
     width: 100%;
     height: 3.3rem;
     background: #FC6E26;
-    margin-top: 5.7%;
+    /*margin-top: 5.7%;*/
     font-size: 1.5rem;
     line-height: 3.3rem;
     color: white;
     text-align: center;
     border-radius: 4px;
 }
-.container .login .register{
-    display: block;
-    width: 100%;
-    height: 3.3rem;
-    margin-top: 5.7%;
-    font-size: 1.5rem;
-    line-height: 3.3rem;
-    text-align: center;
-    color: black;
-}
+
 
 
 

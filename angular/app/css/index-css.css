@@ -209,7 +209,6 @@ body{
     left: 0;
 }
 .list .list_cont{
-    height: 86.3%;
     padding-top: 1.7rem;
     overflow-y:auto ;
     overflow-x:hidden;
@@ -302,21 +301,134 @@ body{
 .user{
     height: 100%;
     /*display: none;*/
+    background: #EEEEEE;
+}
+.user header{
+    width: 100%;
+    height: 14.2rem;
+    background: url("../image/own_bg.png") no-repeat;
+    background-size: 100% 100%;
+    padding-top:5.3rem;
+}
+.user header .h_logo{
+    width: 6.7rem;
+    height: 6.7rem;
+    border-radius: 50%;margin: 0 auto;
+}
+.user header .h_logo img{
+    width: 6.7rem;
+    height: 6.7rem;
+}
+.user header .h_name{
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+    margin-top: 3.5%;
+}
+.user header .h_words{
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    font-size: 0.8rem;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+}
+.user .u_cont{
+    padding-top: 1.7rem;
+}
+.user .u_cont li{
+    height: 5.6rem;
+    width: 100%;
+    background: white;
+    position: relative;
+}
+.user .u_cont .property{
+    /*padding-left: 4.1%;*/
+}
+.user .u_cont li a{
+    display: block;
+    padding-left: 4.1%;
+    padding-right: 4.1%;
+    height: 100%;
+    color: #4A4A4A;
+    font-size: 1.3rem;
+}
+.user .u_cont li .u_c_words{
+    float: left;
+    width: 6rem;
+    line-height: 5.6rem;
+    overflow: hidden;
+}
+.user .u_cont .property .u_c_num{
+    float: right;
+    width: 30%;
+    line-height: 5.6rem;
+    position: absolute;
+    right: 16%;
+    text-align: right;
+    color: #F4223c;
+}
+.user .u_cont .property span{
+    display: block;
+    width: 1.7rem;
+    height: 1.7rem;
+    top: 2rem;
+    right: 4.5%;
+    position: absolute;
+}
+.user .u_cont .property span img{
+    width: 1.7rem;
+    height: 1.7rem;
+    position: absolute;
+    top:0;
+    left: 0;
+    display: none;
+}
+.user .u_cont .property span .close_eye{
+    display: block;
+}
+.user .u_cont .record span{
+    display: block;
+    width:1rem;
+    height: 1.6rem;
+    top: 1.5rem;
+    text-align: center;
+    position: absolute;
+    right: 5%;
+}
+.user .u_cont .record span img{
+    width:0.5rem;
+    height: 1rem;
+}
+.user .u_cont .contact span{
+    float: right;
+    display: block;
+    width:1rem;
+    height: 1.6rem;
+    top: 1.5rem;
+    text-align: center;
+    position: absolute;
+    right: 5%;
+}
+.user .u_cont .contact span img{
+    width:0.5rem;
+    height: 1rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+.user .u_cont li .line{
+    width: 91%;
+    display: block;
+    height: 1px;
+    background: #EEEEEE;
+    position: absolute;
+    bottom: 0;
+}
 
 
 
