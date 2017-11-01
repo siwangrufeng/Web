@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/list_hide_1_css.css">
+    <link rel="stylesheet" href="css/media.css">
+</head>
+<body>
+<div class="container">
+    <div class="l_hide">
+        <div class="l_h_top">
+            <a class="l_h_back"></a>
+            <p>新手专享</p>
+        </div>
+        <header>
+            <p class="l_h_words">预期年化收益</p>
+            <p class="l_h_interest">
+                15.0
+                <span>%</span>
+            </p>
+            <div class="l_h_butt">
+                <p class="l_h_time">
+                    封闭期
+                    <span>15天</span>
+                </p>
+                <p class="l_h_money">
+                    余额
+                    <span>2701300元</span>
+                </p>
+            </div>
+        </header>
+        <div class="h_cont">
+            <a class="h_c_pub h_c_details" href="">
+                <p class="h_c_left">产品详情</p>
+                <p class="h_c_right">新手特权，最高可投1万</p>
+                <span></span>
+            </a>
+            <a href="" class="h_c_pub h_c_ensure">
+                <p class="h_c_left">安全保障</p>
+                <p class="h_c_right">风险金保障</p>
+                <span></span>
+            </a>
+            <div class="h_c_people">
+                <h6>¥</h6>
+                <p>
+                    累计已有
+                    <span class="h_c_p_num">546</span>
+                    人次购买
+                </p>
+            </div>
+            <form action="" class="start">
+                <div class="num">
+                    <span class="num_minus">-</span>
+                    <input type="number" step="1000" max="10000" min="1000" value="1000">
+                    <span class="num_plus">+</span>
+                </div>
+                <div class="start_butt">开始投资</div>
+            </form>
+            <div class="h_c_words">市场有风险，投资需谨慎</div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $(".l_h_back").click(function () {
+            history.go(-1);
+        });
+//        function myGo (index) {    // 负代表后退， 正代表前进
+//
+//        }
+    })
+</script>
+</html>

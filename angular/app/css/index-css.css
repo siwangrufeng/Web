@@ -13,23 +13,35 @@ li {
 }
 html {
     font-size: 12px;
+    height: 100%;
+}
+body{
+    height: 100%;
 }
 .container {
-    width: 31.3rem;
-    height: 55.58rem;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    /*margin: 0 auto;*/
     position: relative;
+}
+.panel_all{
+    width: 100%;
+    height: 92%;
 }
 .panel{
-    width: 31.3rem;
-    height: 51.3rem;
+    width: 100%;
+    /*height: 51.3rem;*/
 }
 .index header{
-    width: 31.3rem;
-    height: 19.5rem;
+    width: 100%;
+    height: 35%;
     position: relative;
     background: url("../image/index-bg.png") no-repeat;
-    background-size:31.3rem 19.5rem;
+    background-size:100% 19.5rem;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5.2rem;
+    padding-bottom: 5.2rem;
 }
 .index{
     display: none;
@@ -43,31 +55,28 @@ html {
     letter-spacing: 0.12rem;
     line-height: 3.417rem;
     text-shadow: 0 0.083rem 0.25rem #FC6E26;
-    position: absolute;
+    margin-top: 1.5rem;
 }
 .index header .h_s_left{
-    top: 6.2rem;
-    left: 4rem;
+    margin-left: 2rem;
 }
 .index header .h_s_right{
-    top: 6.2rem;
-    right: 3.75rem;
+    margin-right: 2rem;
 }
 .index header .h_logo{
     width: 7.7rem;
     height: 9.2rem;
-    position: absolute;
-    left: 11.9rem;
-    top: 5.2rem;
 }
 .index header .h_logo img{
-    width: 7.7rem;
-    height: 9.2rem;
+    width: 100%;
+    height: 100%;
 }
 .index .advert{
-    width: 18.75rem;
-    height: 19.1rem;
-    background: rgb(251,251,251);
+    width: 100%;
+    /*height: 18.2rem;*/
+    height: 57%;
+    /*background: rgb(251,251,251);*/
+    padding-top: 2.8%;
 }
 .index .advert .icon{
     width: 4.7rem;
@@ -77,31 +86,28 @@ html {
     color: #FC6E26;
     text-align: center;
     line-height: 1.7rem;
-    margin-top: 0.9rem;
-    margin-left: 1.9rem;
+    margin-left: 6%;
     font-size: 1rem;
 }
 .index .advert .earnings{
-    width:31.3rem;
+    width:100%;
 }
 .index .advert .earnings .num{
-    width: 13.3rem;
-    height: 6.3rem;
-    margin-left: 9.1rem;
-    margin-top: 5rem;
+    width: 100%;
+    height: 19.8%;
+    margin-top: 7.5%;
     font-family: HelveticaNeueDeskInterface-Regular;
     font-size: 64px;
     color: #F4223C;
-    position: relative;
+    text-align: center;
+    line-height: 64px;
 }
 .index .advert .earnings .num span{
     width: 2.8rem;
     height: 3.6rem;
     font-size: 3rem;
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
+    display: inline-block;
+    margin-left: -1.5rem;
 }
 .index .advert .earnings p{
     width:100%;
@@ -113,24 +119,26 @@ html {
     overflow: hidden;
 }
 .index .advert .info{
-    width: 31.3rem;
-    height: 2.7rem;
-    margin-top: 3.7rem;
+    width: 100%;
+    height: 3.2rem;
+    margin-top:11.6%;
 }
 .index .advert .info .i_left{
     float: left;
-    margin-left: 2.2rem;
+    margin-left: 7%;
     width: 8rem;
-    height: 2.7rem;
+    height:3.2rem;
+    overflow: hidden;
 }
 .index .advert .info .i_right{
     float: right;
-    margin-right: 2.2rem;
+    margin-right: 7%;
     width: 8rem;
-    height: 2.7rem;
+    height:3.2rem;
+    text-align: right;
+    overflow: hidden;
 }
 .index .advert .info p{
-    width: 6rem;
     height: 1.2rem;
     font-family: STHeitiSC-Medium;
     font-size: 1.2rem;
@@ -141,9 +149,8 @@ html {
 }
 .index .advert .info span{
     display: block;
-    width: 6rem;
     height: 1.2rem;
-    margin-top: 0.3rem;
+    margin-top: 0.8rem;
     font-family: STHeitiSC-Light;
     font-size: 1.2rem;
     color: #9B9B9B;
@@ -152,10 +159,11 @@ html {
     line-height: 1.2rem;
 }
 .index .advert .buy_btn{
-    width: 27.5rem;
+    display: block;
     height: 3.3rem;
-    margin-top: 1.8rem;
-    margin-left: 1.8rem;
+    margin-top: 5.7%;
+    margin-left: 6%;
+    margin-right: 6%;
     margin-bottom: 0.8rem;
     background: #FC6E26;
     border-radius: 4px;
@@ -166,7 +174,6 @@ html {
     color: white;
 }
 .index .advert .remark{
-    width: 31.3rem;
     height: 0.8rem;
     text-align: center;
     line-height: 0.8rem;
@@ -174,50 +181,60 @@ html {
     font-size: 10px;
     color: #9B9B9B;
     letter-spacing: 0.4px;
+    margin-top: 1.5rem;
+    margin-bottom: 3%;
 }
-/*.list{*/
-    /*display: none;*/
-/*}*/
+.list{
+    display: none;
+    background: #EEEEEE;
+    height: 100%;
+}
 .list header{
-    width: 31.3rem;
-    height:2.6rem;
+    width: 100%;
+    height:5.3rem;
     background: white;
-    padding-top: 2.7rem;
+    /*padding-top:2.7rem;*/
+    position: relative;
 }
 .list header p{
-    width: 31.3rem;
+    width: 100%;
     height: 1.5rem;
     line-height: 1.5rem;
     text-align: center;
     color:#FC6E26;
     font-size: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    top: 2.7rem;
+    left: 0;
 }
 .list .list_cont{
-    width: 31.3rem;
-    height: 44.4rem;
-    background: #EEEEEE;
+    height: 86.3%;
     padding-top: 1.7rem;
     overflow-y:auto ;
     overflow-x:hidden;
 }
 .list .list_cont ul{
-    width: 31.3rem;
     height: 100%;
 }
 .list .list_cont ul .list_info{
-    width: 28.9rem;
-    height: 8.6rem;
-    padding: 2.5rem 1.1rem 0 1.3rem;
+    height: 11.1rem;
     background: white;
     margin-bottom:0.8rem ;
 }
+.list .list_cont ul .list_info a{
+    display: block;
+    height: 100%;
+    padding-left: 3.2%;
+    padding-right: 3.2%;
+}
 .list .list_cont ul .list_info .l_top{
-    width: 28.9rem;
     height: 2.4rem;
+    padding-top: 2.5rem;
     border-bottom: 1px solid #EEEEEE;
 }
 .list .list_cont ul .list_info .l_name{
-    width: 12rem;
+    width: 35%;
     height: 1.3rem;
     line-height: 1.3rem;
     font-size:1.3rem;
@@ -226,7 +243,7 @@ html {
     overflow:hidden;
 }
 .list .list_cont ul .list_info .l_prompt{
-    width: 14rem;
+    width: 55%;
     height: 1.1rem;
     line-height: 1.3rem;
     font-size: 1.1px;
@@ -239,7 +256,7 @@ html {
 }
 .list .list_cont ul .list_info .l_left{
     height: 3.6rem;
-    width: 13rem;
+    width: 50%;
     float: left;
     margin-top: 1.1rem;
     overflow: hidden;
@@ -262,11 +279,12 @@ html {
     color: #9B9B9B;
     letter-spacing: 0;
     margin-top: 0.3rem;
+    overflow: hidden;
 }
 .list .list_cont ul .list_info .l_right{
     float: right;
     height: 3.6rem;
-    width: 13rem;
+    width: 35%;
     overflow: hidden;
     margin-top: 1.1rem;
 }
@@ -280,44 +298,20 @@ html {
 .list .list_cont ul .list_info .l_right .l_words{
     text-align: right;
 }
-.list .list_cont ul .list_info .l_hide{
-    width: 31.3rem;
-    height: 55.58rem;
-    background: white;
-    position: absolute;
-    z-index: 100;
-    left: 0;
-    top: 0;
+/*个人中心开始*/
+.user{
+    height: 100%;
+    /*display: none;*/
 }
-.list .list_cont ul .list_info .l_hide .l_h_top{
-    width: 31.3rem;
-    height: 2.6rem;
-    padding-top: 2.7rem;
-    position: relative;
-}
-.list .list_cont ul .list_info .l_hide .l_h_top span{
-    display: block;
-    width: 1.5rem;
-    height: 1.5rem;
 
-    position: absolute;
-    top: 2.5rem;
-    left: 1.8rem;
-}
-.list .list_cont ul .list_info .l_hide .l_h_top p{
-    width: 31.3rem;
-    height: 1.5rem;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #FC6E26;
-    line-height: 1.5rem;
-}
-.list .list_cont ul .list_info .l_hide header{
-    width: 31.3rem;
-    height: 14.2rem;
-    background: url("../image/own_bg.png") no-repeat;
-    background-size: 31.3rem 14.2rem;
-}
+
+
+
+
+
+
+
+
 
 
 
@@ -329,33 +323,13 @@ html {
 
 
 .control{
-    width:31.3rem;
-    height: 4.2rem;
+    width:100%;
+    height: 8%;
     border-top:rgba(151,151,151,.3) solid 0.083rem ;
-    opacity: 0.3;
     position: absolute;
     bottom: 0;
+    background: darkgray;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

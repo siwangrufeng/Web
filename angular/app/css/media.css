@@ -1,0 +1,45 @@
+@media screen and (max-width: 370px){
+    .index .advert .earnings .num{
+        margin-top:5%;
+        font-size: 56px;
+        line-height: 56px;
+    }
+    .index .advert .info{
+        margin-top:8%;
+    }
+}
+@media screen and (max-width: 320px){
+    .index .advert .earnings .num{
+        margin-top:1%;
+        font-size: 44px;
+        line-height: 44px;
+    }
+    .index .advert .earnings .num span{
+        margin-left: -1rem;
+    }
+    .index .advert .info{
+        margin-top:3%;
+    }
+    .index .advert .buy_btn{
+        margin-top: 3%;
+    }
+    .index .advert .remark{
+        margin-top: 1rem;
+    }
+}
+@media screen and (min-width: 414px){
+    .index .advert .buy_btn{
+        margin-top: 8%;
+    }
+    .index .advert .remark{
+        margin-top: 3rem;
+    }
+}
+@media screen and (max-width: 370px){
+    .l_hide .h_cont .h_c_words{
+       margin-top: 1rem;
+    }
+    .l_hide .h_cont .start{
+        margin-top: 10%;
+    }
+}
