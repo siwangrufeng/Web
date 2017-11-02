@@ -180,7 +180,7 @@
                         <a>
                             <p class="u_c_words">资产总额</p>
                             <p class="u_c_num">*******</p>
-                            <span>
+                            <span class="eye">
                                 <img class="close_eye" src="image/close%20eye.png" alt="">
                                 <img class="open_eye" src="image/open%20eye.png" alt="">
                             </span>
@@ -198,7 +198,7 @@
 
                     </li>
                     <li class="contact">
-                        <a href="">
+                        <a href="tel:1008611">
                             <p class="u_c_words">联系我们</p>
                             <span>
                                 <img src="image/Path%202%20Copy.png" alt="">
@@ -207,13 +207,97 @@
                     </li>
                 </ul>
             </div>
+            <div class="quit">
+                退出
+            </div>
         </div>
-
+        <div class="panel safe">
+            <header>
+                安全保障
+            </header>
+            <div class="shadow"></div>
+            <div class="s_cont">
+                <ul>
+                    <li class="s_c_list">
+                        <p class="s_c_title">
+                            1.大数据甄别风险
+                        </p>
+                        <p class="s_c_words">
+                            运用大数据进行征信，采集多达2000个维度数据，进行全方位数据分析。
+                        </p>
+                    </li>
+                    <li class="s_c_list">
+                        <p class="s_c_title">
+                            1.大数据甄别风险
+                        </p>
+                        <p class="s_c_words">
+                            运用大数据进行征信，采集多达2000个维度数据，进行全方位数据分析。
+                        </p>
+                    </li>
+                    <li class="s_c_list">
+                        <p class="s_c_title">
+                            1.大数据甄别风险
+                        </p>
+                        <p class="s_c_words">
+                            运用大数据进行征信，采集多达2000个维度数据，进行全方位数据分析。
+                        </p>
+                    </li>
+                    <li class="s_c_list">
+                        <p class="s_c_title">
+                            1.大数据甄别风险
+                        </p>
+                        <p class="s_c_words">
+                            运用大数据进行征信，采集多达2000个维度数据，进行全方位数据分析。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="control">
-
+        <div class="key key1">
+            <div class="k_img">
+                <img class="k_img_1" src="image/butt-4-2.png" alt="">
+                <img class="k_img_2" src="image/butt-4-1.png" alt="">
+            </div>
+            <p class="k_words">推荐</p>
+        </div>
+        <div class="key">
+            <div class="k_img">
+                <img class="k_img_1" src="image/butt-2-2.png" alt="">
+                <img class="k_img_2" src="image/butt-2-1.png" alt="">
+            </div>
+            <p class="k_words">产品</p>
+        </div>
+        <div class="key">
+            <div class="k_img">
+                <img class="k_img_1" src="image/butt-3-2.png" alt="">
+                <img class="k_img_2" src="image/butt-3-1.png" alt="">
+            </div>
+            <p class="k_words">我的</p>
+        </div>
+        <div class="key">
+            <div class="k_img">
+                <img class="k_img_1" src="image/butt-1-2.png" alt="">
+                <img class="k_img_2" src="image/butt-1-1.png" alt="">
+            </div>
+            <p class="k_words">安全</p>
+        </div>
     </div>
 </div>
 </body>
+<script>
+    $(function () {
+//        点击切换面板
+        $(".key").click(function () {
+            $(this).addClass("key1").siblings(".key").removeClass("key1");
+            var index=$(".key").index($(this));
+            $(".panel").eq(index).show().siblings().hide()
+        })
+        $(".eye").click(function () {
+            "110101199001010001".replace(/^(.{6})(?:\d+)(.{4})$/,"$1****$2");
+        })
+    })
+</script>
 </html>

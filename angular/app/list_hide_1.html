@@ -37,13 +37,13 @@
                 <p class="h_c_right">新手特权，最高可投1万</p>
                 <span></span>
             </a>
-            <a href="" class="h_c_pub h_c_ensure">
+            <a href="safe.html" class="h_c_pub h_c_ensure">
                 <p class="h_c_left">安全保障</p>
                 <p class="h_c_right">风险金保障</p>
                 <span></span>
             </a>
             <div class="h_c_people">
-                <h6>¥</h6>
+                <h6></h6>
                 <p>
                     累计已有
                     <span class="h_c_p_num">546</span>
@@ -69,9 +69,19 @@
         $(".l_h_back").click(function () {
             history.go(-1);
         });
-//        function myGo (index) {    // 负代表后退， 正代表前进
-//
-//        }
+//        点击增加数字
+        var num=parseInt($(".num input").val());
+        $(".num_plus").click(function () {
+            num=num+1000;
+            $(".num input").val(num);
+        });
+        $(".num_minus").click(function () {
+            num=num-1000;
+            if (num<=1000){
+                num=1000;
+            }
+            $(".num input").val(num);
+        })
     })
 </script>
 </html>

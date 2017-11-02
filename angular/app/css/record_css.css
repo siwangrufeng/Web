@@ -28,6 +28,7 @@ header{
     background: white;
     position: relative;
     padding-top: 2.7rem;
+    margin-bottom: 1.7rem;
 }
 header .back{
     position: absolute;
@@ -50,6 +51,84 @@ header p{
     text-align: center;
     overflow: hidden;
 }
+.cont{
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.cont .c_list{
+    height: 9.6rem;
+    margin-bottom: 0.8rem;
+    background: white;
+}
+.cont .c_list .c_l_top{
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    height: 4.8rem;
+}
+.cont .c_list .c_l_top .c_l_t_words{
+    width: 60%;
+    font-size: 1.5rem;
+    color: #4A4A4A;
+    letter-spacing: 0;
+    float: left;
+    line-height: 4.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.cont .c_list .c_l_top .c_l_t_money{
+    font-size: 1.3rem;
+    color: #F4223C;
+    letter-spacing: 0;
+    float: right;
+    text-align: right;
+    width: 35%;
+    overflow:hidden ;
+    line-height: 4.8rem;
+    white-space: nowrap;
+}
+.cont .c_list .c_l_top .line{
+    width: 100%;
+    display: block;
+    height: 1px;
+    background: #d6d6d6;
+    position: absolute;
+    bottom: 0;
+}
+.cont .c_list .c_l_bott{
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 4.8rem;
+}
+.cont .c_list .c_l_bott .c_l_b_words{
+    width: 40%;
+    line-height: 4.8rem;
+    font-size: 1.5rem;
+    color: #4A4A4A;
+    letter-spacing: 0;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.cont .c_list .c_l_bott .c_l_b_time{
+    width: 50%;
+    font-size:1rem;
+    color: #9B9B9B;
+    letter-spacing: 0;
+    float: right;
+    text-align: right;
+    overflow: hidden;
+    line-height: 4.8rem;
+    white-space: nowrap;
+}
+
+
+
+
+
+
+
+
 
 
 

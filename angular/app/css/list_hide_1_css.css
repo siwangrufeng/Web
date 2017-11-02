@@ -116,8 +116,6 @@ body{
 }
 .l_hide .h_cont{
     height: 62.5%;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
 }
 .l_hide .h_cont .h_c_pub{
     display: block;
@@ -126,6 +124,8 @@ body{
     padding-bottom: 1.9rem;
     height: 1.6rem;
     position: relative;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 .l_hide .h_cont .h_c_pub .h_c_left{
     width: 25%;
@@ -166,14 +166,10 @@ body{
     display: block;
     float: left;
     height: 100%;
-    border-radius: 50%;
-    background: #FC6E26;
-    color: white;
     width: 1.3rem;
-   line-height: 1.3rem;
-    font-size: 1rem;
-    text-align: center;
     margin-right: 0.8rem;
+    background: url("../image/Group%205.png") no-repeat;
+    background-size: 100% 100%;
 }
 .l_hide .h_cont .h_c_people p{
     float: left;

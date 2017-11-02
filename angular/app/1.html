@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <style>
+
+    </style>
+</head>
+<body>
+<input type="text" id="inp" value="123456">
+<span id="span">点我</span>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+//        $("input").c=$("input").val();
+//        console.log($("input").c);
+//        var a=0;
+//        $("span").click(function () {
+//            a++;
+//            if(a/2!=0){
+//                $("input").val("*******")
+//            }else {
+//                $("input").val($(input).c())
+//            }
+//
+//        })
+        var input=document.getElementById("inp");
+        var span=document.getElementById("span");
+        input.a=input.value;
+        var c=0;
+        span.click(function () {
+            c++;
+            if (a/2!=0){
+                input.value="*******"
+            }else{
+                input.value=input.a
+            }
+        })
+
+    })
+</script>
+</html>

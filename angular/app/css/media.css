@@ -34,6 +34,9 @@
     .index .advert .remark{
         margin-top: 3rem;
     }
+    .control .key .k_img{
+        margin-top: 8%;
+    }
 }
 @media screen and (max-width: 370px){
     .l_hide .h_cont .h_c_words{
@@ -41,5 +44,34 @@
     }
     .l_hide .h_cont .start{
         margin-top: 10%;
+    }
+    .cont .c_list .c_l_top .c_l_t_words{
+        font-size: 1.3rem;
+    }
+    .cont .c_list .c_l_bott .c_l_b_words{
+        font-size: 1.3rem;
+    }
+    .control .key .k_img img{
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+    .control .key .k_words{
+        margin-top: -0.4rem;
+    }
+    .user .u_cont .record span{
+        top: 1.8rem;
+    }
+    .user .u_cont .contact span{
+        top: 1.8rem;
+    }
+    .user header{
+        height: 12rem;
+        padding-top:3rem;
+    }
+    .user header .h_name{
+       margin-top: 3%;
+    }
+    .user header .h_words{
+        margin-top: 4%; color: green;
     }
 }

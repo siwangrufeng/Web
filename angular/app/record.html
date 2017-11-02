@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="css/record_css.css">
+    <link rel="stylesheet" href="css/media.css">
     <script src="js/jquery.min.js"></script>
 </head>
 <body>
@@ -15,6 +16,50 @@
         </div>
         <p>交易记录</p>
     </header>
+    <div class="cont">
+        <ul>
+            <li class="c_list">
+                <div class="c_l_top">
+                    <p class="c_l_t_words">支付投资项目购买金额</p>
+                    <p class="c_l_t_money">¥1000.00</p>
+                    <span class="line"></span>
+                </div>
+                <div class="c_l_bott">
+                    <p class="c_l_b_words">支付</p>
+                    <p class="c_l_b_time">16/07/04 15:07:54</p>
+                </div>
+            </li>
+            <li class="c_list">
+                <div class="c_l_top">
+                    <p class="c_l_t_words">支付投资项目购买金额</p>
+                    <p class="c_l_t_money">¥1000.00</p>
+                    <span class="line"></span>
+                </div>
+                <div class="c_l_bott">
+                    <p class="c_l_b_words">支付</p>
+                    <p class="c_l_b_time">16/07/04 15:07:54</p>
+                </div>
+            </li>
+            <li class="c_list">
+                <div class="c_l_top">
+                    <p class="c_l_t_words">支付投资项目购买金额</p>
+                    <p class="c_l_t_money">¥1000.00</p>
+                    <span class="line"></span>
+                </div>
+                <div class="c_l_bott">
+                    <p class="c_l_b_words">支付</p>
+                    <p class="c_l_b_time">16/07/04 15:07:54</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
 </body>
+<script>
+    $(function () {
+        $(".back").click(function () {
+            history.go(-1)
+        })
+    })
+</script>
 </html>
