@@ -27,7 +27,7 @@
         margin-top: 1rem;
     }
 }
-@media screen and (min-width: 414px){
+@media screen and (min-width: 412px){
     .index .advert .buy_btn{
         margin-top: 8%;
     }
@@ -36,6 +36,9 @@
     }
     .control .key .k_img{
         margin-top: 8%;
+    }
+    .list .list_cont{
+        height: 88%;
     }
 }
 @media screen and (max-width: 370px){

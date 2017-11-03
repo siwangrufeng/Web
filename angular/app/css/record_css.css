@@ -52,13 +52,28 @@ header p{
     overflow: hidden;
 }
 .cont{
+    height: 85%;
     overflow-x: hidden;
     overflow-y: auto;
 }
+@media screen and (min-width:375px){
+    .cont{
+        height: 87.4%;
+    }
+}
+@media screen and (min-width:412px){
+    .cont{
+        height: 88.4%;
+    }
+
+}
 .cont .c_list{
     height: 9.6rem;
-    margin-bottom: 0.8rem;
+    margin-top: 0.8rem;
     background: white;
+}
+.cont .c_list:first-child{
+    margin-top: 0;
 }
 .cont .c_list .c_l_top{
     margin-left: 5%;
