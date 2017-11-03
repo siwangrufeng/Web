@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            position: relative;
+        }
+        .ball{
+            width: 50px;
+            height: 50px;
+            background: #e66dd6;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="ball"></div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script>
+    $(function () {
+        var wid=window.innerWidth;
+        var hei=window.innerHeight;
+        $("body").width(wid).height(hei);
+        var x=3;
+        var y=2;
+        setInterval(function () {
+            var xx=$(".ball").offset().left;
+            var yy=$(".ball").offset().top;
+//            console.log(yy)
+            if(xx<0||xx>=wid-$(".ball").width()){
+                x = -x;
+            }
+            if(yy<0||yy>=hei-$(".ball").height()){
+                y = -y;
+            }
+            xx=xx+x;
+            yy=yy+y;
+            $(".ball").css({
+                "left":xx+"px","top":yy+"px"
+            })
+        },8)
+
+    })
+</script>
+</html>

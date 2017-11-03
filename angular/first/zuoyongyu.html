@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body ng-init="name='zhangsan';age='10'">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>$scope&$rootScope</h3>
+            <h1>form：控制器之外：{{name}}</h1>
+            <form ng-controller="myCtrl">
+                <div class="form-group">
+                    <h4>姓名：{{name}}</h4>
+                    <input type="text" ng-model="name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <h4>姓名：{{myage}}</h4>
+                    <input type="text" ng-model="myage" class="form-control">
+                </div>
+            </form>
+            <div class="form-group">
+                <h4>operate{{age}}</h4>
+                <input type="text" ng-model="age" class="form-control">
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/angular.js"></script>
+<script>
+    angular.module("myApp", [])
+            .controller("myCtrl", ["$scope","$rootScope", function ($scope,$rootScope) {
+                //$scope表示的是当前的作用域
+                //注入$rootScope表示是根上的作用域，最好不要乱用，跟ng-app平齐 是全局的 可以控制除控制器以外的变量，可以拿到控制器外面的数据，然后可以赋给控制器内，但是不能拿到控制器里面的数据
+                //ng-init是全局的，如果控制器里面的变量没有赋初值，会影响变量的值
+                $scope.name="lisi";
+                $scope.myage=$rootScope.age;
+
+
+
+            }]);
+</script>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        pre {
+            font-size: 20px;
+        }
+
+        input {
+            outline: none;
+        }
+
+        .red {
+            border: 1px solid red;
+        }
+
+        .green {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="page-header">表单验证</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>表单 form</h2>
+            <form name="reg_form" ng-model="">
+                <!--表单里面的name可以为了angular服务，angular可以通过name来获取值-->
+                <div class="form-group">
+                    <label>用户名：</label>
+                    <input type="text" class="form-control" name="user"
+                           ng-model="form.user"
+                           required
+                           ng-minlength="3"
+                           ng-maxlength="16"
+                           ng-class="
+                           {'red':reg_form.user.$invalid && reg_form.user.$dirty,
+                           'green':reg_form.user.$valid}"
+                    ><br>
+                    <!--ng-model调用数据要直接form-->
+                    <!-- 档符合后面条件的时候，前面的类名生效，在这里要写form的name而不是直接写form  -->
+                    <!-- 格式 form_name.input_name.$*
+                         *可以是：
+                         $invalid,$valid;
+                         $dirty,$pristine;
+                         $touched;
+                         $error(.minlength,.maxlength,.required)
+                      -->
+                    <span style="color: red" ng-show="reg_form.user.$invalid && reg_form.user.$dirty">请输入3-16位用户名</span>
+                </div>
+                <div class="form-group">
+                    <label>邮箱：</label>
+                    <input type="email" class="form-control" name="mail"
+                           ng-model="form.mail"
+                           required
+                           ng-class="
+                           {'red':reg_form.mail.$invalid&& reg_form.mail.$dirty,
+                           'green':reg_form.mail.$valid}"
+                    ><br>
+                    <span style="color: red" ng-show="reg_form.mail.$invalid && reg_form.mail.$dirty">请输入合法邮箱</span>
+                </div>
+                <div class="form-group">
+                    <label>初始密码：</label>
+                    <input type="password" class="form-control" name="pass"
+                           ng-model="form.pass"
+                           ng-minlength="8"
+                           ng-maxlength="16"
+                           required
+                           ng-class="
+                           {'red':reg_form.pass.$invalid&& reg_form.pass.$dirty,
+                           'green':reg_form.pass.$valid}"
+                    ><br>
+                    <span style="color: red" ng-show="reg_form.pass.$invalid && reg_form.pass.$dirty">请输入8-16位密码</span>
+                </div>
+                <div class="form-group">
+                    <label>确认密码：</label>
+                    <input type="password" class="form-control" name="conf"
+                           ng-model="form.conf"
+                           required
+                           ng-minlength="8"
+                           ng-maxlength="16"
+                           ng-class="
+                           {'red':form.conf !== form.pass&& reg_form.conf.$dirty,
+                           'green':form.conf === form.pass&& reg_form.conf.$valid}"
+                    ><br>
+                    <span style="color: red" ng-hide="reg_form.conf.$error.required || form.conf === form.pass&& reg_form.conf.$valid">请确认密码</span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn"
+                            ng-disabled="
+                     reg_form.user.$error.required || reg_form.mail.$error.required || reg_form.pass.$error.required || reg_form.conf.$error.required
+                    "
+                            ng-class="{
+                            'btn-default':reg_form.user.$error.required || reg_form.mail.$error.required || reg_form.pass.$error.required || reg_form.conf.$error.required,
+                            'btn-primary':reg_form.user.$dirty && reg_form.mail.$dirty && reg_form.pass.$dirty && reg_form.conf.$dirty
+                            }"
+
+                    >登录</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2>数据信息</h2>
+            <pre>{{form|json}}</pre>
+            <!--表单里面的数组尽量叫做form-->
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/angular.js"></script>
+<script>
+    angular.module("myApp", [])
+            .controller("myCtrl", ["$scope", "$rootScope", function ($scope, $rootScope) {
+
+
+            }]);
+</script>
+</html>
