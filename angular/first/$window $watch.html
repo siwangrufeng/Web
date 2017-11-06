@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body ng-controller="myCtrl">
+<div class="container">
+    <h1 class="page-header">$window $watch</h1>
+    <h2 class="btn btn-primary btn-lg">{{info.width+"+"+info.height}}</h2>
+</div>
+
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+
+//    window.onresize= function () {
+//        var obj=document.querySelector(".btn-lg");
+//        obj.innerHTML=window.innerWidth+"x"+window.innerHeight
+//    };
+//    window.onresize();
+//    js原生代码只需要走完上部分就可以执行了
+
+
+    angular.module("myApp",[])
+            .controller("myCtrl",["$scope","$window", function ($scope,$window) {
+//                window.onresize= function () {
+//                    var obj=document.querySelector(".btn-lg");
+//                    obj.innerHTML=window.innerWidth+"x"+window.innerHeight
+//                };
+//                window.onresize();
+//                用angular的方式写，不同的是，要等angular控制器渲染完了才能执行js原生代码
+
+
+//                $scope.info={
+//                    width:$window.innerWidth,                         //$window一定要注入，实际上相当于将js原码里面所有window属性打包
+//                    height:$window.innerHeight
+//                };
+
+//                jqLite方法 等同于将angular模拟或者说包装成jQuery元素，可以用jQuery方法及事件，但并不是所有
+                angular.element($window).bind("resize",function(){
+                    var obj=document.querySelector(".btn-lg");
+                    obj.innerHTML=window.innerWidth+"x"+window.innerHeight
+                })
+
+
+            }])
+</script>
+</html>

@@ -31,7 +31,8 @@
     <div class="row">
         <div class="col-md-6">
             <h2>表单 form</h2>
-            <form name="reg_form" ng-model="">
+            <form name="reg_form" ng-model="" novalidate>
+                <!--novalidate表示抛弃html5里面的表单验证-->
                 <!--表单里面的name可以为了angular服务，angular可以通过name来获取值-->
                 <div class="form-group">
                     <label>用户名：</label>
@@ -44,7 +45,7 @@
                            {'red':reg_form.user.$invalid && reg_form.user.$dirty,
                            'green':reg_form.user.$valid}"
                     ><br>
-                    <!--ng-model调用数据要直接form-->
+                    <!-- ng-model调用数据要直接form -->
                     <!-- 档符合后面条件的时候，前面的类名生效，在这里要写form的name而不是直接写form  -->
                     <!-- 格式 form_name.input_name.$*
                          *可以是：
@@ -53,16 +54,32 @@
                          $touched;
                          $error(.minlength,.maxlength,.required)
                       -->
-                    <span style="color: red" ng-show="reg_form.user.$invalid && reg_form.user.$dirty">请输入3-16位用户名</span>
+
+                    <div ng-if="!reg_form.user.$error.required">
+                        <p style="color: red" ng-show="reg_form.user.$error.minlength">少于3位</p>
+                        <p style="color: red" ng-show="reg_form.user.$error.maxlength">多于16位</p>
+                    </div>
+
+                    <!--<p style="color: red" ng-show="reg_form.user.$invalid && reg_form.user.$dirty">请输入3-16位用户名</p>-->
                 </div>
                 <div class="form-group">
                     <label>邮箱：</label>
+                    <!--<input type="email" class="form-control" name="mail"-->
+                    <!--ng-model="form.mail"-->
+                    <!--required-->
+                    <!--ng-class="-->
+                    <!--{'red':reg_form.mail.$invalid&& reg_form.mail.$dirty,-->
+                    <!--'green':reg_form.mail.$valid}"-->
+                    <!--&gt;<br>-->
+                    <!--<span style="color: red" ng-show="reg_form.mail.$invalid && reg_form.mail.$dirty">请输入合法邮箱</span>-->
                     <input type="email" class="form-control" name="mail"
                            ng-model="form.mail"
                            required
-                           ng-class="
-                           {'red':reg_form.mail.$invalid&& reg_form.mail.$dirty,
-                           'green':reg_form.mail.$valid}"
+                           ng-pattern="/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/"
+                           ng-class="{
+                           'red':reg_form.mail.$invalid&& reg_form.mail.$dirty,
+                           'green':reg_form.mail.$valid
+                           }"
                     ><br>
                     <span style="color: red" ng-show="reg_form.mail.$invalid && reg_form.mail.$dirty">请输入合法邮箱</span>
                 </div>
@@ -90,7 +107,9 @@
                            {'red':form.conf !== form.pass&& reg_form.conf.$dirty,
                            'green':form.conf === form.pass&& reg_form.conf.$valid}"
                     ><br>
-                    <span style="color: red" ng-hide="reg_form.conf.$error.required || form.conf === form.pass&& reg_form.conf.$valid">请确认密码</span>
+                    <!--判断是否相等的时候要从json数组里取值，所以用的应该是ng-model里面的值来判断-->
+                    <span style="color: red"
+                          ng-hide="reg_form.conf.$error.required || form.conf === form.pass&& reg_form.conf.$valid">请确认密码</span>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn"
@@ -102,14 +121,15 @@
                             'btn-primary':reg_form.user.$dirty && reg_form.mail.$dirty && reg_form.pass.$dirty && reg_form.conf.$dirty
                             }"
 
-                    >登录</button>
+                    >登录
+                    </button>
                 </div>
             </form>
         </div>
         <div class="col-md-6">
             <h2>数据信息</h2>
             <pre>{{form|json}}</pre>
-            <!--表单里面的数组尽量叫做form-->
+            <!--表单里面的数组尽量叫做form angular生成的一个叫做form的数据-->
         </div>
     </div>
 </div>
@@ -117,8 +137,24 @@
 <script src="js/angular.js"></script>
 <script>
     angular.module("myApp", [])
-            .controller("myCtrl", ["$scope", "$rootScope", function ($scope, $rootScope) {
-
+            .controller("myCtrl", ["$scope","$http", function ($scope,$http) {
+            if($scope.form.user.length>=3 && $scope.form.user.length<=16){
+                return;
+            }else {
+                alert("")
+            }
+//          可以不写，意义不大
+                $http({                  //异步通讯，ajax
+                    type:"GET",
+                    url:"user.php",
+                    data:$scope.form
+                }).success(function(res){
+//                    成功的话
+                    alert(1)
+                }).error(function (rt) {
+                    alert(2)
+//                    失败的话
+                })
 
             }]);
 </script>

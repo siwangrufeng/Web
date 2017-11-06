@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="../app/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../app/css/bootstrap-theme.min.css">
+    <style>
+        pre {
+            font-size: 22px;
+        }
+
+        .red {
+            border: 1px solid red;
+        }
+
+        .green {
+            border: 1px solid green;
+        }
+
+        .msg {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+<!--服务器无筛选的接受所有数据是致命的   容易被黑客肉机攻击-->
+<div class="container">
+    <h1 class="page-heading">AngularJs</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h2>表单 form</h2>
+            <form action="" name="reg_form" ng-model="form" novalidate>   <!--整个变量-->  <!-- novalidate 抛弃html5的表单验证 -->
+                <div class="form-group">
+                    <label>用户名：</label>
+                    <input type="text"
+                           name="user"
+                           ng-model="form.user"
+                           class="form-control"
+                           ng-minlength="3" ng-maxlength="10"
+                           ng-class="{
+                               'red':reg_form.user.$invalid && reg_form.user.$dirty,
+                               'green':reg_form.user.$valid
+                           }"
+                           placeholder="请输入3-10个字符!"
+                           required>  <!-- required 必填-->
+                    <!--  ng-class="{'red':true,'green':false}" 布尔在前 要加[]参考变量 -->
+                    <!-- angular写法 form_name.input_name.$*   ($invalid  $valid  $dirty   $touched)  -->
+                    <!--$touched不能碰    $dirty不能改值，只要改过就脏了，体验更好-->
+
+
+                    <p class="help-block msg" ng-show="
+                        reg_form.user.$invalid && reg_form.user.$dirty
+                    ">请输入3-10个字符!</p>   <!--计算真值  真才显示-->
+
+                </div>
+                <div class="form-group">
+                    <label>邮箱：</label>
+                    <input type="email"
+                           name="mail"
+                           ng-model="form.mail"
+                           class="form-control"
+                           ng-pattern="/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/"
+                           ng-class="{
+                           'red':reg_form.mail.$invalid && reg_form.mail.$dirty,
+                           'green':reg_form.mail.$valid}"
+                           required>
+                </div>  <!--  /^[]+@[]+()+$/   ^[]要求的第一个字母  ()可选的   .在正则表示所有的东西  \转义字符-->
+                <div class="form-group">
+                    <label>初始密码：</label>
+                    <input type="password"
+                           name="pass"
+                           ng-model="form.pass"
+                           class="form-control"
+                           ng-minlength="6" ng-maxlength="16"
+                           placeholder="请输入密码。。。"
+                           ng-class="{
+                               'red':reg_form.pass.$invalid && reg_form.pass.$dirty,
+                               'green':reg_form.pass.$valid
+                           }"
+                           required>
+
+                    <p class="help-block msg" ng-show="
+                        reg_form.pass.$invalid && reg_form.pass.$dirty
+                    ">请输入6-16位密码!</p>   <!--计算真值  真才显示-->
+
+                </div>
+                <div class="form-group">
+                    <label>确认密码：</label>
+                    <input type="password"
+                           name="conf"
+                           ng-model="form.conf"
+                           class="form-control"
+                           ng-minlength="6" ng-maxlength="16"
+                           placeholder="请再次确认密码。。。"
+                           ng-class="{
+                               'red':reg_form.conf.$dirty && form.conf != form.pass,
+                               'green':reg_form.conf.$valid && form.conf != form.pass
+                           }"
+                           required>
+
+                    <p class="help-block msg" ng-show="
+                        reg_form.conf.$dirty && form.conf != form.pass
+                    ">密码不一致!</p>   <!--计算真值  真才显示-->
+
+
+                </div>
+                <div class="form-group">
+                    <div class="btn btn-primary" ng-disabled="reg_form.$error.required">注册</div>
+                    <!--尝试  当所有的表单验证都通过了才能点击-->
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h2>数据信息</h2>
+            <pre>   <!--把我们现有的数据在网页中显示  可以实时监控  做表单的时候比console更方便-->
+                {{form | json}}
+            </pre>
+            <h3>
+                form_name.input_name.$*:
+                $invalid,$valid;
+                $dirty,$pristine;
+                $touched;
+                $error(.maxlength,.minlength,.required)
+            </h3>
+
+        </div>
+    </div>
+</div>
+
+<script src="../app/js/angular.min.js"></script>
+</body>
+</html>
