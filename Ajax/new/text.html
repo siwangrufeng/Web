@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="showIfo">
+    <!--要使用localhost或者127.0.0.1检索到www目录才能用-->
+</div>
+<form action="">
+    <input type="text" name="username" id="pageSize">
+    <input type="text" name="pwd" id="pageIndex">
+    <input type="text"  id="userId">
+    <button type="submit" id="btn">提交</button>
+</form>
+</body>
+<script>
+    window.onload= function () {
+        var btn=document.getElementById("btn");
+        var show=document.getElementById("showIfo");
+
+        btn.onclick= function () {
+            var pageSize=document.getElementById("username").value;
+            var pageIndex=document.getElementById("pwd").value;
+//            var xhr;      //先声明一个保存XMLHttpRequest对象
+//
+//            if(window.XMLHttpRequest){
+//                xhr=new XMLHttpRequest;  //对象实例化
+//                //ie7及以上以及dom浏览器的创建方法
+//            }else{
+//                xhr=new ActiveXObject("Microsoft.XMLHTTP");
+//                //ie5 6的创建方法
+//            }
+//            // /以上部分为做兼容
+//
+//
+//            var url="http://127.0.0.1:8000/blog/getAllBlog";
+//            //把需要传输的数据拼接到路径上
+//            //u p 是自己编的名字 ? &是固定写法 意思是u=user p=pwd
+//            xhr.open("POST",url,true);
+//            //默认为true 为异步刷新 false为同步刷新
+//
+//            xhr.onreadystatechange=function(){
+//                if (xhr.readyState == 4) {
+//                    if (xhr.status == 200) {
+//                        if (xhr.responseText == 1) {
+//                            show.innerHTML = "密码错误"
+//                        } else if (xhr.responseText == 2) {
+//                            show.innerHTML = "登陆成功"
+//                        }
+//                    }
+//                }
+//            };
+//            xhr.send();
+//            show.innerHTML=xhr;
+
+        };
+    }
+</script>
+</html>
