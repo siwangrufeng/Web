@@ -7,6 +7,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        span {
+            background: red;
+            cursor: pointer;
+            user-select: none;
+        }
+    </style>
 </head>
 <body ng-controller="myCtrl">
 <div class="container">
@@ -14,7 +21,7 @@
     <div class="row">
         <div class="col-md-6">
             <h2 class="text-center">详情页面</h2>
-            <table class="table table-bordered table-hover">
+            <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>No</th>
@@ -41,13 +48,15 @@
         </div>
         <div class="col-md-6">
             <h2 class="text-center">购物车页面</h2>
-            <table class="table table-bordered table-hover">
+            <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>No</th>
                     <th>品名</th>
                     <th>价格</th>
-                    <th>数量</th>
+                    <th>
+                        数量
+                    </th>
                     <th>总价</th>
                     <th></th>
                 </tr>
@@ -57,7 +66,8 @@
                     <td>{{$index+1}}</td>
                     <td>{{item.name}}</td>
                     <td class="text-right">{{item.price | currency : "¥"}}</td>
-                    <td class="text-right">{{item.qty | number}}</td>
+                    <td class="text-right">{{item.qty | number}}<span
+                            ng-click="del1(item)">减一个</span></td>
                     <td class="text-right">{{item.price*item.qty | currency : "¥"}}</td>
                     <td class="text-center">
                         <div class="btn btn-default btn-xs" ng-click="del(item,$index)">删除</div>
@@ -66,17 +76,24 @@
                 </tbody>
                 <tfoot>
                 <tr>
+                    <td colspan="6">
+                        用filter算出的总价
+                        {{cart | amount | currency:"¥"}}
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="2" class="text-right">
-                        总金额{{}}
+                        总金额{{total | currency:"¥"}}
                     </td>
                     <td class="text-right">
-                        折扣{{cart | amount:disc}}
+                        折扣{{zhekou}}
                     </td>
                     <td class="text-right">
-                        优惠多少{{}}
+                        优惠多少{{youhui | currency:"¥"}}
                     </td>
                     <td colspan="2" class="text-right">
-                        实付金额{{cart | amount | currency:"¥"}}
+                        实付金额{{payout | currency:"¥"}}
+                        <!--  cart数据用一个叫做amount的过滤器（名字自定义）将总额统计出来，统计的是前面的json数组  -->
                     </td>
                     <!--<td class="text-right">{{sum | currency : "¥"}}</td>-->
                 </tr>
@@ -89,48 +106,21 @@
 <script src="js/angular.js"></script>
 <script>
     var app = angular.module("myApp", []);
-    app.filter("amount", function () {
+    app.filter("amount", function () {          //过滤器作用是有限的，直接作用在视图上
         return function (cart) {
             var sum = 0;
             for (var i = 0; i < cart.length; i++) {
                 sum += (cart[i].qty * cart[i].price)
             }
-            reg = [
-                {first: 200, dis: .9},
-                {first: 400, dis: .85},
-                {first: 600, dis: .8},
-                {first: 800, dis: .75}
-            ];
-            var disc = 1;
-            for (i = 0; i < reg.length; i++) {
-                if (i == reg.length - 1) {
-                    if (sum >= reg[i].first) {
-                        sum = sum * reg[i].dis;
-                        disc = reg[i].dis * 100 + "%"
-
-                    }
-                }
-                else {
-                    if (sum >= reg[i].first && sum < reg[i + 1].first) {
-//                               alert(1);
-                        sum = sum * reg[i].dis;
-                        disc = reg[i].dis * 100 + "%"
-                        alert(disc)
-                    }
-                }
-
-
-            }
             return sum;
-            return disc;
         }
 
     }).controller("myCtrl", ["$scope", function ($scope) {
         $scope.data = [
-            {name: "键盘", price: 699.9, qty: 33},
-            {name: "鼠标", price: 349.5, qty: 456},
-            {name: "电脑", price: 499, qty: 5},
-            {name: "手表", price: 200, qty: 213},
+            {name: "键盘", price: 499.9, qty: 33},
+            {name: "鼠标", price: 249.5, qty: 456},
+            {name: "电脑", price: 199, qty: 5},
+            {name: "手表", price: 99, qty: 213},
             {name: "棒棒糖", price: 2.5, qty: 23}
         ];
 
@@ -144,6 +134,7 @@
                         item.qty--;
                         $scope.insertCart(item);
                     }
+                    $scope.totalAmount();
                     break;
                 }
             }
@@ -151,7 +142,6 @@
 
 
         };
-
 
         $scope.insertCart = function (item) {
             var k = -1;   //不要写0 因为下标包括0
@@ -172,23 +162,89 @@
             }
         };
 
-        $scope.del = function (item, $index) {       //删除一整行
-
+//删除一整行
+        $scope.del = function (item, $index) {
             for (i = 0; i < $scope.data.length; i++) {
                 if ($scope.data[i].name == item.name) {
                     $scope.data[i].qty = $scope.data[i].qty + item.qty;
                     $scope.cart.splice($index, 1);
                 }
             }
+        };
 
+//        每次删除一个
+        $scope.del1 = function (item) {
+            for (i = 0; i < $scope.cart.length; i++) {
+                if (item == $scope.cart[i]) {
+                    if (item.qty > 1) {
+                        item.qty--;
+                    } else if (item.qty <= 1) {
+                        $scope.cart.splice(i, 1);
+                    }
+                    $scope.totalAmount();
+                    break;
+                }
+            }
+            $scope.insertdata(item)
+        };
+        $scope.insertdata = function (item) {
+            var k = -1;
+            for (i = 0; i < $scope.data.length; i++) {
+                if ($scope.data[i].name == item.name) {
+                    k = i;
+                    break;
+                }
+            }
+            if (k > -1) {
+                $scope.data[k].qty++;
+            }
         };
 
 
-//               $scope.reg = [
-//                   {first:1000,dis:.9},
-//                   {second:5000,dis:.85},
-//                   {third:500000,dis:.8}
-//               ]
+//        优惠折扣策略 模拟数据库取数据的结果
+        $scope.role = [
+            {base: 200, youhui: .95},
+            {base: 300, youhui: .9},
+            {base: 400, youhui: .8},
+            {base: 600, youhui: .75},
+            {base: 800, youhui: .7},
+            {base: 1000, youhui: .65},
+            {base: 1200, youhui: .6}
+        ];
+
+
+        $scope.total = 0;    //赋初值
+        $scope.totalAmount = function () {
+            $scope.total = 0;   //为防止叠加，每次都要清零一次，重新计算
+            for (var i = 0; i < $scope.cart.length; i++) {
+                $scope.total += ($scope.cart[i].qty * $scope.cart[i].price)
+            }
+//            console.log($scope.total)
+        };
+
+
+//        监测或者说跟踪对象：购物车合计总金额，cart是一个数组，虽然是一个数组，但他作为对象本身的没有更改的
+//        对象最好是数值，跟踪的是数据 某个具体地址而不是对象
+//        $scope.$watch("total", function (newval,oldval) {    //两个形参，前面一个是新值也就是更改过后的值，后面为老值，也就是更改之前的值，不能跨级
+////            一般都只用一个新值
+//        })
+        $scope.$watch("total", function (newVal) {
+            $scope.zhekou = 1;
+            for (i = $scope.role.length - 1;i>=0; i--) {
+                if (newVal >= $scope.role[i].base) {
+                    $scope.zhekou = $scope.role[i].youhui;
+                    break;
+                }
+            }
+            $scope.payout = newVal * $scope.zhekou;
+            $scope.youhui = newVal - $scope.payout;
+            if($scope.zhekou==1){
+                $scope.zhekou="";
+            }else {
+                $scope.zhekou=$scope.zhekou*100+"%"
+            }
+
+        })
 
 
     }]);
