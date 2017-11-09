@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script src="jquery.min.js"></script>
+<script>
+$(function () {
+    //如果上面引入的是angular，这里应该写$http后面都一样
+    $.ajax({
+        type:"GET",
+        url:"这个地方写网址，如果是get的话，可以用?name='ni'&pass='123'这种格式拼接，如果是post参数写在外面",
+        data:{name:'ni','pass':'123'},// get也可以把参数写在data里面
+        success: function () {
+            //这里面的后台写
+        }
+    })
+})
+</script>
+</html>

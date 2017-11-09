@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <style>
+        @charset "UTF-8";
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide {
+            display: none !important;
+        }
+
+        ng\:form {
+            display: block;
+        }
+
+        .ng-animate-start {
+            clip: rect(0, auto, auto, 0);
+            -ms-zoom: 1.0001;
+        }
+
+        .ng-animate-active {
+            clip: rect(-1px, auto, auto, 0);
+            -ms-zoom: 1;
+        }
+        /*以上为ng-cloak防止页面闪烁*/
+
         span {
             background: red;
             cursor: pointer;
@@ -212,7 +232,6 @@
             {base: 1200, youhui: .6}
         ];
 
-
         $scope.total = 0;    //赋初值
         $scope.totalAmount = function () {
             $scope.total = 0;   //为防止叠加，每次都要清零一次，重新计算
@@ -230,7 +249,7 @@
 //        })
         $scope.$watch("total", function (newVal) {
             $scope.zhekou = 1;
-            for (i = $scope.role.length - 1;i>=0; i--) {
+            for (i = $scope.role.length - 1; i >= 0; i--) {
                 if (newVal >= $scope.role[i].base) {
                     $scope.zhekou = $scope.role[i].youhui;
                     break;
@@ -238,10 +257,10 @@
             }
             $scope.payout = newVal * $scope.zhekou;
             $scope.youhui = newVal - $scope.payout;
-            if($scope.zhekou==1){
-                $scope.zhekou="";
-            }else {
-                $scope.zhekou=$scope.zhekou*100+"%"
+            if ($scope.zhekou == 1) {
+                $scope.zhekou = "";
+            } else {
+                $scope.zhekou = $scope.zhekou * 100 + "%"
             }
 
         })

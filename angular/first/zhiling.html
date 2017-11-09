@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        hello,.hello,[hello]{
+            display: block;
+            border: 5px solid red;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl">
+<div class="container">
+    <h1 class="page-header">指令系统 directive</h1>
+    <hello-fan>welcome</hello-fan>
+    <!-- h5里面可以自定义标签名 -->
+    <!-- 通过directive指令系统，将我们需要更改的html元素更改成我们想要的 -->
+    <hello>to here!</hello>
+    <!--作为标签名-->
+    <div hello>再见</div>
+    <!--作为属性名-->
+    <div class="hello">你好</div>
+    <!--作为类名-->
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myApp", [])
+            .directive("hello", function () {    //
+                return{
+                    restrict:"E",   //限制
+                    //restrict 匹配指令的类名声明
+                    //E:element 元素标签   只对元素名为hello的元素生效，整体替换整个标签 不保留属性
+                    //A：attribute 属性    只对属性值为hello的元素生效，保留属性
+                    //C：class name 类名   只对类名为hello的元素生效，保留类名
+                    //M：注释 已经废弃了
+                    template:"<div>这是替换用的标签</div>",       //模板，模板就是预先设定好的一套规则，用后面的内容去替换现有内容 不能同时用两个标签来替换，可以嵌套标签
+//                    templateUrl:"temp.html",  //不能跟template共存，地址可以shihtml文档，也可以是json
+                    replace:true   //替换 true不保留的直接替换，false的话是替换其内部所有，也就是说就算此标签内部有其他标签，也会被替换，只保留最外面一层 默认为false
+                }
+            })
+//            .directive("helloFan", function () {    //h5里面自定义的标签名，像hello-fan hello：fan这种类型的标签名，不管html里面写的啥，在这里都要换成驼峰命名
+//                return{
+//                    restrict:"E",   //限制
+//                    template:"<div>这是替换用的标签</div>",
+//                    replace:true
+//                }
+//            })
+//            .directive("hello", function () {
+//                return{
+//                    restrict:"AC",   //限制 同时写两个，就是对属性值为hello和类名为hello的元素都生效
+////                    写三个也同理
+//                    template:"<span>这是替换用的标签</span>",
+//                    replace:true
+//                }
+//            })
+            .controller("myCtrl", ["$scope", function ($scope){
+
+
+
+            }])
+</script>
+</html>
