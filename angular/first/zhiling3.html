@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <style>
+        .hello {
+            border: 5px solid red;
+            padding: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl">
+<div class="container">
+    <h1 class="page-header">AngularJs 指令系统 directive</h1>
+    <div ng-repeat="row in data" class="hello" hello-title="row.title" hello-text="row.text">
+        {{row.text}}
+    </div>
+</div>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myApp", [])
+            .directive("hello", function () {
+                        return {
+                            restrict: 'EAC',
+                            scope: {title: '=helloTitle', text: '=helloText'},   //变成驼峰命名 把上面的row.title拿下来，然后放在template要替换的里面  这里的scope跟link里面的scope是关联的
+                            template: '<div>' +  //scope   //说的简单点就是创建模板的时候就是这边创建了一个控制器，每个div就有一个控制器   也就是这些控制器不会在父级上进行传播 都是单独的小事件 如果父标签上有动作是传不到里面的  其实还有另外一个属性叫link
+                            '<div ng-click="toggle()">点击：{{title}}</div>' +
+                            '<h2 ng-show="showMe">拼音：{{text}}</h2>' +
+                            '</div>',
+                            replace: false,
+                            link: function (scope, element, attrs) {  //link是一套渲染的机制  把所有标签上有指令的地方都链接好，只要点击就出发onclick事件，触发事件监听，最终compile  默认是angular控制的
+                                scope.showMe = false;   //空的字符串本身就是false
+                                scope.toggle = function () {
+                                    scope.showMe = !scope.showMe;
+                                }
+                            }
+                        }
+                    }
+            )
+            .controller("myCtrl", ["$scope", function ($scope) {
+                console.log($scope);
+                $scope.data = [
+                    {title: "上海", text: "shanghai"},
+                    {title: "南京", text: "nanjing"},
+                    {title: "天津", text: "tianjin"}
+                ];
+                $scope.title = "欢迎光临！";  //全局变量  父级控制器的变量可以延伸到子上面的
+            }])
+</script>
+</body>
+</html>

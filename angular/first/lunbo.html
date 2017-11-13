@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS 轮播</title>
+    <script src="js/angular.min.js"></script>
+    <style>
+        .bg {
+            text-align: center;
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            margin-bottom: 10px;
+            border-radius: 15px;
+            border: 1px solid #44ccff;
+            background: #11ffff;
+        }
+        .di {
+            width: 300px;
+            border: 1px solid #ccc;
+        }
+        .bcg {
+            list-style: none;
+            width: 500px;
+            margin: 100px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl" class="bcg">
+<div class="di" ng-mouseover="stop()" ng-mouseleave="go()">
+    <div ng-repeat="v in arr" ng-show="current==$index">
+        <img src="{{v.url}}">
+    </div>
+    <a ng-repeat="v in arr" ng-click="fn($index)" ng-class="current==$index?'bg':''">
+        {{$index+1}}
+    </a>
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.controller("myCtrl", function ($scope, $interval) {
+        $scope.current = 0;
+        $scope.arr = [
+            {url: "http://mat1.gtimg.com/news/FERD_proj/kuaibao160606/kuaibaonew.png"},
+             {url: "http://mat1.gtimg.com/news/FERD_proj/kuaibao160606/videonew.png"},
+             {url: "http://mat1.gtimg.com/news/FERD_proj/kuaibao160606/zhibonew.png"},
+             {url: "http://mat1.gtimg.com/news/FERD_proj/kuaibao160606/zhuantinew.png"}
+        ];
+        $scope.fn = function (n) {
+            $scope.current = n;
+            $interval.cancel($scope.timer);
+        };
+        $scope.go = function () {
+            $interval.cancel($scope.timer);
+            $scope.timer = $interval(function () {
+                $scope.current++;
+                if ($scope.current > $scope.arr.length - 1) {
+                    $scope.current = 0;
+                }
+            }, 1000);
+        };
+        $scope.stop = function () {
+            $interval.cancel($scope.timer);
+        };
+        $scope.go();
+    });
+</script>
+
+</body>
+</html>

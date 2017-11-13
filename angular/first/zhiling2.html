@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <title>Title</title>
+    <style>
+        .hello{
+            border: 5px solid red;
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl">
+<div class="hello" ng-repeat="item in data">
+    <!--<div ng-click="showMe = !showMe">点击</div>-->
+    <!--<div ng-show="showMe">{{item}}</div>-->
+    {{item}}
+</div>
+</body>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myApp",[])
+            .directive("hello",function(){
+                return{
+                    restrict:'EAC',
+                    template:'<div>' +               //会自动生成ng-scope
+                        '<div ng-transclude ng-click="showMe = !showMe">kadjlkjakgn</div>' +
+                        '<h2 ng-show="showMe">wiwuehfgn</h2>' +
+                    '</div>',
+                    transclude:true, //transclude 需不需要将你的指令内部的元素（注意不是指令的模板）嵌入到你的模板中去，默认是false //scope   //说的简单点就是创建模板的时候就是这边创建了一个控制器，每个div就有一个控制器   也就是这些控制器不会在父级上进行传播 都是单独的小事件 如果父标签上有动作是传不到里面的  其实还有另外一个属性叫link
+                    replace:true,
+                    link: function (scope,element,attrs) {             //link是一套渲染的机制 把所有标签上有指令的地方连接好，只要点击就会触发onclick事件，从而触发事件监听，触发最终compile
+                        //控制域 元素 属性，顺序固定
+                        element.find("h2").css({                      //在
+                            "width":parseInt(Math.random()*500+400)+"px",
+                            "background":"red"
+                        })
+
+                    }
+                }
+            })
+            .controller("myCtrl", ["$scope", function ($scope){
+                $scope.data=[10,200,3000,40000];
+
+
+
+            }])
+</script>
+</html>
