@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button name="buttn1">点击的一组name为buttn1的单选按钮</button>
+</body>
+<script src="jQuery/JS/jquery-1.11.3.min.js"></script>
+<script>
+    $(function(){
+        $("button").click(function () {
+            alert($("button[name='buttn1']").html())
+        })
+    })
+</script>
+</html>
