@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            line-height: 20px;
+            overflow : hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    </style>
 </head>
 <body>
-<button name="buttn1">点击的一组name为buttn1的单选按钮</button>
+<div>年的时间考虑的撒娇发链接打死了空间打开了房间看了那个年龄，多了几分公开结果</div>
 </body>
-<script src="jQuery/JS/jquery-1.11.3.min.js"></script>
-<script>
-    $(function(){
-        $("button").click(function () {
-            alert($("button[name='buttn1']").html())
-        })
-    })
-</script>
+
 </html>
